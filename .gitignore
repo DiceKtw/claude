@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# 作業系統/編輯器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# 剪映草稿測試輸出（不應進版控）
+*.draft/
