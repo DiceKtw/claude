@@ -85,7 +85,17 @@ def main() -> None:
     except Exception as e:  # noqa: BLE001
         fail(f"無法匯入 pyJianYingDraft：{e}\n請先執行：py -3.10 -m pip install pyJianYingDraft")
 
-    ver = getattr(draft, "__version__", "未知")
+    ver = getattr(draft, "__version__", None)
+    if not ver:
+        # 此套件未提供 __version__，改用套件中繼資料查詢
+        try:
+            from importlib.metadata import version, PackageNotFoundError
+            try:
+                ver = version("pyJianYingDraft")
+            except PackageNotFoundError:
+                ver = version("pyjianyingdraft")
+        except Exception:  # noqa: BLE001
+            ver = "未知"
     log(f"pyJianYingDraft 版本：{ver}")
 
     # --- 2. 建立草稿（DraftFolder → create_draft） -----------------------
@@ -110,12 +120,16 @@ def main() -> None:
     log(f"已建立草稿：{args.name}（{args.width}x{args.height}）")
 
     # --- 3. 新增影片軌 ---------------------------------------------------
-    # 註：常見 API 為 script.add_track(draft.TrackType.video)。
-    #     少數版本用 append_track(TrackSpec(TrackType.video, "video1"))。
+    # 已對照實際安裝版 pyJianYingDraft 驗證：使用 append_track(TrackSpec(...))。
+    # （此版沒有 add_track；若你的版本報錯，才需改回 add_track。）
     try:
-        script.add_track(draft.TrackType.video)
+        script.append_track(draft.TrackSpec(draft.TrackType.video))
     except AttributeError:
-        fail("此版本沒有 script.add_track；請對照文件（可能是 append_track/TrackSpec）。")
+        # 極少數舊版可能是 add_track(TrackType.video)
+        try:
+            script.add_track(draft.TrackType.video)
+        except AttributeError:
+            fail("此版本既無 append_track 也無 add_track；請對照安裝版文件。")
     log("已新增影片軌")
 
     # --- 4. 建立影片素材 -------------------------------------------------
