@@ -40,7 +40,11 @@ export const S0: React.FC<SceneProps> = ({from}) => {
 	const hp = prog(g, 6, 24, E.outExpo);
 	const half = 420 * hp;
 	const dent = dentAt(g);
-	const seed = prog(g, 0, 6, E.outBack) * (1 - prog(g, 10, 10, E.inOutSine));
+	// 第 0 格就有一顆 accent 種子點（接 S6 片尾眨眼落下的同一點，循環時像「睜開眼」），6 起地平線從它長出去
+	const seed = (0.8 + 0.2 * prog(g, 0, 6, E.outBack)) * (1 - prog(g, 10, 10, E.inOutSine));
+	// 地平線一開始亮一點、粗一點（手機上第 1 秒就看得到），40–70 退回 30%／1.5px 讓位給球
+	const hzOp = 0.6 - 0.3 * prog(g, 40, 30, E.inOutSine);
+	const hzW = 2 - 0.5 * prog(g, 40, 30, E.inOutSine);
 	const ticks = Array.from({length: 15}, (_, i) => 120 + i * 60);
 
 	/* ---------- 紅色收入線（之後完全不動） ---------- */
@@ -81,13 +85,13 @@ export const S0: React.FC<SceneProps> = ({from}) => {
 			<Push f={g} from={0} to={240} amount={0.02} originX={BALL.x} originY={GC}>
 				<Svg>
 					{/* 地平線：從中心點往兩邊畫出 */}
-					{seed > 0.01 ? <circle cx={540} cy={GROUND} r={3.2 * seed} fill={alpha(C.paper, 0.55)} /> : null}
+					{seed > 0.01 ? <circle cx={540} cy={GROUND} r={9 * seed} fill={C.accent} /> : null}
 					{hp > 0.001 ? (
 						<path
 							d={horizonPath(540 - half, 540 + half, dent)}
 							fill="none"
-							stroke={alpha(C.paper, 0.3)}
-							strokeWidth={1.5}
+							stroke={alpha(C.paper, hzOp)}
+							strokeWidth={hzW}
 							strokeLinecap="round"
 						/>
 					) : null}
@@ -195,30 +199,30 @@ export const S0: React.FC<SceneProps> = ({from}) => {
 				</Svg>
 
 				{/* 一開始球旁邊的「技術」 */}
-				<MonoWipe x={BALL.x + 116} y={DROP_Y} p={tagP} color={alpha(C.paper, 0.6)} opacity={ringFade}>
+				<MonoWipe x={BALL.x + 116} y={DROP_Y} p={tagP} size={36} color={alpha(C.paper, 0.7)} opacity={ringFade}>
 					技術
 				</MonoWipe>
 
 				{/* 軸旁邊的「技術 Lv.N」 */}
-				<MonoWipe x={AXIS_X + 22} y={APEX_Y} p={lvP} color={C.paper}>
-					<span style={{color: alpha(C.paper, 0.6)}}>技術 </span>
+				<MonoWipe x={AXIS_X + 22} y={APEX_Y} p={lvP} size={36} color={C.paper}>
+					<span style={{color: alpha(C.paper, 0.7)}}>技術 </span>
 					<span>Lv.</span>
-					<RollDigit f={g} at={APEX} values={['1', '2', '3', '4', '5']} size={26} color={C.accent} />
+					<RollDigit f={g} at={APEX} values={['1', '2', '3', '4', '5']} size={36} color={C.accent} />
 				</MonoWipe>
 
 				{/* 收入 +0% */}
-				<div style={{position: 'absolute', right: 1080 - LABEL_RIGHT, top: GROUND - 50}}>
-					<MaskRise segments="收入 +0%" start={30} f={g} size={26} color={red} weight={500} family={F.mono} stagger={2} dur={14} />
+				<div style={{position: 'absolute', right: 1080 - LABEL_RIGHT, top: GROUND - 66}}>
+					<MaskRise segments="收入 +0%" start={28} f={g} size={40} color={red} weight={500} family={F.mono} stagger={2} dur={14} />
 				</div>
 
-				{/* 主文案 */}
+				{/* 主文案：提前到第 1、2 次落地（60／90），Reels 第 1 秒就有字可讀 */}
 				<div style={{position: 'absolute', left: TEXT_X, top: 420}}>
-					<MaskRise segments="技術很好，" start={116} f={g} size={110} color={C.paper} weight={900} family={F.display} stagger={3} />
+					<MaskRise segments="技術很好，" start={56} f={g} size={110} color={C.paper} weight={900} family={F.display} stagger={3} />
 				</div>
 				<div style={{position: 'absolute', left: TEXT_X, top: 548}}>
 					<MaskRise
 						segments={[{text: '收入卻'}, {text: '沒變', color: red}, {text: '？'}]}
-						start={146}
+						start={86}
 						f={g}
 						size={110}
 						color={C.paper}

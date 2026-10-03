@@ -5,7 +5,7 @@ import {AbsoluteFill} from 'remotion';
 import {SceneProps, useG} from '../../lib/Master';
 import {ANGUS, F, STAGE} from '../../lib/theme';
 import {E, alpha, lerp, prog, pulseAt} from '../../lib/motion';
-import {Abs, Glint, ImpactFlicks, MaskRise, Push, Svg, drift} from '../../lib/components';
+import {Abs, ImpactFlicks, MaskRise, Push, Svg, drift} from '../../lib/components';
 import {T, TR} from '../timeline';
 import {CARD, CARD_XS, DropGhosts, FLIP_AT, FlipCard} from './S3_parts';
 
@@ -49,7 +49,8 @@ export const S3: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 
 	return (
 		<AbsoluteFill style={{background: C.accent}}>
-			<Push f={g} from={1000} to={1064} amount={0.015} originX={540} originY={830}>
+			{/* 第 3 張翻完（960）就開始慢推，不留凍住的空檔 */}
+			<Push f={g} from={966} to={1064} amount={0.03} originX={540} originY={830}>
 				<Svg>
 					{/* 版面參考線：卡片欄位、上下緣 */}
 					{GUIDE_XS.map((x, j) => (
@@ -89,7 +90,7 @@ export const S3: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 
 				{/* 副標：THREE QUESTIONS / 三個問題 */}
 				<Abs x={110 + hdx} y={SUB_Y} style={{clipPath: `inset(0 ${(1 - subP) * 100}% 0 0)`}}>
-					<div style={{fontFamily: F.mono, fontSize: 22, lineHeight: '30px', color: alpha(C.ink, 0.6), letterSpacing: '0.08em', whiteSpace: 'pre'}}>
+					<div style={{fontFamily: F.mono, fontSize: 26, lineHeight: '30px', color: alpha(C.ink, 0.78), letterSpacing: '0.08em', whiteSpace: 'pre'}}>
 						THREE QUESTIONS / 三個問題
 					</div>
 				</Abs>
@@ -134,7 +135,6 @@ export const S3: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 							})}
 						</g>
 					) : null}
-					<Glint x0={110} x1={970} y={LINE_Y} f={g} start={1012} dur={36} color={C.paper} width={2} />
 				</Svg>
 			</Push>
 		</AbsoluteFill>

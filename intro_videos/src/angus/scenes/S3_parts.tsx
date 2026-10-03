@@ -32,9 +32,9 @@ export const flipAngle = (f: number, b: number) => {
 	return -6 * Math.sin(Math.PI * Math.min(1, u * 1.15)) * (1 - u * 0.5);
 };
 
-/** 定格呼吸：錯開相位、±3px，1000 起慢慢加進來（不跳） */
+/** 定格呼吸：錯開相位、±6px，第 3 張翻完後（970 起）慢慢加進來（不跳） */
 export const breathe = (f: number, i: number) =>
-	3 * Math.sin(((f - 1000) / 84) * Math.PI * 2 + i * 2.1) * prog(f, 1000, 24, E.inOutSine);
+	6 * Math.sin(((f - 970) / 84) * Math.PI * 2 + i * 2.1) * prog(f, 970, 24, E.inOutSine);
 
 /* ------------------------------------------------------------------ */
 /* 背面：accent 細格線＋大等寬編號                                        */
@@ -129,8 +129,8 @@ const Front: React.FC<{n: string; big: string; small: string; sq: number}> = ({n
 				top: 292,
 				fontFamily: F.sans,
 				fontWeight: 500,
-				fontSize: 30,
-				lineHeight: '42px',
+				fontSize: 36,
+				lineHeight: '44px',
 				color: alpha(C.paper, 0.75),
 				whiteSpace: 'pre',
 			}}

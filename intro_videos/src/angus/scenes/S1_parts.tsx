@@ -56,6 +56,38 @@ export const ClickSpark: React.FC<{
 	return <Spark cx={cx} cy={cy} size={size * pulse} rays={rays} color={color} rotate={spin + click * 30} core={core} rayWidth={0.11} />;
 };
 
+/**
+ * 螢光筆底條：包住一段字，字後面墊一條 accent 色塊（約字的下半 0.5em），p 0→1 由左往右刷出。
+ * 規則：米白底上強調色只當色塊、字一律用 ink（ink 壓 accent 10:1）。這個手法全片只用兩次（S1 副標、S4 收尾句）。
+ */
+export const Marker: React.FC<{p: number; size: number; color: string; top?: number; h?: number; pad?: number; children: React.ReactNode}> = ({
+	p,
+	size,
+	color,
+	top = 0.66,
+	h = 0.5,
+	pad = 0.12,
+	children,
+}) => (
+	<div style={{position: 'relative', display: 'inline-block'}}>
+		{p > 0 ? (
+			<div
+				style={{
+					position: 'absolute',
+					left: -size * pad,
+					right: -size * pad,
+					top: size * top,
+					height: size * h,
+					background: color,
+					transform: `scaleX(${clamp(p).toFixed(4)})`,
+					transformOrigin: '0% 50%',
+				}}
+			/>
+		) : null}
+		<div style={{position: 'relative'}}>{children}</div>
+	</div>
+);
+
 /** 等寬標題：由左往右擦出，擦的前緣帶一個 accent 小游標 */
 export const MonoTitle: React.FC<{
 	g: number;

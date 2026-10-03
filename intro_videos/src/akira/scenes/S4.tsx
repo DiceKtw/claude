@@ -1,7 +1,9 @@
 // Akira S4 信任 1176–1440（全域格數）
 // 研究筆記的第四頁：一張月曆線稿先描出來（外框 → 橫線由上往下 → 直線由左往右，1200–1240），
-// 1230–1350 每 4 格預約一天（米白 15% 填色＋中心小點；剛填的那格先亮一圈細框再退掉，像游標一路走過去），
-// rng(7) 挑的 3 天留空（只有空心小圈），文案落在 1360／1390。
+// 1230–1350 每 4 格預約一天（米白 18% 填色＋中心小點；剛填的那格先亮一圈細框再退掉，像游標一路走過去），
+// rng(7) 挑的 3 天留空（只有空心小圈）。
+// 10/3：文案提前到 1290／1320 落拍（原本 1360／1390 不在拍格線上、只停 0.4 秒）——「客人一直回來」出現時格子還在一格格被填上。
+// 同時「週二」這一欄的四週由一條米白細線一週一週連起來（每到一週就圈一下）：同一位客人每週都回來，把文案畫成看得到的事。
 // 1176–1200 由 Master 溶接進場；1416 起 S5 溶接蓋上。
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
@@ -27,8 +29,13 @@ const HATCH0 = 1214; // 不屬於這個月的格子：淡斜線
 const LEGEND = 1227; // 右上 RESERVED（提前 3 格，1230 拍那格已看得到）
 const FILL0 = 1230; // 每 4 格預約一天
 const FILL_STEP = 4;
-const L1 = 1353; // 「客人一直回來，」（1360 站穩大半；quiet 線性淡入，提前 7 格）
-const L2 = 1383; // 「是因為信任」（1390）
+const FILL_OP = 0.18; // 填色（Akira 規範上限 18%）
+const L1 = 1283; // 「客人一直回來，」（1290 站穩大半；quiet 線性淡入，提前 7 格）
+const L2 = 1313; // 「是因為信任」（1320 Gmaj9）
+// 回訪線：週二（第 1 欄）第 2–5 列，四週都有預約；每一段在下一週那格被填上的那一格剛好抵達
+const RET_COL = 1;
+const RET_ROWS = [1, 2, 3, 4];
+const RET_SEG = 20; // 每段描線格數
 const PUSH0 = 1200;
 const PUSH1 = 1440;
 const DRIFT0 = 1350;
@@ -54,6 +61,13 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 
 	const calDx = drift(g, DRIFT0, DRIFT1, -6);
 	const txtDx = drift(g, DRIFT0, DRIFT1, 8);
+
+	// 回訪線：每個節點＝該週週二那格的預約時間
+	const retNodes = RET_ROWS.map((r) => {
+		const i = r * CAL.cols + RET_COL;
+		const k = i - LEAD;
+		return {b: cellBox(i), t: FILL0 + k * FILL_STEP};
+	});
 
 	const outCells = [...Array.from({length: LEAD}, (_, i) => i), ...Array.from({length: CAL.cols * CAL.rows - TRAIL_FROM}, (_, i) => TRAIL_FROM + i)];
 
@@ -91,17 +105,34 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 							const rh = b.h - INSET * 2;
 							return (
 								<g key={`d${k}`}>
-									{!open ? <rect x={rx} y={ry} width={rw} height={rh} rx={6} fill={C.accent} opacity={0.15 * fillP} /> : null}
+									{!open ? <rect x={rx} y={ry} width={rw} height={rh} rx={6} fill={C.accent} opacity={FILL_OP * fillP} /> : null}
 									{hot > 0.01 ? (
 										<rect x={rx} y={ry} width={rw} height={rh} rx={6} fill="none" stroke={open ? C.muted : C.accent} strokeWidth={C.hairline} opacity={hot * (open ? 0.7 : 0.9)} />
 									) : null}
 									{open ? (
 										<circle cx={b.cx} cy={b.cy} r={4} fill="none" stroke={C.muted} strokeWidth={C.hairline} opacity={dotP} />
 									) : (
-										<circle cx={b.cx} cy={b.cy} r={3} fill={C.accent} opacity={dotP} />
+										<circle cx={b.cx} cy={b.cy} r={4} fill={C.accent} opacity={dotP} />
 									)}
 								</g>
 							);
+						})}
+
+						{/* 回訪線（1.5px 米白）：週二這一欄一週連到下一週，到一週就圈一下 */}
+						{retNodes.slice(1).map((n, s) => {
+							const a = retNodes[s];
+							const p = prog(g, n.t - RET_SEG, RET_SEG, E.inOutSine);
+							if (p <= 0) return null;
+							const y0 = a.b.cy + 9;
+							const y1 = n.b.cy - 9;
+							return <line key={`rl${s}`} x1={a.b.cx} y1={y0} x2={a.b.cx} y2={y0 + (y1 - y0) * p} stroke={C.accent} strokeWidth={C.hairline} />;
+						})}
+						{retNodes.map((n, s) => {
+							// 第一週：在第一段起筆時圈；之後每一週：線抵達那格圈
+							const at = s === 0 ? retNodes[1].t - RET_SEG - 2 : n.t - 2;
+							const p = prog(g, at, 12, E.outCubic);
+							if (p <= 0) return null;
+							return <circle key={`rc${s}`} cx={n.b.cx} cy={n.b.cy} r={9} fill="none" stroke={C.accent} strokeWidth={C.hairline} opacity={p} />;
 						})}
 
 						{/* 線稿：外框 → 橫線 → 直線（全部 1.5px 暖灰） */}
@@ -116,8 +147,8 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 
 					{/* 欄頭 */}
 					{DAYS.map((d, c) => (
-						<FadeRise key={d} f={g} start={HEAD0 + c * 3} dur={18} rise={16} style={{left: CAL.x0 + c * COL_W, top: CAL.y0 + (CAL.head - 25) / 2, width: COL_W, display: 'flex', justifyContent: 'center'}}>
-							<div style={{...monoStyle(18, 0.2), lineHeight: '25px', paddingLeft: '0.2em'}}>{d}</div>
+						<FadeRise key={d} f={g} start={HEAD0 + c * 3} dur={18} rise={16} style={{left: CAL.x0 + c * COL_W, top: CAL.y0 + (CAL.head - 28) / 2, width: COL_W, display: 'flex', justifyContent: 'center'}}>
+							<div style={{...monoStyle(20, 0.2), lineHeight: '28px', paddingLeft: '0.2em'}}>{d}</div>
 						</FadeRise>
 					))}
 
@@ -127,7 +158,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 							style={{
 								position: 'absolute',
 								right: 1080 - CAL.x1,
-								top: 388,
+								top: 394, // 慢推 1.018 放大後字頂仍在 STAGE.top 390 以下
 								display: 'flex',
 								alignItems: 'center',
 								gap: 14,
@@ -136,7 +167,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 							}}
 						>
 							<svg width={22} height={22} style={{overflow: 'visible'}}>
-								<rect x={0.75} y={0.75} width={20.5} height={20.5} rx={4} fill={alpha(C.accent, 0.15)} stroke={C.muted} strokeWidth={C.hairline} />
+								<rect x={0.75} y={0.75} width={20.5} height={20.5} rx={4} fill={alpha(C.accent, FILL_OP)} stroke={C.muted} strokeWidth={C.hairline} />
 								<circle cx={11} cy={11} r={3} fill={C.accent} />
 							</svg>
 							<div style={{...monoStyle(20, 0.3), marginRight: '-0.3em'}}>RESERVED</div>
@@ -147,7 +178,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 				{/* 文案 */}
 				<AbsoluteFill style={{transform: `translateX(${txtDx}px)`}}>
 					<div style={{position: 'absolute', left: TX, top: TY1}}>
-						<MaskRise segments="客人一直回來，" start={L1} f={g} size={68} color={C.paper} weight={700} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
+						<MaskRise segments="客人一直回來，" start={L1} f={g} size={68} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
 					</div>
 					<div style={{position: 'absolute', left: TX, top: TY2}}>
 						<MaskRise
@@ -156,7 +187,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 							f={g}
 							size={68}
 							color={C.paper}
-							weight={700}
+							weight={500}
 							family={F.sans}
 							quiet
 							stagger={3}

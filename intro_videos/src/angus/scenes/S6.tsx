@@ -61,12 +61,16 @@ export const S6: React.FC<SceneProps> = ({from}) => {
 	// 光芒提前 4 格、每道錯開 0.3 格：落拍那格已經大半張開（最用力的那一格）
 	const rays0 = sparkRays(g, BLOOM_AT - 4, 0.3, 16);
 	const retract = 1 - prog(g, 1766, 10, E.inCubic); // 收尾：光芒收回
-	const rays = rays0.map((r) => r * retract);
+	// 1740 最後一拍：不再噴震波（跟 1500 長得一樣），改成光芒伸長 1.3 倍再收回＋整塊字一起「踢」一下
+	const flare = pulseAt(g, [LAST_PULSE - 6], 18, 0.3);
+	const rays = rays0.map((r) => r * retract * flare);
 	let turn = -45 * (1 - prog(g, BLOOM_AT - 2, 28, E.outExpo));
 	for (const b of STAR_BEATS) turn += 30 * prog(g, b - 6, 20, E.inOutSine);
 	const beatPulse = pulseAt(g, STAR_BEATS.map((b) => b - 2), 12, 0.12);
-	const lastPulse = pulseAt(g, [LAST_PULSE - 2], 18, 0.3);
-	const bloomPulse = pulseAt(g, [BLOOM_AT - 2], 18, 0.22);
+	// pulseAt 的峰值在 b+0.315×dur：提前 6 格起跑，最大那一格剛好落在 1500／1740
+	const lastPulse = pulseAt(g, [LAST_PULSE - 6], 18, 0.12);
+	const bloomPulse = pulseAt(g, [BLOOM_AT - 6], 18, 0.5); // 綻放先衝到約 1.5 倍再回到 320（超過頭→回彈）
+	const kickBlock = pulseAt(g, [LAST_PULSE - 6], 18, 0.03);
 	const starSize = 320 * sSc * beatPulse * lastPulse * bloomPulse;
 	const coreR = lerp(16, 9, mv) + (BLINK.r - 9) * prog(g, 1764, 12, E.outBack);
 	const starOn = g >= BLOOM_AT - 4 && g < FALL0;
@@ -109,24 +113,18 @@ export const S6: React.FC<SceneProps> = ({from}) => {
 				{SYMBOLS.map((_, i) => (
 					<RecallSymbol key={i} i={i} g={g} />
 				))}
-				{ABSORB.map((a) => (
-					<Ring key={a} cx={CORE.x} cy={CORE.y} f={g} start={a} dur={14} r0={12} r1={52} w0={2} color={alpha(C.paper, 0.7)} />
-				))}
 				{g < BLOOM_AT - 3 && dotR > 0.1 ? <circle cx={CORE.x} cy={CORE.y} r={dotR} fill={C.accent} /> : null}
 
 				{/* 1500 綻放＋兩圈震波 */}
-				<Ring cx={CORE.x} cy={CORE.y} f={g} start={BLOOM_AT - 1} dur={40} r0={40} r1={560} w0={3} color={C.paper} />
+				<Ring cx={CORE.x} cy={CORE.y} f={g} start={BLOOM_AT - 1} dur={44} r0={40} r1={860} w0={5} color={C.paper} />
 				<Ring cx={CORE.x} cy={CORE.y} f={g} start={BLOOM_AT + 3} dur={48} r0={30} r1={780} w0={2} color={alpha(C.paper, 0.7)} />
 				{starOn ? <Spark cx={CORE.x} cy={sCy} size={starSize} rays={rays} color={C.accent} rotate={turn} core={coreR} rayWidth={0.1} /> : null}
 
-				{/* 1740 最後一次脈動的震波 */}
-				<Ring cx={STAR_TOP.x} cy={STAR_TOP.y} f={g} start={LAST_PULSE - 1} dur={44} r0={70} r1={720} w0={3} color={C.paper} />
-				<Ring cx={STAR_TOP.x} cy={STAR_TOP.y} f={g} start={LAST_PULSE + 2} dur={36} r0={50} r1={320} w0={2} color={C.accent} />
 			</Svg>
 
 			{/* 名字、副標、輸入框（慢推＋上下視差） */}
 			<Push f={g} from={BLOOM_AT} to={1770} amount={0.02} originX={540} originY={820}>
-				<AbsoluteFill style={{opacity: fade}}>
+				<AbsoluteFill style={{opacity: fade, transform: `scale(${kickBlock.toFixed(4)})`, transformOrigin: '540px 820px'}}>
 					<div style={{position: 'absolute', left: 0, width: 1080, top: NAME_TOP + nameDy, display: 'flex', justifyContent: 'center'}}>
 						<MaskRise segments="安格斯" start={1556} f={g} size={190} color={C.paper} weight={900} family={F.display} stagger={3} />
 					</div>
@@ -165,7 +163,6 @@ export const S6: React.FC<SceneProps> = ({from}) => {
 								/>
 							) : null}
 							<SendButton g={g} pop={btnPop} />
-							<Ring cx={BTN.x} cy={BTN.y} f={g} start={PRESS_AT} dur={30} r0={42} r1={150} w0={2.5} color={C.accent} />
 						</Svg>
 						<div
 							style={{
@@ -179,9 +176,9 @@ export const S6: React.FC<SceneProps> = ({from}) => {
 						>
 							<Typewriter
 								text="讓你的技術，值更多錢"
-								start={1645}
+								start={1636}
 								f={g}
-								every={3}
+								every={2}
 								size={52}
 								color={C.paper}
 								hotColor={C.accent}

@@ -1,6 +1,9 @@
 // Akira S3 經驗 936–1200（全域格數）
 // 研究筆記的第三頁：三張經驗卡每拍一張升進預先畫好的虛線版位（960／990／1020），
-// 三條細線從卡的右緣出發、沿右側走線、在下方匯成一點（1050–1080），文案落在 1110／1140。
+// 三條細線從卡的右緣出發、沿右側走線、在下方匯成一點（1050–1080）。
+// 文案（10/3 提前一整拍）：「把經驗，」跟三條線同拍起筆（1050），「變成一個適合你的答案」跟匯點小圓一起落在 1080 的 Bm9，
+// 完整停留約 1.4 秒才被溶接蓋掉（原本 1110／1140 只停 0.4 秒）。1160 起卡內文字和走線先淡掉、只留卡框，
+// 1176 S4 溶接時是「三個卡框 → 月曆外框」對位，不會兩張投影片疊在一起。
 // 936–960 由 Master 從左往右細線掃入（掃入時虛線版位已經在，掃過去就看得到）；1176 起 S4 溶接蓋上。
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
@@ -14,13 +17,16 @@ const C = AKIRA;
 
 // 時間（全域格數）
 const CARD_B = [960, 990, 1020]; // 三張卡的拍點
+// 卡（含標題）提前 7 格起跑：拍點那格卡身已站穩、標題第一個字已六成（跟全片文案「提前 7 格」一致）
+const CARD_LEAD = 7;
 const LINE_T0 = [1050, 1053, 1056]; // 三條線起筆（錯開 3 格）
 const LINE_DUR = [30, 24, 18]; // 線越長畫越久（筆速一致）→ 最長那條在 1080 拍抵達匯點
 const DOT = 1074; // 匯點小圓淡入（1080 拍已站穩）
-const L1 = 1103; // 「把經驗，變成」：quiet 版是線性淡入，提前 7 格，1110 拍那格第一個字已六成以上、位置九成
-const L2 = 1133; // 「一個適合你的答案」：1140 拍
-const HOLD = 1140; // 定格：卡片錯開相位上下漂 ±2px
-const PUSH0 = 960; // 慢推從第一張卡落定就開始，1080–1103 匯點之後到文案之前也不會停住
+const L1 = 1043; // 「把經驗，」：quiet 版是線性淡入，提前 7 格，1050 拍那格第一個字已六成以上、位置九成
+const L2 = 1073; // 「變成一個適合你的答案」：1080 拍（Bm9，跟匯點小圓同拍）
+const HOLD = 1110; // 定格：卡片錯開相位上下漂 ±2px
+const INNER_OUT = 1160; // 卡內文字＋走線淡出（只留卡框），讓位給文案、也讓溶接變成框對框
+const PUSH0 = 936; // 慢推從掃入就開始（卡一出現就在非 1 的縮放裡，避免 LCD 次像素彩邊）
 const PUSH1 = 1200;
 
 // 版面
@@ -66,6 +72,7 @@ export const S3: React.FC<SceneProps> = ({from}) => {
 	const dys = [0, 1, 2].map((i) => cardDy(g, i));
 	const lines = [0, 1, 2].map((i) => ({r: route(i, dys[i]), p: prog(g, LINE_T0[i], LINE_DUR[i], E.inOutSine)}));
 	const dotP = prog(g, DOT, 12, E.outCubic);
+	const inner = 1 - prog(g, INNER_OUT, 18, E.inOutSine);
 
 	return (
 		<AbsoluteFill style={{background: C.ink}}>
@@ -96,11 +103,11 @@ export const S3: React.FC<SceneProps> = ({from}) => {
 
 				{/* 三張經驗卡 */}
 				{CARDS.map((c, i) => (
-					<InfoCard key={c.idx} f={g} b={CARD_B[i]} x={CARD.x} y={CARD_Y[i]} w={CARD.w} h={CARD.h} idx={c.idx} tag={c.tag} title={c.title} note={c.note} dy={dys[i]} />
+					<InfoCard key={c.idx} f={g} b={CARD_B[i] - CARD_LEAD} x={CARD.x} y={CARD_Y[i]} w={CARD.w} h={CARD.h} idx={c.idx} tag={c.tag} title={c.title} note={c.note} dy={dys[i]} inner={inner} />
 				))}
 
 				{/* 三條細線匯成一點 */}
-				<Svg>
+				<Svg style={{opacity: inner}}>
 					{lines.map(({r, p}, i) => {
 						if (p <= 0) return null;
 						const start = r.at(0);
@@ -120,17 +127,18 @@ export const S3: React.FC<SceneProps> = ({from}) => {
 				</Svg>
 
 				{/* 文案（置中，接在匯點正下方） */}
+				{/* 第一行在逗號斷行（跟其他場景一致）；句尾全形逗號右邊是空的，往右補 0.35em 讓字面視覺置中 */}
 				<div style={{position: 'absolute', left: 0, top: TY1, width: 1080, display: 'flex', justifyContent: 'center'}}>
-					<MaskRise segments="把經驗，變成" start={L1} f={g} size={64} color={C.paper} weight={700} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
+					<MaskRise segments="把經驗，" start={L1} f={g} size={64} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} style={{marginRight: -22}} />
 				</div>
 				<div style={{position: 'absolute', left: 0, top: TY2, width: 1080, display: 'flex', justifyContent: 'center'}}>
 					<MaskRise
-						segments={[{text: '一個'}, {text: '適合你', color: C.accent, weight: 700}, {text: '的答案'}]}
+						segments={[{text: '變成一個'}, {text: '適合你', color: C.accent, weight: 700}, {text: '的答案'}]}
 						start={L2}
 						f={g}
 						size={64}
 						color={C.paper}
-						weight={700}
+						weight={500}
 						family={F.sans}
 						quiet
 						stagger={3}

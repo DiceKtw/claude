@@ -2,8 +2,8 @@
 import React from 'react';
 import {ANGUS} from '../../lib/theme';
 import {E, alpha, clamp, lerp, prog} from '../../lib/motion';
-import {Spark} from '../../lib/components';
 import {BALL} from '../timeline';
+import {Bust} from './S2_parts';
 
 const C = ANGUS;
 
@@ -31,7 +31,8 @@ const SymPhone: React.FC = () => (
 		<rect x={-24} y={-42} width={48} height={84} rx={11} />
 		<line x1={-7} y1={-32} x2={7} y2={-32} strokeLinecap="round" />
 		<rect x={-14} y={-18} width={28} height={22} rx={4} strokeWidth={2} />
-		<path d="M -8 4 A 8 8 0 0 1 8 4" stroke={C.accent} strokeWidth={2.5} />
+		{/* 螢幕裡的作品：迷你鮑伯頭（跟 S2 貼文卡同一款） */}
+		<Bust x={0} y={6} hair="bob" s={0.17} body={false} />
 	</g>
 );
 const SymFunnel: React.FC = () => (
@@ -58,7 +59,19 @@ const SymCurve: React.FC = () => (
 		<path d="M -30 24 L -4 24 C 14 24 24 8 32 -30" stroke={C.accent} strokeWidth={3} />
 	</g>
 );
-const SymStar: React.FC = () => <Spark cx={0} cy={0} size={74} rays={1} color={C.accent} core={5} rayWidth={0.12} />;
+// S1 的規格列（小方塊＋標籤＋點狀引線＋數值）；星芒留給 1500 第一次、也是唯一一次綻放
+const SymRows: React.FC = () => (
+	<g strokeLinecap="round">
+		{[-22, 0, 22].map((y) => (
+			<g key={y}>
+				<rect x={-38} y={y - 4} width={8} height={8} fill={C.accent} />
+				<line x1={-24} y1={y} x2={-12} y2={y} stroke={C.paper} strokeWidth={3} />
+				<line x1={-4} y1={y} x2={14} y2={y} stroke={alpha(C.paper, 0.6)} strokeWidth={2} strokeDasharray="1 5" />
+				<line x1={22} y1={y} x2={38} y2={y} stroke={C.paper} strokeWidth={3} />
+			</g>
+		))}
+	</g>
+);
 
 export const SYMBOLS: {C: React.FC; x: number; y: number}[] = [
 	{C: SymBall, x: 180, y: 452},
@@ -66,7 +79,7 @@ export const SYMBOLS: {C: React.FC; x: number; y: number}[] = [
 	{C: SymFunnel, x: 130, y: 770},
 	{C: SymCards, x: 950, y: 810},
 	{C: SymCurve, x: 236, y: 1130},
-	{C: SymStar, x: 856, y: 1146},
+	{C: SymRows, x: 856, y: 1146},
 ];
 export const ABSORB = SYMBOLS.map((_, i) => 1452 + i * 4); // 每 4 格吸收一個
 const DEPART = 1434; // 刀前就已經出發（第一格就在動）
@@ -85,7 +98,8 @@ export const symAt = (i: number, f: number) => {
 	const cy = CORE.y + (dx * Math.sin(a) + dy * Math.cos(a)) * 0.82;
 	const x = (1 - e) * (1 - e) * s.x + 2 * (1 - e) * e * cx + e * e * CORE.x;
 	const y = (1 - e) * (1 - e) * s.y + 2 * (1 - e) * e * cy + e * e * CORE.y;
-	return {x, y, scale: lerp(1.3, 0.2, e), rot: (f - 1440) * 1.5 + 220 * e, t};
+	// 不自轉：一路正立、只順著彎路微微前傾，飛進去時還認得出是什麼（放大 1.4 倍，手機上看得清）
+	return {x, y, scale: lerp(1.82, 0.28, e), rot: -14 * e, t};
 };
 
 /** 一個回憶符號（含殘影） */

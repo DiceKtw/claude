@@ -1,16 +1,18 @@
 // 安格斯 S4 成果 1064–1320（paper 底）
 // 座標軸 → 紅色平線回來了（收入 +0%）→ 1110 落拍往上彎 → 成長曲線一路畫到右上（間距圖淡點）
-// → 1170 端點星芒 → 每拍一條量測引線（收入／客戶／業績 ↑）→ 文案落拍 1240／1270 → 定格
+// → 1170 技術球撞上頂端 → 三條量測引線 16 分音符連發 → 文案落拍 1200／1230 → 球每拍在頂端小跳
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {SceneProps, useG} from '../../lib/Master';
 import {ANGUS, F} from '../../lib/theme';
-import {E, alpha, beatsFrom, clamp, lerp, mixHex, prog, pulseAt} from '../../lib/motion';
-import {Abs, Leader, MaskRise, Push, Ring, Spark, Svg, drift, ghostFrames, sparkRays} from '../../lib/components';
+import {E, alpha, beatsFrom, clamp, lerp, mixHex, prog} from '../../lib/motion';
+import {Abs, ImpactFlicks, Leader, MaskRise, Push, Svg, drift, ghostFrames} from '../../lib/components';
 import {OutWrap} from '../../lib/transitions';
 import {TR} from '../timeline';
 import {S3} from './S3';
+import {Marker} from './S1_parts';
 import {
+	BALL_R,
 	BEND_AT,
 	BEND_X,
 	CH,
@@ -25,8 +27,10 @@ import {
 	curveAt,
 	dipAt,
 	headU,
+	hopAt,
 	linePath,
 	passFrame,
+	squashAt,
 } from './S4_parts';
 
 const C = ANGUS;
@@ -40,7 +44,8 @@ const TICK_X = [220, 300, 380, 460, 540, 620, 700, 780, 860, 940];
 const TICK_Y = [1097, 1044, 991, 938, 885, 832, 779, 726, 673, 620];
 // 間距圖：曲線畫出時每 4 格留一個淡點
 const SPACING = beatsFrom(BEND_AT, 16, 4); // 1110…1170
-const TIP_BEATS = [1200, 1230, 1260, 1290];
+const LINE1_AT = 1200; // 主文案第 1 行落拍
+const LINE2_AT = 1230; // 第 2 行落拍（＋螢光筆底條）
 const SLIDE = TR.slideS3; // S3 往左甩出（1064–1080），在 S4 上層重畫
 
 // 軸線頭（畫出進度）
@@ -67,28 +72,32 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 	const head = curveAt(u);
 	const headV = Math.hypot(curveAt(headU(g + 0.5)).x - curveAt(headU(g - 0.5)).x, curveAt(headU(g + 0.5)).y - curveAt(headU(g - 0.5)).y);
 	const penK = g >= CURVE_START ? prog(g, CURVE_START, 6, E.outBack) : 0;
-	const penOff = prog(g, TIP_AT - 2, 4, E.outCubic); // 交給星芒
 
-	// 收入 +0%：彎上去之後劃掉、變灰
-	const tagCol = mixHex(RED, C.muted, prog(g, BEND_AT + 8, 16, E.inOutSine));
+	// 技術球：撞頂後留在端點，每拍小跳（S0 那顆球終於爬到收入曲線的頂端）
+	const atTip = g >= TIP_AT;
+	const sq = squashAt(g);
+	const ballX = atTip ? TIP.x : head.x;
+	const ballY = atTip ? TIP.y - hopAt(g) : head.y;
+	const ballRx = BALL_R * penK * (1 + 0.32 * sq);
+	const ballRy = BALL_R * penK * (1 - 0.3 * sq);
+
+	// 收入 +0%：彎上去之後劃掉、退成灰（ink 62%，手機上還讀得到）
+	const tagK = prog(g, BEND_AT + 8, 16, E.inOutSine);
+	const tagCol = mixHex(RED, C.ink, tagK);
+	const tagOp = lerp(1, 0.62, tagK);
 	const strikeP = prog(g, BEND_AT + 6, 12, E.outExpo);
 
 	// 筆頭下方的時間游標（虛線落到橫軸）
 	const cursorOp = prog(g, CURVE_START, 6, E.outCubic) * (1 - prog(g, TIP_AT + 2, 16, E.inOutSine));
 
-	/* ---------- 端點星芒 ---------- */
-	const rays = sparkRays(g, TIP_AT - 3, 0.5, 14);
-	const tipPulse = pulseAt(g, TIP_BEATS.map((b) => b - 2), 10, 0.3) * pulseAt(g, [TIP_AT - 3], 16, 0.7);
-	const tipSpin = -40 * (1 - prog(g, TIP_AT - 3, 24, E.outExpo)) + 0.25 * Math.max(0, g - TIP_AT);
-	const tipCore = 6 * prog(g, TIP_AT - 3, 8, E.outBack);
-
 	/* ---------- 視差、定格 ---------- */
-	const chartDx = drift(g, 1236, 1320, -8);
-	const textDx = drift(g, 1236, 1320, 8);
+	const chartDx = drift(g, LINE1_AT - 4, 1320, -8);
+	const textDx = drift(g, LINE1_AT - 4, 1320, 8);
+	const markP = prog(g, LINE2_AT + 2, 16, E.outExpo);
 
 	return (
 		<AbsoluteFill style={{background: C.paper}}>
-			<Push f={g} from={1270} to={1320} amount={0.015} originX={540} originY={860}>
+			<Push f={g} from={LINE1_AT} to={1320} amount={0.02} originX={540} originY={860}>
 				<AbsoluteFill style={{transform: `translateX(${chartDx.toFixed(2)}px)`}}>
 					<Svg>
 						<defs>
@@ -168,7 +177,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 						) : null}
 
 						{/* 平線＋成長曲線（一條路徑，顏色從彎點往兩邊變） */}
-						{flatP > 0 ? <path d={d} fill="none" stroke="url(#angS4line)" strokeWidth={4.5} strokeLinecap="butt" strokeLinejoin="round" /> : null}
+						{flatP > 0 ? <path d={d} fill="none" stroke="url(#angS4line)" strokeWidth={8} strokeLinecap="butt" strokeLinejoin="round" /> : null}
 						{/* 平線起點小端帽 */}
 						{flatP > 0 ? (
 							<line
@@ -189,23 +198,16 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 							return <circle key={F0} cx={p.x} cy={p.y} r={5.5 * k} fill={alpha(C.ink, 0.3)} />;
 						})}
 
-						{/* 筆頭＋快的時候拖殘影 */}
-						{penK > 0 && penOff < 1 && headV > 6
+						{/* 技術球（筆頭）＋快的時候拖殘影 */}
+						{penK > 0 && !atTip && headV > 6
 							? ghostFrames(g, 3, 1.1).map((gh, i) => {
 									const p = curveAt(headU(gh.f));
-									return <circle key={i} cx={p.x} cy={p.y} r={7} fill={C.accent} opacity={gh.o * clamp((headV - 6) / 20)} />;
+									return <circle key={i} cx={p.x} cy={p.y} r={BALL_R * 0.94} fill={C.accent} opacity={gh.o * clamp((headV - 6) / 20)} />;
 								})
 							: null}
-						{penK > 0 && penOff < 1 ? <circle cx={head.x} cy={head.y} r={7 * penK * (1 - penOff * 0.3)} fill={C.accent} /> : null}
-
-						{/* 1170 端點星芒＋震波 */}
-						<Ring cx={TIP.x} cy={TIP.y} f={g} start={TIP_AT - 1} dur={36} r0={10} r1={120} w0={3} color={C.accent} />
-						{g >= TIP_AT - 3 ? (
-							<Spark cx={TIP.x} cy={TIP.y} size={48 * tipPulse} rays={rays} color={C.accent} rotate={tipSpin} core={tipCore} rayWidth={0.13} />
-						) : null}
-						{TIP_BEATS.map((b) => (
-							<Ring key={b} cx={TIP.x} cy={TIP.y} f={g} start={b - 1} dur={26} r0={14} r1={52} w0={1.5} color={alpha(C.ink, 0.5)} />
-						))}
+						{penK > 0 ? <ellipse cx={ballX} cy={ballY} rx={Math.max(0.01, ballRx)} ry={Math.max(0.01, ballRy)} fill={C.accent} /> : null}
+						{/* 1170 撞頂那一格：球頂踢出小撇 */}
+						<ImpactFlicks x={TIP.x} y={TIP.y - BALL_R + 2} f={g} start={TIP_AT - 1} dur={11} color={C.accent} width={3} spread={14} len={18} />
 
 						{/* 量測引線：曲線上的點 → 右側細軸，每拍一條 */}
 						{READS.map((r) => {
@@ -234,18 +236,18 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 					</MonoTag>
 
 					{/* 收入 +0%（呼應 S0），彎上去之後被劃掉 */}
-					<Abs x={CH.x0 + 16} y={FLAT_Y - 46}>
-						<MaskRise segments="收入 +0%" start={1092} f={g} size={26} color={tagCol} weight={500} family={F.mono} stagger={2} dur={14} />
+					<Abs x={CH.x0 + 16} y={FLAT_Y - 58} style={{opacity: tagOp}}>
+						<MaskRise segments="收入 +0%" start={1092} f={g} size={34} color={tagCol} weight={500} family={F.mono} stagger={2} dur={14} />
 					</Abs>
 					{strikeP > 0 ? (
 						<Svg>
 							<line
-								x1={CH.x0 + 16 + 70}
-								y1={FLAT_Y - 46 + 16}
-								x2={CH.x0 + 16 + 70 + 56 * strikeP}
-								y2={FLAT_Y - 46 + 16}
+								x1={CH.x0 + 16 + 86}
+								y1={FLAT_Y - 58 + 21}
+								x2={CH.x0 + 16 + 86 + 68 * strikeP}
+								y2={FLAT_Y - 58 + 21}
 								stroke={C.ink}
-								strokeWidth={2}
+								strokeWidth={2.5}
 							/>
 						</Svg>
 					) : null}
@@ -254,7 +256,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 					{READS.map((r) => (
 						<div key={r.b} style={{position: 'absolute', right: 1080 - (r.x - 22), top: r.y - 8 - 34 * 1.18}}>
 							<MaskRise
-								segments={[{text: r.text + ' '}, {text: '↑', color: C.accent}]}
+								segments={r.text + ' ↑'}
 								start={r.b - 2}
 								f={g}
 								size={34}
@@ -268,13 +270,25 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 					))}
 				</AbsoluteFill>
 
-				{/* 文案（主角） */}
+				{/* 文案（主角）：1200／1230 正拍落下；第 2 行 ink 字＋accent 螢光筆底條（米白底上不用橘字） */}
 				<AbsoluteFill style={{transform: `translateX(${textDx.toFixed(2)}px)`}}>
 					<Abs x={110} y={398}>
-						<MaskRise segments="收入、客戶、業績，" start={1236} f={g} size={84} color={C.ink} weight={900} family={F.display} stagger={2} />
+						<MaskRise
+							segments="收入、客戶、業績，"
+							start={LINE1_AT - 4}
+							f={g}
+							size={84}
+							color={C.ink}
+							weight={900}
+							family={F.display}
+							stagger={2}
+							style={{fontFeatureSettings: '"halt"'}}
+						/>
 					</Abs>
 					<Abs x={110} y={494}>
-						<MaskRise segments="一起往上" start={1266} f={g} size={84} color={C.accent} weight={900} family={F.display} stagger={3} />
+						<Marker p={markP} size={84} color={C.accent}>
+							<MaskRise segments="一起往上" start={LINE2_AT - 4} f={g} size={84} color={C.ink} weight={900} family={F.display} stagger={3} />
+						</Marker>
 					</Abs>
 				</AbsoluteFill>
 			</Push>

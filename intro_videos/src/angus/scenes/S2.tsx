@@ -5,7 +5,7 @@ import {AbsoluteFill} from 'remotion';
 import {SceneProps, useG} from '../../lib/Master';
 import {ANGUS, F} from '../../lib/theme';
 import {E, alpha, clamp, lerp, mixHex, prog, pulseAt} from '../../lib/motion';
-import {Abs, DirBlur, DrawPath, Glint, ImpactFlicks, MaskRise, Push, Ring, Svg, drift, ghostFrames} from '../../lib/components';
+import {Abs, DrawPath, Glint, ImpactFlicks, MaskRise, Push, Ring, Svg, drift, ghostFrames} from '../../lib/components';
 import {OutWrap} from '../../lib/transitions';
 import {PHONE, SCREEN, TR} from '../timeline';
 import {CARD_H, CARD_W, FUNNEL, FeedCard, FunnelDim, FunnelLayer, layerMid, layerTop, partialPoly, pointAt, polySegs, roundRectSegs, segsD} from './S2_parts';
@@ -14,9 +14,11 @@ import {S1} from './S1';
 const C = ANGUS;
 
 // 時間（全域格數）
-const CARD_BEATS = [630, 660, 690, 720]; // 貼文推上來
+// 第 4 張提前到 705（八分反拍）：feed 先捲完，720 那拍只留給主文案＋漏斗第 3 層
+const CARD_BEATS = [630, 660, 690, 705]; // 貼文推上來
 const LAYER_BEATS = [660, 690, 720]; // 漏斗三層長出來
-const LIKES = [648, 678, 708, 749]; // 每張卡的愛心被按（最後一張跟「預約」同一拍）
+// 愛心被按 → 下一格小點從那顆愛心彈出去（因果看得見）；最後一張跟「預約」同一拍
+const LIKES = [641, 671, 701, 749];
 // 小點：沿引線 16 格 → 從漏斗頂沿中線落下 24 格（inOutQuart），落在當時漏斗的最底層
 const DROPS = [
 	{depart: 650, fall: 666, land: 690, layer: 0},
@@ -41,6 +43,13 @@ const LEADER_Y0 = 600;
 const FUNNEL_IN_Y = 506; // 小點進漏斗的位置（漏斗頂上方一點）
 
 const LABELS = ['曝光', '私訊', '預約'];
+const DOT_R = 9; // 小點：手機上約 3px 才看得到
+
+// feed 的裁切框：螢幕下半（上緣直線、下面兩角圓角），整個 feed 畫在同一個 SVG 裡（不用 CSS clip-path／filter 合成層）
+const FEED_CLIP_D = (() => {
+	const {x, y, w, h, r} = SCREEN;
+	return `M${x},${FEED_TOP} H${x + w} V${y + h - r} A${r},${r} 0 0 1 ${x + w - r},${y + h} H${x + r} A${r},${r} 0 0 1 ${x},${y + h - r} Z`;
+})();
 
 export const S2: React.FC<SceneProps> = ({from}) => {
 	const g = useG(from);
@@ -49,6 +58,7 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 	const scrollAt = (f: number) => CARD_BEATS.reduce((a, b) => a + PITCH * prog(f, b - 2, 14, E.outExpo), 0);
 	const scroll = scrollAt(g);
 	const vScroll = scrollAt(g + 0.5) - scrollAt(g - 0.5);
+	const blurY = Math.min(40, Math.abs(vScroll) * 0.12);
 
 	// --- 視差：漏斗往左、文案往右（手機不動，S3 要從螢幕框放大） ---
 	const fdx = drift(g, 690, 840, -10);
@@ -80,9 +90,17 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 	const LEADER = polySegs(leaderPts);
 	const leaderP = prog(g, DROPS[0].depart, 16, E.inOutSine);
 
-	// --- 小點位置 ---
+	// --- 小點位置：愛心彈出 → 手機右緣 → 引線 → 漏斗中線落下 ---
+	const heartAt = (k: number, f: number): [number, number] => [CARD_X + CARD_W - 32, SLOT_TOP + PITCH * (k + 1) - scrollAt(f) + 206];
 	const dotPos = (f: number, d: (typeof DROPS)[number]): [number, number] | null => {
-		if (f < d.depart) return null;
+		const k = d.layer; // 第 k 顆小點來自第 k 張卡
+		const like = LIKES[k];
+		if (f < like + 1) return null;
+		if (f < d.depart) {
+			const h0 = heartAt(k, like);
+			const t = prog(f, like + 1, d.depart - like - 1, E.outExpo);
+			return [lerp(h0[0], leaderPts[0][0], t), lerp(h0[1], leaderPts[0][1], t)];
+		}
 		if (f < d.fall) return pointAt(LEADER, prog(f, d.depart, 16, E.inOutSine));
 		const landY = layerTop(d.layer) + FUNNEL.h - 16;
 		const t = clamp((f - d.fall) / 24);
@@ -109,32 +127,28 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 					<rect x={SCREEN.x} y={SCREEN.y} width={SCREEN.w} height={SCREEN.h} rx={SCREEN.r} fill={alpha(C.paper, 0.04 * glassK)} />
 				</Svg>
 
-				{/* feed：卡片從螢幕底部推上來 */}
-				<div
-					style={{
-						position: 'absolute',
-						left: SCREEN.x,
-						top: SCREEN.y,
-						width: SCREEN.w,
-						height: SCREEN.h,
-						clipPath: `inset(${FEED_TOP - SCREEN.y}px 0 0 0 round 0 0 ${SCREEN.r}px ${SCREEN.r}px)`,
-					}}
-				>
-					<DirBlur y={Math.abs(vScroll) * 0.12} style={{position: 'absolute', inset: 0}}>
-						<svg
-							width={SCREEN.w}
-							height={SCREEN.h}
-							viewBox={`${SCREEN.x} ${SCREEN.y} ${SCREEN.w} ${SCREEN.h}`}
-							style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}
-						>
+				{/* feed：卡片從螢幕底部推上來（SVG clipPath 裁切＋SVG 垂直模糊，全部在同一個 SVG 裡畫） */}
+				<Svg>
+					<defs>
+						<clipPath id="angS2feed">
+							<path d={FEED_CLIP_D} />
+						</clipPath>
+						{blurY > 0.15 ? (
+							<filter id="angS2blur" x={SCREEN.x - 20} y={SCREEN.y - 60} width={SCREEN.w + 40} height={SCREEN.h + 120} filterUnits="userSpaceOnUse">
+								<feGaussianBlur stdDeviation={`0 ${blurY.toFixed(2)}`} />
+							</filter>
+						) : null}
+					</defs>
+					<g clipPath="url(#angS2feed)">
+						<g filter={blurY > 0.15 ? 'url(#angS2blur)' : undefined}>
 							{CARD_BEATS.map((_, k) => {
 								const y = SLOT_TOP + PITCH * (k + 1) - scroll;
 								if (y >= SCREEN.y + SCREEN.h - 2 || y + CARD_H < FEED_TOP) return null;
 								return <FeedCard key={k} k={k} x={CARD_X} y={y} f={g} likeAt={LIKES[k]} />;
 							})}
-						</svg>
-					</DirBlur>
-				</div>
+						</g>
+					</g>
+				</Svg>
 
 				<Svg>
 					{/* 手機外框：從上方中間順時針描一圈 */}
@@ -225,14 +239,14 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 						return (
 							<g key={i} opacity={1 - absorbed}>
 								{ghosts.map((x, j) => (
-									<circle key={j} cx={x.q![0]} cy={x.q![1]} r={5 * (1 - j * 0.15)} fill={C.accent} opacity={x.o} />
+									<circle key={j} cx={x.q![0]} cy={x.q![1]} r={DOT_R * (1 - j * 0.15)} fill={C.accent} opacity={x.o} />
 								))}
-								<circle cx={p[0]} cy={p[1]} r={5 * pop * beatPulse * (1 - absorbed * 0.6)} fill={C.accent} />
+								<circle cx={p[0]} cy={p[1]} r={DOT_R * pop * beatPulse * (1 - absorbed * 0.6)} fill={C.accent} />
 							</g>
 						);
 					})}
 					{/* 750：落進「預約」 */}
-					<Ring cx={fcx} cy={layerMid(2)} f={g} start={HIT} dur={42} r0={72} r1={260} w0={3} color={C.accent} />
+					<Ring cx={fcx} cy={layerMid(2)} f={g} start={HIT} dur={42} r0={72} r1={120} w0={2} color={C.accent} />
 					<ImpactFlicks x={fcx} y={layerTop(2) + FUNNEL.h - 16} f={g} start={HIT} dur={11} color={C.accent} width={3} spread={12} len={16} />
 
 					{/* 780：手機外框上緣掃光 */}
@@ -245,10 +259,13 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 				</Svg>
 
 				{/* 文案 */}
-				<Abs x={110 + tdx} y={1118}>
+				{/* 拆成三段：全形逗號（繁中置中）兩側各收 16px，句子不被切成兩截；錯開節奏不變（每字 3 格） */}
+				<Abs x={110 + tdx} y={1118} style={{display: 'flex'}}>
+					<MaskRise segments="把作品" start={716} f={g} size={92} color={C.paper} weight={900} family={F.display} stagger={3} />
+					<MaskRise segments="，" start={725} f={g} size={92} color={C.paper} weight={900} family={F.display} style={{marginLeft: -16, marginRight: -16}} />
 					<MaskRise
-						segments={[{text: '把作品，變成'}, {text: '預約', color: C.accent}]}
-						start={716}
+						segments={[{text: '變成'}, {text: '預約', color: C.accent}]}
+						start={728}
 						f={g}
 						size={92}
 						color={C.paper}

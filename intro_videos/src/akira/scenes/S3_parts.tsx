@@ -112,7 +112,8 @@ export const InfoCard: React.FC<{
 	title: string;
 	note: string;
 	dy?: number; // 定格段的上下漂
-}> = ({f, b, x, y, w, h, idx, tag, title, note, dy = 0}) => {
+	inner?: number; // 卡內元素（短槓、小標、標題、右側小字）的淡出係數；卡框不受影響
+}> = ({f, b, x, y, w, h, idx, tag, title, note, dy = 0, inner = 1}) => {
 	const {p, op} = cardBody(f, b);
 	if (op <= 0) return null;
 	// 卡內元素錯開：短槓（描出）→ 標題 → 小標 → 右側小字
@@ -132,6 +133,7 @@ export const InfoCard: React.FC<{
 				opacity: op,
 			}}
 		>
+			<div style={{position: 'absolute', inset: 0, opacity: inner}}>
 			{/* 左上米白短槓 40×4：由左往右描出 */}
 			<div style={{position: 'absolute', left: 36, top: 36, width: 40 * bar, height: 4, background: C.accent}} />
 			{/* 小標 01  HAIR */}
@@ -142,9 +144,10 @@ export const InfoCard: React.FC<{
 			<div style={{position: 'absolute', left: 34, top: 74}}>
 				<MaskRise segments={title} start={b} f={f} size={52} color={C.paper} weight={700} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.2} />
 			</div>
-			{/* 右側小字 */}
-			<div style={{position: 'absolute', right: 38, top: 90, display: 'flex', justifyContent: 'flex-end'}}>
-				<MaskRise segments={note} start={b + 8} f={f} size={28} color={C.muted} weight={500} family={F.sans} quiet stagger={2} dur={14} lineHeight={1.3} tracking={0.04} />
+			{/* 右側小字（10/3：28→34px，手機上約 12px 讀得到；顏色維持暖灰，主從不變） */}
+			<div style={{position: 'absolute', right: 38, top: 86, display: 'flex', justifyContent: 'flex-end'}}>
+				<MaskRise segments={note} start={b + 8} f={f} size={34} color={C.muted} weight={500} family={F.sans} quiet stagger={2} dur={14} lineHeight={1.3} tracking={0.04} />
+			</div>
 			</div>
 		</div>
 	);

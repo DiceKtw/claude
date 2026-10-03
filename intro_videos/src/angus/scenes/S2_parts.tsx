@@ -116,17 +116,60 @@ export const Heart: React.FC<{x: number; y: number; f: number; likeAt: number}> 
 };
 
 /* ------------------------------------------------------------------ */
-/* 貼文卡片：抽象「作品」＝ accent 半圓（髮型輪廓）＋兩條短線＋右下愛心     */
+/* 貼文卡片：「作品」＝胸像剪影（paper 淡色）＋accent 髮型（四款輪流）     */
+/* 一眼看得出是頭髮：鮑伯、長直髮、短髮、包頭；＋兩條短線＋右下愛心          */
 /* ------------------------------------------------------------------ */
 export const CARD_W = 312;
 export const CARD_H = 250;
 
-// 每張作品的小變化（髮型輪廓的大小、位置、傾斜、兩條短線長度）
-const WORKS = [
-	{dx: -46, rx: 62, ry: 62, tilt: 0, l1: 150, l2: 96},
-	{dx: 34, rx: 74, ry: 54, tilt: -8, l1: 120, l2: 168},
-	{dx: 0, rx: 66, ry: 66, tilt: 6, l1: 176, l2: 84},
-	{dx: -22, rx: 58, ry: 70, tilt: -4, l1: 138, l2: 110},
+// 胸像（局部座標：原點＝照片底邊中點，往上是負）
+const SHOULDER_D = 'M-80,0 C-76,-30 -44,-44 0,-44 C44,-44 76,-30 80,0 Z';
+export const HAIR = {
+	bob: {
+		d: 'M-42,-50 C-48,-96 -34,-124 0,-126 C34,-124 48,-96 42,-50 L30,-50 C30,-72 28,-90 22,-100 C10,-96 -10,-92 -26,-80 L-28,-50 Z',
+		strand: 'M-30,-66 Q-26,-106 12,-118',
+	},
+	long: {
+		d: 'M-42,-8 C-50,-70 -44,-124 0,-126 C44,-124 50,-70 42,-8 L28,-8 C30,-60 26,-92 18,-104 C8,-100 4,-106 0,-112 C-4,-106 -8,-100 -18,-104 C-26,-92 -30,-60 -28,-8 Z',
+		strand: 'M0,-124 L0,-112',
+	},
+	pixie: {
+		d: 'M-28,-76 C-34,-106 -18,-124 4,-124 C28,-124 38,-104 30,-80 C26,-92 14,-100 -2,-100 C-14,-98 -22,-90 -28,-76 Z',
+		strand: 'M-18,-108 Q2,-120 24,-108',
+	},
+	updo: {
+		d: 'M-27,-90 C-31,-112 -16,-122 0,-122 C16,-122 31,-112 27,-90 C16,-102 -16,-102 -27,-90 Z',
+		strand: 'M-16,-108 Q0,-116 16,-108',
+		bun: true,
+	},
+} as const;
+type HairKey = keyof typeof HAIR;
+
+/** 胸像＋髮型（給 FeedCard 和 S6 的回憶符號共用） */
+export const Bust: React.FC<{x: number; y: number; hair: HairKey; s?: number; body?: boolean}> = ({x, y, hair, s = 1, body = true}) => {
+	const h = HAIR[hair];
+	return (
+		<g transform={`translate(${x} ${y}) scale(${s})`}>
+			{body ? (
+				<>
+					<path d={SHOULDER_D} fill={alpha(C.paper, 0.12)} />
+					<rect x={-11} y={-60} width={22} height={20} fill={alpha(C.paper, 0.16)} />
+					<ellipse cx={0} cy={-82} rx={24} ry={30} fill={alpha(C.paper, 0.2)} />
+				</>
+			) : null}
+			<path d={h.d} fill={C.accent} />
+			{'bun' in h ? <circle cx={2} cy={-132} r={15} fill={C.accent} /> : null}
+			<path d={h.strand} fill="none" stroke={alpha(C.ink, 0.45)} strokeWidth={3} strokeLinecap="round" />
+		</g>
+	);
+};
+
+// 每張作品：髮型、胸像左右位置、兩條短線長度
+const WORKS: {hair: HairKey; dx: number; l1: number; l2: number}[] = [
+	{hair: 'bob', dx: -40, l1: 150, l2: 96},
+	{hair: 'long', dx: 34, l1: 120, l2: 168},
+	{hair: 'pixie', dx: 0, l1: 176, l2: 84},
+	{hair: 'updo', dx: -22, l1: 138, l2: 110},
 ];
 
 export const FeedCard: React.FC<{k: number; x: number; y: number; f: number; likeAt: number}> = ({k, x, y, f, likeAt}) => {
@@ -135,12 +178,6 @@ export const FeedCard: React.FC<{k: number; x: number; y: number; f: number; lik
 	const py = y + 12;
 	const pw = CARD_W - 24;
 	const ph = 152;
-	const hx = px + pw / 2 + w.dx; // 髮型中心
-	const hy = py + ph; // 坐在照片底
-	const domeD = `M${hx - w.rx},${hy} A${w.rx},${w.ry} 0 0 1 ${hx + w.rx},${hy} Z`;
-	// 輪廓裡面一道分線（ink 細弧）
-	const partD = `M${hx - w.rx * 0.55},${hy - w.ry * 0.18} Q${hx - w.rx * 0.1},${hy - w.ry * 0.95} ${hx + w.rx * 0.5},${hy - w.ry * 0.62}`;
-	const strandD = `M${hx + w.rx * 0.05},${hy - w.ry * 0.12} Q${hx + w.rx * 0.3},${hy - w.ry * 0.62} ${hx + w.rx * 0.72},${hy - w.ry * 0.4}`;
 	const clipId = `angS2ph${k}`;
 	return (
 		<g>
@@ -150,11 +187,7 @@ export const FeedCard: React.FC<{k: number; x: number; y: number; f: number; lik
 			</clipPath>
 			<rect x={px} y={py} width={pw} height={ph} rx={10} fill={alpha(C.paper, 0.06)} />
 			<g clipPath={`url(#${clipId})`}>
-				<g transform={`rotate(${w.tilt} ${hx} ${hy})`}>
-					<path d={domeD} fill={C.accent} />
-					<path d={partD} fill="none" stroke={alpha(C.ink, 0.55)} strokeWidth={3} strokeLinecap="round" />
-					<path d={strandD} fill="none" stroke={alpha(C.ink, 0.35)} strokeWidth={2.5} strokeLinecap="round" />
-				</g>
+				<Bust x={px + pw / 2 + w.dx} y={py + ph} hair={w.hair} />
 			</g>
 			<line x1={px + 4} y1={y + 192} x2={px + 4 + w.l1} y2={y + 192} stroke={alpha(C.paper, 0.38)} strokeWidth={6} strokeLinecap="round" />
 			<line x1={px + 4} y1={y + 216} x2={px + 4 + w.l2} y2={y + 216} stroke={alpha(C.paper, 0.22)} strokeWidth={6} strokeLinecap="round" />

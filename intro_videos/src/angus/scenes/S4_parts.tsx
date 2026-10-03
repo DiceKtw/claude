@@ -1,6 +1,7 @@
 // 安格斯 S4 小元件：成長曲線的數學、描線路徑、等寬小標、量測讀數
 import React from 'react';
 import {ANGUS, F} from '../../lib/theme';
+import {Easing} from 'remotion';
 import {E, clamp, lerp, prog} from '../../lib/motion';
 
 const C = ANGUS;
@@ -15,9 +16,9 @@ export const TIP = {x: 920, y: 660} as const; // 曲線右上端點
 export const RULER_X = 960; // 右側量測細軸
 
 export const BEND_AT = 1110; // 落拍：平線開始往上彎
-export const CURVE_START = BEND_AT - 1; // 彈出物提前 1 格：落拍那格已經在衝
-export const CURVE_DUR = 61; // 一路畫到 1170
-export const TIP_AT = 1170; // 端點星芒綻放
+export const CURVE_START = BEND_AT - 3; // 1107 起跑：1110 落拍那格已經在動
+export const CURVE_DUR = 63; // 一路畫到 1170，中間不停
+export const TIP_AT = 1170; // 技術球撞上曲線頂端（跟上行滑音的最高點同一格）
 
 /* ------------------------------------------------------------------ */
 /* 成長曲線（指數）：u 0..1 沿時間軸                                      */
@@ -31,11 +32,41 @@ export const curveAt = (u: number) => ({
 /** y → u（反函數，給量測點用） */
 export const uAtY = (y: number) => Math.log(1 + ((FLAT_Y - y) / (FLAT_Y - TIP.y)) * EK) / K;
 
-/** 筆頭位置（沿時間軸 x 用 outExpo：一出手最快、慢慢停進右上角） */
-export const headU = (f: number) => prog(f, CURVE_START, CURVE_DUR, E.outExpo);
+/**
+ * 筆頭位置（沿時間軸）：慢起、一路加速、帶著速度在 1170 撞上頂端（不提早停住）。
+ * 跟 1110–1170 的上行滑音一起越推越快；間距圖的淡點也因此越拉越開（看得出加速）。
+ */
+const HEAD_EASE = Easing.bezier(0.42, 0, 0.82, 0.62);
+export const headU = (f: number) => prog(f, CURVE_START, CURVE_DUR, HEAD_EASE);
 
-/** 預備動作：1104–1110 尾端微微下沉 6px，1110 彈回（outBack 會往上過衝一點點） */
-export const dipAt = (f: number) => 6 * prog(f, BEND_AT - 7, 7, E.inOutSine) * (1 - prog(f, BEND_AT - 1, 10, E.outBack));
+/** 預備動作：1103–1110 尾端下沉 10px，1110 彈回（outBack 會往上過衝一點點）——1110 落拍的那一下 */
+export const dipAt = (f: number) => 10 * prog(f, BEND_AT - 7, 7, E.inOutSine) * (1 - prog(f, BEND_AT - 1, 10, E.outBack));
+
+/* ------------------------------------------------------------------ */
+/* 技術球（S0 那顆球）：當筆頭爬上收入曲線 → 1170 撞上頂端壓扁 → 之後每拍在頂端小跳 */
+/* ------------------------------------------------------------------ */
+export const BALL_R = 13;
+export const HOP_LANDS = [1200, 1230, 1260, 1290, 1320];
+const HOP_H = [14, 11, 9, 8, 8];
+const HOP_LEN = 24; // 每次小跳 24 格（落地前 24 格離地）
+/** 頂端的小跳高度（px，往上為正） */
+export const hopAt = (f: number) => {
+	for (let i = 0; i < HOP_LANDS.length; i++) {
+		const L = HOP_LANDS[i];
+		if (f >= L - HOP_LEN && f < L) {
+			const t = (f - (L - HOP_LEN)) / HOP_LEN;
+			return 4 * HOP_H[i] * t * (1 - t);
+		}
+	}
+	return 0;
+};
+/** 壓扁量 0..1：1170 撞頂最大，之後每次落地小壓一下 */
+export const squashAt = (f: number) => {
+	let k = 0;
+	if (f >= TIP_AT && f < TIP_AT + 8) k = 1 - prog(f, TIP_AT, 7, E.outCubic);
+	for (const L of HOP_LANDS) if (f >= L && f < L + 5) k = Math.max(k, 0.45 * (1 - prog(f, L, 4, E.outCubic)));
+	return k;
+};
 const dipW = (x: number) => Math.exp(-Math.pow((x - BEND_X) / 90, 2));
 
 /** 平線（畫到 flatP）＋曲線（畫到 u）合成一條路徑 */
@@ -63,11 +94,12 @@ export const passFrame = (head: (f: number) => number, target: number, f0: numbe
 /* ------------------------------------------------------------------ */
 /* 三條量測引線（每拍一條）：曲線上的點 → 右側細軸                         */
 /* ------------------------------------------------------------------ */
-// 第 1 條跟端點星芒同拍：晚 2 格出手（兄弟元素錯開，星芒是那一拍的主角）
+// 球撞頂（1170）之後，三條讀數用 16 分音符連發（1177.5／1185／1192.5，tick-pop 一路往上），
+// 1200、1230 兩個正拍留給主文案兩行
 export const READS = [
-	{b: 1172, y: 1010, text: '收入'},
-	{b: 1200, y: 880, text: '客戶'},
-	{b: 1230, y: 750, text: '業績'},
+	{b: 1177.5, y: 1010, text: '收入'},
+	{b: 1185, y: 880, text: '客戶'},
+	{b: 1192.5, y: 750, text: '業績'},
 ].map((r) => {
 	const p = curveAt(uAtY(r.y));
 	return {...r, x: p.x};

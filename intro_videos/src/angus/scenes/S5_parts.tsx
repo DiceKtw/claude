@@ -26,6 +26,8 @@ export const Halftone: React.FC<P> = ({g, s}) => {
 		const band = 1 - clamp(Math.abs(y - WORD.cy) / 360);
 		for (let c = 0; c < HT.cols; c++) {
 			const x = HT.x0 + c * HT.pitch + off;
+			// 編號「01 / 08」周圍留一條乾淨的帶子，等寬小字不被網點蓋花
+			if (Math.abs(y - TAG_Y) < 30 && Math.abs(x - 540) < 150) continue;
 			const behind = (front - x) / 220;
 			if (behind <= 0) continue;
 			const k = E.outBack(clamp(behind));
@@ -39,13 +41,13 @@ export const Halftone: React.FC<P> = ({g, s}) => {
 };
 
 /* 2 定價：價格標籤細線框（尖頭＋穿孔）＋刻度尺從左畫到右 */
-const TAG = {x0: 168, x1: 880, y0: 640, y1: 920, r: 22};
+const TAG = {x0: 168, x1: 880, y0: 648, y1: 932, r: 22}; // 框中心 790，接近字面視覺中心（上下留白一致）
 const tagD = (() => {
 	const {x0, x1, y0, y1, r} = TAG;
 	const tip = x0 - 0;
 	const nx = x0 + 120; // 尖頭斜邊結束
 	return [
-		`M ${tip} ${WORD.cy}`,
+		`M ${tip} ${(y0 + y1) / 2}`,
 		`L ${nx} ${y0}`,
 		`L ${x1 - r} ${y0}`,
 		`Q ${x1} ${y0} ${x1} ${y0 + r}`,
@@ -74,7 +76,7 @@ export const PriceTag: React.FC<P> = ({g, s, fg}) => {
 	return (
 		<g>
 			<DrawPath d={tagD} p={p} color={fg} width={3} />
-			{hole > 0 ? <circle cx={TAG.x0 + 62} cy={WORD.cy} r={13 * hole} fill="none" stroke={fg} strokeWidth={3} /> : null}
+			{hole > 0 ? <circle cx={TAG.x0 + 62} cy={(TAG.y0 + TAG.y1) / 2} r={13 * hole} fill="none" stroke={fg} strokeWidth={3} /> : null}
 			{rp > 0 ? <line x1={RULER.x0} y1={RULER.y} x2={head} y2={RULER.y} stroke={fg} strokeWidth={2.5} /> : null}
 			{ticks}
 			{rp > 0 ? <rect x={head - 5} y={RULER.y - 5} width={10} height={10} fill={fg} transform={`rotate(45 ${head} ${RULER.y})`} /> : null}

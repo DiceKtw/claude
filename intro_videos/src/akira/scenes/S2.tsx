@@ -1,6 +1,8 @@
 // Akira S2 美感 576–960（全域格數）
-// 筆在紙上描一張側臉＋鮑伯短髮（臉→髮型外輪廓→瀏海，三筆），髮型區塊淡淡上色，
-// 之後每拍一個量測標註（髮際／下巴輔助線 → 1 : 1.618 → 15° → 輪廓線），最後文案落在 870／900。
+// 筆在紙上描一張側臉＋鮑伯短髮（臉→髮型外輪廓→瀏海三筆主線，再補頸後、閉眼、兩道髮流四筆短線），髮型區塊淡淡上色，
+// 之後每拍一個量測標註（髮際／下巴輔助線 → 1 : 1.618 → 15° → 輪廓線）。
+// 文案（主角）提前到 810／840 落拍：完整停留約 1.5 秒才被 936 的細線掃掉（原本 870／900 只停 0.4 秒讀不完）；
+// 同拍的 15°、輪廓線標註晚 4 格起跑，當文案的跟班。
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {SceneProps, useG} from '../../lib/Master';
@@ -8,34 +10,42 @@ import {AKIRA, F} from '../../lib/theme';
 import {E, clamp, lerp, prog} from '../../lib/motion';
 import {DrawPath, MaskRise, Push, Svg, Vignette, drift} from '../../lib/components';
 import {MonoTag, cubsD, sampler} from './S0_parts';
-import {BANG, CHIN, FACE, HAIR, HAIR_END, HAIR_FILL_D, JAW_DIR, LV} from './S2_parts';
+import {BANG, CHIN, EYE, FACE, HAIR, HAIR_END, HAIR_FILL_D, JAW_DEG, LV, NAPE, STRAND_A, STRAND_B} from './S2_parts';
 
 const C = AKIRA;
 
 // 時間（全域格數）
-const LIFT0 = 576; // S1 往上漂走（Master）；本場景底色同步淡入
-const LIFT1 = 600;
+// 576–600 S1 往上漂走（Master 讓 S1 疊在本場景上面）：本場景墨黑底一開始就不透明，漂走時底色不會變暗
+// 主線三筆帶筆尖點（pen: true）；短線四筆只描、不帶筆尖
 const STROKES = [
-	{cubs: FACE, t0: 600, t1: 642},
-	{cubs: HAIR, t0: 636, t1: 698},
-	{cubs: BANG, t0: 692, t1: 720},
+	{cubs: FACE, t0: 600, t1: 642, pen: true},
+	{cubs: HAIR, t0: 636, t1: 698, pen: true},
+	{cubs: BANG, t0: 692, t1: 712, pen: true},
+	{cubs: NAPE, t0: 700, t1: 712, pen: false},
+	{cubs: EYE, t0: 708, t1: 718, pen: false},
+	{cubs: STRAND_A, t0: 712, t1: 726, pen: false},
+	{cubs: STRAND_B, t0: 716, t1: 730, pen: false},
 ];
 const PEN_IN = 584; // 第一筆的筆尖在起點淡入（600 落筆）
-const FILL0 = 720;
+const FILL0 = 724;
 const FILL1 = 750;
+const FILL_OP = 0.08;
 const B_GUIDE = 750; // HAIRLINE／JAWLINE
 const B_RATIO = 780; // 1 : 1.618
 const B_ANGLE = 810; // 15°
 const B_LEAD = 840; // 輪廓線
-const L1 = 863; // 「他看的不只是頭髮，」（870 拍站穩大半；quiet 是線性淡入，提前 7 格）
-const L2 = 893; // 「是整體比例」（900 拍）
-const PUSH0 = 900;
+const FOLLOW = 4; // 15°、輪廓線跟在文案後面 4 格
+const L1 = 803; // 「他看的不只是頭髮，」（810 拍站穩大半；quiet 是線性淡入，提前 7 格）
+const L2 = 833; // 「是整體比例」（840 拍，Gmaj9）
+// 慢推從第一筆落筆就開始（600→960 不停）：標註之間不會整段不動，文字一出現就在非 1 的縮放裡（避免 LCD 次像素彩邊）
+const PUSH0 = 600;
 const PUSH1 = 960;
+const DRIFT0 = 750; // 標註小字從第一個標註起整組慢慢往左漂
 
 // 版面
 const TX = 110;
 const TY1 = 396;
-const TY2 = 480;
+const TY2 = 488;
 const GUIDE_X0 = 120;
 const GUIDE_X1 = 930;
 const BRACKET_X = 300;
@@ -56,54 +66,50 @@ const arcD = (cx: number, cy: number, r: number, a0: number, a1: number) => {
 export const S2: React.FC<SceneProps> = ({from}) => {
 	const g = useG(from);
 
-	// Master 的 z 順序讓本場景蓋在 S1 上面：底色跟著 S1 的 lift 一起淡入，S1 的漂走才看得到
-	const liftP = prog(g, LIFT0, LIFT1 - LIFT0, E.inOutSine);
-	const bgA = liftP * liftP;
-
 	// 線稿
 	const sp = STROKES.map((s) => prog(g, s.t0, s.t1 - s.t0, E.inOutSine));
 	const fillP = prog(g, FILL0, FILL1 - FILL0, E.inOutSine);
 
 	// 標註整組往左漂
-	const tagDx = drift(g, PUSH0, PUSH1, -6);
+	const tagDx = drift(g, DRIFT0, PUSH1, -8);
 
 	// 標註進度（每拍一個，提前 4 格起跑）
 	// 拍點那格要看得到變化：outCubic（一出手最快）、提前 3 格起跑
 	const gP = (k: number) => prog(g, B_GUIDE - 3 + k * 3, 26, E.outCubic);
 	const ratioP = prog(g, B_RATIO - 3, 26, E.outCubic);
-	const angP = prog(g, B_ANGLE - 3, 22, E.outCubic);
-	const leadP = prog(g, B_LEAD - 3, 24, E.outCubic);
+	const angP = prog(g, B_ANGLE - 3 + FOLLOW, 22, E.outCubic);
+	const leadP = prog(g, B_LEAD - 3 + FOLLOW, 24, E.outCubic);
 
 	const guideLine = (y: number, p: number) =>
 		p > 0 ? (
 			<line x1={GUIDE_X0} y1={y} x2={lerp(GUIDE_X0, GUIDE_X1, p)} y2={y} stroke={C.muted} strokeWidth={C.hairline} strokeDasharray="6 7" opacity={clamp(p * 3)} />
 		) : null;
 
-	// 下顎角度弧線
-	const angR = 84;
-	const ANG_ARM = 104; // 再長就會碰到髮尾前角
-	const angA0 = Math.PI; // 水平往左
-	const angA1 = JAW_DIR; // 下顎線（往左下 15°）
+	// 下顎角度：以 JAWLINE 虛線當水平基準，在下巴右邊的空白處畫下顎線的延長線＋小弧（不跟 4px 下顎線疊成雙線）
+	const angR = 64;
+	const ANG_ARM = 96;
+	const angA0 = 0; // 水平往右（＝JAWLINE）
+	const angA1 = (-JAW_DEG * Math.PI) / 180; // 延長線往右上 15°
 	// 輪廓線引線
 	const leadKnee: [number, number] = [262, 1092]; // 斜線轉水平的轉折點
 	const leadEnd: [number, number] = [210, 1092];
 
 	return (
 		<AbsoluteFill>
-			<AbsoluteFill style={{background: C.ink, opacity: bgA}} />
-			<Push f={g} from={PUSH0} to={PUSH1} amount={0.015} originX={600} originY={820}>
+			<AbsoluteFill style={{background: C.ink}} />
+			<Push f={g} from={PUSH0} to={PUSH1} amount={0.02} originX={600} originY={820}>
 				<Svg style={{transform: `translateY(${DY}px)`}}>
-					{/* 髮型區塊填色（米白 12%） */}
-					{fillP > 0 ? <path d={HAIR_FILL_D} fill={C.accent} opacity={0.12 * fillP} /> : null}
+					{/* 髮型區塊填色（米白 8%） */}
+					{fillP > 0 ? <path d={HAIR_FILL_D} fill={C.accent} opacity={FILL_OP * fillP} /> : null}
 
-					{/* 三筆線稿＋筆尖 */}
+					{/* 線稿＋筆尖（主線三筆才有筆尖） */}
 					{STROKE_D.map((d, i) => (
 						<DrawPath key={i} d={d} p={sp[i]} color={C.accent} width={C.line} />
 					))}
 					{sp.map((p, i) => {
 						// 整合：S1 漂走到第一筆落筆之間（594–600）原本全黑；第一筆的筆尖提前在起點淡入，等 600 落筆
 						const pre = i === 0 ? prog(g, PEN_IN, STROKES[0].t0 - PEN_IN, E.outCubic) : 0;
-						if (p >= 1 || (p <= 0 && pre <= 0)) return null;
+						if (!STROKES[i].pen || p >= 1 || (p <= 0 && pre <= 0)) return null;
 						const tip = STROKE_SAMP[i].at(p);
 						const op = (i === 0 ? pre : clamp((g - STROKES[i].t0) / 3)) * clamp((STROKES[i].t1 - g) / 4);
 						return <circle key={i} cx={tip.x} cy={tip.y} r={4} fill={C.accent} opacity={op} />;
@@ -128,10 +134,9 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 							</g>
 						) : null}
 
-						{/* 810：下顎角度（兩條實線臂＋小弧線） */}
+						{/* 810：下顎角度（JAWLINE 當水平臂，只畫往右上的虛線延長臂＋小弧線） */}
 						{angP > 0 ? (
 							<g>
-								<line x1={CHIN[0]} y1={CHIN[1]} x2={CHIN[0] - lerp(0, ANG_ARM, angP)} y2={CHIN[1]} stroke={C.muted} strokeWidth={C.hairline} />
 								<line
 									x1={CHIN[0]}
 									y1={CHIN[1]}
@@ -139,8 +144,9 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 									y2={CHIN[1] + Math.sin(angA1) * lerp(0, ANG_ARM, angP)}
 									stroke={C.muted}
 									strokeWidth={C.hairline}
+									strokeDasharray="4 5"
 								/>
-								<DrawPath d={arcD(CHIN[0], CHIN[1], angR, angA0, angA1)} p={prog(g, B_ANGLE + 2, 14, E.outCubic)} color={C.muted} width={C.hairline} cap="butt" />
+								<DrawPath d={arcD(CHIN[0], CHIN[1], angR, angA0, angA1)} p={prog(g, B_ANGLE + 2 + FOLLOW, 14, E.outCubic)} color={C.muted} width={C.hairline} cap="butt" />
 								<circle cx={CHIN[0]} cy={CHIN[1]} r={3} fill={C.muted} opacity={angP} />
 							</g>
 						) : null}
@@ -173,10 +179,10 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 
 				{/* 標註小字（整組在 900 後往左漂 6px） */}
 				<AbsoluteFill style={{transform: `translate(${tagDx}px, ${DY}px)`}}>
-					<MonoTag f={g} start={B_GUIDE - 3} x={GUIDE_X0} y={LV.hairline - 32} text="HAIRLINE" />
-					<MonoTag f={g} start={B_GUIDE} x={GUIDE_X0} y={LV.jaw - 32} text="JAWLINE" />
-					<MonoTag f={g} start={B_RATIO - 1} x={BRACKET_X - 20} y={LV.split + 34} text="1 : 1.618" tracking={0.12} align="right" />
-					<MonoTag f={g} start={B_ANGLE - 1} x={CHIN[0] - 52} y={CHIN[1] + 34} text="15°" tracking={0.12} />
+					<MonoTag f={g} start={B_GUIDE - 3} x={GUIDE_X0} y={LV.hairline - 34} text="HAIRLINE" size={22} />
+					<MonoTag f={g} start={B_GUIDE} x={GUIDE_X0} y={LV.jaw - 34} text="JAWLINE" size={22} />
+					<MonoTag f={g} start={B_RATIO - 1} x={BRACKET_X - 20} y={LV.split + 30} text="1 : 1.618" tracking={0.12} align="right" size={22} />
+					<MonoTag f={g} start={B_ANGLE - 1 + FOLLOW} x={CHIN[0] + 104} y={CHIN[1] - 40} text="15°" tracking={0.12} size={22} />
 					{leadP > 0 ? (
 						<div
 							style={{
@@ -189,8 +195,8 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 								lineHeight: '36px',
 								color: C.accent,
 								letterSpacing: '0.12em',
-								opacity: prog(g, B_LEAD - 1, 20, E.outCubic),
-								transform: `translateY(${(1 - prog(g, B_LEAD - 1, 20, E.outCubic)) * 16}px)`,
+								opacity: prog(g, B_LEAD - 1 + FOLLOW, 20, E.outCubic),
+								transform: `translateY(${(1 - prog(g, B_LEAD - 1 + FOLLOW, 20, E.outCubic)) * 16}px)`,
 							}}
 						>
 							輪廓線
@@ -200,7 +206,7 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 
 				{/* 文案 */}
 				<div style={{position: 'absolute', left: TX, top: TY1}}>
-					<MaskRise segments="他看的不只是頭髮，" start={L1} f={g} size={72} color={C.paper} weight={700} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
+					<MaskRise segments="他看的不只是頭髮，" start={L1} f={g} size={72} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
 				</div>
 				<div style={{position: 'absolute', left: TX, top: TY2}}>
 					<MaskRise
@@ -209,7 +215,7 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 						f={g}
 						size={72}
 						color={C.paper}
-						weight={700}
+						weight={500}
 						family={F.sans}
 						quiet
 						stagger={3}
@@ -218,9 +224,7 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 					/>
 				</div>
 			</Push>
-			<AbsoluteFill style={{opacity: bgA}}>
-				<Vignette strength={0.35} />
-			</AbsoluteFill>
+			<Vignette strength={0.35} />
 		</AbsoluteFill>
 	);
 };

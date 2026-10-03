@@ -1,6 +1,8 @@
 // Akira S0 鉤子 0–240（全域格數）
 // 一支筆在墨黑紙上描一條線：沿著淡淡的尺規基線進來，在 x≈380 抬起、變成一縷髮絲輪廓。
-// 描完之後打上設計師的量測標註（R 180／0.4 mm），文案「好看，藏在細節裡。」落在 120／150 拍上。
+// 描完之後打上設計師的量測標註（R 180／0.4 mm）。文案「好看，藏在細節裡。」落在 60／90 拍上（10/3 審片：
+// 原本 120／150 才出字，前 2 秒只有一條細線，Reels 滑到的人看不到任何訊息；提前一拍半，筆在文案下方繼續描）。
+// f0 不再是全黑：尺規基線一開場就畫到四成，第一格就有東西。
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {SceneProps, useG} from '../../lib/Master';
@@ -14,8 +16,8 @@ const C = AKIRA;
 // 時間（全域格數）
 const DRAW0 = 10; // 描線開始
 const DRAW1 = 150; // 描線結束
-const L1 = 113; // 「好看，」起跑：quiet 版是線性淡入，提前 7 格，120 拍那格第一個字已六成以上、位置九成
-const L2 = 143; // 「藏在細節裡。」同理，150 拍站穩大半
+const L1 = 53; // 「好看，」起跑：quiet 版是線性淡入，提前 7 格，60 拍那格第一個字已六成以上、位置九成
+const L2 = 83; // 「藏在細節裡。」同理，90 拍站穩大半
 const TAG_R = 150; // R 180
 const TAG_W = 170; // 0.4 mm
 const HOLD = 150; // 定格段開始
@@ -27,7 +29,7 @@ const RULE_Y = 980;
 // 版面
 const TX = 110;
 const TY1 = 396;
-const TY2 = 514;
+const TY2 = 526;
 
 // 量測標註的位置：在曲線最彎處（頂點右側的捲曲）找曲率最大的點
 const STATIC = strandCubs(0);
@@ -79,8 +81,8 @@ export const S0: React.FC<SceneProps> = ({from}) => {
 	const tipOn = g >= DRAW0 ? 1 : 0;
 	const guideOp = prog(g, DRAW0, 16, E.outCubic) * (1 - prog(g, DRAW1 - 6, 24, E.inOutSine));
 
-	// --- 尺規基線（f0 純墨黑，之後從左邊淡淡畫出來） ---
-	const ruleP = prog(g, 1, 56, E.outCubic);
+	// --- 尺規基線（f0 已經畫到四成，之後從左邊淡淡畫完） ---
+	const ruleP = 0.4 + 0.6 * prog(g, 0, 40, E.outCubic);
 	const ruleX1 = lerp(0, 1080, ruleP);
 	const ticks: number[] = [];
 	for (let x = 40; x <= 1040; x += 40) ticks.push(x);
@@ -190,7 +192,7 @@ export const S0: React.FC<SceneProps> = ({from}) => {
 
 				{/* 文案（主角） */}
 				<div style={{position: 'absolute', left: TX, top: TY1}}>
-					<MaskRise segments="好看，" start={L1} f={g} size={104} color={C.paper} weight={700} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.15} />
+					<MaskRise segments="好看，" start={L1} f={g} size={104} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.15} />
 				</div>
 				<div style={{position: 'absolute', left: TX, top: TY2}}>
 					<MaskRise
@@ -199,7 +201,7 @@ export const S0: React.FC<SceneProps> = ({from}) => {
 						f={g}
 						size={104}
 						color={C.paper}
-						weight={700}
+						weight={500}
 						family={F.sans}
 						quiet
 						stagger={3}
