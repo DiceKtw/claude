@@ -59,7 +59,7 @@ export const S6: React.FC<SceneProps> = ({from}) => {
 	const sCy = lerp(CORE.y, STAR_TOP.y, mv);
 	const sSc = lerp(1, 0.45, mv);
 	// 光芒提前 4 格、每道錯開 0.3 格：落拍那格已經大半張開（最用力的那一格）
-	const rays0 = sparkRays(g, BLOOM_AT - 4, 0.3, 16);
+	const rays0 = sparkRays(g, BLOOM_AT - 6, 0.2, 10); // 光芒面積峰值落在 1500
 	const retract = 1 - prog(g, 1766, 10, E.inCubic); // 收尾：光芒收回
 	// 1740 最後一拍：不再噴震波（跟 1500 長得一樣），改成光芒伸長 1.3 倍再收回＋整塊字一起「踢」一下
 	const flare = pulseAt(g, [LAST_PULSE - 6], 18, 0.3);

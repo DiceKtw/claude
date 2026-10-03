@@ -13,18 +13,19 @@ Akira｜川沙龍老闆　介紹影片　原創配樂＋全部音效（numpy / s
       確定性：所有雜訊都來自固定 seed 的 numpy Generator，每次執行輸出相同
 
 概念：「設計師的研究筆記」——安靜、溫暖、極簡。D 大調，和聲與旋律全部原創。
-  0–240      前奏：鉛筆在紙上的沙沙聲（跟著 DrawPath 的筆速、筆尖位置與彎度起伏）＋極淡的空氣墊音；
-             文案／量測 tick；216 細線掃下的「嘶」
+  0–240      前奏：鉛筆在紙上的沙沙聲（跟著 DrawPath 的筆速、筆尖位置與彎度起伏）＋極淡的空氣墊音（半秒內淡入）；
+             文案 tick 60／90（10/3：文案提前一拍半）、量測 tick 150／170；216 細線掃下的「嘶」
   240        主段進來：Rhodes A9sus4（一拍）＋ sub 脈衝 → 270 Dmaj9 落拍（名字）
   360–600    Bm9 → Gmaj9 → A9sus4，規格列四個固定音高 tick（不往上爬）
-  600–960    Dmaj9 → F#m7 → Bm9 → Gmaj9 → A9sus4；線稿沙沙聲（三筆）、量測 tick、
+  600–960    Dmaj9 → F#m7 → Bm9 → Gmaj9 → A9sus4；線稿沙沙聲（主線三筆＋頸後、閉眼、兩道髮流四筆短線）、量測 tick、
              720 起極輕的 hi-hat、735 起切分的 Rhodes 旋律（全落在反拍，讓開拍點上的 tick）
   960–1200   三張卡：柔和 tick ＋ Rhodes 上行三音 A4 → C#5 → E5；1050 輕上行琶音；1080 Bm9 落在匯點；
              960 起刷鼓（2、4 拍，很輕）
-  1200–1416  月曆：每 4 格一個時鐘般的小 tick（-28 dBFS，rng(7) 留空的第 4、20、27 天不響），
+  1200–1416  月曆：每 4 格一個時鐘般的小 tick（-28 dBFS，rng(7) 留空的第 4、16、27 天不響，跟 S4_parts.tsx 同一套規則），
              hi-hat、刷鼓與旋律都讓位給時鐘（B4 長音之後留白；音樂在 3.2–6 kHz 挖約 10 dB）
   1416       鼓與 sub 退出，只留 1380 起的 Rhodes 長音（A9sus4，最高音 D5）
   1460/1500  Bm9、Gmaj9（溫暖的和弦，最高音 C#5 → B4）
+  1532–1572  筆在片尾描出落款（S0 髮絲線的縮小版）：極輕的鉛筆沙沙聲
   1580       最後的 D6/9 和弦（最高音 A4），D5 → C#5 → B4 → A4 一路下行收住；餘韻
   1770–1794  全部升餘弦淡出，1794 格起數位靜音（Reels 循環接回開頭）
 
@@ -289,12 +290,19 @@ S0_STRAND = [
     [(742, 806), (736, 884), (668, 922), (672, 1002)],
     [(672, 1002), (676, 1082), (784, 1132), (900, 1150)],
 ]
-S2_FACE = [(790, 770), (800, 792), (798, 812), (820, 846), (846, 878), (838, 889), (814, 893), (818, 912), (809, 922),
-           (815, 936), (803, 954), (812, 984), (798, 1006), (752, 1020), (718, 1036), (710, 1090), (714, 1150)]
-S2_HAIR = [(736, 646), (668, 612), (586, 604), (506, 624), (444, 672), (408, 744), (398, 830), (404, 912), (396, 972),
-           (380, 1010), (470, 1024), (566, 1038), (650, 1050), (684, 1046), (684, 1000), (676, 936), (682, 868),
-           (702, 808), (730, 772)]
-S2_BANG = [(736, 646), (772, 676), (790, 716), (794, 752), (784, 768), (758, 772)]
+# S2（10/3 改成看得出是鮑伯的版本；座標同 S2_parts.tsx）
+S2_FACE = [(797, 768), (800, 796), (798, 812), (820, 846), (846, 878), (838, 889), (814, 893), (818, 912), (809, 922),
+           (815, 936), (803, 954), (812, 984), (798, 1006), (756, 1018), (724, 1034), (714, 1090), (718, 1150)]
+S2_HAIR = [(736, 646), (668, 612), (586, 604), (506, 624), (444, 672), (408, 744), (396, 830), (400, 912), (402, 972),
+           (414, 1010), (452, 1030), (530, 1042), (600, 1046), (648, 1040), (662, 1022), (650, 980), (638, 920),
+           (646, 862), (672, 814), (704, 786)]
+S2_BANG = [(736, 646), (774, 672), (796, 712), (804, 742), (800, 766)]
+S2_NAPE = [(560, 1044), (566, 1090), (560, 1150)]
+S2_EYE = [(764, 830), (776, 838), (790, 834)]
+S2_STRAND_A = [(628, 616), (690, 634), (742, 672), (776, 724)]
+S2_STRAND_B = [(492, 720), (468, 820), (470, 920), (498, 1000)]
+# S5 落款：S0 髮絲線縮小 0.19 倍、搬到卡中軸（同 S5.tsx）
+S5_SIGN = [[((x - 440) * 0.19 + 540, (y - 911) * 0.19 + 818) for x, y in c] for c in S0_STRAND]
 
 
 def smooth_cubs(pts):
@@ -538,14 +546,20 @@ def mulberry32(seed):
     return r
 
 
+CAL_LEAD = 2  # 月曆從週三開始：前 2 格不屬於這個月
+
+
 def open_days():
+    """跟 S4_parts.tsx 的 OPEN_DAYS 完全同一套規則：三天不同列、不同星期（guard 500）→ [3, 15, 26]"""
     r = mulberry32(7)
     out = []
     guard = 0
-    while len(out) < 3 and guard < 200:
+    col = lambda k: (CAL_LEAD + k) % 7
+    row = lambda k: (CAL_LEAD + k) // 7
+    while len(out) < 3 and guard < 500:
         guard += 1
         k = 3 + int(np.floor(r() * (CAL_DAYS - 6)))
-        if all(abs(o - k) > 1 for o in out):
+        if all(col(o) != col(k) and row(o) != row(k) for o in out):
             out.append(k)
     return sorted(out)
 
@@ -571,7 +585,7 @@ def build():
     # ---- 前奏墊音（0 → 淡入，240 起讓位給 Rhodes）----
     p = air_pad([57, 64, 71, 78], 7.5)  # A3 E4 B4 F#5
     pe = np.ones(p.shape[1])
-    k_in = S(160)
+    k_in = S(30)  # 10/3：半秒內淡入（原本 160 格，前 1 秒幾乎無聲）
     pe[:k_in] = (0.5 - 0.5 * np.cos(np.pi * np.arange(k_in) / k_in)) ** 1.5
     o0, o1 = S(250), S(420)
     pe[o0:o1] *= 0.5 + 0.5 * np.cos(np.pi * np.arange(o1 - o0) / (o1 - o0))
@@ -647,7 +661,7 @@ def build():
     t_cal_a = etick(4186.0, tau=0.0016, click=0.3, harm=0.1, length=0.016)
     t_cal_b = etick(3951.0, tau=0.0016, click=0.3, harm=0.1, length=0.016)
 
-    for f in (120, 150):
+    for f in (60, 90):  # 10/3：S0 文案提前到 60／90 落拍
         put_tick(t_text, f, TICK_DB['text'], pan=-0.25)
     for f, pan in ((150, 0.30), (170, 0.35)):
         put_tick(t_small, f, TICK_DB['small'], pan=pan, depth=0.0)
@@ -672,10 +686,13 @@ def build():
         cue_verb.add(h, S(f), gain=g * 0.25)
         duck_marks.append((S(f), 0.12))
 
-    # 鉛筆：S0 一筆（10–150），S2 三筆（600–642、636–698、692–720）
+    # 鉛筆：S0 一筆（10–150），S2 主線三筆＋短線四筆（時間同 S2.tsx 的 STROKES），S5 落款一筆（1532–1572）
     s0_sig, s0_a, s0_env, _ = pencil([(10, 150, S0_STRAND)])
     s2_sig, s2_a, s2_env, _ = pencil([(600, 642, smooth_cubs(S2_FACE)), (636, 698, smooth_cubs(S2_HAIR)),
-                                      (692, 720, smooth_cubs(S2_BANG))])
+                                      (692, 712, smooth_cubs(S2_BANG)), (700, 712, smooth_cubs(S2_NAPE)),
+                                      (708, 718, smooth_cubs(S2_EYE)), (712, 726, smooth_cubs(S2_STRAND_A)),
+                                      (716, 730, smooth_cubs(S2_STRAND_B))])
+    s5_sig, s5_a, s5_env, _ = pencil([(1532, 1572, S5_SIGN)])
 
     def rms_peak(x, w=0.05):
         m = (x ** 2).mean(axis=0)
@@ -684,12 +701,14 @@ def build():
 
     s0_sig *= 10 ** (-27.0 / 20) / rms_peak(s0_sig)  # 「極輕」：最快處 50 ms RMS ≈ -27 dBFS
     s2_sig *= 10 ** (-31.0 / 20) / rms_peak(s2_sig)  # 「更輕」
+    s5_sig *= 10 ** (-34.0 / 20) / rms_peak(s5_sig)  # 片尾落款：最輕（小筆、慢）
     cue.add(s0_sig, s0_a)
     cue.add(s2_sig, s2_a)
+    cue.add(s5_sig, s5_a)
     pencil_env = np.zeros(N)
     pencil_env[s2_a : s2_a + len(s2_env)] = s2_env / s2_env.max()
 
-    pencil_curves = dict(s0=(s0_a, s0_env), s2=(s2_a, s2_env))
+    pencil_curves = dict(s0=(s0_a, s0_env), s2=(s2_a, s2_env), s5=(s5_a, s5_env))
     return music, cue, cue_verb, duck_marks, pencil_env, pencil_curves
 
 
@@ -851,19 +870,22 @@ def read_wav24(path):
 # (格, 事件, 類型, 看哪個分軌) 類型：perc = 瞬態起點要對齊；swell = 起點對齊、能量膨起
 EVENTS = (
     [(10, '描線 S0 落筆', 'swell', 'cue')]
-    + [(120, '文案 1 tick', 'perc', 'cue'), (150, '文案 2 tick＋量測小 tick', 'perc', 'cue'), (170, '量測小 tick', 'perc', 'cue')]
+    + [(60, '文案 1 tick', 'perc', 'cue'), (90, '文案 2 tick', 'perc', 'cue'), (150, '量測小 tick R 180', 'perc', 'cue'),
+       (170, '量測小 tick 0.4 mm', 'perc', 'cue')]
     + [(216, '細線掃下 嘶', 'swell', 'cue'), (240, '主段：Rhodes 和弦', 'perc', 'keys'), (240, '主段：sub 脈衝', 'perc', 'sub'),
        (270, '名字：換和弦 Dmaj9', 'perc', 'keys')]
     + [(f, '規格列 tick', 'perc', 'cue') for f in (360, 390, 420, 450)]
     + [(576, '往上漂走 嘶', 'swell', 'cue'), (600, '描線 S2 第 1 筆', 'swell', 'cue'), (636, '描線 S2 第 2 筆', 'swell', 'cue'),
-       (692, '描線 S2 第 3 筆', 'swell', 'cue')]
+       (692, '描線 S2 第 3 筆', 'swell', 'cue'), (700, '描線 S2 頸後', 'swell', 'cue'), (708, '描線 S2 閉眼', 'swell', 'cue'),
+       (712, '描線 S2 髮流 A', 'swell', 'cue'), (716, '描線 S2 髮流 B', 'swell', 'cue')]
     + [(f, '量測標註 tick', 'perc', 'cue') for f in (750, 780, 810, 840)]
     + [(936, '細線掃過 嘶', 'swell', 'cue')]
     + [(f, '卡片 tick', 'perc', 'cue') for f in (960, 990, 1020)]
     + [(f, f'卡片 Rhodes 音 {n}', 'perc', 'cards') for f, n in ((960, 'A4'), (990, 'C#5'), (1020, 'E5'))]
     + [(f, f'上行琶音 {i + 1}', 'perc', 'arp') for i, (f, *_r) in enumerate(ARP)]
     + [(f, f'月曆 tick 第{(f - CAL_T0) // CAL_STEP + 1}天', 'perc', 'cue') for f in CAL_TICKS]
-    + [(1460, '金句 1：Bm9', 'perc', 'end'), (1500, '金句 2：Gmaj9', 'perc', 'end'), (1580, '名字：最後和弦 D6/9', 'perc', 'end')]
+    + [(1460, '金句 1：Bm9', 'perc', 'end'), (1500, '金句 2：Gmaj9', 'perc', 'end'), (1532, '描線 S5 落款', 'swell', 'cue'),
+       (1580, '名字：最後和弦 D6/9', 'perc', 'end')]
 )
 
 

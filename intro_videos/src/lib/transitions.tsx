@@ -36,7 +36,7 @@ export const InWrap: React.FC<{f: number; tr: Transition; children: React.ReactN
 			return <AbsoluteFill style={{clipPath: `inset(${top}px ${right}px ${bottom}px ${left}px round ${r}px)`}}>{children}</AbsoluteFill>;
 		}
 		case 'lineWipe': {
-			const p = prog(f, tr.t0, tr.t1 - tr.t0, E.inOutQuart);
+			const p = prog(f, tr.t0, tr.t1 - tr.t0, E.inOutSine); // 安靜的掃線：峰值速度比 inOutQuart 慢一半以上
 			if (p >= 1) return <AbsoluteFill>{children}</AbsoluteFill>;
 			const pos = tr.dir === 'down' ? H * p : W * p;
 			const clip = tr.dir === 'down' ? `inset(0 0 ${H - pos}px 0)` : `inset(0 ${W - pos}px 0 0)`;

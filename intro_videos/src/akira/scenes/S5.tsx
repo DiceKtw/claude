@@ -30,7 +30,7 @@ const T_NAME = 1580 - LEAD; // 署名落在最後一個和弦 D6/9
 const T_SALON = 1600 - LEAD;
 const T_BOOK = 1620 - LEAD; // 歡迎預約：1620 已站穩大半，完整停留約 2.4 秒
 const T_UNDER = 1626; // 歡迎預約下方細線由左往右
-const T_GLINT = 1664; // 細線上慢慢掃一次光
+const T_GLINT = 1704; // 細線上慢慢掃一次光（掃到 1764，蓋住結尾定格）
 const PUSH0 = 1440;
 const PUSH1 = 1800; // 一路推到最後一格（淡出時還在推，不會先減速到 0）
 const FADE0 = 1770; // 由上往下每 2 格錯開淡出，1798 全部歸零
@@ -68,7 +68,9 @@ export const S5: React.FC<SceneProps> = ({from}) => {
 	const guideOut = 1 - prog(g, GUIDE_OUT, 26, E.inOutSine);
 	const signP = prog(g, SIGN0, SIGN_DUR, E.inOutSine);
 	const tip = SIGN_SAMP.at(signP);
-	const tipOp = prog(g, SIGN0 - 6, 6, E.outCubic) * out(2);
+	// 收筆後筆尖停在線尾，像設計軟體裡等待的游標：每 2 拍（60 格）慢慢呼吸一次（只有透明度，不放大、不發光），
+	// 1650–1770 定格段才不會只剩看不出來的慢推
+	const tipOp = prog(g, SIGN0 - 6, 6, E.outCubic) * out(2); // Akira 規範：不做重複脈動
 	const underP = prog(g, T_UNDER, 34, E.inOutSine);
 
 	return (

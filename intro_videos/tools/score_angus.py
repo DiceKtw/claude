@@ -728,36 +728,40 @@ def build():
         put(bounce_dong(hz(nn)), 60 + 30 * i, 0.42 + 0.02 * i, pan=0.05, verb=0.3)
     for f in range(75, 196, 30):
         put(tick_light(6200, 3520), f, 0.16, pan=0.2, verb=0.1)
-    put(whoosh(0.24, 400, 6000, width=0.7, peak=0.9, floor=0.55, att=0.004), 228, 0.40, verb=0.25)
+    put(whoosh(0.24, 400, 6000, width=0.7, peak=0.45, floor=0.55, att=0.004), 228, 0.40, verb=0.25)  # 峰值≈234.5，對 iris 張最快那格
 
     # S1
     heavy(240, chord=None, clap_g=1.1, boom=True, crash_on=True)
     heavy(270, chord=['F5', 'A5', 'C6'], clap_g=1.25, boom=False, chord_decay=0.8)
-    put(shimmer([hz('F6'), hz('A6'), hz('C7'), hz('G6')], dur=1.6), 282, 0.30, verb=0.5, duck=True)
-    for i, nn in enumerate(['A5', 'C6', 'E6', 'G6']):
-        put(tickpop(hz(nn)), 360 + 30 * i, 0.44, pan=-0.2 + 0.13 * i, verb=0.2, duck=True)
+    for i, nn in enumerate(['A5', 'C6', 'E6', 'G6']):  # 規格列每兩拍一列（360／420／480／540）
+        put(tickpop(hz(nn)), 360 + 60 * i, 0.44, pan=-0.2 + 0.13 * i, verb=0.2, duck=True)
     put(whoosh(0.30, 2500, 700, width=0.7, peak=0.3, floor=0.45, pan0=0.4, pan1=-0.4, flutter=20.0), 584, 0.42,
         verb=0.15, duck=True)
 
     # S2
-    for f in (630, 660, 690, 720):
+    for f in (630, 660, 690, 705):  # 第 4 張卡 705（八分反拍），720 留給主文案
         put(tick_light(), f, 0.30, pan=0.15, verb=0.1, duck=True)
     put(xylo(hz('A5'), bright=1.0, decay=1.1), 750, 0.50, pan=-0.1, verb=0.35, duck=True)
     put(xylo(hz('D6'), bright=1.0, decay=1.3), 757, 0.52, pan=0.1, verb=0.35)
     put(bell(hz('D7'), decay=0.7), 757, 0.10, pan=0.25, verb=0.4)
-    put(whoosh(0.27, 350, 5000, width=0.7, peak=0.85, floor=0.55, att=0.004), 824, 0.45, verb=0.25, duck=True)
+    put(whoosh(0.27, 350, 5000, width=0.7, peak=0.5, floor=0.55, att=0.004), 824, 0.45, verb=0.25, duck=True)  # 峰值≈832
 
     # S3
+    for i, f in enumerate((878, 882, 886)):  # 三張卡落地壓扁（比翻卡低約 8 dB，翻卡還是主角）
+        put(tick_light(4200 + 300 * i, 1760), f, 0.14, pan=0.25 - 0.25 * i, verb=0.05)
     for i, (f, nn) in enumerate(((900, 'D6'), (930, 'F6'), (960, 'Bb6'))):
         put(paper(), f, 0.32, pan=0.25 - 0.25 * i, verb=0.1, duck=True)
         put(xylo(hz(nn), bright=1.0, decay=1.1), f, 0.46, pan=0.25 - 0.25 * i, verb=0.35)
-    put(whoosh(0.28, 2200, 600, width=0.7, peak=0.3, floor=0.45, pan0=0.6, pan1=-0.7), 1064, 0.42, verb=0.15, duck=True)
+    put(whoosh(0.30, 2200, 600, width=0.7, peak=0.78, floor=0.15, pan0=0.6, pan1=-0.7), 1064, 0.42, verb=0.15, duck=True)  # 峰值≈1078
 
     # S4
     put(slide(hz('D4'), hz('D6'), 1.0), 1110, 0.26, pan=0.0, verb=0.3, duck=True)
     put(whoosh(1.0, 300, 6000, width=0.5, peak=0.95, floor=0.15), 1110, 0.12, verb=0.2)
-    for i, (f, nn) in enumerate(((1170, 'D6'), (1200, 'F6'), (1230, 'A6'))):
-        put(tickpop(hz(nn)), f, 0.46, pan=-0.15 + 0.15 * i, verb=0.2, duck=True)
+    put(bounce_dong(hz('D5')), 1170, 0.46, pan=0.2, verb=0.3, duck=True)  # 技術球撞上曲線頂端（S0 落地 D4 的高八度）
+    for i, (f, nn) in enumerate(((1177.5, 'D6'), (1185, 'F6'), (1192.5, 'A6'))):  # 三條讀數連發
+        put(tickpop(hz(nn)), f, 0.42, pan=-0.15 + 0.15 * i, verb=0.2, duck=True)
+    for i, nn in enumerate(('F5', 'A5', 'D6')):  # 1230「一起往上」＋螢光筆
+        put(xylo(hz(nn), bright=1.0, decay=0.9), 1230, 0.20, pan=(i - 1) * 0.35, verb=0.3)
 
     # S5 蒙太奇
     for k, nn in enumerate(['G4', 'Bb4', 'D5', 'F5', 'G5', 'Bb5', 'C6']):
@@ -771,8 +775,8 @@ def build():
     heavy(1500, chord=['F5', 'A5', 'C6'], clap_g=1.2, boom=True, crash_on=True, kick_g=1.05)
     put(shimmer([hz('F6'), hz('A6'), hz('C7'), hz('G6')], dur=2.0, grains=20), 1500, 0.32, verb=0.5)
     heavy(1560, chord=['A5', 'C6', 'E6'], clap_g=1.2, boom=False)
-    for i in range(10):  # 讓你的技術，值更多錢（10 字，every 3）
-        put(keyclick(i), 1645 + 3 * i, 0.36 * (1.0 if i % 3 else 1.12), pan=-0.15 + 0.03 * i, verb=0.03, duck=True)
+    for i in range(10):  # 讓你的技術，值更多錢（10 字，every 2，1654 打完）
+        put(keyclick(i), 1636 + 2 * i, 0.36 * (1.0 if i % 3 else 1.12), pan=-0.15 + 0.03 * i, verb=0.03, duck=True)
     put(xylo(hz('C7'), bright=1.0, decay=1.3), 1690, 0.42, pan=0.15, verb=0.4, duck=True)
     put(bell(hz('C7'), decay=0.6), 1690, 0.12, pan=0.15, verb=0.4)
     heavy(1740, chord=['F5', 'A5', 'C6'], clap_g=0.9, boom=True, crash_on=False, kick_g=0.95)
@@ -921,20 +925,22 @@ EVENTS = (
     [(6, '地平線 咻', 'swell'), (14, '收入線 低音嗡', 'swell'), (22, '球彈出 叮', 'perc')]
     + [(f, f'球落地 咚 {i + 1}', 'perc') for i, f in enumerate(range(60, 211, 30))]
     + [(f, 'Lv tick', 'perc') for f in range(75, 196, 30)]
-    + [(228, 'iris 咻上揚', 'swell'), (240, 'drop 大鼓+拍手+貝斯', 'perc'), (270, '安格斯 重拍', 'perc'),
-       (282, '星芒 shimmer', 'perc')]
-    + [(f, '規格列 tick-pop', 'perc') for f in (360, 390, 420, 450)]
+    + [(228, 'iris 咻上揚', 'swell'), (240, 'drop 大鼓+拍手+貝斯', 'perc'), (270, '安格斯 重拍', 'perc')]
+    + [(f, '規格列 tick-pop', 'perc') for f in (360, 420, 480, 540)]
     + [(584, 'blinds 咻', 'swell')]
-    + [(f, '貼文卡片 tick', 'perc') for f in (630, 660, 690, 720)]
+    + [(f, '貼文卡片 tick', 'perc') for f in (630, 660, 690, 705)]
     + [(750, '預約 叮咚+鈴', 'perc'), (824, '螢幕放大 咻上揚', 'swell')]
+    + [(f, '卡片落地 輕 tick', 'perc') for f in (878, 882, 886)]
     + [(f, '翻卡 啪+木琴', 'perc') for f in (900, 930, 960)]
     + [(1064, '往左甩 咻', 'swell'), (1110, '紅線上彎 滑音 riser', 'swell')]
-    + [(f, '量測 tick-pop', 'perc') for f in (1170, 1200, 1230)]
+    + [(1170, '技術球撞頂 咚', 'perc')]
+    + [(f, '量測 tick-pop', 'perc') for f in (1177.5, 1185, 1192.5)]
+    + [(1230, '一起往上 木琴和弦', 'perc')]
     + [(1320 + 15 * k, f'蒙太奇 第{k + 1}刀', 'perc') for k in range(7)]
     + [(1425, '蒙太奇 第8刀 重擊', 'perc')]
     + [(1452 + 4 * i, f'吸入 噗 {i + 1}', 'perc') for i in range(6)]
     + [(1500, '星芒綻放 大重拍+shimmer', 'perc'), (1560, '名字 重拍', 'perc')]
-    + [(1645 + 3 * i, f'打字 {i + 1}', 'perc') for i in range(10)]
+    + [(1636 + 2 * i, f'打字 {i + 1}', 'perc') for i in range(10)]
     + [(1690, '按鈕 叮', 'perc'), (1740, '最後和弦 重拍', 'perc'), (1790, '眨眼 啵', 'perc')]
 )
 
@@ -1049,7 +1055,7 @@ def verify(y, stems):
             worst_mix = max(worst_mix, abs(off_m))
         flag = '' if (kind != 'perc' or abs(off_c) <= 5.0) else '  <-- 超過 5 ms'
         rows.append((f, name, kind, off_c, off_m, jump, jump_hf, ratio, ratio_hf))
-        print(f'  {f:5d} | {name:<18s} | {off_c:+6.2f} ms（{rise_c:+5.1f} dB, {band_c}）| {off_m:+6.2f} ms（{rise_m:+5.1f} dB, {band_m}）| '
+        print(f'  {f:7.1f} | {name:<18s} | {off_c:+6.2f} ms（{rise_c:+5.1f} dB, {band_c}）| {off_m:+6.2f} ms（{rise_m:+5.1f} dB, {band_m}）| '
               f'{jump:+5.1f} dB（>2k: {jump_hf:+5.1f}）| 全頻 {ratio:+5.1f} / >2k {ratio_hf:+5.1f} dB{flag}')
     print(f'  打擊類事件最大起點偏差：音效分軌 {worst:.2f} ms；成品混音 {worst_mix:.2f} ms')
     print('\n[咻／滑音整段] 事件全長內 音效/音樂 能量比（全頻 / >2k）')

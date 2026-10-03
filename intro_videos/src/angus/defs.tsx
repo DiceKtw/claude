@@ -48,6 +48,7 @@ export const angusOverlay = (f: number) => (
 				{from: 1320, num: '05', label: '關鍵字'},
 				{from: 1440, num: '06', label: '聯絡'},
 			]}
+			showIndex={false}
 			hideFrom={1772}
 			hideDur={16}
 		/>

@@ -2,7 +2,7 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {Brand, F, FPS, SAFE, TOTAL, W} from './theme';
-import {E, clamp, mixHex, prog, pulseAt, beatsFrom} from './motion';
+import {E, alpha, clamp, mixHex, prog, pulseAt, beatsFrom} from './motion';
 
 export type HudMode = {from: number; mode: 'dark' | 'light' | 'accent'}; // dark = 深底（HUD 用亮色）；accent = 強調色底（強調元件改用 ink）
 export type Chapter = {from: number; num: string; label: string};
@@ -37,7 +37,7 @@ export const Hud: React.FC<{
 	if (f < appear - 1) return null;
 	const mode = modeAt(f, modes);
 	const fg = mode === 'dark' ? brand.paper : brand.ink;
-	const fgSoft = mode === 'dark' ? 'rgba(250,249,245,0.62)' : 'rgba(20,20,19,0.62)';
+	const fgSoft = mode === 'dark' ? alpha(brand.paper, 0.62) : alpha(brand.ink, 0.62);
 	// 強調色底上，強調元件（圓點、章節號、進度條）改用 ink，不然會融進底色
 	const acc = mode === 'accent' ? brand.ink : brand.accent;
 	const fade = hideFrom !== undefined ? 1 - prog(f, hideFrom, hideDur, E.inOutSine) : 1;
@@ -104,7 +104,7 @@ export const Hud: React.FC<{
 					display: 'flex',
 					alignItems: 'center',
 					gap: 12,
-					clipPath: `inset(0 ${(1 - a(4, 16)) * 100}% 0 0)`,
+					clipPath: `inset(-8px ${(1 - a(4, 16)) * 100}% -8px -8px)`, // 上下左留 8px，點脈動放大時不被切平
 				}}
 			>
 				<div style={{width: 12, height: 12, borderRadius: 6, background: acc, transform: `scale(${dotScale})`}} />

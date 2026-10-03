@@ -36,7 +36,7 @@ export const S1: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 	const lineP = prog(g, 239, 28, E.outExpo);
 	const hot = 1 - prog(g, 250, 14, E.inOutSine);
 	const upper = drift(g, 300, 600, 12); // 主角區塊往右
-	const lower = drift(g, 300, 600, -16); // 規格列往左
+	const lower = drift(g, 300, 600, -8); // 規格列往左（-8：列首小方塊不超出安全區太多）
 	// 副標「美髮人的教練」：ink 字＋accent 螢光筆底條（米白底上不用橘字）
 	const markP = prog(g, 312, 16, E.outExpo);
 
