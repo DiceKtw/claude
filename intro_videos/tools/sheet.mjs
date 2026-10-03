@@ -2,6 +2,7 @@
 // 用法：
 //   node tools/sheet.mjs <entry> <out.png> <start> <end> <step> [cols=6] [scale=0.3]
 //   node tools/sheet.mjs <entry> <outDir/> --frames=270,300,330 [scale=1]   ← 輸出多張原尺寸 PNG
+//   加 --comp=Angus／--comp=Akira 可指定合成（用 src/index.ts 看完整影片時要加）
 import {bundle} from '@remotion/bundler';
 import {renderStill, selectComposition, openBrowser} from '@remotion/renderer';
 import {execFileSync} from 'node:child_process';
@@ -18,6 +19,9 @@ const BROWSER = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/head
 let frames;
 let cols = 6;
 let scale = 0.3;
+const compArg = rest.find((a) => a.startsWith('--comp='));
+const compId = compArg ? compArg.slice(7) : 'Dev';
+rest.splice(0, rest.length, ...rest.filter((a) => !a.startsWith('--comp=')));
 const framesArg = rest.find((a) => a.startsWith('--frames='));
 if (framesArg) {
 	frames = framesArg.slice(9).split(',').map(Number);
@@ -32,7 +36,7 @@ if (framesArg) {
 
 const serveUrl = await bundle({entryPoint: path.resolve(entry), onProgress: () => {}});
 const browser = await openBrowser('chrome', {browserExecutable: BROWSER, chromiumOptions: {gl: 'swangle'}});
-const comp = await selectComposition({serveUrl, id: 'Dev', puppeteerInstance: browser}).catch(async () => {
+const comp = await selectComposition({serveUrl, id: compId, puppeteerInstance: browser}).catch(async () => {
 	const {getCompositions} = await import('@remotion/renderer');
 	const all = await getCompositions(serveUrl, {puppeteerInstance: browser});
 	return all[0];
