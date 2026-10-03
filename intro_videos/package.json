@@ -1,0 +1,22 @@
+{
+  "name": "intro-videos",
+  "private": true,
+  "version": "1.0.0",
+  "description": "安格斯／Akira 介紹影片（Remotion，1080x1920 60fps）",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.532",
+    "@remotion/cli": "4.0.532",
+    "@remotion/renderer": "^4.0.532",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.532"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.8",
+    "typescript": "5.8.3"
+  }
+}

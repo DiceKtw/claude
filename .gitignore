@@ -14,3 +14,7 @@ Thumbs.db
 
 # 剪映草稿測試輸出（不應進版控）
 *.draft/
+
+# 介紹影片：相依套件與輸出
+intro_videos/node_modules/
+intro_videos/out/
