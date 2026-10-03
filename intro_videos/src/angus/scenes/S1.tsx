@@ -1,15 +1,109 @@
-// 安格斯 S1（佔位，待製作）
+// 安格斯 S1 檔案 228–600（paper 底）：名字落拍、星芒每拍喀一聲、規格列 tick-pop
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {SceneProps, useG} from '../../lib/Master';
-import {ANGUS, F} from '../../lib/theme';
+import {ANGUS, F, STAGE} from '../../lib/theme';
+import {E, alpha, beatsFrom, lerp, prog} from '../../lib/motion';
+import {Glint, MaskRise, Push, SpecRow, Svg, drift} from '../../lib/components';
+import {ClickSpark, IrisRim, MonoTitle, irisActive} from './S1_parts';
+
+const C = ANGUS;
+const X = STAGE.left; // 110
+const LINE_Y = 440;
+const HERO_TOP = 448; // 字面上緣≈478（離細線 38）
+const SUB_TOP = 740; // 跟名字留 40 左右的氣口
+const SPARK = {x: 880, y: 486, size: 64};
+const ROWS = [
+	{index: '01', label: '身分', value: '雁沙龍 老闆'},
+	{index: '02', label: '角色', value: '美髮人的教練'},
+	{index: '03', label: '專長', value: '網路行銷・店務經營'},
+	{index: '04', label: '目標', value: '幫美髮人提高收入'},
+];
+const ROW_Y = [862, 942, 1022, 1102]; // 分鏡 850…1090 整組下移 12，讓副標有氣口
+const ROW_B = [360, 390, 420, 450];
 
 export const S1: React.FC<SceneProps> = ({from}) => {
 	const g = useG(from);
+
+	const lineP = prog(g, 248, 30, E.outExpo);
+	const upper = drift(g, 300, 584, 8); // 主角區塊往右
+	const lower = drift(g, 300, 584, -12); // 規格列往左
+
 	return (
-		<AbsoluteFill style={{background: ANGUS.ink, alignItems: 'center', justifyContent: 'center'}}>
-			<div style={{fontFamily: F.display, fontWeight: 900, fontSize: 120, color: ANGUS.accent}}>S1 安格斯</div>
-			<div style={{fontFamily: F.mono, fontSize: 40, color: ANGUS.paper}}>{g}</div>
+		<AbsoluteFill style={{background: irisActive(g) ? undefined : C.paper}}>
+			<Push f={g} from={300} to={584} amount={0.018} originX={540} originY={800}>
+				{/* 標題下細線＋每小節一次掃光（不跟著漂） */}
+				<Svg>
+					{lineP > 0 ? (
+						<line x1={X} y1={LINE_Y} x2={lerp(X, STAGE.right, lineP)} y2={LINE_Y} stroke={alpha(C.ink, 0.25)} strokeWidth={1.5} />
+					) : null}
+					<Glint x0={X} x1={STAGE.right} y={LINE_Y} f={g} start={360} dur={40} color={C.accent} width={2} />
+					<Glint x0={X} x1={STAGE.right} y={LINE_Y} f={g} start={480} dur={40} color={C.accent} width={2} />
+				</Svg>
+
+				{/* 主角區塊：標題、名字、星芒、副標 */}
+				<AbsoluteFill style={{transform: `translateX(${upper.toFixed(2)}px)`}}>
+					<MonoTitle
+						g={g}
+						x={X}
+						y={400 - 6}
+						start={244}
+						dur={12}
+						text="(01) — PROFILE / 個人檔案"
+						size={24}
+						color={alpha(C.ink, 0.6)}
+						cursor={C.accent}
+					/>
+					<div style={{position: 'absolute', left: X, top: HERO_TOP}}>
+						<MaskRise segments="安格斯" start={266} f={g} size={230} color={C.ink} weight={900} family={F.display} stagger={4} />
+					</div>
+					<Svg>
+						<ClickSpark g={g} cx={SPARK.x} cy={SPARK.y} size={SPARK.size} bloom={282} beats={beatsFrom(300, 10)} color={C.accent} />
+					</Svg>
+					<div style={{position: 'absolute', left: X, top: SUB_TOP}}>
+						<MaskRise
+							segments={[
+								{text: '雁沙龍 老闆'},
+								{text: '　／　', color: C.muted},
+								{text: '美髮人的教練', color: C.accent},
+							]}
+							start={300}
+							f={g}
+							size={46}
+							color={C.ink}
+							weight={700}
+							family={F.sans}
+							stagger={1}
+							dur={16}
+						/>
+					</div>
+				</AbsoluteFill>
+
+				{/* 規格列（往左漂） */}
+				<AbsoluteFill style={{transform: `translateX(${lower.toFixed(2)}px)`}}>
+					{ROWS.map((r, i) => (
+						<SpecRow
+							key={r.index}
+							f={g}
+							b={ROW_B[i]}
+							x={X}
+							y={ROW_Y[i]}
+							width={STAGE.right - X}
+							index={r.index}
+							label={r.label}
+							value={r.value}
+							brand={C}
+							ink={C.ink}
+							size={36}
+						/>
+					))}
+				</AbsoluteFill>
+			</Push>
+
+			{/* iris 228–240：圓的內緣一圈橘（球撐開成新畫面）；這段的 paper 底也在這裡畫 */}
+			<Svg>
+				<IrisRim g={g} color={C.accent} fill={C.paper} />
+			</Svg>
 		</AbsoluteFill>
 	);
 };
