@@ -434,12 +434,12 @@ export const SpecRow: React.FC<{
 	const valueW = textWidth(value, size);
 	const leadX0 = labelX + labelW + 18;
 	const leadX1 = x + width - valueW - 18;
-	// 小方塊
-	const sq = quiet ? prog(f, b - 4, 14, E.outCubic) : prog(f, b - 1, 9, E.outBack);
-	const sqRot = quiet ? 0 : (1 - prog(f, b - 1, 9, E.outExpo)) * 90;
-	const lw = quiet ? prog(f, b, 18, E.outCubic) : prog(f, b, 12, E.outExpo);
-	const ld = prog(f, b + 6, quiet ? 18 : 10, E.outCubic);
-	const typeStart = b + (quiet ? 12 : 8);
+	// 小方塊：提前起跑，讓拍點那一格小方塊已經彈到最大（音效 tick-pop 打在拍點上）
+	const sq = quiet ? prog(f, b - 8, 14, E.outCubic) : prog(f, b - 4, 9, E.outBack);
+	const sqRot = quiet ? 0 : (1 - prog(f, b - 4, 9, E.outExpo)) * 90;
+	const lw = quiet ? prog(f, b - 4, 18, E.outCubic) : prog(f, b - 2, 12, E.outExpo);
+	const ld = prog(f, b + 4, quiet ? 18 : 10, E.outCubic);
+	const typeStart = b + (quiet ? 10 : 6);
 	return (
 		<div style={{position: 'absolute', left: 0, top: 0, width: '100%', height: '100%', pointerEvents: 'none'}}>
 			{/* 小方塊／短槓 */}

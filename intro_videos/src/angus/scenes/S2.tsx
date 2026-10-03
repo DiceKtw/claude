@@ -6,8 +6,10 @@ import {SceneProps, useG} from '../../lib/Master';
 import {ANGUS, F} from '../../lib/theme';
 import {E, alpha, clamp, lerp, mixHex, prog, pulseAt} from '../../lib/motion';
 import {Abs, DirBlur, DrawPath, Glint, ImpactFlicks, MaskRise, Push, Ring, Svg, drift, ghostFrames} from '../../lib/components';
-import {PHONE, SCREEN} from '../timeline';
-import {CARD_H, CARD_W, FUNNEL, FeedCard, FunnelDim, FunnelLayer, layerMid, layerTop, pointAt, polySegs, roundRectSegs, segsD} from './S2_parts';
+import {OutWrap} from '../../lib/transitions';
+import {PHONE, SCREEN, TR} from '../timeline';
+import {CARD_H, CARD_W, FUNNEL, FeedCard, FunnelDim, FunnelLayer, layerMid, layerTop, partialPoly, pointAt, polySegs, roundRectSegs, segsD} from './S2_parts';
+import {S1} from './S1';
 
 const C = ANGUS;
 
@@ -22,6 +24,7 @@ const DROPS = [
 	{depart: 710, fall: 726, land: 750, layer: 2},
 ];
 const HIT = 750; // 第 3 顆落進「預約」
+const BLINDS = TR.blindsS1; // S1 的百葉窗甩出（584–600），在 S2 上層重畫
 
 // feed 版面
 const PITCH = 270; // 卡片間距（250 高＋20 縫）
@@ -170,7 +173,9 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 					/>
 
 					{/* 引線：第 1 顆小點當筆頭把它畫出來 */}
-					<DrawPath d={segsD(LEADER)} p={leaderP} color={alpha(C.paper, 0.55)} width={2} cap="butt" dash="6 7" />
+					{leaderP > 0 ? (
+						<polyline points={partialPoly(leaderPts, leaderP)} fill="none" stroke={alpha(C.paper, 0.55)} strokeWidth={2} strokeDasharray="6 7" strokeLinejoin="round" />
+					) : null}
 					{leaderP > 0 ? <circle cx={leaderPts[0][0]} cy={leaderPts[0][1]} r={4 * prog(g, 650, 8, E.outBack)} fill={C.paper} /> : null}
 
 					{/* 漏斗 */}
@@ -253,6 +258,14 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 					/>
 				</Abs>
 			</Push>
+
+			{/* 整合修正：Master 的 z-index 讓 S2（104）疊在 S1（103）上面，S1 的百葉窗甩出整段被蓋掉。
+			    584–600 在 S2 最上層用同一個 OutWrap／同一組轉場參數重畫 S1 甩出，S2 從條縫露出來。 */}
+			{BLINDS.type === 'blinds' && g < BLINDS.t1 ? (
+				<OutWrap f={g} tr={BLINDS}>
+					<S1 from={from} host />
+				</OutWrap>
+			) : null}
 		</AbsoluteFill>
 	);
 };

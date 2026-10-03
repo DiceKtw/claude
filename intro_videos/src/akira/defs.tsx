@@ -34,7 +34,7 @@ export const akiraOverlay = (f: number) => (
 			]}
 			hideFrom={1416}
 			hideDur={24}
-			rightText={(f) => `NOTE ${String(Math.min(5, Math.floor((f < 240 ? 0 : f < 600 ? 1 : f < 960 ? 2 : f < 1200 ? 3 : 4)) + 1)).padStart(2, '0')} / 05`}
+			rightText={(f) => `NOTE ${f < 240 ? '00' : f < 600 ? '01' : f < 960 ? '02' : f < 1200 ? '03' : '04'} / 04`}
 		/>
 		<Grain f={f} opacity={0.05} />
 	</>

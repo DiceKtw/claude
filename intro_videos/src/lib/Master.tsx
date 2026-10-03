@@ -21,8 +21,8 @@ export const Master: React.FC<{
 	return (
 		<AbsoluteFill style={{background: '#000'}}>
 			{scenes.map((s, i) => {
-				// 舊場景在上面被移走（Out）時，它要比下一個場景高
-				const z = isOut(s.exit) ? 100 + i * 2 + 1 : 100 + i * 2;
+				// 舊場景在上面被移走（Out）時，它要比下一個場景高（下一場是 100+(i+1)*2，所以 +3）
+				const z = isOut(s.exit) ? 100 + i * 2 + 3 : 100 + i * 2;
 				const C = s.C;
 				return (
 					<Sequence key={s.id} from={s.from} durationInFrames={s.to - s.from} style={{zIndex: z}} name={s.id}>

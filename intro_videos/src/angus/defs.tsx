@@ -17,7 +17,7 @@ export const ANGUS_META: Omit<SceneDef, 'C'>[] = [
 ];
 
 // HUD 換色：等轉場剛好蓋滿的那一格才換
-const MONTAGE_MODES = (['dark', 'light', 'light', 'dark', 'light', 'light', 'dark', 'light'] as const).map((mode, i) => ({
+const MONTAGE_MODES = (['dark', 'accent', 'light', 'dark', 'accent', 'light', 'dark', 'accent'] as const).map((mode, i) => ({
 	from: 1320 + i * 15,
 	mode,
 }));
@@ -30,10 +30,11 @@ export const angusOverlay = (f: number) => (
 			label="雁沙龍 · ANGUS COACHING"
 			appear={196}
 			modes={[
+				// 換色格＝轉場剛好蓋過 HUD 那一格（iris 約 235 蓋到 HUD；百葉窗上兩條約 589 甩走；螢幕放大約 832 蓋滿上緣）
 				{from: 0, mode: 'dark'},
-				{from: 238, mode: 'light'},
-				{from: 598, mode: 'dark'},
-				{from: 838, mode: 'light'},
+				{from: 235, mode: 'light'},
+				{from: 589, mode: 'dark'},
+				{from: 832, mode: 'accent'},
 				{from: 1078, mode: 'light'},
 				...MONTAGE_MODES,
 				{from: 1440, mode: 'dark'},

@@ -63,8 +63,9 @@ export const passFrame = (head: (f: number) => number, target: number, f0: numbe
 /* ------------------------------------------------------------------ */
 /* 三條量測引線（每拍一條）：曲線上的點 → 右側細軸                         */
 /* ------------------------------------------------------------------ */
+// 第 1 條跟端點星芒同拍：晚 2 格出手（兄弟元素錯開，星芒是那一拍的主角）
 export const READS = [
-	{b: 1170, y: 1010, text: '收入'},
+	{b: 1172, y: 1010, text: '收入'},
 	{b: 1200, y: 880, text: '客戶'},
 	{b: 1230, y: 750, text: '業績'},
 ].map((r) => {
@@ -118,7 +119,6 @@ export const UpTick: React.FC<{x: number; y: number; f: number; at: number}> = (
 	return (
 		<g transform={`translate(${x} ${y + lift})`}>
 			<polygon points={`0,${-s} ${s * 0.9},${s * 0.6} ${-s * 0.9},${s * 0.6}`} fill={C.accent} />
-			<circle r={2.4} fill={C.ink} cy={s * 0.6 + 6} opacity={k} />
 		</g>
 	);
 };

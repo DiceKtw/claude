@@ -4,11 +4,11 @@ import {AbsoluteFill} from 'remotion';
 import {Brand, F, FPS, SAFE, TOTAL, W} from './theme';
 import {E, clamp, mixHex, prog, pulseAt, beatsFrom} from './motion';
 
-export type HudMode = {from: number; mode: 'dark' | 'light'}; // dark = 深底（HUD 用亮色）
+export type HudMode = {from: number; mode: 'dark' | 'light' | 'accent'}; // dark = 深底（HUD 用亮色）；accent = 強調色底（強調元件改用 ink）
 export type Chapter = {from: number; num: string; label: string};
 
 const modeAt = (f: number, modes: HudMode[]) => {
-	let m: 'dark' | 'light' = modes[0]?.mode ?? 'dark';
+	let m: HudMode['mode'] = modes[0]?.mode ?? 'dark';
 	for (const x of modes) if (f >= x.from) m = x.mode;
 	return m;
 };
@@ -38,6 +38,8 @@ export const Hud: React.FC<{
 	const mode = modeAt(f, modes);
 	const fg = mode === 'dark' ? brand.paper : brand.ink;
 	const fgSoft = mode === 'dark' ? 'rgba(250,249,245,0.62)' : 'rgba(20,20,19,0.62)';
+	// 強調色底上，強調元件（圓點、章節號、進度條）改用 ink，不然會融進底色
+	const acc = mode === 'accent' ? brand.ink : brand.accent;
 	const fade = hideFrom !== undefined ? 1 - prog(f, hideFrom, hideDur, E.inOutSine) : 1;
 	if (fade <= 0) return null;
 
@@ -56,8 +58,9 @@ export const Hud: React.FC<{
 	for (let i = 0; i < chapters.length; i++) if (f >= chapters[i].from) ci = i;
 	const cur = chapters[ci];
 	const prev = ci > 0 ? chapters[ci - 1] : undefined;
-	const inP = prog(f, cur.from, quiet ? 22 : 14, quiet ? E.outCubic : E.outExpo);
-	const outP = prev ? prog(f, cur.from - 2, 10, E.inExpo) : 1;
+	// 新章節等舊的收得差不多才升起，避免兩行疊在一起
+	const inP = prog(f, cur.from + (prev ? (quiet ? 6 : 4) : 0), quiet ? 22 : 14, quiet ? E.outCubic : E.outExpo);
+	const outP = prev ? prog(f, cur.from - 4, quiet ? 10 : 8, E.outCubic) : 1;
 
 	const beats = beatsFrom(0, 60, 30);
 	const dotScale = quiet ? 1 : pulseAt(f, beats, 10, 0.45);
@@ -87,7 +90,7 @@ export const Hud: React.FC<{
 					y1={row2 + 14}
 					x2={SAFE.right - 230 + 200 * progress * a(10)}
 					y2={row2 + 14}
-					stroke={brand.accent}
+					stroke={acc}
 					strokeWidth={quiet ? 1.5 : 3}
 				/>
 			</svg>
@@ -104,7 +107,7 @@ export const Hud: React.FC<{
 					clipPath: `inset(0 ${(1 - a(4, 16)) * 100}% 0 0)`,
 				}}
 			>
-				<div style={{width: 12, height: 12, borderRadius: 6, background: brand.accent, transform: `scale(${dotScale})`}} />
+				<div style={{width: 12, height: 12, borderRadius: 6, background: acc, transform: `scale(${dotScale})`}} />
 				<div style={{fontFamily: F.mono, fontSize: 21, color: fg, letterSpacing: track, whiteSpace: 'pre'}}>{label}</div>
 			</div>
 
@@ -128,7 +131,7 @@ export const Hud: React.FC<{
 			<div style={{position: 'absolute', left: SAFE.left + 30, top: row2 - 6, height: 34, overflow: 'hidden', width: 520}}>
 				{prev && outP < 1 ? (
 					<div style={{position: 'absolute', transform: `translateY(${-outP * 34}px)`, display: 'flex', gap: 12, alignItems: 'baseline'}}>
-						<ChapterText ch={prev} fg={fg} accent={brand.accent} quiet={quiet} />
+						<ChapterText ch={prev} fg={fg} accent={acc} quiet={quiet} />
 					</div>
 				) : null}
 				<div
@@ -141,7 +144,7 @@ export const Hud: React.FC<{
 						alignItems: 'baseline',
 					}}
 				>
-					<ChapterText ch={cur} fg={fg} accent={brand.accent} quiet={quiet} />
+					<ChapterText ch={cur} fg={fg} accent={acc} quiet={quiet} />
 				</div>
 			</div>
 

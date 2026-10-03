@@ -5,6 +5,7 @@ import {SceneProps, useG} from '../../lib/Master';
 import {ANGUS, F, STAGE} from '../../lib/theme';
 import {E, alpha, beatsFrom, lerp, prog} from '../../lib/motion';
 import {Glint, MaskRise, Push, SpecRow, Svg, drift} from '../../lib/components';
+import {T, TR} from '../timeline';
 import {ClickSpark, IrisRim, MonoTitle, irisActive} from './S1_parts';
 
 const C = ANGUS;
@@ -22,8 +23,14 @@ const ROWS = [
 const ROW_Y = [862, 942, 1022, 1102]; // 分鏡 850…1090 整組下移 12，讓副標有氣口
 const ROW_B = [360, 390, 420, 450];
 
-export const S1: React.FC<SceneProps> = ({from}) => {
+// 整合修正：Master 的 z-index 讓 S2 疊在 S1 上面，所以 S1 的百葉窗甩出（584–600）改由 S2 在上層重畫（host）。
+// Master 排的這一份在甩出期間整個被 S2 蓋住，不用再算（省掉 6 條全畫面模糊）。
+const BL = TR.blindsS1;
+const OUT_FROM = BL.type === 'blinds' ? BL.t0 : T.S1.to;
+
+export const S1: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 	const g = useG(from);
+	if (!host && g >= OUT_FROM) return null;
 
 	const lineP = prog(g, 248, 30, E.outExpo);
 	const upper = drift(g, 300, 584, 8); // 主角區塊往右

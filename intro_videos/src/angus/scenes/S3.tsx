@@ -6,6 +6,7 @@ import {SceneProps, useG} from '../../lib/Master';
 import {ANGUS, F, STAGE} from '../../lib/theme';
 import {E, alpha, lerp, prog, pulseAt} from '../../lib/motion';
 import {Abs, Glint, ImpactFlicks, MaskRise, Push, Svg, drift} from '../../lib/components';
+import {T, TR} from '../timeline';
 import {CARD, CARD_XS, DropGhosts, FLIP_AT, FlipCard} from './S3_parts';
 
 const C = ANGUS;
@@ -22,8 +23,14 @@ const passFrame = (x: number) => {
 	return LINE_AT + 40;
 };
 
-export const S3: React.FC<SceneProps> = ({from}) => {
+// 整合修正：Master 的 z-index 讓 S4 疊在 S3 上面，所以 S3 往左甩出（1064–1080）改由 S4 在上層重畫（host）。
+// Master 排的這一份在甩出期間整個被 S4 蓋住，不用再算。
+const SL = TR.slideS3;
+const OUT_FROM = SL.type === 'slide' ? SL.t0 : T.S3.to;
+
+export const S3: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 	const g = useG(from);
+	if (!host && g >= OUT_FROM) return null;
 
 	// 版面參考線（從螢幕放大進來時就開始長）
 	const guideV = (j: number) => prog(g, 826 + j * 2, 26, E.outExpo);

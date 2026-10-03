@@ -68,6 +68,24 @@ export const roundRectSegs = (x: number, y: number, w: number, h: number, r: num
 export const polySegs = (pts: [number, number][]): PSeg[] =>
 	pts.slice(1).map((p, i) => ({k: 'L' as const, x0: pts[i][0], y0: pts[i][1], x1: p[0], y1: p[1]}));
 
+/** 折線畫到進度 t 為止的 points 字串（虛線直接用 dasharray，不用 mask，算圖比較快） */
+export const partialPoly = (pts: [number, number][], t: number) => {
+	const lens = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]));
+	let d = clamp(t) * lens.reduce((a, b) => a + b, 0);
+	const out: [number, number][] = [pts[0]];
+	for (let i = 0; i < lens.length; i++) {
+		if (d >= lens[i]) {
+			out.push(pts[i + 1]);
+			d -= lens[i];
+			continue;
+		}
+		const u = lens[i] > 0 ? d / lens[i] : 0;
+		out.push([lerp(pts[i][0], pts[i + 1][0], u), lerp(pts[i][1], pts[i + 1][1], u)]);
+		break;
+	}
+	return out.map((p) => `${n2(p[0])},${n2(p[1])}`).join(' ');
+};
+
 /* ------------------------------------------------------------------ */
 /* 線條愛心（自己畫的，中心在 0,0，約 24×21）                              */
 /* ------------------------------------------------------------------ */

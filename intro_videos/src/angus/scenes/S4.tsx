@@ -6,7 +6,10 @@ import {AbsoluteFill} from 'remotion';
 import {SceneProps, useG} from '../../lib/Master';
 import {ANGUS, F} from '../../lib/theme';
 import {E, alpha, beatsFrom, clamp, lerp, mixHex, prog, pulseAt} from '../../lib/motion';
-import {Abs, DirBlur, Leader, MaskRise, Push, Ring, Spark, Svg, drift, ghostFrames, sparkRays} from '../../lib/components';
+import {Abs, Leader, MaskRise, Push, Ring, Spark, Svg, drift, ghostFrames, sparkRays} from '../../lib/components';
+import {OutWrap} from '../../lib/transitions';
+import {TR} from '../timeline';
+import {S3} from './S3';
 import {
 	BEND_AT,
 	BEND_X,
@@ -38,6 +41,7 @@ const TICK_Y = [1097, 1044, 991, 938, 885, 832, 779, 726, 673, 620];
 // 間距圖：曲線畫出時每 4 格留一個淡點
 const SPACING = beatsFrom(BEND_AT, 16, 4); // 1110…1170
 const TIP_BEATS = [1200, 1230, 1260, 1290];
+const SLIDE = TR.slideS3; // S3 往左甩出（1064–1080），在 S4 上層重畫
 
 // 軸線頭（畫出進度）
 const vHead = (f: number) => lerp(CH.base, CH.top, prog(f, 1080, 20, E.outExpo)); // 縱軸由下往上
@@ -74,7 +78,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 
 	/* ---------- 端點星芒 ---------- */
 	const rays = sparkRays(g, TIP_AT - 3, 0.5, 14);
-	const tipPulse = pulseAt(g, TIP_BEATS.map((b) => b - 2), 10, 0.3);
+	const tipPulse = pulseAt(g, TIP_BEATS.map((b) => b - 2), 10, 0.3) * pulseAt(g, [TIP_AT - 3], 16, 0.7);
 	const tipSpin = -40 * (1 - prog(g, TIP_AT - 3, 24, E.outExpo)) + 0.25 * Math.max(0, g - TIP_AT);
 	const tipCore = 6 * prog(g, TIP_AT - 3, 8, E.outBack);
 
@@ -197,7 +201,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 						{/* 1170 端點星芒＋震波 */}
 						<Ring cx={TIP.x} cy={TIP.y} f={g} start={TIP_AT - 1} dur={36} r0={10} r1={120} w0={3} color={C.accent} />
 						{g >= TIP_AT - 3 ? (
-							<Spark cx={TIP.x} cy={TIP.y} size={48 * tipPulse * 1.0} rays={rays} color={C.accent} rotate={tipSpin} core={tipCore} rayWidth={0.13} />
+							<Spark cx={TIP.x} cy={TIP.y} size={48 * tipPulse} rays={rays} color={C.accent} rotate={tipSpin} core={tipCore} rayWidth={0.13} />
 						) : null}
 						{TIP_BEATS.map((b) => (
 							<Ring key={b} cx={TIP.x} cy={TIP.y} f={g} start={b - 1} dur={26} r0={14} r1={52} w0={1.5} color={alpha(C.ink, 0.5)} />
@@ -274,6 +278,14 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 					</Abs>
 				</AbsoluteFill>
 			</Push>
+
+			{/* 整合修正：Master 的 z-index 讓 S4（108）疊在 S3（107）上面，S3 往左甩出整段被蓋掉。
+			    1064–1080 在 S4 最上層用同一個 OutWrap／同一組轉場參數重畫 S3 甩出，S4 從右邊露出來。 */}
+			{SLIDE.type === 'slide' && g < SLIDE.t1 ? (
+				<OutWrap f={g} tr={SLIDE}>
+					<S3 from={from} host />
+				</OutWrap>
+			) : null}
 		</AbsoluteFill>
 	);
 };
