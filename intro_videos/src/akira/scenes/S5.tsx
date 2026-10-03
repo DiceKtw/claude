@@ -102,11 +102,11 @@ export const S5: React.FC<SceneProps> = ({from}) => {
 
 				{/* 金句 */}
 				<FadeRise f={g} start={T_L1} {...ENTER} fadeOut={out(0)} style={{...row, top: Y_L1}}>
-					<div style={{fontFamily: F.sans, fontWeight: 700, fontSize: 84, lineHeight: 1.2, color: C.paper, whiteSpace: 'pre'}}>剪的不是頭髮，</div>
+					<div style={{fontFamily: F.sans, fontWeight: 700, fontSize: 84, lineHeight: 1.2, color: C.paper, whiteSpace: 'pre'}}>想換髮型，</div>
 				</FadeRise>
 				<FadeRise f={g} start={T_L2} {...ENTER} fadeOut={out(1)} style={{...row, top: Y_L2}}>
 					<div style={{fontFamily: F.sans, fontWeight: 700, fontSize: 84, lineHeight: 1.2, color: C.paper, whiteSpace: 'pre'}}>
-						是你<span style={{color: C.accent}}>想成為的樣子</span>。
+						先讓 <span style={{color: C.accent}}>Akira</span> 看看。
 					</div>
 				</FadeRise>
 

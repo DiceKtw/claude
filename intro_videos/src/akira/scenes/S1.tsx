@@ -42,7 +42,7 @@ const TYPE_GUIDES = [
 	{y: 695, at: 222},
 ];
 const ROWS: {label: string; value: string}[] = [
-	{label: 'OWNER ', value: '川沙龍'}, // 尾端空白：SpecRow 用估計字寬算引線起點，拉丁字比估計寬，補一格避免引線貼字
+	{label: '沙龍', value: '川沙龍'},
 	{label: '專長', value: '美感・髮型設計'},
 	{label: '客人', value: '非常多'},
 	{label: '經驗', value: '美髮知識豐富'},
@@ -130,7 +130,7 @@ export const S1: React.FC<SceneProps> = ({from}) => {
 							transform: `translateY(${(1 - sP) * 16}px)`,
 						}}
 					>
-						川沙龍 老闆
+						川沙龍
 					</div>
 				</div>
 

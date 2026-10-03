@@ -15,7 +15,7 @@ const HERO_TOP = 448; // 字面上緣≈478（離細線 38）
 const SUB_TOP = 740; // 跟名字留 40 左右的氣口
 const SPARK = {x: 880, y: 486, size: 64};
 const ROWS = [
-	{index: '01', label: '身分', value: '雁沙龍 老闆'},
+	{index: '01', label: '沙龍', value: '雁沙龍'},
 	{index: '02', label: '角色', value: '美髮人的教練'},
 	{index: '03', label: '專長', value: '網路行銷・店務經營'},
 	{index: '04', label: '目標', value: '幫美髮人提高收入'},
@@ -70,7 +70,7 @@ export const S1: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 					<div style={{position: 'absolute', left: X, top: SUB_TOP}}>
 						<MaskRise
 							segments={[
-								{text: '雁沙龍 老闆'},
+								{text: '雁沙龍'},
 								{text: '　／　', color: C.muted},
 								{text: '美髮人的教練', color: C.accent},
 							]}
