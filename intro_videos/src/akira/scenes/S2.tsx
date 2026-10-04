@@ -206,11 +206,11 @@ export const S2: React.FC<SceneProps> = ({from}) => {
 
 				{/* 文案 */}
 				<div style={{position: 'absolute', left: TX, top: TY1}}>
-					<MaskRise segments="他看的不只是頭髮，" start={L1} f={g} size={72} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
+					<MaskRise segments="適不適合你，" start={L1} f={g} size={72} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
 				</div>
 				<div style={{position: 'absolute', left: TX, top: TY2}}>
 					<MaskRise
-						segments={[{text: '是'}, {text: '整體比例', color: C.accent, weight: 700}]}
+						segments={[{text: '他'}, {text: '一看就知道', color: C.accent, weight: 700}, {text: '。'}]}
 						start={L2}
 						f={g}
 						size={72}

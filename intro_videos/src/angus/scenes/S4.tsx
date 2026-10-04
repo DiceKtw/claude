@@ -274,7 +274,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 				<AbsoluteFill style={{transform: `translateX(${textDx.toFixed(2)}px)`}}>
 					<Abs x={110} y={398}>
 						<MaskRise
-							segments="收入、客戶、業績，"
+							segments="會剪，"
 							start={LINE1_AT - 4}
 							f={g}
 							size={84}
@@ -287,7 +287,7 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 					</Abs>
 					<Abs x={110} y={494}>
 						<Marker p={markP} size={84} color={C.accent}>
-							<MaskRise segments="一起往上" start={LINE2_AT - 4} f={g} size={84} color={C.ink} weight={900} family={F.display} stagger={3} />
+							<MaskRise segments="也要會賣。" start={LINE2_AT - 4} f={g} size={84} color={C.ink} weight={900} family={F.display} stagger={3} />
 						</Marker>
 					</Abs>
 				</AbsoluteFill>
