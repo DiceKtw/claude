@@ -7,6 +7,8 @@ import subprocess, sys
 import numpy as np
 
 src = sys.argv[1]
+# 選用：略過的格數區間（例如細線掃場，線每格移動會被誤判成殘影），格式 216-240,936-960
+IGN = [tuple(map(int, r.split('-'))) for r in (sys.argv[2].split(',') if len(sys.argv) > 2 and sys.argv[2] else [])]
 W, H = 270, 480
 raw = subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', src, '-vf', f'scale={W}:{H}:flags=area,format=gray',
                       '-f', 'rawvideo', '-'], capture_output=True).stdout
@@ -25,6 +27,8 @@ for i in range(1, len(g) - 1):
     a, b, s = c(i - 1, i), c(i, i + 1), c(i - 1, i + 1)
     flash = min(a, b) > 400 and s < 0.35 * min(a, b)
     ghost = top[i] > max(top[i - 1], top[i + 1]) + 30
+    if any(a0 <= i <= a1 for a0, a1 in IGN):
+        continue
     if flash or ghost:
         bad.append((i, 'flash' if flash else '', 'top-ghost' if ghost else ''))
 print('可疑格：', bad if bad else '無')
