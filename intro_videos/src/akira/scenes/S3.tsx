@@ -133,7 +133,7 @@ export const S3: React.FC<SceneProps> = ({from}) => {
 				</div>
 				<div style={{position: 'absolute', left: 0, top: TY2, width: 1080, display: 'flex', justifyContent: 'center'}}>
 					<MaskRise
-						segments={[{text: '變成一個'}, {text: '適合你', color: C.accent, weight: 700}, {text: '的答案'}]}
+						segments={[{text: '變成一個讓你'}, {text: '驚艷', color: C.accent, weight: 700}, {text: '的答案。'}]}
 						start={L2}
 						f={g}
 						size={64}

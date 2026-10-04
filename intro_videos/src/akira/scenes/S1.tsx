@@ -51,8 +51,8 @@ const TYPE_GUIDES = [
 	{y: 695, at: 222},
 ];
 const ROWS: {label: string; value: string}[] = [
-	{label: '沙龍', value: '川沙龍'},
-	{label: '專長', value: '美感・髮型設計'},
+	{label: '美感', value: '敏銳'},
+	{label: '專長', value: '髮型設計'},
 	{label: '客人', value: '非常多'},
 	{label: '經驗', value: '美髮知識豐富'},
 ];

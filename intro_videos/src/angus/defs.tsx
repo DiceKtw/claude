@@ -44,9 +44,9 @@ export const angusOverlay = (f: number) => (
 				{from: 240, num: '01', label: '檔案'},
 				{from: 600, num: '02', label: '行銷'},
 				{from: 840, num: '03', label: '經營'},
-				{from: 1080, num: '04', label: '成果'},
+				{from: 1080, num: '04', label: '目標'},
 				{from: 1320, num: '05', label: '關鍵字'},
-				{from: 1440, num: '06', label: '聯絡'},
+				{from: 1440, num: '06', label: '收尾'},
 			]}
 			showIndex={false}
 			hideFrom={1772}

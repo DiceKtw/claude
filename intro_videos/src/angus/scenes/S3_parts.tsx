@@ -13,7 +13,7 @@ export const FLIP_AT = [900, 930, 960] as const; // 翻到正面那一格（啪�
 export const CARDS = [
 	{n: '01', big: '客源', small: '客人從哪來'},
 	{n: '02', big: '回客', small: '怎麼回來'},
-	{n: '03', big: '客單', small: '怎麼多花'},
+	{n: '03', big: '客單', small: '一次花多少'},
 ] as const;
 
 const DROP_H = 120;

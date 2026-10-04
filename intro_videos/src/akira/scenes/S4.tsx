@@ -178,11 +178,11 @@ export const S4: React.FC<SceneProps> = ({from}) => {
 				{/* 文案 */}
 				<AbsoluteFill style={{transform: `translateX(${txtDx}px)`}}>
 					<div style={{position: 'absolute', left: TX, top: TY1}}>
-						<MaskRise segments="客人一直回來，" start={L1} f={g} size={68} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
+						<MaskRise segments="剪過一次的客人，" start={L1} f={g} size={68} color={C.paper} weight={500} family={F.sans} quiet stagger={3} dur={16} lineHeight={1.18} />
 					</div>
 					<div style={{position: 'absolute', left: TX, top: TY2}}>
 						<MaskRise
-							segments={[{text: '是因為'}, {text: '信任', color: C.accent, weight: 700}]}
+							segments={[{text: '下次還是'}, {text: '找他', color: C.accent, weight: 700}, {text: '。'}]}
 							start={L2}
 							f={g}
 							size={68}

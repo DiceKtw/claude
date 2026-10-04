@@ -30,7 +30,7 @@ export const akiraOverlay = (f: number) => (
 				{from: 240, num: '01', label: '檔案'},
 				{from: 600, num: '02', label: '美感'},
 				{from: 960, num: '03', label: '經驗'},
-				{from: 1200, num: '04', label: '信任'},
+				{from: 1200, num: '04', label: '回頭客'},
 			]}
 			hideFrom={1416}
 			hideDur={24}

@@ -74,19 +74,9 @@ export const S1: React.FC<SceneProps & {host?: boolean}> = ({from, host}) => {
 						<MaskRise segments="安格斯" start={266} f={g} size={230} color={C.ink} weight={900} family={F.display} stagger={4} />
 					</div>
 					<div style={{position: 'absolute', left: X, top: SUB_TOP, display: 'flex'}}>
-						<MaskRise
-							segments={[{text: '雁沙龍'}, {text: ' ／ ', color: C.muted}]}
-							start={300}
-							f={g}
-							size={46}
-							color={C.ink}
-							weight={700}
-							family={F.sans}
-							stagger={1}
-							dur={16}
-						/>
+						{/* 10/3：副標只留「美髮人的教練」（雁沙龍在規格列 01 已出現，避免同畫面重複） */}
 						<Marker p={markP} size={46} color={C.accent}>
-							<MaskRise segments="美髮人的教練" start={306} f={g} size={46} color={C.ink} weight={700} family={F.sans} stagger={1} dur={16} />
+							<MaskRise segments="美髮人的教練" start={300} f={g} size={46} color={C.ink} weight={700} family={F.sans} stagger={1} dur={16} />
 						</Marker>
 					</div>
 				</AbsoluteFill>
