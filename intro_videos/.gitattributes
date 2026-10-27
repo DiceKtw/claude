@@ -1,0 +1,16 @@
+# Windows 拉下來時不要把腳本換成 CRLF（bash 會壞）
+*.sh   text eol=lf
+*.py   text eol=lf
+*.mjs  text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.json text eol=lf
+*.md   text eol=lf
+*.mp4   binary
+*.mov   binary
+*.wav   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.woff2 binary
+*.ttf   binary

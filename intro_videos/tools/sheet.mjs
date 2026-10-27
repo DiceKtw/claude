@@ -15,7 +15,9 @@ if (!entry || !out) {
 	console.error('用法見檔頭註解');
 	process.exit(1);
 }
-const BROWSER = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
+// 雲端 Linux 用內建 Chromium；Windows／Mac 沒有這個路徑 → null，Remotion 自動下載
+const CLOUD_CHROMIUM = '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
+const BROWSER = fs.existsSync(CLOUD_CHROMIUM) ? CLOUD_CHROMIUM : null;
 let frames;
 let cols = 6;
 let scale = 0.3;
@@ -35,7 +37,7 @@ if (framesArg) {
 }
 
 const serveUrl = await bundle({entryPoint: path.resolve(entry), onProgress: () => {}});
-const browser = await openBrowser('chrome', {browserExecutable: BROWSER, chromiumOptions: {gl: 'swangle'}});
+const browser = await openBrowser('chrome', {browserExecutable: BROWSER, chromiumOptions: BROWSER ? {gl: 'swangle'} : {}});
 const comp = await selectComposition({serveUrl, id: compId, puppeteerInstance: browser}).catch(async () => {
 	const {getCompositions} = await import('@remotion/renderer');
 	const all = await getCompositions(serveUrl, {puppeteerInstance: browser});
@@ -58,13 +60,21 @@ if (framesArg) {
 	console.log(files.join('\n'));
 	process.exit(0);
 }
-// 每張加上格數標籤，再拼成 cols 欄的總表
+// 每張加上格數標籤，再拼成 cols 欄的總表（標籤字型：依序找雲端 Linux／Windows／Mac 上存在的字型檔）
+const LABEL_FONT = [
+	'/usr/share/fonts/truetype/jetbrains-mono/JetBrainsMono-Bold.ttf',
+	'C:/Windows/Fonts/consolab.ttf',
+	'C:/Windows/Fonts/arial.ttf',
+	'/System/Library/Fonts/Menlo.ttc',
+	'/System/Library/Fonts/Supplemental/Arial.ttf',
+].find((p) => fs.existsSync(p));
+const fontOpt = LABEL_FONT ? `fontfile='${LABEL_FONT.replace(/:/g, '\\:')}':` : '';
 const labeled = [];
 for (const file of files) {
 	const f = Number(path.basename(file).slice(1, 5));
 	const lf = file.replace('.png', '_l.png');
 	execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', file, '-vf',
-		`pad=iw+6:ih+34:3:31:0x777777,drawtext=fontfile=/usr/share/fonts/truetype/jetbrains-mono/JetBrainsMono-Bold.ttf:text='f${f}  ${(f / 60).toFixed(2)}s':x=6:y=6:fontsize=20:fontcolor=white`, lf]);
+		`pad=iw+6:ih+34:3:31:0x777777,drawtext=${fontOpt}text='f${f}  ${(f / 60).toFixed(2)}s':x=6:y=6:fontsize=20:fontcolor=white`, lf]);
 	labeled.push(lf);
 }
 const rows = Math.ceil(labeled.length / cols);
