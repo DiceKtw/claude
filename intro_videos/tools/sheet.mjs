@@ -51,6 +51,8 @@ for (const f of frames) {
 	files.push(file);
 }
 await browser.close({silent: true});
+// 打包暫存（每次約 45 MB）用完就刪，避免 /tmp 塞滿
+fs.rmSync(serveUrl, {recursive: true, force: true});
 
 if (framesArg) {
 	console.log(files.join('\n'));

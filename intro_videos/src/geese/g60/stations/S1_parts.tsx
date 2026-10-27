@@ -2,8 +2,9 @@
 import React from 'react';
 import {DirBlur} from '../../../lib/components';
 import {E, Ease, clamp, lerp, prog} from '../../../lib/motion';
-import {F, G} from '../../theme';
-import {camVelocity} from '../camera';
+import {F, G, READ} from '../../theme';
+import {camVelocity, camera} from '../camera';
+import {ST} from '../timeline';
 
 /** DirBlur 開模糊時 filter 會變成絕對定位的參考框：一律撐滿父框，開關模糊時字才不會跳位 */
 export const FULL: React.CSSProperties = {position: 'absolute', left: 0, top: 0, width: '100%', height: '100%'};
@@ -36,15 +37,57 @@ export const backOut =
 		return 1 + (s + 1) * u * u * u + s * u * u;
 	};
 
-/** 鏡頭移站時（每格位移上百 px），站內的字跟著模糊；停留慢漂時不模糊。
- *  移站方向是斜的（700, 1000），等向的 CSS blur 就夠像方向模糊，而且比 SVG filter 快很多。
- *  box＝這一站字的範圍（站內座標）；active=false（字還沒出來）時不開 filter，省算圖。 */
+/** 移鏡模糊係數（每格位移 px → 模糊 stdDeviation px）：站點的字、紋理（Texture.tsx）共用同一個值，
+ *  同一格裡字和紋理糊得一樣多，才會讀成「在動」而不是「失焦」。 */
+export const MOVE_BLUR_K = 0.15;
+
+/** 畫面四角這一格移動了幾 px（拉遠時縮放＋平移的合成速度） */
+const edgeSpeed = (f: number) => {
+	const a = camera(f - 0.5);
+	const b = camera(f + 0.5);
+	let m = 0;
+	for (const [sx, sy] of [
+		[0, 0],
+		[1080, 0],
+		[0, 1920],
+		[1080, 1920],
+	]) {
+		const wx = a.x + (sx - READ.cx) / a.zoom;
+		const wy = a.y + (sy - READ.cy) / a.zoom;
+		m = Math.max(m, Math.hypot(READ.cx + (wx - b.x) * b.zoom - sx, READ.cy + (wy - b.y) * b.zoom - sy));
+	}
+	return m;
+};
+
+/** 拉遠揭曉最快那幾格（f≈2784–2840，畫面四角每格移 20–99px）的等向模糊（畫面 px，最多約 8px）；其他時候 0 */
+export const revealBlurPx = (f: number) => {
+	if (f < ST.REVEAL.from + 70 || f > ST.REVEAL.from + 150) return 0;
+	const sp = edgeSpeed(f);
+	return sp > 20 ? 0.08 * sp : 0;
+};
+
+/** 這一格世界圖層要帶的模糊（世界座標的 stdDeviation，x／y）：
+ *  站與站移鏡＝順著鏡頭方向（|v|×MOVE_BLUR_K）；拉遠揭曉最快那幾格＝等向（revealBlurPx／zoom）。
+ *  move=false 時只算拉遠那段（給還沒進場或不該帶移鏡模糊的字）。 */
+export const moveBlurXY = (f: number, zoom: number, move = true) => {
+	if (f < ST.REVEAL.from - 20) {
+		if (!move) return {x: 0, y: 0};
+		const v = camVelocity(f);
+		return {x: (Math.abs(v.vx) * MOVE_BLUR_K) / zoom, y: (Math.abs(v.vy) * MOVE_BLUR_K) / zoom};
+	}
+	const r = revealBlurPx(f) / zoom;
+	return {x: r, y: r};
+};
+
+/** 鏡頭移站時（每格位移上百 px），站內的字跟著鏡頭方向模糊；停留慢漂時不模糊。
+ *  box＝這一站字的範圍（站內座標）；active=false（字還沒出來）時不帶移鏡模糊，省算圖（拉遠那幾格照樣模糊）。 */
 export const CamBlur: React.FC<{f: number; box: Box; active: boolean; children: React.ReactNode}> = ({f, box, active, children}) => {
-	const v = active ? camVelocity(f) : {vx: 0, vy: 0};
-	const r = Math.min(24, Math.hypot(v.vx, v.vy) * 0.07);
+	const b = moveBlurXY(f, camera(f).zoom, active);
 	return (
-		<div style={{position: 'absolute', left: box.x, top: box.y, width: box.w, height: box.h, filter: r > 0.3 ? `blur(${r.toFixed(2)}px)` : undefined}}>
-			<div style={{position: 'absolute', left: -box.x, top: -box.y}}>{children}</div>
+		<div style={{position: 'absolute', left: box.x, top: box.y, width: box.w, height: box.h}}>
+			<DirBlur x={b.x} y={b.y} style={FULL}>
+				<div style={{position: 'absolute', left: -box.x, top: -box.y, width: 0, height: 0}}>{children}</div>
+			</DirBlur>
 		</div>
 	);
 };
@@ -108,18 +151,18 @@ export const FlowStair: React.FC<{
 	const gy1 = r2.y + size * 1.3;
 	const drop = prog(f, t.gateIn, 7, E.outExpo);
 	const pull = prog(f, t.gateOut, 6, E.inExpo); // 抽掉：慢起、最後一下猛抽
-	const bow = 6 * Math.sin(Math.PI * clamp((f - t.hit) / 9)) * (f >= t.hit ? 1 : 0);
+	const bow = 10 * Math.sin(Math.PI * clamp((f - t.hit) / 9)) * (f >= t.hit ? 1 : 0);
 	const gyEnd = lerp(gy0, gy1, drop * (1 - pull));
 	const gyTop = gy0;
 
-	// 「服務」：搶跑（加速）→ 撞線 → 彈回 6px → 往前擠 → 線抽掉後衝進位置（過衝回彈）
+	// 「服務」：搶跑（加速）→ 撞線 → 彈回 10px → 往前擠 → 線抽掉後衝進位置（過衝回彈）
 	const inkR = cw * 2 - size * 0.16; // 字墨右緣（相對字框左緣）
-	const contactX = gx - 3 - inkR;
+	const contactX = gx - 4 - inkR; // 細線 6px：線的左緣在 gx−3，再留 1px
 	const startX = contactX - 92;
 	let sx: number;
 	if (f < t.hit) sx = lerp(startX, contactX, prog(f, t.rush, t.hit - t.rush, E.inCubic));
 	else if (f < t.land - 4) {
-		const back = prog(f, t.hit, 5, E.outCubic) * 6;
+		const back = prog(f, t.hit, 5, E.outCubic) * 10;
 		const creep = prog(f, t.hit + 5, t.land - 4 - (t.hit + 5), E.inOutSine) * 3;
 		sx = contactX - back + creep;
 	} else {
@@ -148,7 +191,7 @@ export const FlowStair: React.FC<{
 						d={`M ${gx} ${gyTop} Q ${gx + bow * 2} ${((gyTop + gyEnd) / 2 + (gyEnd - gyTop) * 0.22).toFixed(2)} ${gx} ${gyEnd.toFixed(2)}`}
 						fill="none"
 						stroke={G.ink}
-						strokeWidth={4}
+						strokeWidth={6}
 						strokeLinecap="round"
 					/>
 				</svg>

@@ -26,17 +26,22 @@ ensureGeeseFonts([...ALL_TEXT, COVER_SUB]);
 const COVER_F = 2950;
 const STATIONS = [S1, S2, S3, S4, S5, S6, S7, S8];
 
-// 開口：頂點在畫面 (904, 1127)；y 1000 時上臂內緣約 x 688，y 1253 時下臂內緣約 x 686。
-// 字塊左緣對齊閱讀窗左緣、上下置中在頂點高度，右緣離筆刷內緣都留 75px 以上。
+// 第 1 輪修正：IG 個人頁 3:4 九宮格（一格約 129pt 寬）裡副標原本只剩 5.5pt 讀不出來 →
+// 副標拆成三行放大到 90px（九宮格裡約 10.7pt），三行全部放在「>」的開口裡：
+//   雁沙龍（150px／900）／去之前／會想知道的／8 件事（90px／500，「8」用 Anybody 900、117px）。
+// 整張地圖往下移 36px（3:4 裁切 y 240–1680 的上緣不再切到「先報價」），開口跟著往下 36px：
+// 開口內緣（移動後）約 y 936→x 604、y 1016→663、y 1336→661、y 1416→600，字塊 x 96–546、y 926–1410，每一處都留 50px 以上。
+const WORLD_DY = 36;
 const X = READ.left + 6;
-const TITLE = 170; // 3 字 → 510px（約畫寬 47%）
-const SUB = 46;
-const TOP = 1000;
+const TITLE = 150; // 3 字 → 450px
+const SUB = 90;
+const TOP = 890 + WORLD_DY;
 
 export const Cover: React.FC = () => {
 	const f = COVER_F;
 	const cam = camera(f);
 	const [pre, post] = COVER_SUB.split(' 8 ');
+	const subLines = [pre.slice(0, 3), pre.slice(3)]; // 去之前／會想知道的
 	return (
 		<AbsoluteFill lang="zh-Hant-TW" style={{background: G.yellow}}>
 			{/* 拉遠後的整張字地圖（世界圖層，跟影片 f2950 同一個鏡頭） */}
@@ -46,7 +51,9 @@ export const Cover: React.FC = () => {
 					left: 0,
 					top: 0,
 					transformOrigin: '0 0',
-					transform: `translate(${(READ.cx - cam.x * cam.zoom).toFixed(2)}px, ${(READ.cy - cam.y * cam.zoom).toFixed(2)}px) scale(${cam.zoom.toFixed(5)})`,
+					transform: `translate(${(READ.cx - cam.x * cam.zoom).toFixed(2)}px, ${(READ.cy + WORLD_DY - cam.y * cam.zoom).toFixed(2)}px) scale(${cam.zoom.toFixed(5)})`,
+					// 合成層裡的文字用灰階反鋸齒（不然字邊有偏橘／偏綠的 LCD 色邊，IG 再壓一次會更明顯）
+					willChange: 'transform',
 				}}
 			>
 				<Texture f={f} cam={cam} />
@@ -54,13 +61,17 @@ export const Cover: React.FC = () => {
 					<C key={i} f={f} cam={cam} />
 				))}
 			</div>
-			{/* 封面兩行字：放在「>」的開口裡 */}
-			<div style={{position: 'absolute', left: X, top: TOP, color: G.ink, whiteSpace: 'pre'}}>
+			{/* 封面字：放在「>」的開口裡 */}
+			<div style={{position: 'absolute', left: X, top: TOP, color: G.ink, whiteSpace: 'pre', willChange: 'transform'}}>
 				<div style={{fontFamily: F.round, fontWeight: 900, fontSize: TITLE, lineHeight: 1}}>{C60.END.name}</div>
-				<div style={{marginTop: 30, fontFamily: F.round, fontWeight: 500, fontSize: SUB, lineHeight: 1.2, display: 'flex', alignItems: 'baseline'}}>
-					<span>{pre}</span>
-					<span style={{fontFamily: F.num, fontWeight: 900, fontSize: SUB * 1.18, margin: `0 ${(SUB * 0.22).toFixed(1)}px`}}>8</span>
-					<span>{post}</span>
+				<div style={{marginTop: 24, fontFamily: F.round, fontWeight: 500, fontSize: SUB, lineHeight: 1.15}}>
+					{subLines.map((t, i) => (
+						<div key={i}>{t}</div>
+					))}
+					<div style={{display: 'flex', alignItems: 'baseline'}}>
+						<span style={{fontFamily: F.num, fontWeight: 900, fontSize: SUB * 1.3, lineHeight: 1, marginRight: (SUB * 0.22).toFixed(1) + 'px'}}>8</span>
+						<span>{post}</span>
+					</div>
 				</div>
 			</div>
 		</AbsoluteFill>

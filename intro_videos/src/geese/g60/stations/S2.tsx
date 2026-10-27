@@ -25,7 +25,7 @@ export const S2: React.FC<StationProps> = ({f}) => {
 	return (
 		<StationBox id="S2">
 			<CamBlur f={f} box={{x: 44, y: 316, w: 640, h: 276}} active={f >= HIT - 12 && leave}>
-				<FanIn f={f} text={C60.S2.big} hit={HIT} x={60} y={326} size={228} enter={1000} squeeze={40} narrow={{'・': 0.6}} />
+				<FanIn f={f} text={C60.S2.big} hit={HIT} x={60} y={326} size={228} enter={1000} squeeze={24} narrow={{'・': 0.6}} />
 			</CamBlur>
 			<CamBlur f={f} box={{x: 104, y: 598, w: 460, h: 92}} active={f >= SUB - 4 && leave}>
 				<Rise f={f} at={SUB - 3} style={{position: 'absolute', left: 112, top: 604}}>

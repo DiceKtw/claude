@@ -7,13 +7,16 @@ import React from 'react';
 import {C60} from '../../copy';
 import {F, G, bar60, b60} from '../../theme';
 import {Rise, StationBox, StationProps} from '../kit';
+import {ST} from '../timeline';
 import {FlockDrop, TexFlash} from './S4_parts';
 import {Away} from './Away';
 import {MoveBlur} from './S5_parts';
 
+// 第 1 輪修正：小字跟著鏡頭到站（from+16），第一個小雁陣提前到第 2 拍落地（跟其他站「第 2 拍主字」一致），
+// 到站後不再有 1 秒只剩紋理的空檔。
 const T = {
-	lead: bar60(8, 2), // f932「店裡還有」
-	a: bar60(8, 3), // f964「廁所備衛生棉」落地
+	lead: ST.S4.from + 16, // f916「店裡還有」：鏡頭到站
+	a: bar60(8, 2), // f932「廁所備衛生棉」落地
 	b: bar60(9, 1), // f1029「零食櫃」落地（小節 9 正拍）
 } as const;
 
@@ -24,10 +27,10 @@ const B_SIZE = 110;
 // 第二行往右：右緣比第一行再多出 30px（x 420–750）；上緣離第一行夠遠，落下路徑（上方 −120px 起）不會穿過第一行
 const B = {size: B_SIZE, y: 696, x: A.x + Array.from(C60.S4.a).length * A.size + 30 - Array.from(C60.S4.b).length * B_SIZE};
 
-// 反拍點綴：每半拍一個紋理詞亮起（全段 6 次）。左右交替、一路往下，最後停在右下角（下一站的方向）。
+// 反拍點綴：每半拍一個紋理詞亮起（全段 5 次）。左右交替、一路往下，最後停在右下角（下一站的方向）。
 // 位置都避開兩個小雁陣的落下路徑，也不貼在文案行尾（免得被讀成同一句）。
+// 第 1 輪修正：拿掉 beat 29.5 的「護」（緊接在「店裡還有」之後亮，會被讀成「店裡還有護…」），從第一行落地後才開始閃。
 const FLASH: {beat: number; text: string; x: number; y: number}[] = [
-	{beat: 29.5, text: C60.TEXTURE[6], x: 500, y: 168}, // f948 護（右上）
 	{beat: 30.5, text: C60.TEXTURE[3], x: 150, y: 604}, // f980 剪（左中，第一行落地後）
 	{beat: 31.5, text: C60.TEXTURE[2], x: 590, y: 322}, // f1013 服務（右上）
 	{beat: 32.5, text: C60.TEXTURE[5], x: 250, y: 842}, // f1045 染（左下，第二行落地後）

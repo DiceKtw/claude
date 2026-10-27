@@ -70,22 +70,31 @@ export const FlockDrop: React.FC<{
 	);
 };
 
-/** 紋理詞點亮：一個工作語言紋理詞（34px、500、深黃）在 at 那一格亮成墨色，停 6 格再退回深黃，然後淡回紋理裡。
- *  用 SVG 文字＋雁黃描邊（paint-order）把底下的紋理字讓開一圈，墨字才乾淨。 */
+/** 紋理詞點亮：一個工作語言紋理詞（34px、500、深黃）在 at 那一格亮成墨色——同時放大到 1.5 倍、字重 500→900
+ *  （4 格 outBack 進、停 6 格、8 格退回），再淡回紋理裡。手機上 34px 只剩 12px，只變色看不到；變大變粗才看得出「點亮」。
+ *  用 SVG 文字＋雁黃描邊（paint-order）把底下的紋理字讓開一圈，墨字才乾淨。縮放以字的中心為準，位置仍釘在紋理裡那個詞上。 */
 export const TexFlash: React.FC<{f: number; at: number; text: string; x: number; y: number; size?: number}> = ({f, at, text, x, y, size = 34}) => {
 	if (f < at - 14 || f > at + 34) return null;
-	const on = prog(f, at - 2, 2, E.outExpo);
-	const off = prog(f, at + 6, 10, E.outExpo);
-	const color = mixHex(G.yellowDeep, G.ink, on * (1 - off));
+	const on = prog(f, at - 4, 4, E.outBack);
+	const off = prog(f, at + 6, 8, E.outExpo);
+	const k = Math.max(0, on * (1 - off));
+	const color = mixHex(G.yellowDeep, G.ink, clamp(k));
 	const op = prog(f, at - 14, 10, E.outExpo) * (1 - prog(f, at + 18, 16, E.inExpo));
-	const w = Math.ceil(size * Math.max(1, Array.from(text).length) * 1.1) + 16;
+	const n = Math.max(1, Array.from(text).length);
+	const w = Math.ceil(size * n * 1.1) + 16;
+	const sc = 1 + 0.5 * k;
+	const weight = Math.round(clamp(500 + 400 * k, 100, 900));
+	// 字墨中心（相對 svg 左上）：x＝8＋半個字寬，y＝基線上方約 0.42em
+	const cx = 8 + (size * n) / 2;
+	const cy = size * 1.15 - size * 0.42;
 	return (
 		<svg width={w} height={size * 1.6} style={{position: 'absolute', left: x - 8, top: y - size * 0.3, overflow: 'visible', opacity: op}}>
 			<text
 				x={8}
 				y={size * 1.15}
+				transform={sc !== 1 ? `translate(${cx.toFixed(2)} ${cy.toFixed(2)}) scale(${sc.toFixed(4)}) translate(${(-cx).toFixed(2)} ${(-cy).toFixed(2)})` : undefined}
 				fontFamily={F.round}
-				fontWeight={500}
+				fontWeight={weight}
 				fontSize={size}
 				fill={color}
 				stroke={G.yellow}

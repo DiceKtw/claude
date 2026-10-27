@@ -4,7 +4,7 @@
 // 版面在模組載入時算一次（固定亂數），每格只決定哪些字看得到、透明度多少。
 import {E, clamp, prog, rng} from '../../../lib/motion';
 import {C60} from '../../copy';
-import {bar60} from '../../theme';
+import {b60} from '../../theme';
 import {ANCHOR, APEX, BAND, BOX, LONG_START, LONG_STROKE, MAP, P, SHORT_END, SHORT_STROKE} from '../world';
 
 export const TEX = {size: 34, weight: 500} as const;
@@ -36,42 +36,44 @@ const SEQ = GROUPS.flatMap((g) => g.map((i, j) => ({text: T[i] as string, gap: j
 type Zone = {id: string; x: number; y: number; w: number; h: number; at: number; kind: 'clear' | 'dim'; m: number};
 const Z = (id: string, x: number, y: number, w: number, h: number, at: number, kind: 'clear' | 'dim' = 'clear', m = 40): Zone => ({id, x, y, w, h, at, kind, m});
 const ZONES_LOCAL: Zone[] = [
-	// S1 先報價／副句／流程
+	// S1 店名小標／先報價／副句／流程
+	Z('S1', 50, 90, 705, 42, 6, 'clear', 12),
 	Z('S1', 50, 240, 612, 228, 22),
-	Z('S1', 100, 502, 676, 68, 61, 'dim', 14),
-	Z('S1', 150, 632, 450, 196, 93, 'clear', 14),
+	Z('S1', 100, 502, 676, 68, 61, 'dim', 40),
+	Z('S1', 150, 632, 500, 224, 93, 'clear', 14),
 	// S2 燙・染／全程設計師操作
 	Z('S2', 60, 326, 600, 250, 281),
 	Z('S2', 112, 604, 430, 80, 318, 'dim', 14),
 	// S3 每個月／附屬句／Mono 小標（斜 3°）／不定期辦活動（樓梯）／像是…
 	Z('S3', 48, 96, 722, 190, 542),
 	Z('S3', 104, 322, 566, 68, 608, 'dim', 14),
-	Z('S3', 160, 420, 590, 84, 673, 'clear', 12),
-	Z('S3', 216, 620, 436, 172, 768, 'clear', 26),
-	Z('S3', 272, 836, 486, 60, 832, 'dim', 14),
-	// S4 店裡還有／廁所備衛生棉／零食櫃
-	Z('S4', 64, 226, 226, 68, 929, 'dim', 14),
-	Z('S4', 120, 440, 600, 100, 955),
+	Z('S3', 160, 420, 600, 84, 673, 'clear', 12),
+	Z('S3', 216, 620, 436, 172, 736, 'clear', 26),
+	Z('S3', 272, 836, 486, 60, 768, 'dim', 40),
+	// S4 店裡還有（整行紋理一起降，免得讀成「店裡還有 剪 燙 染…」）／廁所備衛生棉／零食櫃
+	Z('S4', 64, 226, 726, 68, 913, 'dim', 14),
+	Z('S4', 120, 440, 600, 100, 923),
 	Z('S4', 420, 696, 330, 110, 1020),
-	// S5 GOOGLE／4.9¹★／2,400+ 則評論／註腳
-	Z('S5', 46, 272, 196, 42, 1187, 'clear', 12),
-	Z('S5', 41, 316, 734, 240, 1216),
+	// S5 Google／4.9¹★／2,400+ 則評論／註腳
+	Z('S5', 46, 272, 196, 42, 1171, 'clear', 12),
+	Z('S5', 41, 316, 734, 240, 1186),
 	Z('S5', 214, 560, 562, 90, 1283, 'clear', 26),
 	Z('S5', 46, 772, 620, 40, 1348, 'clear', 12),
-	// S6 附設／夜間洗髮（往左下一字一階）
-	Z('S6', 610, 301, 122, 74, 1572, 'dim', 14),
-	Z('S6', 50, 515, 170, 190, 1604),
-	Z('S6', 220, 475, 170, 190, 1604),
-	Z('S6', 390, 435, 170, 190, 1604),
-	Z('S6', 560, 395, 170, 190, 1604),
+	// S6 附設（80px）／夜間洗髮（往左下一字一階）
+	Z('S6', 300, 285, 470, 90, 1556, 'dim', 14),
+	Z('S6', 50, 515, 170, 190, 1572),
+	Z('S6', 220, 475, 170, 190, 1572),
+	Z('S6', 390, 435, 170, 190, 1572),
+	Z('S6', 560, 395, 170, 190, 1572),
 	// S7 上班／開心／是我們的文化／雁｜生活係髮廊
 	Z('S7', 250, 170, 460, 230, 1955),
 	Z('S7', 190, 402, 460, 230, 1958),
-	Z('S7', 130, 660, 362, 74, 2151, 'dim', 14),
+	Z('S7', 130, 660, 362, 74, 2151, 'dim', 40),
 	Z('S7', 70, 762, 300, 46, 2184, 'clear', 12),
-	// S8 想找你的命定設計師，／歡迎來雁沙龍。
-	Z('S8', 62, 404, 722, 74, 2330, 'clear', 30),
-	Z('S8', 12, 530, 700, 106, 2438),
+	// S8 想找你的命定設計師，（引言）／歡迎來／雁沙龍。
+	Z('S8', 140, 300, 620, 60, 2330, 'clear', 30),
+	Z('S8', 100, 392, 570, 190, 2437),
+	Z('S8', 40, 600, 720, 190, 2440),
 ];
 export type WZone = {x0: number; y0: number; x1: number; y1: number; cx: number; at: number; kind: 'clear' | 'dim'};
 export const ZONES: WZone[] = ZONES_LOCAL.map((z) => {
@@ -156,7 +158,7 @@ const DRY: Dry[] = (() => {
 /* 排字                                                                */
 /* ------------------------------------------------------------------ */
 export type Word = {x: number; w: number; text: string; zone: number; pin: boolean; u: number};
-export type Line = {y: number; words: Word[]; fill: boolean; fillAt: number; dir: 1 | -1};
+export type Line = {y: number; words: Word[]; fill: boolean; fillAt: number; dir: 1 | -1; core?: boolean};
 
 const layoutLine = (y: number, seed: number, fill: boolean): Word[] => {
 	const r = rng(seed);
@@ -203,7 +205,8 @@ const layoutLine = (y: number, seed: number, fill: boolean): Word[] => {
 	return words;
 };
 
-const BEATS21 = [1, 2, 3, 4].map((b) => bar60(21, b)); // 小節 21：紋理變密（替拉遠鋪路）
+// 小節 21：紋理變密（替拉遠鋪路）。第 1 輪修正：每半拍一組（8 組），拉遠前每拍都有東西在長
+const BEATS21 = [0, 1, 2, 3, 4, 5, 6, 7].map((k) => b60(80 + k * 0.5));
 const S8_TOP = ANCHOR.S8.y - BOX.halfH - 280;
 const S8_SPAN = BOX.halfH * 2 + 560;
 
@@ -262,14 +265,38 @@ export const LINES: Line[] = (() => {
 	});
 	fills.forEach((v, i) => {
 		const words = layoutLine(v, 51000 + i * 17, true);
-		// 在站 8 附近的補行：照高度分四組，一拍一組由上往下補（四拍落在小節 21 的四個拍點）
+		// 在站 8 附近的補行：照高度分八組，每半拍一組由上往下補（落在小節 21 的拍點與反拍）
 		const inView = v >= S8_TOP && v <= S8_TOP + S8_SPAN;
-		const g = inView ? clamp(Math.floor(((v - S8_TOP) / S8_SPAN) * 4), 0, 3) : Math.floor(r() * 4);
+		const g = inView ? clamp(Math.floor(((v - S8_TOP) / S8_SPAN) * 8), 0, 7) : Math.floor(r() * 8);
 		const jitter = Math.floor(r() * 4);
 		// 短筆畫（下臂）上的刷向是右 → 左，長筆畫是左 → 右
 		const dir: 1 | -1 = v > APEX.y + 300 ? -1 : 1;
 		lines.push({y: v, words, fill: true, fillAt: BEATS21[g] - 3 + jitter, dir});
 	});
+	lines.sort((a, b) => a.y - b.y);
+
+	// 揭曉補墨（第 1 輪修正）：拉遠到字只剩一層色調時，筆刷核心（離中線 0.62 個半寬以內）再補一層字，
+	// 只補行距 ≥ 80 的空隙（補完行距 ≤ 55，不會疊字）；飛白只留在外側（毛邊與乾筆細帶），「>」才是一道濃墨筆刷而不是淡灰斜紋。
+	// 只在 zoom < 0.62 之後淡進來（Texture.tsx），站點附近停留時完全看不到。
+	const core: Line[] = [];
+	for (let i = 0; i + 1 < lines.length; i++) {
+		const g = lines[i + 1].y - lines[i].y;
+		if (g < 80) continue;
+		const n = 1;
+		for (let k = 1; k <= n; k++) {
+			const v = lines[i].y + (g * k) / (n + 1) + (r() - 0.5) * 8;
+			const words = layoutLine(v, 88000 + i * 31 + k, true).filter((w) => {
+				const c: P = {x: w.x + w.w / 2, y: v - (ASC - DESC) / 2};
+				const a = coord(c, LONG);
+				const b = coord(c, SHORT);
+				const inA = a.t >= -0.02 && a.t <= 1.02 && Math.abs(a.s) < 0.62;
+				const inB = b.t >= -0.02 && b.t <= 1.02 && Math.abs(b.s) < 0.62;
+				return inA || inB;
+			});
+			if (words.length) core.push({y: v, words, fill: false, fillAt: 0, dir: 1, core: true});
+		}
+	}
+	lines.push(...core);
 	lines.sort((a, b) => a.y - b.y);
 	return lines;
 })();

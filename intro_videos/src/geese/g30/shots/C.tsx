@@ -1,10 +1,10 @@
 // 30 秒〈一格一位〉鏡頭 C・名牌（小節 3）：logo 第一次出現
 // f225 硬切：高直排墨框從上方拉門落下（硬切那格正在最快）→ 框停住、裡面的 logo／「雁」因慣性多沉一下再彈回
-// 拍 2「雁沙龍」直排逐字落位；拍 3 英文＋地區 Mono 小標；之後兩區反向微漂
+// 拍 2「雁沙龍」直排逐字落位，錯 6 格英文＋地區（墨色 Mono）；拍 4「雁」被大鼓震一下；兩區反向等速微漂到硬切
 import React from 'react';
 import {Img} from 'remotion';
 import {DirBlur} from '../../../lib/components';
-import {E, clamp, prog} from '../../../lib/motion';
+import {E, clamp} from '../../../lib/motion';
 import {C30} from '../../copy';
 import {F, G} from '../../theme';
 import {Line, SH, ShotProps, VBox, bar30, logoSrc, slideIn} from '../kit';
@@ -15,15 +15,16 @@ const BOX = {x: 236, y: 290, w: 320, h: 830};
 const NAME = {x: 590, y: 300, size: 150};
 const DROP_AT = T0 - 5; // 拉門提前 5 格起跑：最快那格在硬切前一格，硬切那格框已落下大半、還帶著速度
 const NAME_AT = bar30(3, 2); // 253
-const EN_AT = bar30(3, 3); // 281
+const EN_AT = NAME_AT + 6; // 259：跟逐字落下的「雁沙龍」錯 6 格（停留約 1.35 秒）
+const KICK4 = bar30(3, 4); // 309
 
 export const C: React.FC<ShotProps> = ({f}) => {
 	const off = slideIn(f, DROP_AT, 'top', 1200);
 	const vy = slideIn(f + 0.5, DROP_AT, 'top', 1200).y - slideIn(f - 0.5, DROP_AT, 'top', 1200).y;
-	// 框往下停住，裡面的東西多沉一下再彈回
-	const sink = 30 * ring(f - (DROP_AT + 8), 0.33, 8);
-	// 之後：框跟名字反方向慢漂
-	const drift = prog(f, T0 + 12, SH.C.to - T0 - 12, E.inOutSine);
+	// 框往下停住，裡面的東西多沉一下再彈回；拍 4 再被大鼓震一下
+	const sink = 30 * ring(f - (DROP_AT + 8), 0.33, 8) + 12 * ring(f - KICK4, 0.33, 8);
+	// 之後：框跟名字反方向等速慢漂（一路推到硬切，不在切點前停住）
+	const drift = clamp((f - (T0 + 12)) / (SH.C.to - T0 - 12));
 	const logo = logoSrc('ink');
 	const name = Array.from(C30.C.name);
 	const step = NAME.size * 1.04;
@@ -32,7 +33,7 @@ export const C: React.FC<ShotProps> = ({f}) => {
 		<>
 			<PaperFast />
 			{/* 名牌框 */}
-			<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * 14).toFixed(2)}px)`}}>
+			<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * 24).toFixed(2)}px)`}}>
 				<DirBlur y={Math.min(22, Math.abs(vy) * 0.08)} style={{position: 'absolute', left: BOX.x - 20, top: BOX.y + off.y - 20, width: BOX.w + 40, height: BOX.h + 40}}>
 					<VBox x={20} y={20} w={BOX.w} h={BOX.h} fill={G.paper} style={{overflow: 'hidden'}}>
 						<div style={{position: 'absolute', inset: 0, transform: `translateY(${sink.toFixed(2)}px)`}}>
@@ -49,7 +50,7 @@ export const C: React.FC<ShotProps> = ({f}) => {
 				</DirBlur>
 			</div>
 			{/* 雁沙龍：直排逐字落位，由下往上堆（龍→沙→雁，錯 3 格）：每個字往下落時，它上方的格子都還空著，不會疊字 */}
-			<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * -16).toFixed(2)}px)`}}>
+			<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * -28).toFixed(2)}px)`}}>
 				{name.map((ch, i) => {
 					const s = NAME_AT - 3 + (name.length - 1 - i) * 3;
 					if (f < s) return null;
@@ -72,9 +73,9 @@ export const C: React.FC<ShotProps> = ({f}) => {
 				x={90}
 				y={1156}
 				text={C30.C.en}
-				size={34}
+				size={38}
 				weight={500}
-				color={G.pencil}
+				color={G.ink}
 				f={f}
 				at={EN_AT - 2}
 				style={{fontFamily: F.mono, width: 790, textAlign: 'center', letterSpacing: '0.02em'}}

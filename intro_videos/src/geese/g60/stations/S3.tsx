@@ -21,11 +21,12 @@ const T = {
 	sub: bar60(5, 4), // f611 附屬句＋字距第 2 推
 	step3: bar60(6, 1), // f643 字距最後一推（小節 6 正拍，最大一步）
 	tag: bar60(6, 2), // f675 Mono 小標「年度教育課程：」
-	tagA: bar60(6, 3), // f707「剪髮・」
-	tagB: b60(22.5), // f723「燙髮・」（半拍）
-	tagC: bar60(6, 4), // f739「染髮」
-	ev: bar60(7, 1), // f771「不定期辦活動」樓梯落字
-	evSub: bar60(7, 3), // f836「像是剪髮講座、陶藝課」
+	// 第 1 輪修正：後半段整組往前收半小節，最後一行「像是…」才有 1.8 秒可讀（原本只有 0.75 秒）
+	tagA: b60(21.5), // f691「剪髮・」（半拍）
+	tagB: bar60(6, 3), // f707「燙髮・」
+	tagC: b60(22.5), // f723「染髮」（半拍）
+	ev: bar60(6, 4), // f739「不定期辦活動」樓梯落字
+	evSub: bar60(7, 1), // f771「像是剪髮講座、陶藝課」（小節 7 正拍）
 } as const;
 
 const STEP_X = 56; // 樓梯：每往下一行往右錯
@@ -83,13 +84,14 @@ const CourseTag: React.FC<{f: number}> = ({f}) => (
 			left: X0 + STEP_X * 2,
 			top: Y.tag,
 			display: 'flex',
-			opacity: 0.7,
+			opacity: 0.85,
 			transform: 'rotate(3deg)',
 			transformOrigin: '0 50%',
 		}}
 	>
+		{/* 38px、85%、字距 0.04em：這行是真的課程內容，要讀得到（中文不需要 Mono 的 0.12em 字距） */}
 		{TAG_SEGS.map((s, i) => (
-			<MonoTag key={i} f={f} at={TAG_AT[i] - 2} text={s} size={34} color={G.ink} style={{lineHeight: 1.2}} />
+			<MonoTag key={i} f={f} at={TAG_AT[i] - 2} text={s} size={38} color={G.ink} style={{lineHeight: 1.2, letterSpacing: '0.04em'}} />
 		))}
 	</div>
 );

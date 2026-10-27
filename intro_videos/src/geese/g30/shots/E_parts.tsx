@@ -51,11 +51,40 @@ export const Giant: React.FC<{
 	);
 };
 
-/** 常駐標籤：「設計師」小直排墨框（價目表式直角黑框，紙色底，壓在所有東西上面，位置永遠不動） */
+/** 常駐標籤：「設計師」小直排墨框（價目表式直角黑框，紙色底，壓在所有東西上面）。
+ *  小節 5 的四連擊之間釘在右下角不動；小節 6 拍 3、4 分兩段跳到句子裡「設計師」三字的正下方（TAG_E6），F 從那裡接手。 */
 export const TAG = {x: 770, y: 950, w: 100, h: 280} as const;
-export const DesignerTag: React.FC = () => (
-	<VBox x={TAG.x} y={TAG.y} w={TAG.w} h={TAG.h} text={C30.E.tag} size={56} fill={G.paper} border={8} />
-);
+export const TAG_E6 = {x: 376, y: 806} as const;
+export const DesignerTag: React.FC<{x?: number; y?: number; lag?: number; blur?: {x: number; y: number}}> = ({x = TAG.x, y = TAG.y, lag = 0, blur}) => {
+	const box = (
+		<VBox x={0} y={0} w={TAG.w} h={TAG.h} fill={G.paper} border={8} style={{overflow: 'hidden'}}>
+			<div
+				lang="zh-Hant-TW"
+				style={{
+					writingMode: 'vertical-rl',
+					textOrientation: 'upright',
+					fontFamily: F.round,
+					fontWeight: 900,
+					fontSize: 56,
+					color: G.ink,
+					lineHeight: 1.05,
+					letterSpacing: '0.04em',
+					whiteSpace: 'pre',
+					transform: `translateY(${lag.toFixed(2)}px)`,
+				}}
+			>
+				{C30.E.tag}
+			</div>
+		</VBox>
+	);
+	const st: React.CSSProperties = {position: 'absolute', left: x, top: y, width: TAG.w, height: TAG.h};
+	if (!blur || (Math.abs(blur.x) < 0.25 && Math.abs(blur.y) < 0.25)) return <div style={st}>{box}</div>;
+	return (
+		<DirBlur x={blur.x} y={blur.y} style={st}>
+			{box}
+		</DirBlur>
+	);
+};
 
 /** 一列字（價目表的列）：水平、900、墨色可調淡 */
 export const Row: React.FC<{x: number; y: number; a: number; blurY?: number}> = ({x, y, a, blurY = 0}) => {

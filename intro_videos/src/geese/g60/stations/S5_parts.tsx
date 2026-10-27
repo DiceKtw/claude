@@ -4,18 +4,18 @@ import {DirBlur} from '../../../lib/components';
 import {E, Ease, clamp, prog} from '../../../lib/motion';
 import {C60} from '../../copy';
 import {F, G} from '../../theme';
-import {camVelocity} from '../camera';
-import {ST} from '../timeline';
-import {stretchPct} from '../kit';
+import {camera} from '../camera';
+import {moveBlurXY} from './S1_parts';
 
 /** DirBlur 的外框一律撐滿站框，開關模糊時字不會跳位 */
 export const FULL: React.CSSProperties = {position: 'absolute', left: 0, top: 0, width: '100%', height: '100%'};
 
-/** 站與站之間 1 拍移鏡時（每格位移上百 px），站內的字跟著帶方向模糊；停留慢漂、拉遠揭曉時不模糊 */
+/** 站與站之間 1 拍移鏡時（每格位移上百 px），站內的字跟著帶方向模糊；停留慢漂、拉遠揭曉時不模糊。
+ *  係數跟紋理（Texture.tsx）一致（moveBlurXY），字和紋理同一格糊得一樣多；拉遠揭曉最快那幾格也一起糊。 */
 export const MoveBlur: React.FC<{f: number; children: React.ReactNode}> = ({f, children}) => {
-	const v = f < ST.REVEAL.from - 20 ? camVelocity(f) : {vx: 0, vy: 0};
+	const b = moveBlurXY(f, camera(f).zoom);
 	return (
-		<DirBlur x={Math.abs(v.vx) * 0.09} y={Math.abs(v.vy) * 0.09} style={FULL}>
+		<DirBlur x={b.x} y={b.y} style={FULL}>
 			{children}
 		</DirBlur>
 	);
@@ -54,45 +54,79 @@ export const ROW = {
 	starRight: NUM * 2.337 + NOTE_ML + NOTE * 0.38 + STAR_ML + STAR * 0.96,
 } as const;
 
-const DROP = 200; // ★ 從上方 200px 落下
-const STAR_DUR = 16;
+const SLIDE = 260; // ★ 從右側 260px 水平滑進（30 秒片的 ★ 是從上方落下；兩支不用同一個動作）
+const STAR_DUR = 14;
+const JUMP = 70; // drop（f1414）時 ★ 被撐開的 4.9 彈起的高度
 
-/** 主角列：4.9 從字寬 50% 撐到 150%（④字寬伸展，全片唯一），¹ 掛在右上角被撐開的右緣帶著走；
- *  ★ 一拍後從上方落下站上同一條基線（outBack：第一次碰地那格＝拍點，過衝的部分轉成落地壓扁）；
- *  小節 12 每拍「吸一口」：拍點那格字寬縮到 142%，再用一拍慢慢鼓回 150%（像 house 的 sidechain），¹ 和 ★ 跟著右緣被拉回、推出。 */
+/** 主角列：4.9 ¹ ★
+ *  ① 到站後第 2 拍（appearAt）4.9 先以字寬 50% 的窄字浮上來（看得到的東西被撐開才有物理感）；
+ *  ② 拍點前 16 格開始往內吸（50→44%，像彈簧上緊）→ 拍點前 4 格放開，最寬 158% 那一格＝hit，再 20 格回到 150%
+ *     （④字寬伸展，全片唯一）；¹ 掛在右上角跟著右緣走；
+ *  ③ ★ 一拍後從右側水平滑進（outBack：第一次碰到位那格＝starHit，過衝轉成橫向壓扁）；
+ *  ④ 小節 11 濾波上揚（build→drop）：字寬一路吸到 128%、★ 被壓扁到 90%（蓄力）；
+ *     drop 那拍 3 格撐到 162%（最用力那格＝drop），★ 被彈起 70px、在 land 落地壓扁；之後 20 格回到 150%；
+ *  ⑤ 小節 12 其餘三拍往外撐（150→156%），跟著 sidechain 推出去。 */
 export const RatingRow: React.FC<{
 	f: number;
 	x: number;
 	y: number;
-	stretchAt: number; // 字寬伸展起跑格（拍點前 3 格）
-	starHit: number; // ★ 碰地那格（拍點）
-	pumps: readonly number[]; // 小節 12 的四個拍點
-}> = ({f, x, y, stretchAt, starHit, pumps}) => {
+	appearAt: number; // 窄字浮上來的格（拍點前 3 格）
+	hit: number; // 撐到最寬那一格（拍點）
+	starHit: number; // ★ 第一次碰到位那格（拍點）
+	build: number; // 蓄力起點（小節 11 第 3 拍）
+	drop: number; // drop 拍點（小節 12 正拍）
+	land: number; // ★ 彈起後落地（小節 12 第 2 拍）
+	pumps: readonly number[]; // 小節 12 其餘拍點（往外撐）
+}> = ({f, x, y, appearAt, hit, starHit, build, drop, land, pumps}) => {
 	const width = (ff: number) => {
-		const base = stretchPct(ff, stretchAt, 16);
-		let duck = 0;
-		for (const b of pumps) duck = Math.max(duck, prog(ff, b - 2, 2, E.outCubic) * (1 - prog(ff, b, 24, E.inOutSine)));
-		return base - 8 * duck;
+		let w = 50 - 6 * prog(ff, hit - 16, 12, E.inCubic) + 114 * prog(ff, hit - 4, 4, E.outCubic) - 8 * prog(ff, hit, 20, E.outBack);
+		w += -22 * prog(ff, build, drop - 3 - build, E.inCubic) + 34 * prog(ff, drop - 3, 3, E.outExpo) - 12 * prog(ff, drop, 20, E.outBack);
+		let push = 0;
+		for (const b of pumps) push = Math.max(push, prog(ff, b - 2, 2, E.outCubic) * (1 - prog(ff, b, 24, E.inOutSine)));
+		return w + 6 * push;
 	};
 	const s = width(f);
 	// 右緣速度（px／格）→ 橫向模糊；只在撐開那幾格明顯
 	const edgeV = (width(f + 0.5) - width(f - 0.5)) * 0.0138 * NUM;
-	const numOp = clamp((f - (stretchAt - 1)) / 2);
-	const noteOp = clamp((f - (stretchAt + 2)) / 3);
+	const numOp = clamp((f - appearAt + 1) / 4);
+	const numY = 30 * (1 - prog(f, appearAt, 14, E.outExpo));
+	const noteOp = clamp((f - (hit - 3)) / 3);
 
-	// ★ 落下
+	// ★ 從右側滑進
 	const t0 = starHit - hitT(E.outBack) * STAR_DUR;
 	const raw = (ff: number) => E.outBack(clamp((ff - t0) / STAR_DUR));
-	const starY = (ff: number) => -DROP * (1 - Math.min(1, raw(ff)));
-	const over = Math.max(0, raw(f) - 1); // 0 → 0.098
-	const vy = starY(f + 0.5) - starY(f - 0.5);
+	const slideX = (ff: number) => SLIDE * (1 - Math.min(1, raw(ff)));
+	const over = Math.max(0, raw(f) - 1); // 0 → 0.098：碰到位的過衝轉成橫向壓扁
+	// drop：蓄力壓扁 → 彈起（拋物線）→ 落地壓扁
+	const jumpY = (ff: number) => {
+		const t = (ff - (drop - 1)) / (land - (drop - 1));
+		return t > 0 && t < 1 ? -JUMP * 4 * t * (1 - t) : 0;
+	};
+	const squeeze = 0.1 * prog(f, build, drop - 3 - build, E.inCubic) * (1 - prog(f, drop - 3, 3, E.outExpo));
+	const landSq = f >= land ? 1 - prog(f, land, 10, E.outCubic) : 0;
+	const sx = 1 - over * 1.1 + 0.1 * landSq + 0.05 * squeeze;
+	const sy = 1 + over * 0.7 - 0.14 * landSq - squeeze;
+	const vx = slideX(f + 0.5) - slideX(f - 0.5);
+	const vy = jumpY(f + 0.5) - jumpY(f - 0.5);
 	const starOp = clamp((f - t0 + 1) / 2);
 
 	if (numOp <= 0) return null;
 	return (
 		<DirBlur x={Math.abs(edgeV) * 0.1} style={FULL}>
 			<div style={{position: 'absolute', left: x, top: y, display: 'flex', alignItems: 'flex-start', whiteSpace: 'pre', color: G.ink}}>
-				<span style={{fontFamily: F.num, fontWeight: 900, fontSize: NUM, fontStretch: `${s.toFixed(2)}%`, lineHeight: 1, opacity: numOp}}>{C60.S5.num}</span>
+				<span
+					style={{
+						fontFamily: F.num,
+						fontWeight: 900,
+						fontSize: NUM,
+						fontStretch: `${s.toFixed(2)}%`,
+						lineHeight: 1,
+						opacity: numOp,
+						transform: numY > 0.05 ? `translateY(${numY.toFixed(2)}px)` : undefined,
+					}}
+				>
+					{C60.S5.num}
+				</span>
 				<span
 					style={{
 						fontFamily: F.num,
@@ -107,7 +141,7 @@ export const RatingRow: React.FC<{
 					{C60.S5.note}
 				</span>
 				{f >= t0 - 1 ? (
-					<DirBlur y={Math.abs(vy) * 0.15} style={{marginLeft: STAR_ML, marginTop: ROW.baseline - STAR * 0.943}}>
+					<DirBlur x={Math.abs(vx) * 0.13} y={Math.abs(vy) * 0.15} style={{marginLeft: STAR_ML, marginTop: ROW.baseline - STAR * 0.943}}>
 						<span
 							style={{
 								display: 'block',
@@ -117,7 +151,7 @@ export const RatingRow: React.FC<{
 								lineHeight: 1,
 								opacity: starOp,
 								transformOrigin: '50% 94.3%',
-								transform: `translateY(${starY(f).toFixed(2)}px) scale(${(1 + over * 0.7).toFixed(4)}, ${(1 - over * 1.1).toFixed(4)})`,
+								transform: `translate(${slideX(f).toFixed(2)}px, ${jumpY(f).toFixed(2)}px) scale(${sx.toFixed(4)}, ${sy.toFixed(4)})`,
 							}}
 						>
 							{C60.S5.star}

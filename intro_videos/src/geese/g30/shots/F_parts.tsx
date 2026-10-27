@@ -74,10 +74,18 @@ export const VCol: React.FC<{
 /** 直排一欄的高度（字數 × (1 + 字距 0.04em)） */
 export const vColH = (text: string, size: number) => Array.from(text).length * size * 1.04;
 
-/** 「設計師」小直排墨框（跟 E 的常駐標籤同一個樣式：100×280、8px 框、56px），可移動；lag＝框裡的字的慣性位移 */
+/** 「設計師」小直排墨框（跟 E 的常駐標籤同一個樣式：100×280、8px 框、56px），可移動、可放大；lag＝框裡的字的慣性位移 */
 export const TAG = {w: 100, h: 280} as const;
-export const TagBox: React.FC<{x: number; y: number; lag?: number}> = ({x, y, lag = 0}) => (
-	<VBox x={x} y={y} w={TAG.w} h={TAG.h} fill={G.paper} border={8} style={{overflow: 'hidden'}}>
-		<VText text={C30.E.tag} size={56} dy={lag} />
+export const TagBox: React.FC<{x: number; y: number; lag?: number; w?: number; h?: number; size?: number; border?: number}> = ({
+	x,
+	y,
+	lag = 0,
+	w = TAG.w,
+	h = TAG.h,
+	size = 56,
+	border = 8,
+}) => (
+	<VBox x={x} y={y} w={w} h={h} fill={G.paper} border={border} style={{overflow: 'hidden'}}>
+		<VText text={C30.E.tag} size={size} dy={lag} />
 	</VBox>
 );

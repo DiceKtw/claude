@@ -6,7 +6,7 @@ import {DirBlur} from '../../../lib/components';
 import {E, clamp, lerp, prog, rng} from '../../../lib/motion';
 import {C30} from '../../copy';
 import {F, G} from '../../theme';
-import {Cell, VBox, b30, slideIn} from '../kit';
+import {Cell, Line, VBox, b30, slideIn} from '../kit';
 
 /* ------------------------------------------------------------------ */
 /* 版面                                                                 */
@@ -21,6 +21,9 @@ const BIG = 2.3; // 留下來那個放大倍數（≈300px）
 const BEAT2 = b30(1); // 28：5 個彈出
 const BEAT3 = b30(2); // 56：剩 1 個放大、格子填黃
 const BEAT4 = b30(3); // 84：直排黑框拉門
+// 小節 2（B 段）：附屬句在正拍就落下（多給閱讀時間）；拍 1、3、4 框裡的直排字被大鼓震一下
+const B_LINE_AT = b30(4); // 113
+const B_KICKS = [b30(4), b30(6), b30(7)]; // 113 169 197
 
 /* ------------------------------------------------------------------ */
 /* 紙底（效能版）：跟 kit 的 Paper 同色、同樣 3% 灰階紙紋，                */
@@ -142,7 +145,15 @@ export const Glyph: React.FC<{
 };
 
 /** 直排字（不帶框；放進 VBox 當 children，才能讓字有自己的慣性） */
-export const VText: React.FC<{text: string; size: number; weight?: number; color?: string; dx?: number; dy?: number}> = ({text, size, weight = 900, color = G.ink, dx = 0, dy = 0}) => (
+export const VText: React.FC<{text: string; size: number; weight?: number; color?: string; dx?: number; dy?: number; lh?: number}> = ({
+	text,
+	size,
+	weight = 900,
+	color = G.ink,
+	dx = 0,
+	dy = 0,
+	lh = 1.05,
+}) => (
 	<div
 		lang="zh-Hant-TW"
 		style={{
@@ -152,7 +163,8 @@ export const VText: React.FC<{text: string; size: number; weight?: number; color
 			fontWeight: weight,
 			fontSize: size,
 			color,
-			lineHeight: 1.05,
+			// 直排兩欄的欄距：lh 是欄寬（字級倍數）。預設 1.05；兩欄句子用 1.2 以上，欄距約 0.2em，才不會被橫著讀
+			lineHeight: lh,
 			letterSpacing: '0.04em',
 			whiteSpace: 'pre',
 			transform: `translate(${dx.toFixed(2)}px, ${dy.toFixed(2)}px)`,
@@ -161,6 +173,39 @@ export const VText: React.FC<{text: string; size: number; weight?: number; color
 		{text}
 	</div>
 );
+
+/**
+ * 「1 小時」小標（開場、回到那一格、抽鼓那兩拍共用）：墨色、數字用 Anybody 窄體。
+ * 這是讓人看懂「一格＝一個小時」的唯一線索，所以不用鉛筆灰小字（手機上對比不夠、太小）。
+ * reveal：由左往右擦出的進度（0–1）。左上角定位；下緣約在格子上緣上方 16px。
+ */
+export const HOUR_H = 72;
+export const HourLabel: React.FC<{x: number; y: number; reveal?: number}> = ({x, y, reveal = 1}) => {
+	const [num, ...rest] = C30.A.hour.split(' ');
+	return (
+		<div
+			lang="zh-Hant-TW"
+			style={{
+				position: 'absolute',
+				left: x,
+				top: y,
+				height: HOUR_H,
+				display: 'flex',
+				alignItems: 'baseline',
+				color: G.ink,
+				whiteSpace: 'pre',
+				lineHeight: `${HOUR_H}px`,
+				clipPath: reveal < 1 ? `inset(0 ${((1 - reveal) * 100).toFixed(2)}% 0 0)` : undefined,
+				transform: reveal < 1 ? `translateX(${((1 - reveal) * -14).toFixed(2)}px)` : undefined,
+			}}
+		>
+			<span style={{fontFamily: F.num, fontWeight: 900, fontStretch: '75%', fontSize: 72}}>{num}</span>
+			<span style={{fontFamily: F.round, fontWeight: 700, fontSize: 50}}>{' ' + rest.join(' ')}</span>
+		</div>
+	);
+};
+/** 小標的位置：格子上方（左緣齊格子） */
+export const hourPos = (cell: {x: number; y: number}) => ({x: cell.x - 2, y: cell.y - HOUR_H - 14});
 
 /* ------------------------------------------------------------------ */
 /* 6 個「客」：擠一團 → 5 個排 V 字往右上彈出 → 剩 1 個                   */
@@ -189,8 +234,8 @@ const rotV = (v: {x: number; y: number}, deg: number) => {
 	const a = (deg * Math.PI) / 180;
 	return {x: v.x * Math.cos(a) - v.y * Math.sin(a), y: v.x * Math.sin(a) + v.y * Math.cos(a)};
 };
-// V 字兩翼：從領頭往後（-U）各偏 20°，夾角 40°，像箭頭指向右上
-const ARM = {1: rotV({x: -U.x, y: -U.y}, 20), [-1]: rotV({x: -U.x, y: -U.y}, -20)} as Record<number, {x: number; y: number}>;
+// V 字兩翼：從領頭往後（-U）各偏 36°，夾角 72°，一眼讀得出是雁陣（像箭頭指向右上）
+const ARM = {1: rotV({x: -U.x, y: -U.y}, 36), [-1]: rotV({x: -U.x, y: -U.y}, -36)} as Record<number, {x: number; y: number}>;
 const NRM = {x: -U.y, y: U.x}; // 垂直飛行方向（翅膀上下擺）
 
 // V 字隊形：領頭 1 號；兩翼內側先走、外側再晚 3 格
@@ -199,9 +244,9 @@ const SLOT: Record<number, Slot> = {1: {k: 0, side: 0}, 2: {k: 1, side: 1}, 3: {
 const LAUNCH0 = BEAT2 - 2; // 領頭提前 2 格起跑：拍點那格領頭正拉成一道、第一對翅膀剛要出手
 const STAG = 3;
 const FLY = 34; // 飛到右上角的時間（outExpo）
-const PARK = {x: 1030, y: 140}; // 領頭停的位置（右上角，避開直排框）
-const GAP = 130; // 沿翼的間距
-const FAR = 0.5; // 飛遠後的大小
+const PARK = {x: 1000, y: 230}; // 領頭停的位置（右上角，避開直排框；不壓在 Reels 右上角的相機鈕底下）
+const GAP = 150; // 沿翼的間距
+const FAR = 0.42; // 飛遠後的大小
 const BANK = 12; // 飛行時往前傾的角度
 
 /** 擠在格子裡的位置（格子內座標轉畫面座標） */
@@ -293,18 +338,20 @@ const velOf = (fn: (ff: number) => {x: number; y: number}, f: number) => {
 /* 舞台                                                                 */
 /* ------------------------------------------------------------------ */
 export const OpeningStage: React.FC<{f: number; children?: React.ReactNode}> = ({f, children}) => {
-	// 「1 小時」小標：開場第 2 格起由左往右擦出來
-	const lab = prog(f, 2, 12, E.outExpo);
+	// 「1 小時」小標：從循環接縫前就開始擦（f0 已擦出 97%、還在走），第 0 格就看得到「一格＝1 小時」
+	const lab = prog(f, -8, 12, E.outExpo);
+	const hp = hourPos(CELL);
 
-	// 直排黑框：拉門從下方滑進，最快那格落在拍 4
-	const vbAt = BEAT4 - 4;
+	// 直排黑框：拉門從下方滑進；提前 5 格起跑，撞停（進度 0.96）那格落在拍 4 後不到 1 格
+	const vbAt = BEAT4 - 5;
 	const vbOff = slideIn(f, vbAt, 'bottom', 1620);
-	// 框停住後，裡面的字因為慣性多走一點再彈回（框往上停，字往上衝）
-	const lag = -26 * ring(f - (vbAt + 8), 0.36, 7);
+	// 框停住後，裡面的字因為慣性多走一點再彈回（框往上停，字往上衝）；小節 2 每下大鼓再被震一下
+	let lag = -26 * ring(f - (vbAt + 8), 0.36, 7);
+	for (const b of B_KICKS) lag += -8 * ring(f - b, 0.36, 7);
 	const vbOn = f >= vbAt;
 
-	// B 段起：框與格子反方向微漂（視差，不是移鏡）
-	const drift = prog(f, 100, 125, E.inOutSine);
+	// B 段起：框與格子反方向等速微漂（視差，不是移鏡；等速一路推到硬切，不在切點前停住）
+	const drift = clamp((f - 100) / 125);
 
 	const pile: React.ReactNode[] = [];
 	const flyers: React.ReactNode[] = [];
@@ -330,24 +377,8 @@ export const OpeningStage: React.FC<{f: number; children?: React.ReactNode}> = (
 	return (
 		<>
 			{/* 那一格（拍 3 由下往上填黃） */}
-			<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * 6).toFixed(2)}px)`}}>
-				<div
-					style={{
-						position: 'absolute',
-						left: CELL.x,
-						top: CELL.y - 70,
-						fontFamily: F.mono,
-						fontWeight: 500,
-						fontSize: 40,
-						lineHeight: '50px',
-						color: G.pencil,
-						whiteSpace: 'pre',
-						clipPath: `inset(0 ${((1 - lab) * 100).toFixed(2)}% 0 0)`,
-						transform: `translateX(${((1 - lab) * -14).toFixed(2)}px)`,
-					}}
-				>
-					{C30.A.hour}
-				</div>
+			<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * 14).toFixed(2)}px)`}}>
+				<HourLabel x={hp.x} y={hp.y} reveal={lab} />
 				<Cell f={f} x={CELL.x} y={CELL.y} size={CELL.s} fillAt={BEAT3} />
 				{/* 還擠在格子裡的（裁在格子內框裡） */}
 				<div style={{position: 'absolute', left: IN.x, top: IN.y, width: IN.s, height: IN.s, overflow: 'hidden'}}>
@@ -359,16 +390,20 @@ export const OpeningStage: React.FC<{f: number; children?: React.ReactNode}> = (
 			</div>
 			{/* 直排黑框：一個小時，只約一位。 */}
 			{vbOn ? (
-				<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * -8).toFixed(2)}px)`}}>
+				<div style={{position: 'absolute', inset: 0, transform: `translateY(${(drift * -18).toFixed(2)}px)`}}>
 					<DirBlur
 						y={Math.abs(slideIn(f + 0.5, vbAt, 'bottom', 1620).y - slideIn(f - 0.5, vbAt, 'bottom', 1620).y) * 0.18}
 						style={{position: 'absolute', left: VB.x - 20, top: VB.y + vbOff.y - 20, width: VB.w + 40, height: VB.h + 40}}
 					>
 						<VBox x={20} y={20} w={VB.w} h={VB.h} fill={G.paper} style={{overflow: 'hidden'}}>
-							<VText text={C30.A.line.replace('，', '，\n')} size={118} dy={lag} />
+							<VText text={C30.A.line.replace('，', '，\n')} size={110} lh={1.22} dy={lag} />
 						</VBox>
 					</DirBlur>
 				</div>
+			) : null}
+			{/* 小節 2 正拍：下方一行附屬句（A／B 同一個舞台，A 的最後兩格就開始升起） */}
+			{f >= B_LINE_AT - 2 ? (
+				<Line x={90} y={1150} text={C30.B.line} size={48} weight={500} f={f} at={B_LINE_AT - 2} style={{letterSpacing: '0.04em'}} />
 			) : null}
 			{/* 飛出去的 V 字小隊（在最上層，越過格子框） */}
 			{flyers}

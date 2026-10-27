@@ -4,7 +4,7 @@
 import React from 'react';
 import {F, G, b60, bar60} from '../../theme';
 import {C60} from '../../copy';
-import {Rise, StationBox, StationProps, VDrop} from '../kit';
+import {MonoTag, Rise, StationBox, StationProps, VDrop} from '../kit';
 import {ST} from '../timeline';
 import {CamBlur, FlowStair, backOut, reachT} from './S1_parts';
 
@@ -19,15 +19,23 @@ const LAND = HIT + Math.round(DUR * (1 - reachT(backOut(1.2)))); // backOut(1.2)
 // 三個字各走各的直線不互穿，空中排成真正的 ^ 字雁陣：「報」在尖端，「先」「價」兩翼在後。
 const FROM = {dx: -300, dy: 1540};
 
+// 店名小標（第 1 輪修正）：開場 3 秒內交代「這是哪家店、是髮廊」。只用 copy.ts 已核准的兩個字串（C60.END.name／en），
+// 不加字；f8 起由左往右擦出，第 0 格之後畫面就有字。
+const NAME_TAG = `${C60.END.name}  ${C60.END.en}`;
+const NAME_AT = 8;
 export const S1: React.FC<StationProps> = ({f}) => {
 	// 鏡頭模糊只在這站自己的離站移鏡用（拉遠揭曉時不開，跟其他站一致）
 	const on = f >= LAND - DUR - 2 && f <= ST.S2.from + 24;
 	return (
 		<StationBox id="S1">
+			{/* 店名小標：主字上方 */}
+			<CamBlur f={f} box={{x: 40, y: 80, w: 740, h: 60}} active={on}>
+				<MonoTag f={f} at={NAME_AT} text={NAME_TAG} size={34} style={{position: 'absolute', left: 50, top: 90, lineHeight: 1.2}} />
+			</CamBlur>
 			{/* 主字：V 字從左下飛進，「報」領頭 */}
 			<CamBlur f={f} box={{x: 40, y: 228, w: 640, h: 252}} active={on}>
 				<div style={{position: 'absolute', left: 50, top: 240}}>
-					<VDrop f={f} text={C60.S1.big} land={LAND} size={204} from={FROM} dur={DUR} />
+					<VDrop f={f} text={C60.S1.big} land={LAND} size={204} from={FROM} dur={DUR} stagger={2} />
 				</div>
 			</CamBlur>
 			{/* 副句：往右錯 50px */}
@@ -36,22 +44,22 @@ export const S1: React.FC<StationProps> = ({f}) => {
 					<div style={{fontFamily: F.round, fontWeight: 500, fontSize: 52, lineHeight: 1.3, color: G.ink, whiteSpace: 'pre'}}>{C60.S1.sub}</div>
 				</Rise>
 			</CamBlur>
-			{/* 流程：報價 → 確認 → 服務（一階往右下 60px） */}
-			<CamBlur f={f} box={{x: 150, y: 632, w: 440, h: 196}} active={on}>
+			{/* 流程：報價 → 確認 → 服務（一階往右下 70px；48px 才看得出「被擋」） */}
+			<CamBlur f={f} box={{x: 150, y: 632, w: 500, h: 224}} active={on}>
 				<FlowStair
 					f={f}
 					words={C60.S1.flow}
 					x={160}
 					y={642}
-					size={40}
-					stepY={62}
+					size={48}
+					stepY={70}
 					t={{
 						row0: b60(3) - 3, // f93：擦出，拍上 3/4
 						row1: b60(3) + 1, // f97：「確認」慢慢寫
 						row1End: b60(3) + 22, // f118：「確認 →」寫完
 						gateIn: b60(3) + 3, // f99：細墨線垂下
-						rush: b60(3) + 5, // f101：「服務」搶跑
-						hit: b60(3) + 12, // f108：撞線
+						rush: 105, // 「服務」搶跑
+						hit: 112, // 撞線：貼著 f112.5 的貝斯八度音
 						gateOut: b60(3) + 23, // f119：線被抽掉（6 格 inExpo）
 						land: bar60(2), // f129：「服務」衝進位置＝小節 2 正拍
 					}}

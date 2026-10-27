@@ -27,8 +27,15 @@ export const landFor = (beat: number, dur: number) => beat + Math.round(dur * (1
 /* ------------------------------------------------------------------ */
 export const WM = {big: 240, en: 44, gap: 26, w: 720, h: 240 + 26 + 44} as const;
 
-export const WordMark: React.FC<{f: number; at: number}> = ({f, at}) => {
+export const WordMark: React.FC<{f: number; at: number; rewipe?: number}> = ({f, at, rewipe}) => {
 	const chars = Array.from(C60.END.name);
+	// 英文行重新擦出（片尾第 1 個 stab）：拍前 8 格由左往右擦掉（inExpo 5 格），拍前 2 格起再由左往右擦出（outExpo 12 格）
+	let enClip: string | undefined;
+	if (rewipe !== undefined && f >= rewipe - 8 && f < rewipe + 12) {
+		const outP = prog(f, rewipe - 8, 5, E.inExpo);
+		const inP = prog(f, rewipe - 2, 12, E.outExpo);
+		enClip = f < rewipe - 2 ? `inset(-20% 0 -20% ${(outP * 100).toFixed(2)}%)` : `inset(-20% ${((1 - inP) * 100).toFixed(2)}% -20% 0)`;
+	}
 	// 疊溶 6 格、兄弟錯 2 格；同時往下落定 14px（鼓組回來＝落地）
 	const piece = (i: number) => {
 		const s = at - 3 + i * 2;
@@ -75,6 +82,7 @@ export const WordMark: React.FC<{f: number; at: number}> = ({f, at}) => {
 					color: G.ink,
 					opacity: en.o,
 					transform: `translateY(${en.y.toFixed(2)}px)`,
+					clipPath: enClip,
 				}}
 			>
 				{C60.END.en}
@@ -91,7 +99,10 @@ export const LogoImg: React.FC<{src: string; w: number; h: number; pos: string; 
 /* ------------------------------------------------------------------ */
 /* 片尾資訊行：一行由一或兩段 VDrop 組成（不同字級／字體的段落基線對齊）      */
 /* ------------------------------------------------------------------ */
-export type Part = {text: string; size: number; weight: number; family: string; stretch?: number; tracking?: number};
+export type Part = {text: string; size: number; weight: number; family: string; stretch?: number; tracking?: number; pulse?: number};
+
+/** 「蓋章」：pulse 那一格字寬最寬（+14%，拍前 3 格撐開），之後 18 格 outBack 回原寬 */
+const stamp = (f: number, at: number) => 14 * (prog(f, at - 3, 3, E.outCubic) - prog(f, at, 18, E.outBack));
 export type InfoLine = {parts: Part[]; x: number; y: number; beat: number; dx: number};
 
 const DUR = 16;
@@ -103,21 +114,27 @@ export const InfoRow: React.FC<{f: number; line: InfoLine}> = ({f, line}) => {
 				const n = Array.from(p.text).length;
 				// 長的行 V 字張得小一點（外側字的過衝才不會撞到上一行）
 				const spread = Math.min(0.2, 0.9 / Math.max(1, n));
+				const stagger = n > 8 ? 1 : 2;
+				// 整行以拍點為中心擺正：領頭字提早、最外側的字晚到的格數各一半（各最多 4 格）
+				const L = Math.floor((n - 1) / 2);
+				const kmax = Math.max(L, n - 1 - L);
+				const shift = Math.min(4, Math.round((kmax * stagger) / 2));
+				const st = p.stretch !== undefined ? p.stretch + (p.pulse !== undefined ? stamp(f, p.pulse) : 0) : undefined;
 				return (
 					<VDrop
 						key={i}
 						f={f}
 						text={p.text}
-						land={landFor(line.beat + i * 3, DUR)}
+						land={landFor(line.beat + i * 3, DUR) - shift}
 						size={p.size}
 						weight={p.weight}
 						family={p.family}
 						from={{dx: line.dx, dy: 170}}
 						spread={spread}
-						stagger={n > 8 ? 1 : 2}
+						stagger={stagger}
 						dur={DUR}
 						tracking={p.tracking ?? 0}
-						style={{fontStretch: p.stretch ? `${p.stretch}%` : undefined, marginLeft: i ? Math.round(p.size * 0.32) : 0}}
+						style={{fontStretch: st !== undefined ? `${st.toFixed(2)}%` : undefined, marginLeft: i ? Math.round(p.size * 0.32) : 0}}
 					/>
 				);
 			})}

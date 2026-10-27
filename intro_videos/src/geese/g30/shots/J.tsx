@@ -1,22 +1,23 @@
 // 30 秒〈一格一位〉鏡頭 J・片尾（小節 15–16，f1575–1800）
 // f1575 硬切：那一格（左緣不動）往右撐開、往下壓扁成預約框（硬切那格正在撐），框裡的「預約 07-281-3636」被撐開的框一路揭出來。
-// 拍 2：框上方 logo（第二次出現；沒有檔案就是「雁沙龍」字標）逐字落位；拍 3 地址；拍 4 IG。
-// 第 16 小節正拍最後一擊：框裡的黃先往下沉乾（吸一口氣），再 4 格由下往上灌滿——滿的那格在拍上（第三次黃格填色）；
-// 之後整張慢漂放大 1% 到最後一格。
+// 拍 2：框上方 logo（第二次出現；沒有檔案就是「雁沙龍」字標）逐字落位，地址錯 6 格跟著進；拍 3 IG；拍 4 框裡的「預約」被震一下。
+// 第 16 小節正拍最後一擊：框裡的黃先往下沉乾（吸一口氣），拍上那格黃一口氣灌上 58%（最大的一跳）、3 格後灌滿（第三次黃格填色），
+// 預約框被擊中撐一下再收回；之後整張等速慢漂放大 1% 到最後一格，「預約」在拍 2、3 再被輕震兩下。
 import React from 'react';
 import {Img} from 'remotion';
 import {E, clamp, lerp} from '../../../lib/motion';
 import {C30} from '../../copy';
 import {F, G} from '../../theme';
 import {Line, SH, ShotProps, bar30, logoSrc} from '../kit';
-import {CELL, Glyph, PaperFast} from './A_parts';
+import {CELL, Glyph, PaperFast, ring} from './A_parts';
 import {Blur, VCol, vColH, vel} from './F_parts';
 
 const T0 = SH.J.from; // 1575
 const BOX = {x: 90, y: 600, w: 790, h: 300, b: 10};
 const LOGO_AT = bar30(15, 2); // 1603
-const ADDR_AT = bar30(15, 3); // 1631
-const IG_AT = bar30(15, 4); // 1659
+const ADDR_AT = LOGO_AT + 6; // 1609：跟字標錯 6 格（地址停約 3.2 秒）
+const IG_AT = bar30(15, 3); // 1631（停約 2.8 秒）
+const NUDGES = [bar30(15, 4), bar30(16, 2), bar30(16, 3)]; // 1659 1716 1744：「預約」被震一下
 const HIT = bar30(16, 1); // 1688
 const DRAIN = 10; // 沉乾要幾格（拍前 14 格開始）
 const LOGO = {x: 90, y: 330, h: 160};
@@ -43,12 +44,19 @@ const shape = (f: number) => {
 	};
 };
 
-/** 黃的水位（0–1，從底部算）：最後一擊前沉乾，再 4 格灌滿 */
+/** 黃的水位（0–1，從底部算）：最後一擊前沉乾（拍前 1 格見底），拍上那格一口氣灌上 58%，3 格後灌滿 */
 const level = (f: number) => {
-	const d0 = HIT - 4 - DRAIN;
+	const d0 = HIT - 1 - DRAIN;
 	if (f < d0) return 1;
-	if (f < HIT - 4) return 1 - E.inCubic(clamp((f - d0) / DRAIN));
-	return E.outCubic(clamp((f - (HIT - 4)) / 4));
+	if (f < HIT - 1) return 1 - E.inCubic(clamp((f - d0) / DRAIN));
+	return E.outCubic(clamp((f - (HIT - 1)) / 4));
+};
+
+/** 預約框被最後一擊撐一下：拍上那格一口氣撐到最大（+3.5%，跟黃色灌上 58% 同一格），之後衰減收回（約 15 格） */
+const hitScale = (f: number) => {
+	const t = f - HIT;
+	if (t < 0) return 1;
+	return 1 + 0.035 * Math.cos(0.5 * t) * Math.exp(-t / 5);
 };
 
 export const J: React.FC<ShotProps> = ({f}) => {
@@ -57,9 +65,13 @@ export const J: React.FC<ShotProps> = ({f}) => {
 	const lv = level(f);
 	const logo = logoSrc('ink');
 
-	// 最後一擊後：整張以閱讀窗中心慢漂放大 1%（被擊中先推一下，之後等速慢漂到最後一格，不停住）
+	// 最後一擊後：整張以閱讀窗中心等速慢漂放大 1% 到最後一格（不停住）
 	const zt = clamp((f - HIT) / (SH.J.to - 1 - HIT));
-	const zoom = 1 + 0.01 * (0.35 * E.outCubic(zt) + 0.65 * zt);
+	const zoom = 1 + 0.01 * zt;
+	const hs = hitScale(f);
+	// 「預約」直排字：拍 4 與最後一擊後的拍 2、3 被震一下（4px）
+	let nudge = 0;
+	for (const b of NUDGES) nudge += -4 * ring(f - b, 0.4, 6);
 	// 最後一擊前的等速慢漂：字標往上、地址兩行往下（反向視差）
 	const pre = clamp((f - (T0 + 14)) / (HIT - T0 - 14));
 	const upY = -18 * pre;
@@ -98,11 +110,24 @@ export const J: React.FC<ShotProps> = ({f}) => {
 				)}
 
 				{/* 預約框（黃底墨框）：框撐開時把裡面的字揭出來 */}
-				<Blur x={Math.min(10, Math.abs(sw) * 0.12)} w={BOX.w} h={BOX.h} style={{position: 'absolute', left: s.x, top: s.y, width: s.w, height: s.h}}>
+				<Blur
+					x={Math.min(10, Math.abs(sw) * 0.12)}
+					w={BOX.w}
+					h={BOX.h}
+					style={{
+						position: 'absolute',
+						left: s.x,
+						top: s.y,
+						width: s.w,
+						height: s.h,
+						transform: hs !== 1 ? `scale(${hs.toFixed(4)})` : undefined,
+						transformOrigin: `${BOX.x + BOX.w / 2 - s.x}px ${BOX.y + BOX.h / 2 - s.y}px`,
+					}}
+				>
 					<div style={{position: 'absolute', inset: 0, boxSizing: 'border-box', border: `${BOX.b}px solid ${G.ink}`, overflow: 'hidden', background: G.paper}}>
 						<div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: `${(lv * 100).toFixed(2)}%`, background: G.yellow}} />
 						{/* 內容釘在最後的位置（換算成框內座標），框是窗：框撐開時一路揭出來 */}
-						<VCol text={TEL_LABEL} x={CONTENT_X - s.x - BOX.b} y={MID_Y - vColH(TEL_LABEL, 48) / 2 - s.y - BOX.b} size={48} />
+						<VCol text={TEL_LABEL} x={CONTENT_X - s.x - BOX.b} y={MID_Y - vColH(TEL_LABEL, 48) / 2 - s.y - BOX.b + nudge} size={48} />
 						<div
 							style={{
 								position: 'absolute',
@@ -123,8 +148,8 @@ export const J: React.FC<ShotProps> = ({f}) => {
 				</Blur>
 
 				{/* 地址、IG */}
-				<Line x={BOX.x} y={BOX.y + BOX.h + 44 + downY} text={C30.J.addr} size={40} weight={500} f={f} at={ADDR_AT - 3} />
-				<Line x={BOX.x} y={BOX.y + BOX.h + 112 + downY} text={C30.J.ig} size={36} weight={500} f={f} at={IG_AT - 3} style={{fontFamily: F.mono}} />
+				<Line x={BOX.x} y={BOX.y + BOX.h + 44 + downY} text={C30.J.addr} size={44} weight={500} f={f} at={ADDR_AT - 3} />
+				<Line x={BOX.x} y={BOX.y + BOX.h + 124 + downY} text={C30.J.ig} size={44} weight={500} f={f} at={IG_AT - 3} style={{fontFamily: F.mono}} />
 			</div>
 		</>
 	);

@@ -2,8 +2,8 @@
 import React from 'react';
 import {DirBlur} from '../../../lib/components';
 import {clamp} from '../../../lib/motion';
-import {camVelocity} from '../camera';
-import {ST} from '../timeline';
+import {camera} from '../camera';
+import {moveBlurXY} from './S1_parts';
 
 export type Box = {x: number; y: number; w: number; h: number};
 
@@ -15,9 +15,7 @@ export const FULL: React.CSSProperties = {position: 'absolute', left: 0, top: 0,
  * 只在 box（站內座標）範圍開 filter，比整個站框小，算圖快；子元素照樣用站內座標排。
  */
 export const CamBlur: React.FC<{f: number; box: Box; children: React.ReactNode}> = ({f, box, children}) => {
-	const v = f < ST.REVEAL.from - 20 ? camVelocity(f) : {vx: 0, vy: 0};
-	const bx = Math.abs(v.vx) * 0.09;
-	const by = Math.abs(v.vy) * 0.09;
+	const {x: bx, y: by} = moveBlurXY(f, camera(f).zoom);
 	return (
 		<div style={{position: 'absolute', left: box.x, top: box.y, width: box.w, height: box.h}}>
 			<DirBlur x={bx} y={by} style={FULL}>
