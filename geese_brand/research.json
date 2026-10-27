@@ -1,0 +1,1102 @@
+{
+ "web": {
+  "summary": "共做了約 30 組 WebSearch，關鍵字包括雁沙龍、Geese Model、三家分店名、小臉專家安格斯、雁之懶人燙、style-map、ezPretty、104 徵才、雁形理論、丁平龍、RUIENCY 潤熙、Dcard、YouTube。WebFetch 全部失敗（geese-model.com、pixnet、style-map、yahoo、sharelife、ezpretty、ptt、instagram 都回 DNS ENOTFOUND），所以以下事實都來自搜尋結果摘要，沒有讀到原文。\n\n【據點】查到三家店，資料多在 2019–2023 年之間：\n・鹽埕店：五福四路198號，07-531-3536\n・民生店：新興區民生一路259號，07-281-3636，用 ezPretty 線上預約\n・明誠店：左營區明誠二路198號，07-550-8150，2019 年 11 月初開幕\n營業時間多數寫「週一至六 11–20、週日 12–20」，但公休日說法互相矛盾。2024–2026 年的現況（例如明誠店還有沒有營業）查不到。\n\n【品牌】\n・店名取自「雁形理論 the flying-geese model」，意思是雁群排成 V 字一起飛，飛得比單飛遠。\n・官方用語：「想要呈現出的不只是髮型 更是妳/你的第二張臉!」、「這是一個好心情的開始」。\n・IG 簡介：「自媒體經紀沙龍｜新生設計師の培育專門店｜每月數十萬外客資源」。\n・品牌已經營約十年，2021 年推出自有護髮品牌 RUIENCY 潤熙。\n\n【人物】\n・安格斯被部落格稱為「小臉專家」、雁團隊執行長、首席設計師，多數時間在管理階層，旗下不少設計師是他帶出來的。\n・2021 年前後的新聞寫雁沙龍執行長叫「丁平龍」：曾赴日本進修，主張美髮人要團結，靠獎金分紅與股權創造被動收入；雁定期辦讀書會、技術研習營，以及行銷、攝影課程。\n・丁平龍是不是安格斯本人，網路上查不到直接證據，要問客戶。\n・安格斯對外開的課程，網路上完全查不到。\n\n【服務】\n・招牌項目：「雁之懶人燙」，用剪裁加燙髮技巧修飾臉型，做出視覺小臉，而且好整理。\n・其他項目：熱塑燙、韓系剪裁、歐美漸層暈染、OLAPLEX 歐拉護髮、結構式護髮。\n・唯一查到的價格是 style-map 上單一設計師 JASON（鹽埕店）：剪 600 起、染 1,200–5,000、燙 3,000–3,500。\n\n【口碑】部落格多為合作體驗文，常提到：溝通細心、不推銷、依臉型剪、剪完視覺年齡變年輕、生意好要預約。\n\n【裝潢】三家店風格不同：\n・鹽埕店：老屋保留斑駁牆面，白綠／果綠色牆上有雁子圖案，擺古早裁縫機、舊理髮廳旋轉燈、老窗框、二手書櫃。\n・民生店：木質調，門口擺滿綠色盆栽，有落地窗，像森林系咖啡廳。\n・明誠店：日式清新，牆面是鮮明橘色配深綠色。",
+  "facts": [
+   {
+    "topic": "據點",
+    "fact": "雁在高雄有三間分店：鹽埕店、民生店、明誠店（有一篇部落格把明誠店叫「左營店」）。",
+    "source": "https://ann319999.pixnet.net/blog/posts/10355743421 ；https://you5252001.pixnet.net/blog/posts/9557401360 ；https://nicole2310.pixnet.net/blog/posts/2035647897 （皆為搜尋摘要）",
+    "date": "約 2019–2023",
+    "confidence": "high"
+   },
+   {
+    "topic": "據點",
+    "fact": "鹽埕店：高雄市鹽埕區五福四路198號，電話 07-531-3536。搭捷運鹽埕埔站 4 號出口步行約 2 分鐘，和華南銀行同一側。（另有一篇寫成「五福二路198號」，應是筆誤）",
+    "source": "https://rubiepop.com.tw/blog/post/…鹽埕店 ；https://bella0627.pixnet.net/blog/posts/17316571004 ；https://xmirax.pixnet.net/blog/posts/8228278567 （搜尋摘要）",
+    "date": "約 2018–2021（舊資料）",
+    "confidence": "high"
+   },
+   {
+    "topic": "據點",
+    "fact": "鹽埕店營業時間：多數來源寫週一至六 11:00–20:00、週日 12:00–20:00；只有一篇寫 11:00–22:00。",
+    "source": "搜尋摘要：jaelluo.pixnet.net/blog/posts/13358037390、nellydyu.tw/blog/post/44814574 等鹽埕店體驗文",
+    "date": "舊部落格，未知年份（約 2018–2021）",
+    "confidence": "medium"
+   },
+   {
+    "topic": "據點",
+    "fact": "民生店：高雄市新興區民生一路259號，電話 07-281-3636，在新興國小附近、民生路林蔭大道上。可從捷運信義國小站 1 號出口或中央公園站 3 號出口走過去。",
+    "source": "https://www.ezpretty.com.tw/landing/store/5708 ；https://carry490.pixnet.net/blog/posts/8228237377 ；https://emom0719.pixnet.net/blog/posts/10351223807 （搜尋摘要）",
+    "date": "未知（ezPretty 為現行預約頁，部落格為舊文）",
+    "confidence": "high"
+   },
+   {
+    "topic": "據點",
+    "fact": "民生店營業時間：ezPretty 寫週一至六 11:00–20:00、週日 12:00–20:00，並註明染、燙只接 11:00–16:00 的預約。但 style-map／部分部落格寫週一公休，另一篇寫週二店休，說法互相矛盾。",
+    "source": "https://www.ezpretty.com.tw/landing/store/5708 ；https://style-map.com/studio/3880 ；you5252001.pixnet.net/blog/posts/9557401360（搜尋摘要）",
+    "date": "未知",
+    "confidence": "low"
+   },
+   {
+    "topic": "據點",
+    "fact": "明誠店：高雄市左營區明誠二路198號，電話 07-550-8150，營業時間週一至六 11:00–20:00、週日 12:00–20:00。",
+    "source": "https://you5252001.pixnet.net/blog/posts/9557401360 ；https://pinkfei0212.pixnet.net/blog/posts/10353505528 ；https://angrace1113.pixnet.net/blog/posts/9468918836 （搜尋摘要）",
+    "date": "約 2019–2021",
+    "confidence": "high"
+   },
+   {
+    "topic": "歷史",
+    "fact": "明誠店是雁在某年 11 月初新開的店，該篇體驗文寫於 2019 年 11 月底，推斷明誠店於 2019 年 11 月開幕。",
+    "source": "明誠店體驗文（搜尋摘要，候選：https://angrace1113.pixnet.net/blog/posts/9468918836 、https://hello0910.pixnet.net/blog/posts/9556981666 ）",
+    "date": "2019-11",
+    "confidence": "medium"
+   },
+   {
+    "topic": "據點",
+    "fact": "預約管道：官網 geese-model.com 線上預約、官方 LINE、ezPretty 預約系統；部落格普遍提醒要先預約。民生店招牌很不明顯，門口停機車可能被拖吊。",
+    "source": "https://www.ezpretty.com.tw/landing/store/5708 ；https://emom0719.pixnet.net/blog/posts/10351223807 ；https://carry490.pixnet.net/blog/posts/8228237377 （搜尋摘要）",
+    "date": "未知",
+    "confidence": "high"
+   },
+   {
+    "topic": "據點",
+    "fact": "社群帳號：IG @geese.model_hair；FB 民生店 facebook.com/Angus.salon；FB 鹽埕店 facebook.com/geese2.salon；YouTube @GeeseModelhairsalon（最早一支影片「全染」約在 2016 年上傳）。",
+    "source": "https://www.instagram.com/geese.model_hair/ ；https://www.facebook.com/Angus.salon/ ；https://www.facebook.com/geese2.salon/ ；https://m.youtube.com/@GeeseModelhairsalon/videos （搜尋摘要）",
+    "date": "2016 至今",
+    "confidence": "high"
+   },
+   {
+    "topic": "口號與用語",
+    "fact": "官方社群宣傳語：「雁 Geese Model 想要呈現出的不只是髮型 更是妳/你的第二張臉!」",
+    "source": "搜尋摘要（出自 style-map.com/studio/3880 或 FB 粉專簡介）",
+    "date": "未知",
+    "confidence": "medium"
+   },
+   {
+    "topic": "口號與用語",
+    "fact": "YouTube 頻道／宣傳語：「雁 Geese Model 美髮沙龍 這是一個好心情的開始」。",
+    "source": "https://m.youtube.com/@GeeseModelhairsalon/videos （搜尋摘要）",
+    "date": "未知",
+    "confidence": "medium"
+   },
+   {
+    "topic": "口號與用語",
+    "fact": "IG 簡介自我定位：「自媒體經紀沙龍｜新生設計師の培育專門店｜每月數十萬外客資源」（外客數字是店家自己的宣傳，未經查證）。",
+    "source": "https://www.instagram.com/geese.model_hair/ （搜尋摘要）",
+    "date": "未知（推測為近期簡介）",
+    "confidence": "medium"
+   },
+   {
+    "topic": "歷史",
+    "fact": "店名由來：取自雁形理論的英文「the flying-geese model」。雁群飛行時排成 V 字形一起飛，飛的距離比單飛遠，比喻團隊合作。",
+    "source": "搜尋摘要（品牌故事相關部落格／報導）；新聞標題〈創業過程奉行「雁形理論」 雁沙龍執行長丁平龍〉https://tw.news.yahoo.com/…-010457600.html",
+    "date": "約 2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "歷史",
+    "fact": "老闆建立雁團隊與品牌價值約十年，目標是提升美髮人的技術價值。透過嚴謹的培育訓練，幫助中途轉行的人和對美髮有熱誠的學徒。另一篇部落格稱雁是「高雄在地10年的沙龍」。",
+    "source": "https://taiwan.sharelife.tw/article_aid-24855.html （【雁沙龍】打造新生設計師舞台 職能訓練提升設計師專業價值，搜尋摘要）",
+    "date": "約 2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "團隊",
+    "fact": "新聞稱雁沙龍執行長為「丁平龍」：曾赴日本深造髮藝，回台後客人寧可等好幾個月也要等他回來剪，因此創立自己的品牌。他主張美髮人要團結，靠獎金分紅、股權分配創造被動收入，年長設計師可轉往幕後做教育訓練。",
+    "source": "https://tw.news.yahoo.com/創業過程奉行-雁形理論-雁沙龍執行長丁平龍-美髮人都該有被動收入-010457600.html ；https://www.cheers.com.tw/article/article.action?id=5099681 （搜尋摘要）",
+    "date": "約 2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "團隊",
+    "fact": "報導說丁平龍也跨足餐飲，與人合開「龍耀食誠餐飲管理公司」，參與經營「何必問綠豆沙」品牌（何必問官網提到接班人與龍耀食誠餐飲管理集團合作）。2021 年曾計畫與太元生醫合作開發抗老洗髮精。",
+    "source": "https://www.cheers.com.tw/article/article.action?id=5099681 ；https://hopiwen.com/ ；Yahoo 新聞同上（搜尋摘要）",
+    "date": "約 2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "團隊",
+    "fact": "安格斯（Angus）被多篇部落格稱為「高雄小臉專家」、雁團隊執行長、「雁髮型執行長」、首席設計師。他大多時間在管理階層、不一定在現場，旗下不少設計師是他調教出來的。",
+    "source": "https://ann319999.pixnet.net/blog/posts/10353392398 ；https://you5252001.pixnet.net/blog/posts/9557401360 ；https://shanxrie.pixnet.net/blog/posts/16088365412 （搜尋摘要）",
+    "date": "2021–2023",
+    "confidence": "high"
+   },
+   {
+    "topic": "團隊",
+    "fact": "雁的培育制度：專門培養能在短時間內做出高業績的新秀設計師；定期舉辦讀書會、技術研習營，以及行銷、攝影課程；同時訓練剪髮技術與思想教育。部落格另提到有定期內部訓練、外聘老師、行銷社群經營、造型共享。",
+    "source": "Yahoo 新聞（丁平龍專訪）同上；https://taiwan.sharelife.tw/article_aid-24855.html （搜尋摘要）",
+    "date": "約 2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "團隊",
+    "fact": "網路上出現過的設計師：鹽埕店 Love、Jason（2017 年 PTT 討論）；Anna（2020-12 已轉到「分亻duty hair salon」）；民生店 Ruby；Louis。有一篇提到鹽埕店曾有 2 位設計師。目前完整名單與團隊人數查不到。",
+    "source": "https://www.ptt.cc/bbs/hairdo/M.1494503598.A.B43.html ；https://uniqueyawei.pixnet.net/blog/posts/14207422484 ；https://ssuyun411.pixnet.net/blog/posts/13357309014 ；https://nicole2310.pixnet.net/blog/posts/2035647897 （搜尋摘要）",
+    "date": "2017–2020",
+    "confidence": "medium"
+   },
+   {
+    "topic": "團隊",
+    "fact": "104 人力銀行 2023 年 9 月的職缺列表中，雁 Geese Model Hair Salon 的登記公司名為「極剪沙龍企業社」（高雄市新興區），刊登美髮設計師職缺，月薪標示 28,000 元。",
+    "source": "https://m.104.com.tw/search/joblist?keyword=剪髮技術與髮型設計&area=6001016000 （搜尋摘要）",
+    "date": "2023-09",
+    "confidence": "low"
+   },
+   {
+    "topic": "招牌項目",
+    "fact": "「雁之懶人燙」：透過剪裁和特殊燙髮技巧修飾臉型，打造「視覺小臉」，而且好整理。有作者剪到耳下再做懶人燙，洗頭吹頭的時間省很多。流程大致是洗頭→軟化→剪髮→燙。",
+    "source": "https://you5252001.pixnet.net/blog/posts/9557401360 （【高雄美髮推薦】雁Geese Model Hair Salon 明誠店 X 小臉專家安格斯～雁之懶人燙打造視覺小臉，搜尋摘要）",
+    "date": "約 2021",
+    "confidence": "high"
+   },
+   {
+    "topic": "招牌項目",
+    "fact": "安格斯的做法：依臉型、頭型比例剪出適合的髮型，用剪裁修飾臉型。部落格常用的形容詞有「視覺小臉」「無痛整形」「逆齡髮型」「韓系」。",
+    "source": "https://shanxrie.pixnet.net/blog/posts/16088365412 ；https://pinkfei0212.pixnet.net/blog/posts/10353505528 ；https://ann319999.pixnet.net/blog/posts/10355743421 ；https://peny0226.pixnet.net/blog/posts/17331845616 （搜尋摘要）",
+    "date": "2021–2023",
+    "confidence": "high"
+   },
+   {
+    "topic": "服務",
+    "fact": "服務項目包括剪、燙、染、護：熱塑燙、韓系剪裁、歐美漸層線條感暈染（主打不怕布丁頭）、OLAPLEX 歐拉護髮（不含矽靈的三道程序，約一個多小時）、京喚羽結構式護髮；染髮前會用資生堂（SHISEIDO）產品做頭皮隔離。",
+    "source": "https://ann319999.pixnet.net/blog/posts/10353392398 ；https://styleme.pixnet.net/post/223988292 ；rubiepop.com.tw 鹽埕店歐拉護髮文 ；pailing76.pixnet.net（搜尋摘要）",
+    "date": "約 2019–2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "服務",
+    "fact": "自有護髮品牌「RUIENCY 潤熙」：雁沙龍自行研發、獨家販售，主力商品是 MP 深層保濕香水護髮素（蠶絲胺基酸＋摩洛哥油，Chloe 香調），500ml 售價 860 元。一篇說 2021 年推出，但 2020 年 8 月已有部落格介紹，年份有出入。",
+    "source": "https://sweetday.tw/【高雄護髮推薦】雁沙龍-ruiency潤熙-mp深層保濕香水護髮/ ；https://www.bosomgirl.com/2020/08/ruiency_5.html ；https://pailing76.pixnet.net/blog/post/333883440 （搜尋摘要）",
+    "date": "2020–2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "服務",
+    "fact": "價格帶：style-map 上鹽埕店設計師 JASON 列出剪髮 $600 起、染髮 $1,200–5,000、燙髮 $3,000–3,500；店家頁面的價位標示為「$」。這只是單一設計師的參考價，懶人燙與安格斯本人的價格查不到。",
+    "source": "https://style-map.com/en-US/stylist/7231 ；https://style-map.com/studio/3880 （搜尋摘要）",
+    "date": "未知",
+    "confidence": "medium"
+   },
+   {
+    "topic": "評價",
+    "fact": "口碑重點：動工前會認真討論想要的風格和日後打算、不推銷、溝通細心、設計師很好聊；生意好、每位設計師幾乎沒空檔，要提前預約。有作者說設計師親手做了約八成步驟，助理會主動補水、遞衛生紙，洗頭很舒服。",
+    "source": "https://you5252001.pixnet.net/blog/posts/9557401360 ；https://carry490.pixnet.net/blog/posts/8228237377 ；https://bella0627.pixnet.net/blog/posts/17316571004 （搜尋摘要）",
+    "date": "約 2018–2023",
+    "confidence": "medium"
+   },
+   {
+    "topic": "評價",
+    "fact": "網路評價幾乎都是部落客體驗文，不少是合作文；style-map 店家頁顯示 0 則評價。Google 地圖星等與評論數，搜尋結果裡查不到。",
+    "source": "https://style-map.com/studio/3880 （搜尋摘要）",
+    "date": "未知",
+    "confidence": "high"
+   },
+   {
+    "topic": "品牌視覺",
+    "fact": "鹽埕店裝潢：白綠色主色調，明亮柔和；果綠色牆面上畫有和店名一樣的雁子。刻意保留老屋原貌，牆面可見坑洞、斑駁。擺有古早裁縫機、舊理髮廳的旋轉燈、老窗框，沖洗區一角放了復古服飾和配件。整體被形容為「復古懷舊」「復古情懷還很潮」。",
+    "source": "https://nellydyu.tw/blog/post/44814574 ；https://bella0627.pixnet.net/blog/posts/17316571004 ；https://xmirax.pixnet.net/blog/posts/8228278567 ；https://mamibuy.com.tw/talk/article/136004 （搜尋摘要）",
+    "date": "約 2018–2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "品牌視覺",
+    "fact": "鹽埕店有一小區書櫃，據說是和高雄在地二手書店「等閑書房」合作，等候時可以挑書。等閑書房本身位於苓雅區福壽街。",
+    "source": "鹽埕店體驗文（搜尋摘要，候選 https://nellydyu.tw/blog/post/44814574 ）；等閑書房 https://e96031413.github.io/everymantw/",
+    "date": "未知（舊文）",
+    "confidence": "low"
+   },
+   {
+    "topic": "品牌視覺",
+    "fact": "民生店裝潢：木頭質感空間，門口木製圍牆上整齊排著綠色盆栽，有大片落地窗、採光好，外觀像森林系／鄉村咖啡廳，店內是「骨董復古＋文青設計」，店外有等候區。",
+    "source": "https://ssuyun411.pixnet.net/blog/posts/13357309014 ；https://carry490.pixnet.net/blog/posts/8228237377 ；https://emom0719.pixnet.net/blog/posts/10351223807 （搜尋摘要）",
+    "date": "約 2018–2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "品牌視覺",
+    "fact": "明誠店裝潢：日式清新風、空間寬敞明亮，牆面是鮮明橘色配深綠色。",
+    "source": "明誠店體驗文（搜尋摘要，候選 https://fgblog.fashionguide.com.tw/11159/posts/413470 、https://hello0910.pixnet.net/blog/posts/9556981666 ）",
+    "date": "約 2019–2021",
+    "confidence": "medium"
+   },
+   {
+    "topic": "其他",
+    "fact": "2018-02 有一個由「Jay」開發、名為 geese model hair salon 的 Chrome 擴充功能，描述雁是高雄頭髮的首選。推測是早期的行銷用頁面，和沙龍本體關係不明。",
+    "source": "https://chrome.google.com/webstore/detail/geese-model-hair-salon/mocaggeamngkbkacmobmidnhecpdifdm",
+    "date": "2018-02",
+    "confidence": "low"
+   },
+   {
+    "topic": "其他",
+    "fact": "網路上找不到任何安格斯美髮教練、網路行銷、經營課程的公開資訊（課名、平台、報名頁都沒有）。同名的「星星教授安格斯」（占星）、「Angus安格斯教室」（兩性）與他無關，做影片時要避免混淆。",
+    "source": "WebSearch 多組關鍵字（安格斯 美髮 教練／網路行銷 課程／講師）皆無結果",
+    "date": "2026-10 搜尋",
+    "confidence": "high"
+   }
+  ],
+  "visual_notes": [
+   "品牌主色是綠色系：鹽埕店白綠、果綠色牆面，民生店綠色盆栽配木頭色，明誠店深綠色。綠色可以當兩支片的共同底色基調。",
+   "明誠店的「鮮明橘色＋深綠色」，跟我們上一支安格斯片用的橘黃 #FFB13B 剛好接得上：建議橘黃當重點色，深綠當底，再加米白／木頭色當中間色。",
+   "最強的品牌圖像是「雁群 V 字隊形」（雁形理論）。可以用程式畫成線條或點陣：V 字斜線當構圖骨架、轉場路徑或畫面分割，比喻團隊一起飛、帶新人飛遠。注意要做成版面結構，不要做成小鳥貼圖。",
+   "鹽埕店牆上畫有雁子圖案，代表店裡已經在用雁的形象；logo 的實際樣子查不到，要跟客戶要檔案。",
+   "IG 名稱用斜體無襯線字母（𝘎𝘦𝘦𝘴𝘦 𝘔𝘰𝘥𝘦𝘭 𝘏𝘢𝘪𝘳 𝘚𝘢𝘭𝘰𝘯）＋中文單字「雁」。英文用細斜體 sans、中文「雁」放大當主視覺字，是合理的推論方向。",
+   "三家店氣質不同，可以分給兩支片：鹽埕＝復古老屋（斑駁牆、舊理髮廳旋轉燈、裁縫機、老窗框、書櫃，適合做有質感的 60 秒敘事片）；民生＝木質森林系咖啡廳；明誠＝日式清新、橘綠明亮（適合節奏快的 30 秒片）。",
+   "老物件（旋轉燈、裁縫機、窗框、書櫃）如果要入畫，建議畫成大尺度的線稿或版面結構，例如窗框格線切分畫面、旋轉燈斜紋當轉場，不要做成小圖示，避免大介討厭的貼紙感。",
+   "可以當裝飾的專業工作語言：臉型／頭型比例、視覺小臉、剪裁線、耳下長度、熱塑燙、結構式護髮、頭皮隔離、OLAPLEX 三道程序、漸層暈染、預約時段 11:00–16:00、新秀設計師培育、讀書會／技術研習營、獎金分紅／股權。適合做成標註、量尺、時間軸這類設計系統元素。",
+   "可以直接用的官方語言是「第二張臉」「好心情的開始」「雁之懶人燙」「新生設計師の培育專門店」。其中「第二張臉」是官方原句不是 AI 金句，但仍偏口號，建議只當小字或標註，不要做成大標對仗。"
+  ],
+  "open_questions": [
+   "新聞裡的雁沙龍執行長「丁平龍」和「安格斯 Angus」是不是同一人？影片要不要出現本名？",
+   "三家店（鹽埕、民生、明誠）現在是否都還在營業？2024–2026 年有沒有新開、搬遷或收掉的店？最新地址、電話、營業時間和公休日是什麼？（網路資料互相矛盾：週一休、週二休、全週營業）",
+   "官方 logo 檔案、標準色色碼、字型、雁子圖案原檔能不能提供？要不要沿用安格斯片的 #FFB13B？",
+   "「雁之懶人燙」的官方定義、適合誰、價格、要多久？現在還是招牌主打嗎？",
+   "目前的價目表（剪、燙、染、護、安格斯本人指定價）。",
+   "團隊現在多少人（設計師、助理人數）？品牌正式創立年份（網路只有「約十年」「高雄在地 10 年」這種說法，最早可追溯到 2016–2017）？",
+   "安格斯對美髮人開的教練課程叫什麼名字、內容、形式、報名管道？網路完全查不到。本環境有一個技能叫「安格斯 MIND 心戰理論課程」，要不要在影片裡提到 MIND 心戰理論？",
+   "IG 簡介寫的「自媒體經紀沙龍」「每月數十萬外客資源」具體是指什麼？能不能放進影片當數據？",
+   "RUIENCY 潤熙自有護髮品牌還在賣嗎？要不要入鏡？",
+   "兩支片分別想主打什麼：品牌（雁形理論、團隊培育）、對顧客（小臉專家、懶人燙），還是招募設計師？目標觀眾是消費者還是美髮同業？",
+   "有沒有指定或要避開的用語？例如「小臉專家」「無痛整形」這類醫美式說法，要不要用？",
+   "Google 地圖星等與評論數（網路抓不到）能不能提供截圖或數字？"
+  ]
+ },
+ "driveFacts": {
+  "summary": "我讀完了任務指定的所有檔案：資料卡 04–09（其中 06、09 跟 05、08 是同一張卡的不同版本）、Google 截圖 01–03、導覽段 md 和 LINE 後勤群組，也另外搜了雁、Geese、安格斯、分店、民生一路等關鍵字。read_file_content 讀 png 會回傳空白，所以圖片都改用 download 解碼後直接看，色碼是用程式從像素取樣量出來的。\n\n**據點**\n- 雁沙龍民生店在高雄市新興區民生一路 259 號，電話 07-281-3636。\n- Google 商家名稱是「雁沙龍 (附設夜間洗髮)」，有線上預訂。\n- 姊妹店是左營正心街 112 號的川 Hair Salon。安格斯目前經營雁、川兩家店。\n- PIXNET 部落格寫的「明誠店、三間分店」是舊資料，跟現況對不上。\n\n**評價**\n- Google 4.9 星、2,438 則評論，截圖日期 2026-09-19（資料卡標 2026.09）。\n- FB 粉專 1.8 萬追蹤、FB 評分 4.9（424 則）。IG @geese.model_hair 約 1,860 追蹤。\n\n**招牌做法**\n- 先報價再消費。\n- 一小時只約一位客人，不讓客人久等。\n- 燙染全程由設計師操作，不全丟給助理。\n- 學生燙染 8 折。\n- 廁所備衛生棉，店裡有零食櫃。\n- 每月教育課程（例如 10 月的川x雁陶藝課、9 月的剪髮講座），另有不定期活動。\n- 附設夜間洗髮 19:30–23:00，護髮有玻尿酸、酵素水髮膜兩種。\n\n**團隊**：官網合作地圖列了民生店 7 位設計師，各有專長頭銜。另外 Wenwen、Johnson 兩位的 IG 也寫高雄雁沙龍。\n\n**品牌說法（都有原始出處）**\n- 「好髮型・好心情」：Google 圖片裡的價目表抬頭。\n- 「有開心的我們，才有開心的客人」：店家導覽片。\n- 「上班開心是我們的文化」：IG 簡介。\n- 「成為髮型師最強的後盾」：安格斯寫的創立雁的初衷。\n- 雁的定位是「生活係髮廊」，川是「高質感係髮廊」。\n\n**品牌視覺**\n- Logo：毛筆兩筆交叉成飛雁，下面是手寫「geese model」加書法「雁」，有深墨 #3A292E、銅棕 #9B5A3C、白三個版本。\n- 資料卡：米白底 #F4EFE6、墨黑 #1B1916、銅金 #8C6E3C、香檳金 #E8CE99，搭配粗宋體加高反差襯線數字。\n- 資料卡的星星色是 #FFB13B，跟上一支安格斯介紹片的橘黃是同一個色。\n- 舊片已經用過的手法：筆刷寫出「雁」、銅線、No. 章節卡、墨藍夜空配金弦月、旺財紅色帶。新的兩支片應該避開。\n\n**要問客戶的事**：logo 能不能用、英文名用哪個寫法、營業時間、評論數要不要更新、價目、要不要帶到川店、CTA 放哪個，細項在下面的待問清單。\n\nLINE 群組大多在講 ZZZ Lazy 吹風機電商，我只摘了店務相關的事實。人名、電話、客人資料、薪資抽成都沒抄。",
+  "facts": [
+   {
+    "topic": "據點",
+    "fact": "雁沙龍（民生店）地址：高雄市新興區民生一路259號（Google 商家寫「800高雄市新興區永寧里民生一路259號」）；電話 07 281 3636。Google 商家名稱「雁沙龍 (附設夜間洗髮)」，類別「位於高雄的髮廊」，有「線上預訂」按鈕，產品和服務連結為 lin.ee。",
+    "source": "Drive「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn；「02_Google評論數_商家卡.png」ID 1M3ugmyKFf3ARNB1J1tA1RRoj3SP9lK9M",
+    "date": "2026-09-19（截圖檔修改時間）",
+    "confidence": "high"
+   },
+   {
+    "topic": "據點",
+    "fact": "營業時間：LINE 官方帳號客服回覆客人時寫「雁沙龍【營業時間】一～六 11:00～19:00、星期天 12:00～19:00」。Google 截圖顯示「營業中・打烊時間 23:00」（含夜間洗髮）。夜間洗髮片尾卡寫 HOURS 19:30–23:00、RESERVE 07-281-3636。",
+    "source": "LINE OA 客服對話匯出「919_20260126_20260126_Unknown.csv」ID 1_DRflG0p1ihtCRbszjGPuzDk4MDsGhxL；「說明.md」（雁夜間洗髮動畫 v1）ID 1-ZjwtZZJzjKSoRl42-Sxxd0tADg3C7ZR；01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn",
+    "date": "2026-01-26（客服回覆）／2026-09-19（片尾卡、截圖）",
+    "confidence": "medium"
+   },
+   {
+    "topic": "據點",
+    "fact": "安格斯目前有兩家店：高雄新興的雁沙龍、左營的川沙龍（做美髮 20 年、開過 3 家店、現在 2 家）。2026-10 陶藝課介紹片的口白也說「那我們就有兩間店／川跟雁」。",
+    "source": "「三路研究摘要.md」ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w；「川x雁陶藝課_介紹片_v4.srt」ID 1KLPUzW99GIhnWjaqjT2ung8NcL7Kc-7H",
+    "date": "2026-09-30／2026-10-24",
+    "confidence": "high"
+   },
+   {
+    "topic": "據點",
+    "fact": "姊妹店「川 Hair Salon」（川沙龍／川hair，IG @chuan_hairstyling）：高雄市左營區正心街112號、07-558-3388；夜間洗髮（NIGHT SPA）時段為週二–六 19:00–23:00、週日 17:00–21:00。",
+    "source": "「夜間洗髮_參考片研究筆記.md」ID 1DR1P-RrZuX2Qj0L8W5p3NV9bqQY8n5A_；「06_體驗門市.md」ID 1w2lnSSiOTvjAN7maczEsui-lC_34PN0B",
+    "date": "2026-09-05／2026-10-02",
+    "confidence": "medium"
+   },
+   {
+    "topic": "歷史",
+    "fact": "舊資訊：PIXNET 部落格〈【高雄美髮推薦】雁Geese Model Hair Salon 明誠店X小臉…〉寫「高雄美髮設計師Angus（安格斯）這家雁沙龍美髮(明誠店)位於高雄左營區明誠二路上，雁沙龍美髮已經有三間分店」。跟目前「民生店＋川」兩店的說法不一致，屬於過時資料。",
+    "source": "Google 搜尋結果截圖「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn（原文 https://you5252001.pixnet.net）",
+    "date": "部落格發文日期未知（截圖 2026-09-19）",
+    "confidence": "low"
+   },
+   {
+    "topic": "據點",
+    "fact": "民生店同時是安格斯的吹風機品牌 ZZZ Lazy（懶懶）在高雄的體驗點。客服會把想試用的客人導去「雁、或者川門市～我們提供完整的吹風機操作體驗」；懶懶官網的客服電話也有 07-281-3636（跟雁同號）。",
+    "source": "「[LINE]雁 後勤團隊.txt」ID 1C1zP15X-kuB8qkHFduESwQEqAUAObEGd（2026-07-26 訊息）；「官網衝突與疑點.md」ID 1JqdsBiHCdYoS29EJEqbAh_hGp9BVmkre",
+    "date": "2026-07-26／2026-10-02",
+    "confidence": "high"
+   },
+   {
+    "topic": "評價",
+    "fact": "Google 評價 4.9 星、2,438 則 Google 評論。資料卡註記「資料來源 Google・2026.09」。",
+    "source": "「03_Google評論數_特寫_4.9星2438則.png」ID 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv；「02_Google評論數_商家卡.png」ID 1M3ugmyKFf3ARNB1J1tA1RRoj3SP9lK9M；「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg",
+    "date": "2026-09-19（截圖）",
+    "confidence": "high"
+   },
+   {
+    "topic": "評價",
+    "fact": "Facebook 粉專「雁 Geese Model Hair Salon - 民生店」超過 1.8 萬追蹤者，FB 評分 4.9（424）。IG @geese.model_hair 超過 1,860 追蹤者。",
+    "source": "「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn",
+    "date": "2026-09-19",
+    "confidence": "high"
+   },
+   {
+    "topic": "服務",
+    "fact": "雁沙龍十個優點（大介 2026-09-15 交辦宣傳片用）：Google 評論 2000 則／等待一小時內／不讓 walk-in 等、一個時段不約兩位以上／每月課程／不定期活動／廁所有衛生棉／有小零食／學生染燙 8 折／染燙由設計師操作不全交助理／先報價才消費。",
+    "source": "「project_yan_salon_promo.md」ID 1lIivCP7I6g6lff2Y1sDX64ExVvv_A74F",
+    "date": "2026-09-15",
+    "confidence": "high"
+   },
+   {
+    "topic": "招牌項目",
+    "fact": "已拍成片〈設計師們要我介紹〉的口白：「我們在服務之前一定要先進行報價，確認價位之後我們才會進行服務」「現在學生燙染八折」「我們一個小時只會預約一個客人，不會一個時段塞好幾個客人讓你等很久」「燙染全程都是由設計師操作，不會燙完設計師才出現」「Google 有兩千多則評論」「廁所還有提供衛生棉」「零食櫃」「每個月都會安排課程，不斷的精進我們的技術」「不定期的安排活動」。",
+    "source": "「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N",
+    "date": "2026-09-19",
+    "confidence": "high"
+   },
+   {
+    "topic": "招牌項目",
+    "fact": "資料卡 v2 把三個招牌做成膠囊標籤：「先報價 再消費」「一小時只約一位」「全程設計師操作」。",
+    "source": "「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg",
+    "date": "2026-09-19",
+    "confidence": "high"
+   },
+   {
+    "topic": "服務",
+    "fact": "附設夜間洗髮（NIGHT SPA），時段 19:30–23:00。雁的夜間洗髮片護髮段有兩種選擇：玻尿酸（針對光澤）、酵素水髮膜（針對柔順度）。9 月有針對「雁民生店附近」投放夜間洗髮廣告，活動到 9/30 結束後已改文案。",
+    "source": "「說明.md」ID 1-ZjwtZZJzjKSoRl42-Sxxd0tADg3C7ZR；「[LINE]雁 後勤團隊.txt」ID 1C1zP15X-kuB8qkHFduESwQEqAUAObEGd（09-24、10-01）",
+    "date": "2026-09-19～2026-10-01",
+    "confidence": "high"
+   },
+   {
+    "topic": "服務",
+    "fact": "價目表（Google 圖片結果）：抬頭是 logo＋「好髮型・好心情」＋價目表，分類用方框直排大字（可辨認「調」「護」「染」），護、染項目按 S/M/L/XL 長度分級。細項價格解析度太低讀不出來。",
+    "source": "「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn（下方圖片列）",
+    "date": "截圖 2026-09-19（價目表本身日期未知）",
+    "confidence": "medium"
+   },
+   {
+    "topic": "服務",
+    "fact": "教育與活動：2026 年 10 月川x雁手作陶藝課，口白說這是「從今年一整年度教育課程規劃下來」，課程有剪髮、燙髮、染髮，這次邀高雄藝術家來上；「兩位教育長非常用心在安排每一次的課程」「我們培育團隊夥伴們的美感以及設計理念」。結尾：「如果明年度你也想要跟著我們一起學習，一起在美髮這條領域成長，歡迎加入我們」。",
+    "source": "「川x雁陶藝課_介紹片_v4.srt」ID 1KLPUzW99GIhnWjaqjT2ung8NcL7Kc-7H",
+    "date": "2026-10-24",
+    "confidence": "high"
+   },
+   {
+    "topic": "服務",
+    "fact": "2026-09-24 雁x川剪髮講座（講師阿信老師），已剪成 60 秒形象片 v3 並定版。",
+    "source": "「說明.md」（雁 x 川剪髮講座 形象片 v3）ID 1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn",
+    "date": "2026-10-16",
+    "confidence": "high"
+   },
+   {
+    "topic": "其他",
+    "fact": "開店以來每月去學校、養老院義剪，疫情時停了，準備重啟。團隊有不定期聚會（例：2026-09-26「雁烤肉」）。",
+    "source": "「三路研究摘要.md」ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w；「[LINE]雁 後勤團隊.txt」ID 1C1zP15X-kuB8qkHFduESwQEqAUAObEGd",
+    "date": "2026-09-30／2026-09-26",
+    "confidence": "medium"
+   },
+   {
+    "topic": "團隊",
+    "fact": "民生一路259號的設計師（懶懶官網合作地圖，卡片頭銜照抄）：Angus.v「美髮教練安格斯」、Ann「古靈精怪設計師」、Juby「全方位資深設計師」、Elaine 黑輪「日系短髮・極短髮」、含含「頭皮護髮專科」、Ash「懶人專屬髮型師」、Corie 蔻里「層次剪裁專業設計師」，IG 帳號都是 geese_ 開頭。",
+    "source": "「06_體驗門市.md」ID 1w2lnSSiOTvjAN7maczEsui-lC_34PN0B（原網址 https://zzzlazy.com.tw/page/salon）",
+    "date": "2026-10-02",
+    "confidence": "high"
+   },
+   {
+    "topic": "團隊",
+    "fact": "IG 顯示名稱寫「高雄雁沙龍」的另外兩位夥伴：Wenwen @geese_.wen「層次羽毛剪｜韓式大波浪｜造型編髮」、Johnson @geese_cn_johnson「漂染髮專門（GEESE MODEL SALON）」。IG 帳號一律小寫。",
+    "source": "「剪輯說明_初剪v1.md」ID 1ccRP4_2VZBzAt-xHhJ87fMpm_SzI9SIH",
+    "date": "2026-09-21",
+    "confidence": "high"
+   },
+   {
+    "topic": "團隊",
+    "fact": "老闆安格斯（Angus）：IG @geese_angus.v 約 1.2 萬粉，Threads 1,867 粉。自稱「美髮教練」、教練課叫 MIND 心戰理論。簽名句「我是你的美髮教練安格斯，跟著我一起透過網路創造客戶」，有時接「我不瘋癲怎麼巔峰」。團隊段子裡他常是被員工嗆「走開」的老闆，這類片流量最高（激勵手冊 207 萬觀看）。",
+    "source": "「三路研究摘要.md」ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w；「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm",
+    "date": "2026-09-12／2026-09-30",
+    "confidence": "medium"
+   },
+   {
+    "topic": "歷史",
+    "fact": "品牌初衷（安格斯 IG 2025-05-06 原文）：「成為髮型師最強的後盾／就是我創立雁這個品牌的初衷／點選主頁連結加入我們學雁平台」。",
+    "source": "「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm",
+    "date": "2025-05-06",
+    "confidence": "high"
+   },
+   {
+    "topic": "口號與用語",
+    "fact": "兩店定位（安格斯 IG 2025-05-08）：「雁 @geese.model_hair（生活係髮廊）／川 @chuan_hairstyling（高質感係髮廊）」。",
+    "source": "「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm",
+    "date": "2025-05-08",
+    "confidence": "high"
+   },
+   {
+    "topic": "口號與用語",
+    "fact": "IG @geese.model_hair 簡介：「自媒體經紀沙龍 新生設計師の培育專門店 每月數十萬外客資源 激發你的熱情✺是我們的動力! 挖掘你的潛力✺是我們的能力! - 上班開心是我們的文化 行銷團隊高曝光是你們的…」（截斷）。",
+    "source": "「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn",
+    "date": "2026-09-19",
+    "confidence": "high"
+   },
+   {
+    "topic": "口號與用語",
+    "fact": "店內常用說法：「有開心的我們，才有開心的客人」（店家導覽片）；「如果你想要找到你的命定設計師的話，歡迎來我們的雁沙龍」（介紹片結尾）；「好髮型・好心情」（價目表抬頭）。",
+    "source": "「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N；「三路研究摘要.md」ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w；01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn",
+    "date": "2026-09",
+    "confidence": "high"
+   },
+   {
+    "topic": "口號與用語",
+    "fact": "宣傳片腳本收尾字卡曾定為「雁沙龍，先報價，再消費」。這是我們寫的腳本句，不是店家官方口號。",
+    "source": "「project_yan_salon_promo.md」ID 1lIivCP7I6g6lff2Y1sDX64ExVvv_A74F",
+    "date": "2026-09-15",
+    "confidence": "medium"
+   },
+   {
+    "topic": "品牌視覺",
+    "fact": "Logo：兩道毛筆筆刷交叉成「>」形的飛雁／雁陣，下方是連筆手寫英文「geese model」加書法體「雁」字。共三色版：深墨（實測 #3A292E）、銅棕（實測 #9B5A3C）、白。",
+    "source": "「雁_logo_深墨_高解析.png」ID 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7；「雁_logo_銅棕_高解析.png」ID 1kDARgD4o2YvhS-XxbceBSmPvZoibT57o；「雁_logo_白_高解析.png」ID 1NIM3h6uh66OJqLjyjpx3v0uqaFpLSlcp",
+    "date": "2026-10-14",
+    "confidence": "high"
+   },
+   {
+    "topic": "品牌視覺",
+    "fact": "英文名寫法：資料卡用「GEESE MODEL HAIR SALON」，FB 用「雁 Geese Model Hair Salon - 民生店」，logo 是小寫手寫「geese model」，Johnson 的 IG 寫「GEESE MODEL SALON」，IG 帳號 @geese.model_hair。",
+    "source": "資料卡 05 ID 1LT0xe4HCCzRyptoKTEDA5Y1H4yQs_8LY／08 ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg；01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn；「剪輯說明_初剪v1.md」ID 1ccRP4_2VZBzAt-xHhJ87fMpm_SzI9SIH",
+    "date": "2026-09",
+    "confidence": "high"
+   },
+   {
+    "topic": "品牌視覺",
+    "fact": "資料卡（大介 2026-09-19 製作）共兩代：v1 有深色（04）、淺色（05）、直式 9:16（06/07）；v2 是淺色 9:16 全屏（08/09），2160×3840。內容：GEESE MODEL HAIR SALON／雁沙龍／高雄・民生店｜附設夜間洗髮／4.9／五星／2,438 則 Google 評論／地址／電話／IG／資料來源 Google・2026.09。",
+    "source": "「04_雁沙龍資料卡_深色_去背.png」ID 1J8QPyq7KDz6lHHMxufbHwqxPajiMWYWx；「05_雁沙龍資料卡_淺色_去背.png」ID 1LT0xe4HCCzRyptoKTEDA5Y1H4yQs_8LY；「07_雁沙龍資料卡_淺色_直式9比16_全屏底.png」ID 13DSt2bxU-s76Bi95G_O7OLNuLjFNAlJC；「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg",
+    "date": "2026-09-19",
+    "confidence": "high"
+   }
+  ],
+  "visual_notes": [
+   "資料卡淺色版色票（像素實測）：卡底米白 #F4EFE6～#F6F1E7、9:16 外圍底 #E9E2D3、主字墨黑 #1B1916、銅金 #8C6E3C～#96763E（英文小標、細分隔線、圖示）、卡片描邊 #C6B499、星星橘黃 #FFB13B（跟上一支安格斯介紹片的橘黃同色）、浮水印大「雁」字 #EAE1D5",
+   "資料卡深色版：底近黑 #151512～#181515、主字米白 #F3EDE1、金字與細線 #C9A96E、星星 #FFB13B",
+   "資料卡 v2 構成：雙層細金框；4.9 用黑到古銅的漸層；整寬黑色橫帶 #1B1916 上放香檳金大數字 #E8CE99「2,438」；三顆膠囊標籤，第一顆實心黑底白字，另外兩顆是黑框；ADDRESS／RESERVATION／INSTAGRAM 寬字距小標配黑色圓形圖示；底部有空心描邊大字「GEESE」；右上有巨大的「雁」字浮水印出血裁切",
+   "字型（目測推斷，檔案裡沒有字型名稱）：中文標題「雁沙龍」是高對比粗宋體，像思源宋體 Heavy／Noto Serif TC Black；4.9、2,438 是 Didone 系高反差襯線（像 Bodoni／Playfair Display）；英文小標全大寫、字距很寬的襯線；@geese.model_hair 是小寫襯線。另外川hair 夜間洗髮片的字幕用思源宋體粗",
+   "Logo 筆觸：乾筆飛白、起筆重收筆尖，兩筆一長一短交叉成飛雁／箭頭。英文是連筆手寫小寫，「雁」是行草書法。程式動畫可以做筆畫描出或飛白掃筆，但剪髮講座片已經用過「雁筆刷寫出」",
+   "Google 圖片結果有一張門面照：復古台式理髮廳風，紅白藍斜紋遮雨棚、理髮旋轉燈柱、橫招牌由右至左「龍沙（雁）髮美」，中間是圓形「雁」字章，旁邊有盆栽和花籃。是哪一店不確定，要問客戶",
+   "民生店 Google 街景：店前有大行道樹、灰色水泥立面、騎樓。另有 Google 商家照片字卡「學員自己開店啦 Mira的第一家髮廊」，是黃字黑描邊的短影音風格",
+   "價目表視覺：米白紙紋底，左上 logo 加「好髮型・好心情」，分類用黑框直排大字（調／護／染），右側有長髮女生插畫",
+   "品牌氣質：雁＝「生活係髮廊」、上班開心、團隊互嗆的幽默段子、老闆被吐槽；川＝「高質感係」。雁偏親切、生活、實在",
+   "舊片已用過的語彙，新片要避免重複：剪髮講座片（雁筆刷寫出、x、川寫出、銅線、「剪髮講座」逐字升起、No.01–03 章節卡、Team 雁 x 川、Voices 小標）；雁夜間洗髮片（墨藍夜空底加香檳金弦月片尾卡、霧面玻璃卡金邊點亮）；雁夥伴吹風機（旺財紅 #7A1620 色帶）；安格斯個人 IP（白色 6px 線條加橘黃 #FFB13B 重點、紅 #FF4A4A 極少量、姚體字卡、輕木琴音效）"
+  ],
+  "open_questions": [
+   "影片能不能用 logo（深墨／銅棕／白三版 PNG 在 Drive，2026-10-14）？之前夜間洗髮片尾卡因為「沒有官方檔」沒放 logo，要確認這三版是官方定稿",
+   "英文店名用哪個寫法：GEESE MODEL HAIR SALON、Geese Model Hair Salon，還是 GEESE MODEL SALON？中文一律寫「雁沙龍」嗎？",
+   "目前的營業時間：一般時段是不是週一～六 11:00–19:00、週日 12:00–19:00？夜間洗髮是不是 19:30–23:00？有沒有公休日？",
+   "Google 評論數要用 2026-09-19 截圖的 4.9 星、2,438 則，還是請客戶給最新數字（或片中寫「2,400+」）？",
+   "學生燙染 8 折還有效嗎？雁的夜間洗髮價目和護髮價格是多少？資料只查到川的 NIGHT SPA 價目",
+   "片中要不要帶到姊妹店川 Hair Salon？左營明誠店、「三間分店」的舊說法要確認已經不用了",
+   "Google 圖片裡那張復古理髮廳門面（紅白藍斜紋、圓章「雁」）是民生店、舊明誠店，還是川？",
+   "「小臉專家」稱號現在還要用嗎？安格斯的年資對外寫 10 年還是 20 年？",
+   "片尾 CTA 放哪個：電話 07-281-3636、IG @geese.model_hair、Google 線上預訂，還是 LINE（lin.ee）？",
+   "設計師名字和專長（民生店 7 位，加上 Wenwen、Johnson）能不能放進片中？Juby、Corie 跟 Wenwen、Johnson 目前都還在嗎？",
+   "品牌色有沒有官方規範？logo 深墨是 #3A292E，資料卡墨黑是 #1B1916；logo 銅棕是 #9B5A3C，資料卡銅金是 #8C6E3C，兩組不一致。字型有沒有指定？",
+   "「生活係髮廊」「學雁平台」現在還是對外說法嗎？「好髮型・好心情」是不是正式標語？"
+  ]
+ },
+ "driveStyle": {
+  "past_works": [
+   {
+    "name": "Claude 動態設計履歷 30 秒（2026-09-29，大介心中的動畫標竿）",
+    "style": "1920×1080／60fps／120 BPM。黑 #141413、米白 #FAF9F5、陶土橘 #D97757 三色平塗；襯線大標＋無襯線內文＋等寬小標三種字；12 欄格線。開場陶土小球照重力彈跳（擠壓拉伸、殘影、高度標註 358/330/156/34px）→綻放成 12 道光的星芒→打字 hello, world.；逐字遮罩升起、規格表每拍彈一列（小方塊轉出→點狀引線→逐字打，剛打的字先橘後黑）；曲線編輯器、形狀變形、720 點雲、「動態設計」四字四技法、8 刀蒙太奇、片尾符號匯聚。全片常駐 HUD（四角框、品牌名、時間碼、章節標籤、進度條）；只用 outExpo／outBack／inExpo，禁止等速；提前 1–4 格起跑讓重拍落在動作高峰；兄弟元素錯開 2–4 格；配樂用程式合成、照格數對音效。",
+    "feedback": "大介 09/29 14:49：「我覺得做得不錯」；之後兩度拿它當標準（09/29「跟上面的自我展示一樣全力以赴」、09/30「用最早做介紹自己影片的方式跟風格」）；09/30「我覺得新模型的動態做得很好」。沒有退過其中任何元素。但 10/02 起明講新作「不能像它」，只能借等級。",
+    "source": "參考1_動態履歷.md（1XzFB6Hfr633IJNkGNCdwFzXz7BjGYYWz）；參考3_對話紀錄.md（1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）"
+   },
+   {
+    "name": "懶懶吹風機廣告 A 自由發揮 60／30（2026-09-30）",
+    "style": "奶油米白＋玫瑰金＋黑字；翻頁鐘 07:30＋三顆 Z 瞌睡泡泡被吹風機吹走；600px 玫瑰金巨字「乾蓬順捲」砸在產品背後；實拍裝進圓角卡片、說明字放在奶油色圓角卡上並跟拍呼吸；里程表計數、手繪螺旋畫在捲髮棒上、髮根→髮尾滾動點；空氣推入轉場＋玫瑰金接縫線；結尾巨大「咔噠」＋閃光震動。",
+    "feedback": "大介沒有逐版評語（參考2 查無）。10/02 原話否定 A–C 的 30 秒做法：「懶懶吹風機廣告a-c就是兩個長度的同步影片，我不是想要這樣」（30 秒像 60 秒閹割版）。閃白／震動／punch zoom 屬瑞軒退件點，不可搬。",
+    "source": "參考2_吹風機廣告.md（1VtVF-XFMZMIyD0op10QsEKscPCKhQFLp）；feedback_ad_lengths_redesigned.md（1F8BWZ7cbo0EWvaYGO_z27ef3wLVwEQHu）"
+   },
+   {
+    "name": "懶懶吹風機廣告 B 電影感 60／30",
+    "style": "近黑底、霧氣、金色微塵、底片顆粒；直書襯線玫瑰金漸層字逐字升起、金屬光掃過、衝擊波環；預告片式「吹乾是一件事，造型是另一件事，如果它們是同一件事？」；實拍壓暗＋橢圓暗角；字跨剪接點；收尾前全靜音只留一聲「咔噠」。",
+    "feedback": "無逐版評語；同上，30 秒版被歸為「閹割版」做法。記憶 10/02 列為「BRAAM 預告片套路」，新案不可再用。",
+    "source": "參考2_吹風機廣告.md（1VtVF-XFMZMIyD0op10QsEKscPCKhQFLp）；feedback_always_new_not_derivative.md（1gUxUGub3HTNX2k4rXoWwl_XgSLqPmrPD）"
+   },
+   {
+    "name": "懶懶吹風機廣告 C 口白版 60／30",
+    "style": "實拍為主＋白字柔陰影＋深色光暈墊底；字義演出（「塌塌」被壓扁、蓬彈跳、順掃光）；「全台 400+」大數字跨三個鏡頭；深色膠囊關鍵字標籤固定在字幕上方；台灣點陣地圖 54 點逐區亮；動畫對口白的字而不是對拍。",
+    "feedback": "無逐版評語；待確認事項只有露臉同意與「54 位設計師可預約試吹」措辭。",
+    "source": "參考2_吹風機廣告.md（1VtVF-XFMZMIyD0op10QsEKscPCKhQFLp）"
+   },
+   {
+    "name": "懶懶吹風機廣告 D 設計履歷 D60〈吹風機的動態履歷〉／D30〈藍圖〉",
+    "style": "D60：黑底玫瑰金髮絲線→mono 計時器 00:00→20:00→點雲→線稿→靜音一拍後翻成紙色、logo 砸下；五個 SPEC 章節；8 格蒙太奇收尾。D30：工程製圖紙＋標題欄，打字「設計一支吹風機，只有一個條件：」→「懶。」砸下飛進標題欄；鉛筆描線、鏡頭跟筆尖推近、引線標註、需求清單逐拍打勾、10 秒線稿活起來、橡皮章（先影子後落地）逐項蓋、「核可」章收尾；角落 HUD（圖號／時間碼／§章節／進度條）。",
+    "feedback": "大介 09/30 08:31 指名「用最早做介紹自己影片的方式跟風格…不要用真人…需要一些鋪陳然後讓人眼睛為之一亮」；交件後無直接評語、沒要求重做。10/02 記憶判定「只有 D30 獨立概念才是他要的方向」。同串平面廣告被退：「2號如果是黑色會讓商品整體不明顯」。",
+    "source": "參考3_對話紀錄.md（1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）；feedback_ad_lengths_redesigned.md（1F8BWZ7cbo0EWvaYGO_z27ef3wLVwEQHu）"
+   },
+   {
+    "name": "桃園課程活動紀錄片 v2／v3（安格斯第一屆實體課，2026-09-30～10-01）",
+    "style": "v2：83 秒實拍混剪＋16 個開源 icon 小動畫（地圖針、鈔票、愛心、放射線，畫寬 5–12%、固定座標）。v3「課堂紀錄儀」：常駐紀錄框（● REC、課堂時鐘 13:04→17:59、§章節標籤、進度軌）＋紙箱播放頭每拍被坐一下＋對焦框＋測量引線＋里程表數字（出價 1,000→10,000 跨剪接）＋衝擊小撇細環＋T！T！T！三拍三技法＋切條轉場＋片尾章節符號匯聚；安格斯橘黃 #FFB13B、紅 #FF4A4A 極少量、白線加暗邊、字一定有底板。",
+    "feedback": "v2：「裡面的小動畫是用什麼樣的方式做的？跟我期待的動畫落差很多」，要「點綴，且頻繁」、參考動態履歷與懶懶廣告。v3 審片時大介：「虛線的位置有點意味不明，你要根據畫面做動畫」。v3 整體待回（報名資訊、肖像、街友班用語、成交章音效）。",
+    "source": "風格書與套用方案.md（1iRBdqAlmAKTyC-_qhqPR20nUgJlBobuh）；feedback_motion_design_not_stickers.md（1-H50sjlx4yS8j2iDhY4eE1MzvXbPJpNn）；project_taoyuan_course.md（1g1o5Of_WJqhXr40SOH7pdIG4gPk8awTG）"
+   },
+   {
+    "name": "面試（安格斯）剪紙情境動畫 v1→v6（2026-09-10～09-11）",
+    "style": "安格斯剪紙拼貼（白紙邊、紙紋、落影、紙色 #f3ead6／#e6e3de）；基本形象米色 T 會說話（口型層）；狀態改變一律翻面（邋遢版→有型版只一次）；印章砸下「印象」、IG 網格滑到彩色一格放大、紙飛機、膠帶封嘴、燈泡熄滅、四個穿搭分身各自起步走向店門口；每段一個主動作、相鄰段不同手法。",
+    "feedback": "v1：「完全不行，根據言語的內容做示意畫面，不是純文字切換，固定的動作太多了」；音效：「音效完全不對，用我收集的紙張聲音」→紙張聲又被退「完全對不上」→剪紙片預設不配音效；預覽退件：沒有小標題卡、不做掉髮、直接翻面、結尾要各自起步。",
+    "source": "面試_動畫腳本_v6.md（19UEgO0IFaDTSH_9YdjJv5otMbQo5IZG1）；動畫素材與橋段紀錄.md（1NPMn6hW80OxR0f7_bYEyB5d1C5BZNH9N）；剪紙情境動畫_參數.md（1IPkjsWNahNl1nnPWAuFojTzxKNUFO71g）"
+   },
+   {
+    "name": "安格斯剪紙片系列（助理與設計師的距離／設計師很可憐／差異化／Tim口播，2026-09-03～09-18）",
+    "style": "剪紙置換段跟毛片穿插；三紙框橫排、泡泡輪播、紙卡弧線飛入、黑手拖走、錢袋、店面翻華麗、山頂插旗「我不瘋癲怎麼巔峰」、九宮格作品照翻灰；結尾 IG 卡＋游標點擊 @geese_angus.v。",
+    "feedback": "助理片：滴水音效用太多；設計師很可憐：「進場音效都不要，尖叫的音效也不要」「CTA 動畫要在畫面中央，大一點」；Tim：線稿 icon 版退「安格斯風格會有剪紙動畫做效果，挑一些地方設計，跟毛片穿插」、「一張圖裡面表示不同的人就要有不同的造型」。10/03：「我不喜歡過於重複度過高的動畫素材還有橋段…編排動畫的過程還是要有新意」。",
+    "source": "動畫素材與橋段紀錄.md（1NPMn6hW80OxR0f7_bYEyB5d1C5BZNH9N）；project_angus_style_profile.md（1N4Ohfl3tQYm_iu8yCyZFpJmOtO_jhHVN）"
+   },
+   {
+    "name": "安格斯自介動畫 60／30 秒 v1（10/03 全退）→ v2（10/05 交）",
+    "style": "v1：60 秒剪紙繪本式（新手設計師守空椅、時鐘快轉、客人排隊、椅子坐滿、業績滾輪 NT$200,000）；30 秒動態履歷式（大字「安格斯」、橘紙條「美髮人的教練」、翻牌到 20、人群遊行、九位換色客人坐滿、山頂巔峰、自拍比讚）。v2：60 秒改「字幕 MV〈客人從哪裡來〉」、30 秒「美髮 20 年」一拍砸上、客人變多改私訊湧入＋預約表填滿、安格斯只出場兩次、配樂自己合成。",
+    "feedback": "v1：「第一版完全不行，跟動態自介的程度差太多了，這種東西沒有辦法用」；點名客人換色重複、空椅坐滿／排隊老套、手畸形、站位亂、無字意味不明、庫存配樂。v2 待大介回（安格斯 60 的 17 個音效、30 秒四項微調）。",
+    "source": "feedback_selfintro_v1_rejected.md（1hdFr2zqh7_ZSUZIJLagszdWR-4BCyM-y）；v2重做方案.md（1OSQtBae-Ij3hgbkfYCLjI2f3sf5hoptk）；09_各專案現況.md（1u6FXD1JnN8sk2Nw318tqhwW8B3VO7ncM）"
+   },
+   {
+    "name": "雁沙龍宣傳片（我的員工叫我介紹，文字腳本，2026-09-15）",
+    "style": "安格斯 IP 劇情：長得像鄔馨茹的設計師來面試→安格斯「我不看履歷，你把店介紹一遍」→導覽十個優點（先報價→不用等→設計師親手染燙→兩千評論→福利五格快閃→「這些不是賣點是應該的」）→反轉「我是你們客人，來三年了」→字卡「雁沙龍，先報價，再消費」。導覽段參考：早餐店阿姨一句一點＋紅字字卡、JFJ 吐槽老闆、Mike Weston 福利一格一字卡、遮擋物平移運鏡。",
+    "feedback": "大介尚未挑版本（三年客人版／我媽是客人版；誰講收尾句）。品牌安全：鄔馨茹梗只做視覺相似，不碰宮廟／宗教。腳本檔本身位置查不到。",
+    "source": "project_yan_salon_promo.md（1lIivCP7I6g6lff2Y1sDX64ExVvv_A74F）；雁沙龍導覽段_Reels參考_20260915.md（1z1AHu9HH65fykZ5jPvO0aRpw8GRa3awr）；09_各專案現況.md（1u6FXD1JnN8sk2Nw318tqhwW8B3VO7ncM）"
+   },
+   {
+    "name": "雁夜間洗髮 初剪 v1（9/15）＋字幕動畫 v1（9/19，標為獨立 IP）",
+    "style": "雁（黑衣、手持麥）口播導覽：精油燈→頭皮檢測→精油按摩→玻尿酸／酵素水髮膜→懶懶吹風機吹整→深夜剪髮一人服務制→「晚上被老婆趕出門，這裡是你的好去處」；Before/After 分割畫面（Didot 英文＋宋體中文）。動畫：護髮段底片模糊＋兩張白色霧面玻璃卡（Lucide 水滴／葉子圖示）、香檳金 #E9C46A 點亮＋光掃；字幕宋體 TC 粗 118px 白字無描邊雙層柔影、固定 57%。片尾卡 6.5 秒：墨藍夜空＋香檳金弦月，NIGHT SPA／夜間洗髮／雁沙龍／HOURS 19:30–23:00／RESERVE 07-281-3636／ADDRESS 高雄市新興區民生一路 259 號；無聲、未放 logo。",
+    "feedback": "大介 09/18 自己出「大介修正」版：開場換室內 take、拿掉按摩 B-roll 延伸、收緊，49.7→39.6 秒。動畫 v1 的評語在 Drive 查無紀錄（分鏡問題：字幕樣式、玻璃透明度、強調色用香檳金還是配店的黃牆、要不要小標，答案不明）。",
+    "source": "剪輯說明.md（1bcLSmX6lHqyHFYGNBrcN3Hhq-eshXyLW）；分鏡規劃_v1.md（1Glqz40Kf1_i7fMFUUsWU59BJA1IhdJtC）；說明.md（1-ZjwtZZJzjKSoRl42-Sxxd0tADg3C7ZR）"
+   },
+   {
+    "name": "雁夥伴吹風機系列（Geese_ann／wen／ash／johnson／elaine／hanhan，9/20～9/30）",
+    "style": "夥伴口播＋電商 B-roll＋SRT（不做動畫）。B-roll 新設計圖依個人風格：ash＝韓系高級美妝雜誌（奶茶灰牆、紗簾柔光、Didot 斜體、N°01–04、香檳金細線、酒紅數字）、Ann＝剪報拼貼 zine、含含＝粉紅底菱格邊條拍立得。電影感廣告 v1：預告片式、紅絲綢片名、N°01–04 章節字卡、291/280 秤重證據、配樂 022 在 40.17s 爆發、片尾卡。",
+    "feedback": "ash 第一版米白＋卡其細線「只是原圖換色、略顯樸素」，雜誌風過件；廣告混剪 v1 因台詞有「我們」被退（老闆不要讓人覺得是自家品牌）；電影感廣告 v1 待驗收。",
+    "source": "project_geese_partner_dryer_series.md（1QBHRW3c6T78t02v0O9ed5DuabBsUUu9V）"
+   },
+   {
+    "name": "雁 x 川｜剪髮講座 形象片 v1→v3（阿信老師，10/15～10/17 定版）",
+    "style": "60 秒實拍＋疊加設計。母題「引導線」：全片圖像從一條細銅線長出，雁 logo 沿筆刷方向擦出、「x」、川字筆刷刷出；「剪髮講座」逐字升起＋銅線拉開＋Cutting Seminar｜2026.09.24 高雄；No.01 45° 提起，再轉彎（銅線逐格貼在髮片上）／No.02 先找引導線／No.03 慢慢剪；小標 Team／Voices；片尾暖白資訊卡。顏色：墨 #1E1A17、銅 #A4613C（取自雁 logo）、暖白底板；字型思源宋體（標題）＋Instrument Serif 斜體（No.、英文）＋思源黑體（字幕）。配樂〈Chill Day〉81 BPM，剪點全在拍上；不閃白不震不甩鏡、字不跨剪點。",
+    "feedback": "大介 10/16：標題錯字「剪法」要改「剪髮」；「第一個學員有一個聲音很吵（換一個人），後面兩個人的講話感覺都有被裁切到」、「不用太拘泥於布丁頭」（上課 vlog 學員）；加女生助理一句。10/17 01:31：「這部可以了」（開場白霧、小標等 6 題照現狀）。",
+    "source": "分鏡_v1.md（1yhVXpGAXPsxOMQDzFMyVJYAgJrECs5oG）；說明.md（1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn）；暫停紀錄_20261016.md（10548Gn7cTo7aXFTHfYmehbQIUEcFOkw2）"
+   },
+   {
+    "name": "安格斯訪問阿信老師 字幕＋裝飾動畫 v1→v3（10/16～10/17）",
+    "style": "安格斯字幕：勵字姚體補字版、白字深褐邊、固定 57%、重點字橘黃 #FFB13B／紅 #FF4A4A。裝飾「批改筆記」：只用老師改作業記號（底線、紅筆劃掉、插入號、畫圈）——「上千」劃掉補「萬」、技術＝業績劃成≠、剪刀時間圈一小時→20分、故事時間線；左上常駐「安格斯 × 阿信老師」＋七段刻度；結尾「私訊安格斯」@geese_angus.v。音效留給大介在剪映配。",
+    "feedback": "大介 10/16 點收：「批改筆記」方向可以、帳號 @geese_angus.v 對、「本人自評」加回（「他自己說無妨」）；選補回「時」；配樂要「時尚感」。",
+    "source": "說明.md（1pojDcz3Z1dtisHSTFqK4XRqaQ5KtDTVe）；說明.md（1fb0HbriuQWOxjJNqnb0EKV5mhP2T9XYC）；暫停紀錄_20261016.md（10548Gn7cTo7aXFTHfYmehbQIUEcFOkw2）"
+   },
+   {
+    "name": "川x雁陶藝課 vlog v1→v2（店家團隊片，10/23）",
+    "style": "v1 母題「陶印」，配樂 053 卡點。v2 為黏土課重做：「草稿→陶土→展覽」，鉛筆線先畫輪廓再由陶土從底部填滿、每章一個器形（花瓶／碗／杯／罐）、作品用美術館說明牌、片頭片尾做成展覽海報；字型霞鶩文楷＋日系手寫；配色素坯、陶土、青瓷、鉛筆灰；logo 形狀照原檔但上色：雁＝青瓷釉、川＝素燒陶。",
+    "feedback": "大介 10/23：「音樂我覺得可以」；「vlog的後期字卡跟視覺風格跟上一個阿信老師的版本重疊，我希望你可以搭配黏土課這個主題，來一點藝術氛圍的設計，兩個品牌的logo可以保持原本的形狀但是用不一樣的風格渲染上色的感覺」；Brian 段要重組交代任務、贅詞「我們川啊跟雁」要拿掉；之後點出字幕錯開。",
+    "source": "進度紀錄.md（1HYUyueKdbtEFfYn7F5Y77xzp0icHCvYT）；說明.md（18gkIALyHPq1dSkautB9G7T3uY-RgOGXs）"
+   },
+   {
+    "name": "川x雁陶藝課 介紹片 v1→v4（安格斯 IP，10/23～10/24 完成）",
+    "style": "安格斯口播主體＋上課 B-roll；字幕姚體白＋重點橘黃 #FFB13B；v3 起字卡動畫 35 段跟口播演（剪刀＋剪燙染、陶土落下壓扁、蓋章「美感」、畫框框出藝術品、8 顆陶土聚成作品…）＋自製木琴／鐵琴／陶土音效；v4 字卡整組放大搬到空牆／桌面（滿畫面不擋人）、重點字幕 39% 有進場動畫、31 種每種 ≤2 次；配樂最後換剪映 024 電子 house 123 拍；封面 C「設計師的美感／從一塊陶土開始」。",
+    "feedback": "v3 前：「從今年一整年度…聽起來是切掉的…輔助用的素材有點少，可以加入更多動態效果去輔助畫面，不然整體調性偏無趣」；v4 前：動畫用滿畫面、不擋人、字幕要多變化；「更腦洞有點意味不明，直接接去想像」；配樂「要動感一點」→「我希望有時尚動感的感覺」；10/24 晚說「完成」。",
+    "source": "說明.md（1Nsl6z1PXzciWE0z72XK7Ni0RQPFF21OS）；說明.md（1uOrrmN5vrIjIKusdpmHBIttpBr7B63yf）；進度紀錄.md（1HYUyueKdbtEFfYn7F5Y77xzp0icHCvYT）"
+   },
+   {
+    "name": "川hair 品牌形象廣告 A／B／C × 60／30（10/02～10/10，同類型最近的案子）",
+    "style": "v1 IG 素材拼接；v2 抽象 3D（一塊布＝被照顧、髮河＝川）；v3 真實店景作品＋3D 川字被寫出：A〈兩分鐘〉指標牌從捷運巨蛋站走進店／〈坐下來之後〉膠囊鏡；B〈三幕〉電影＋月亮前川字／〈剪・染・燙・川〉大字當窗；C〈一間髮廊的履歷〉／〈作品集〉黑白顯影成彩色；配樂各自合成（城市流行、電影弦樂、爵士）；B 再改時尚版（精品 campaign、雜誌封面）。",
+    "feedback": "v1：「只是感覺你拿了很多網路素材拼接而已，沒有形象廣告的感覺，甚至動畫也很偷工減料」；v2：「A的整體意味不明…logo的位置都被切到，字幕很不好看沒設計感。B的音效是場災難，只有logo川出現的部分看起來不錯」；v3：「通勤地址」不合適（要給客人看）、週一公休寫錯、川字閃爍、C60 有個聲音很吵、A30 卡頓、B 合成配樂「怪怪的」、「B我整個不滿意…我想要時尚感強的並且不失質感」；時尚版 10/10：布丁頭、停頓多、左右一樣的波浪燙意味不明、配樂跟節奏意味不明、只有牆面的鏡頭看不懂。30 秒又被說像 60 秒閹割版。",
+    "source": "project_chuanhair_brand_ad.md（1AVxSbSCEMbw9ng8KJSoOLO5qwGMRGIX2）；交付說明.md（1BLpyb1yMPcLd-xq1tB6MMdiw5HN-1MQW）；feedback_brand_ad_not_footage_collage.md（1hO6QhgezYbP9uGqYbbaeD8VzzjGWjJRX）；退件考題.md（1-DI0iPj1W4nlJrDS31p8qh0lcSyaXSTW）"
+   },
+   {
+    "name": "hive_tony 產品形象片 v1→v2（懶懶 × Hive，10/09）",
+    "style": "v1：寫實 3D 布景「世界在換」＋實拍慢動作＋疊在人身上的色票卡／291g 標註／印章。v2：動態履歷語言——純色底、編輯大字、遮罩升起、重拍打擊、HUD 外框、合成配樂打點；10 秒四賣點（每項約 2 秒、標題 ≤5 字＋一個數字）、全畫面平面海報穿插、印章約畫寬一半高對比急壓＋衝擊波。",
+    "feedback": "v1：「剪得完全不行，沒有一個地方我覺得可以用」；v2：字上寫到的配件圖上要有、海報進場不要剪映紙張翻動聲（「不好聽」）、組裝接觸點沒接起來。",
+    "source": "feedback_brand_film_motion_resume_style.md（1n7uPjjE4UyCIYLr7uito-Rf0itRo8OoK）"
+   }
+  ],
+  "brand_rules": [
+   "【店名與基本資料】中文「雁沙龍」，英文「GEESE MODEL HAIR SALON」／臉書寫「雁 Geese Model Hair Salon - 民生店」；民生店附設夜間洗髮；地址 高雄市新興區民生一路 259 號；電話 07-281-3636；店 IG @geese.model_hair；安格斯 IG @geese_angus.v。來源：08_雁沙龍資料卡v2_淺色_9比16_全屏.png（1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg）、01_Google搜尋雁沙龍_整頁.png（1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn）、project_angus_style_profile.md（1N4Ohfl3tQYm_iu8yCyZFpJmOtO_jhHVN）",
+   "【已用過的賣點】資料卡 v2：Google 4.9 星／2,438 則評論（資料時間 2026-09，用前要重查）、「先報價 再消費」「一小時只約一位」「全程設計師操作」。大介 9/15 交辦的十個優點：Google 評論 2000 則、等待一小時內、不讓 walk-in 等／一個時段不約兩位以上、每月課程、不定期活動、廁所有衛生棉、有小零食、學生染燙 8 折、染燙由設計師操作不全交助理、先報價才消費。來源：08_雁沙龍資料卡v2（1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg）、project_yan_salon_promo.md（1lIivCP7I6g6lff2Y1sDX64ExVvv_A74F）",
+   "【營業時間】Google 顯示打烊 23:00；雁夜間洗髮片尾卡寫 HOURS 19:30–23:00。白天時段沒有查到，總綱規定營業資訊以店家實況為準、要逐項確認。來源：01_Google搜尋雁沙龍_整頁.png（1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn）、說明.md 雁夜間洗髮（1-ZjwtZZJzjKSoRl42-Sxxd0tADg3C7ZR）、大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）",
+   "【雁 logo】取自 Facebook 雁民生店大頭貼（網路最大 395px），已重描成高解析透明檔，並與原圖並排比對過形狀；現有色版：深墨、白、銅棕（雁_logo_深墨_高解析.png 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7、雁_logo_白_高解析.png 1NIM3h6uh66OJqLjyjpx3v0uqaFpLSlcp、雁_logo_銅棕_高解析.png 1kDARgD4o2YvhS-XxbceBSmPvZoibT57o）。陶藝 vlog 另做過青瓷釉上色版。大介 10/23 規則：logo 形狀保持原樣，可用不同風格渲染上色。來源：說明.md 阿信兩支片 v1（1kBPdBisCmltpS9_Gw9e3uJbVNgDxOHEA）、進度紀錄.md（1HYUyueKdbtEFfYn7F5Y77xzp0icHCvYT）、陶瓷logo.py（1k_kxSj3ZpeA1W1Z9epF0s5I4rIWG3Sq-）",
+   "【雁的品牌色（已實際用過）】剪髮講座形象片從雁 logo 取色：墨 #1E1A17、銅 #A4613C＋暖白底板；店內是黃色牆（雁夜間洗髮分鏡問過「強調色要不要配店的黃牆」，川hair 店家資訊也記雁沙龍＝黃色牆）。雁夜間洗髮用過香檳金 #E9C46A＋墨藍夜空。來源：分鏡_v1.md（1yhVXpGAXPsxOMQDzFMyVJYAgJrECs5oG）、分鏡規劃_v1.md（1Glqz40Kf1_i7fMFUUsWU59BJA1IhdJtC）、店家資訊.md（1zTppak__hxKucAX2PQYcSGjccy1f2-Hb）",
+   "【安格斯 IP 字型與色】勵字姚體簡繁（專用；姚體曾缺「兇」「採」已補字，新字要跑缺字檢查）；強調橘黃 #FFB13B、負面紅 #FF4A4A；三個 IP 視覺互不借用（Akira 思源黑體＋磚紅墨線、Elaine 思源粗宋＋白／香檳金）。來源：project_angus_style_profile.md（1N4Ohfl3tQYm_iu8yCyZFpJmOtO_jhHVN）、大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）、Akira風格說明.md（1WOtDVz4YyTBu3D9uGOpmW-jFuLwfp3Ma）",
+   "【安格斯字幕樣式】大介 8/5 手調黃金樣本：姚體、白字、字號 11、黑陰影不透明度約 60%、距離 5、柔化 0.45、角度 −45°、位置正中偏下（y −0.27）；每行 ≤8 字、語氣詞不上字幕；近期阿信／陶藝片做成白字深褐邊、固定畫面 57% 高。字幕沒有進場動畫是總綱通則，但 10/24 介紹片照 Windows W-0074：重點行 20–40% 可有 0.5 秒進場、每次換效果、同種最多 2 次。來源：字幕黃金樣本.json（1MV1pCIaKcXih8YM3Zm-Q__Y3B8P-5f9_）、說明.md 阿信 v3（1pojDcz3Z1dtisHSTFqK4XRqaQ5KtDTVe）、說明.md 陶藝介紹片 v4（1Nsl6z1PXzciWE0z72XK7Ni0RQPFF21OS）",
+   "【安格斯字卡與片尾】字卡黃色發光款、姚體、置中、只水平排列，走清淡典雅（極淡陰影、細邊、寬字距）；結尾 IG CTA @geese_angus.v 每支都有，要放畫面中央、大一點，但進場方式要換。封面：底圖壓黑 60%、姚體兩行置中在胸口、第一行白、第二行重點詞橘黃。來源：剪紙情境動畫_參數.md（1IPkjsWNahNl1nnPWAuFojTzxKNUFO71g）、動畫素材與橋段紀錄.md（1NPMn6hW80OxR0f7_bYEyB5d1C5BZNH9N）",
+   "【已做過的雁沙龍片尾卡】雁夜間洗髮片尾卡：墨藍夜空＋香檳金弦月，NIGHT SPA／夜間洗髮／服務列→分隔線→雁沙龍→HOURS／RESERVE／ADDRESS 依序浮上，停 5 秒、無聲、沒放 logo。剪髮講座片尾：暖白底＋雁 x 川 logo＋講座名＋講師。來源：說明.md（1-ZjwtZZJzjKSoRl42-Sxxd0tADg3C7ZR）、說明.md（1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn）",
+   "【音效與配樂規則】安格斯剪紙／口播疊加動畫預設不配音效（大介自己在剪映配），木琴／叮咚／電子音不用；總綱：形象廣告與動態設計片配樂自己合成，口播與 vlog 用他剪映收藏的；但 10/09 川hair B 合成配樂被嫌「怪怪的」改用剪映庫，總綱標「待更新」。最近他對雁／安格斯片的配樂要求是「時尚感」「時尚動感」（阿信訪問、陶藝介紹片最後用剪映 024 電子 house）。來源：project_angus_style_profile.md（1N4Ohfl3tQYm_iu8yCyZFpJmOtO_jhHVN）、大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）、說明.md（1Nsl6z1PXzciWE0z72XK7Ni0RQPFF21OS）、暫停紀錄_20261016.md（10548Gn7cTo7aXFTHfYmehbQIUEcFOkw2）",
+   "【Reels 版面硬規則】安全區上 14%／下 35% 不放要讀的字，左右離邊至少 90（1080 寬），右側按鈕列不放字；logo 不可被切；小字下限：標籤 34px、主字 44px；中文元件加 lang=\"zh-Hant-TW\"（不然變日文字形）；Remotion 先無聲渲染再用 ffmpeg 封 WAV（內建 AAC 會晚 2048 樣本）。來源：大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）、feedback_motion_design_not_stickers.md（1-H50sjlx4yS8j2iDhY4eE1MzvXbPJpNn）、參考1_動態履歷.md（1XzFB6Hfr633IJNkGNCdwFzXz7BjGYYWz）",
+   "【動態手感（他認可的那套）】只用 outExpo（進場）／outBack（彈出，過衝約 8–10%）／inExpo（離場）／inOutExpo（位移），除等速旋轉外禁止線性；重拍提前 2–4 格起跑讓最用力那格落在拍點；兄弟元素錯開 2–4 格；大衝擊後留 1–2 格喘息；一次一個主角（畫寬 35–60%）配細小附屬；停住也要慢推 1–2%／呼吸。來源：參考1_動態履歷.md（1XzFB6Hfr633IJNkGNCdwFzXz7BjGYYWz）、風格書與套用方案.md（1iRBdqAlmAKTyC-_qhqPR20nUgJlBobuh）"
+  ],
+  "preferences": [
+   "喜歡「整個畫面被設計過」的動態設計系統，不是 icon 貼紙或小疊加；份量要「點綴，且頻繁」。原話：「跟我期待的動畫落差很多」「我預期的是你稍早opus5.5自己獨立生成的動畫」。來源：參考3_對話紀錄.md（1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）、feedback_motion_design_not_stickers.md（1-H50sjlx4yS8j2iDhY4eE1MzvXbPJpNn）",
+   "要一直拿出新東西：「我希望你一直拿出新東西給我，我不喜歡看到跟過去很像的東西，請你全力以赴」；參考只借等級，母題、版面、轉場、配樂動機要從品牌本身重新發明；企劃要附「跟過去作品的差異」欄。來源：feedback_always_new_not_derivative.md（1gUxUGub3HTNX2k4rXoWwl_XgSLqPmrPD）、大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）",
+   "60 秒與 30 秒是同題目的兩個獨立答案：「兩者之間不要像是閹割版跟原版」「我想要在同一個框架下看起來是兩個不一樣的東西」；交件前兩版至少四項不同（主角素材、封面、結構、logo 時刻、配樂），「同框架」只指字型、調色、動作手感。來源：feedback_ad_lengths_redesigned.md（1F8BWZ7cbo0EWvaYGO_z27ef3wLVwEQHu）",
+   "要有鋪陳再讓人眼睛一亮：「整體的節奏需要一些鋪陳然後讓人眼睛為之一亮的感覺」。來源：參考3_對話紀錄.md（1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）",
+   "形象廣告要先看得懂：「意味不明」是他最常用的退件詞；抽象隱喻（一塊布＝被照顧、髮河＝川）、看不出在拍什麼的空鏡、同一顆頭並排都被退；要直接演出是什麼店、做什麼、在哪、怎麼找。來源：feedback_brand_ad_not_footage_collage.md（1hO6QhgezYbP9uGqYbbaeD8VzzjGWjJRX）、feedback_promo_footage_roots_stalls_meaning.md（1W7RklpS4oscwu3D9ny3H8NA8u2b0lNKE）",
+   "動畫要演出內容、不能站著不動：「完全不行，根據言語的內容做示意畫面，不是純文字切換，固定的動作太多了」；無口白的片要有字（安格斯 60 秒他要當字幕 MV）。來源：面試_動畫腳本_v6.md（19UEgO0IFaDTSH_9YdjJv5otMbQo5IZG1）、feedback_selfintro_v1_rejected.md（1hdFr2zqh7_ZSUZIJLagszdWR-4BCyM-y）",
+   "安靜的美感、不堆技術流：瑞軒卡點片退件「完全不對，音效很多餘整體完全沒有美感」；不要閃白、整畫面震動、甩鏡、RGB 錯位、zoom punch、光暈霓虹漸層。來源：參考3_對話紀錄.md（1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）、大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）",
+   "轉場光效只亮一格也算閃白：r_osa 10 秒廣告「切換畫面有閃爍的狀況」→寧可乾淨硬切，主角不可消失幾格再冒出。來源：退件考題.md（1-DI0iPj1W4nlJrDS31p8qh0lcSyaXSTW）",
+   "中間不能停頓：靜止畫面、超慢動作、長黑底字卡都被看成「停頓的地方很多」；除片尾資訊卡（約 3.5 秒）與 logo 寫出時刻，靜止超過 1 秒要改。來源：feedback_promo_footage_roots_stalls_meaning.md（1W7RklpS4oscwu3D9ny3H8NA8u2b0lNKE）",
+   "配樂要一聽就對調性、剪點跟樂句走：川hair B30「配樂跟節奏意味不明」；B60 合成配樂被評「音效是場災難」（問題是做差，不是合成方法）；近期雁／安格斯片他要「時尚感」「時尚動感」。來源：feedback_brand_ad_not_footage_collage.md（1hO6QhgezYbP9uGqYbbaeD8VzzjGWjJRX）、說明.md 陶藝介紹片 v4（1Nsl6z1PXzciWE0z72XK7Ni0RQPFF21OS）",
+   "字要有設計感、logo 不能被切：川hair v2「字幕很不好看沒設計感」「logo的位置都被切到」；細明體＋小字說明的排法被嫌。來源：feedback_brand_ad_not_footage_collage.md（1hO6QhgezYbP9uGqYbbaeD8VzzjGWjJRX）",
+   "文字不要像 AI：不要對仗、金句收尾、每行等長；「不是…而是」預設不用（「全部禁用又會矯枉過正…這就是人類的感覺」）；剛退掉「剪的不是頭髮，是你想成為的樣子」屬同類；「剪刀嘴豆腐心」這類意味不明標語全面停用。來源：feedback_threads_post_structure.md（1TktXgYaz13YTaDHeKZlJkWSQYdrXOA_8）、大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）",
+   "廣告字用客人視角：「『通勤地址』這個不合適，我們是要做給客人看的不是給員工看的」；雁沙龍網路上的介紹偏招募語（「新生設計師の培育專門店」「每月數十萬客資源」），放進形象片要改成客人語言。來源：feedback_customer_facing_wording.md（1VKfQQSwxGLcfDRhRtLKGWP-aNgHPz-KP）、01_Google搜尋雁沙龍_整頁.png（1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn）",
+   "品牌安全：可以嗆觀念不能嗆人，不貶同業、自家人、客人；借名人梗只做視覺相似、不碰宗教（雁沙龍宣傳片定的）。來源：feedback_threads_post_structure.md（1TktXgYaz13YTaDHeKZlJkWSQYdrXOA_8）、project_yan_salon_promo.md（1lIivCP7I6g6lff2Y1sDX64ExVvv_A74F）",
+   "正確第一：營業資訊以店家實況為準（Google 也可能錯，川hair「週一公休」就寫錯）、評論數用前重查、查不到就不寫。來源：大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）、project_chuanhair_brand_ad.md（1AVxSbSCEMbw9ng8KJSoOLO5qwGMRGIX2）",
+   "主角要明顯：平面廣告「2號如果是黑色會讓商品整體不明顯」；印章類重點要大（約畫寬一半）、高對比。來源：參考3_對話紀錄.md（1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）、feedback_brand_film_motion_resume_style.md（1n7uPjjE4UyCIYLr7uito-Rf0itRo8OoK）",
+   "他嫌慢：「為什麼這樣的平面圖處理會這麼耗時？」「等得比我做一部新的還久」→新方向先交 10–15 秒樣片／分鏡＋三張關鍵圖，他說「製作吧」才做全套；回饋只修點名的、快交。來源：參考3_對話紀錄.md（1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）、大介想法總綱.md（1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）",
+   "通過或被點讚的近例：剪髮講座「引導線」形象片「這部可以了」；阿信訪問「批改筆記可以」；陶藝 vlog 配樂「我覺得可以」；川hair v2 唯一認可「B60 川字 logo 在月亮前被寫出來」。來源：說明.md（1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn）、暫停紀錄_20261016.md（10548Gn7cTo7aXFTHfYmehbQIUEcFOkw2）、進度紀錄.md（1HYUyueKdbtEFfYn7F5Y77xzp0icHCvYT）、feedback_brand_ad_not_footage_collage.md（1hO6QhgezYbP9uGqYbbaeD8VzzjGWjJRX）"
+  ],
+  "avoid_repeating": [
+   "Claude 動態履歷的招牌：彈跳球→星芒、hello, world. 打字游標、規格表逐列 tick-pop、四角 HUD＋時間碼＋進度條整套、曲線編輯器、點雲、「動態設計」四字四技法、8 刀蒙太奇、片尾符號匯聚回中心（記憶點名「時間碼 HUD 整套、規格表逐列」不可再用）",
+   "懶懶 A：奶油色圓角字卡、玫瑰金 600px 巨字砸在背後、翻牌／里程表計數器、Z 被吹走再組回 logo、手繪螺旋、空氣推入轉場",
+   "懶懶 B：黑底預告片 BRAAM 套路、直書玫瑰金漸層字、金色微塵霧氣、收尾全靜音只留一聲重擊",
+   "懶懶 C：字義演出大字（壓扁／彈跳）、大數字跨三鏡頭、深色膠囊關鍵字標籤、台灣點陣地圖",
+   "懶懶 D：工程藍圖紙＋標題欄、鉛筆自己描線、引線標註、需求清單逐拍打勾、橡皮章逐項蓋、「核可」章收尾、線稿活起來變實物",
+   "桃園 v3「課堂紀錄儀」：● REC＋時鐘＋進度軌＋紙箱播放頭、對焦框、里程表跨剪接、T！T！T！三拍三技法、切條（百葉窗）轉場",
+   "川hair v3：指標系統走進店、膠囊鏡框、電影三幕、大字當窗、「髮廊的履歷」欄位比喻、作品集黑白顯影、3D logo 被寫出來、時尚雜誌封面刊頭",
+   "雁 x 川剪髮講座：細銅線「引導線」母題、logo 筆刷擦出、No.01／No.02 章節＋Instrument Serif 斜體、Team／Voices 英文小標、暖白底板（剛定版，最容易被看成重複）",
+   "陶藝 vlog：草稿→陶土→展覽、器形章節、美術館說明牌、展覽海報片頭片尾、霞鶩文楷＋手寫、雁青瓷 logo（大介已指出 vlog 與阿信版重疊，同理也不能跟陶藝版重疊）",
+   "阿信訪問「批改筆記」：紅筆劃掉補字、插入號、畫圈、劃成≠、七段刻度常駐",
+   "雁夜間洗髮：白色霧面玻璃卡＋Lucide 小圖示、香檳金點亮掃光、墨藍夜空＋弦月片尾卡",
+   "雁夥伴電影感廣告／Geese_ash：紅絲綢片名、N°01–04 章節字卡、Didot 斜體雜誌風、秤重證據",
+   "hive_tony v2：純色底動態履歷風四賣點＋大印章急壓衝擊波收尾",
+   "安格斯剪紙重複最多的橋段：整張紙翻面換圖（12 次）、紙層視差推近（12）、同類依序彈入（11）、段尾縮小淡出（10）、大「？」變橘「！」（9）、弧線飛入落定、身後橘光＋剪紙星星、翻灰＝淘汰、A/B 前後對照、會說話的安格斯、錢袋、舉食指、蓋章打勾、虛線路線、走路人偶、左右對比框、IG 卡飛到中央；已退件：空椅子坐滿、門口排隊、換色同一位客人、無臉紙人、段落小標題卡",
+   "全面禁用：開源 icon 貼紙、繪本式整張插畫翻頁、寫實 3D 布景＋小疊加、閃白、全畫面震動、甩鏡、RGB 錯位、zoom punch、光暈／霓虹／漸層、程式畫人物、抽象隱喻、AI 對仗金句（如「剪的不是頭髮，是你想成為的樣子」）、「剪刀嘴豆腐心」類標語、文案裡出現招募語"
+  ],
+  "summary": "這次在大介的 Google Drive 讀了指定的參考1／2／3、風格書、面試 v6、剪紙參數、Akira 風格說明，以及總綱 v4、長期記憶、退件考題、10 月的阿信老師與川x雁陶藝課交付說明。結論分成六點：\n\n1. 他的動畫標竿是 Claude 動態履歷，加上懶懶 D 版。他要的是「整個畫面被設計過」，又要「點綴且頻繁」。\n2. 他最在意的是每次都要新。60 秒和 30 秒要是兩個各自設計的答案，不能一支剪成另一支。\n3. 他最常用的退件詞是「意味不明」。川hair 形象廣告前後退了五輪，問題都是看不懂在拍什麼、拼接感、停頓、配樂對不上。這次只能用程式畫的圖，更要讓人一眼看出四件事：這是雁沙龍、做什麼、在哪裡、怎麼預約。\n4. 雁沙龍已有的品牌素材：\n   - 雁 logo 有深墨、白、銅棕三色高解析檔。剪髮講座從 logo 取了墨 #1E1A17 和銅 #A4613C 當主色；店裡的牆是黃色。\n   - 資料卡 v2（2026-09）的內容：Google 4.9 星、2,438 則評論，「先報價 再消費」「一小時只約一位」「全程設計師操作」。\n   - 地址是民生一路 259 號，電話 07-281-3636，IG @geese.model_hair。夜間洗髮片尾卡寫的時段是 19:30–23:00，白天營業時間沒查到。\n   - 另有 9/15 的雁沙龍宣傳片腳本，列了「十個優點」，可以當內容來源。\n5. 這兩支要不要套安格斯 IP（姚體、橘黃 #FFB13B、紅 #FF4A4A），紀錄裡沒有定論：\n   - 雁沙龍宣傳片標為安格斯 IP。\n   - 雁夜間洗髮標為獨立；雁x川 vlog 和形象片是店家團隊片，沒套安格斯風格。\n   - 建議問大介；如果算店家形象片，比較適合用雁 logo 的墨＋銅＋黃牆，另做一套新系統。\n6. 剛定版的剪髮講座「銅線引導線」、陶藝「草稿→陶土→展覽」、阿信「批改筆記」、雁夜間洗髮玻璃卡，都是雁系列最近才用過的，最容易被說重複。\n\n查不到或要確認的事：\n- 大介對懶懶 A／B／C／D 各版沒有逐版評語。\n- 雁夜間洗髮動畫 v1 的評語、雁沙龍宣傳片腳本檔都沒找到。\n- 配樂做法有衝突：總綱規定形象片自己合成，但他近期改用剪映庫裡「時尚動感」的曲子，要請他選。\n- 評論數和營業時間交件前要重查。\n\n本次沒有讀任何 LINE 群組對話。"
+ },
+ "verified": {
+  "summary": "【查核結論】兩份研究合併去重後，衝突的地方逐條處理如下。原則是 2026 年的 Drive 資料（Google 截圖、店家自己拍的片、安格斯本人的 IG／Threads）優先於 2018–2023 年的部落格。網路這次加做了 5 組 WebSearch，回來的還是舊部落格和 2021 年的新聞，沒有 2024 年以後的公開資料，也沒查到停業公告。\n\n1. 分店數量：部落格寫的「三間分店（鹽埕／民生／明誠）」已經過時。依據有三：Google 商家截圖（2026-09-19）只有「雁沙龍 (附設夜間洗髮)」民生一路 259 號一家；安格斯的人設資料寫「開過 3 家，現在 2 家：雁（新興）＋川（左營）」；10 月陶藝課口白也說「我們就有兩間店，川跟雁」。結論是片中只講民生店。鹽埕、明誠現在的狀況查不到，但都不能入片。\n2. 地址、電話：「高雄市新興區民生一路 259 號／07-281-3636」有三個 2026 年的來源互相印證：Google 截圖（OCR 已核對）、安格斯 2026-03-31 的 Threads 徵才文、2026-01-26 客服回覆。判定 high。\n3. 營業時間：說法有四種，沒辦法定案。(a) 2026-01 客服回覆寫週一到六 11–19、週日 12–19；(b) Google 2026-09 顯示營業到 23:00（含夜間洗髮）；(c) 夜間洗髮 19:30–23:00 只出現在我們自己做的片尾卡，出處沒寫；(d) 舊網頁寫 11–20，有的寫週一休，有的寫週二休。建議片中不要放時段。\n4. 評價數字：Google 4.9 星、2,438 則（2026-09-19），OCR 已核對，跟店家片裡說的「兩千多則」也對得上。FB 的 4.9 有讀到，但 424 這個則數 OCR 沒抓到，不要用。\n5. 人物：2021 年新聞寫的執行長「丁平龍」是不是安格斯，沒有任何證據，一律不用。「小臉專家」只是 2021–2023 年部落客合作文的用語，安格斯現在對外的稱號是「美髮教練安格斯」。\n6. 更正 Drive 研究的兩處錯誤：\n・寫「雁營業時間」的那段 LINE 對話，帳號其實是「zzz lazy 懶懶生活品牌」，不是雁的官方 LINE。\n・Drive 裡三色的「雁 logo」不是官方原檔，是我們從 FB 民生店大頭貼（只有 395px）重描的（見阿信老師〈說明.md〉）。色碼也是從重描版量的，跟剪髮講座分鏡寫的 #1E1A17／#A4613C 不一樣。\n7. 新找到的 Drive 證據：\n・安格斯 2025-01-29 的 Threads：團隊從 2024 年初四、五人，成長到「將近 10 幾位」；Juby 是店長；雁和川共同主辦整年度的教育共學。\n・2025-08-03：「在我們的團隊只有兩件事：一上班開心，二賺錢」。\n・2026-09 店家導覽片的原句：「不過忙起來的時候稍微等一下是正常的」。所以文案不能寫「零等待」。\n\n【可以入片】只用 2026 年有出處、公開、對消費者友善的內容：店名、地址、電話、IG、Google 4.9★／2,400+（標註 2026.09）、附設夜間洗髮（不寫時段）、先報價再服務、一小時只約一位、燙染全程設計師操作、每月課程、店內原句「有開心的我們，才有開心的客人」、安格斯的初衷句、「生活係髮廊」。\n\n【不能入片】舊分店、舊營業時間、舊價格、雁之懶人燙、RUIENCY、丁平龍新聞、醫美式用語、限時優惠、內部數字和人員名單、LINE 後勤群組內容。\n\n【視覺】雁的 logo 本身就是「>」形的飛雁筆刷。V 字雁陣可以當版面骨架，不需要宣稱「雁形理論」也成立。米白、墨黑、銅金這組資料卡色票是大介的設計，不是店家規範。#FFB13B 是安格斯個人 IP 的色，建議在雁的兩支片裡少量使用。舊片已經用過的手法要避開。",
+  "usable_facts": [
+   {
+    "fact": "【可入片】中文店名「雁沙龍」。英文店名：FB 粉專寫「雁 Geese Model Hair Salon - 民生店」，資料卡用「GEESE MODEL HAIR SALON」，logo 是小寫手寫「geese model」。Google 商家名稱是「雁沙龍 (附設夜間洗髮)」，類別「位於高雄的髮廊」。",
+    "source": "Drive「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn（2026-09-19，OCR 已核對）",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】地址：高雄市新興區民生一路 259 號。Google 寫法是「800高雄市新興區永寧里民生一路259號」。",
+    "source": "Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn（2026-09-19）；Drive「Threads歷史貼文_234篇_20260912.md」ID 1o5S93yT1jKqtmbAtD9by_Sblbc5RzMxw（2026-03-31 徵才貼文：地點 高雄市民生一路259號）；https://www.ezpretty.com.tw/landing/store/5708",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】電話 07-281-3636。",
+    "source": "Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn；https://www.ezpretty.com.tw/landing/store/5708",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】IG 帳號 @geese.model_hair。",
+    "source": "Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn；安格斯 IG 2025-05-08 文案（Drive「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm）",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，要附日期】Google 評價 4.9 星、2,438 則評論，截圖日期 2026-09-19。評論數會一直長，建議寫成「Google 4.9★・2,400+ 則評論（2026.09）」或「兩千多則 Google 評論」。店家自己的片也是說「兩千多則」。",
+    "source": "Drive「03_Google評論數_特寫_4.9星2438則.png」ID 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv；01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn（OCR：4.9／2,438 則 Google 評論）；「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】雁沙龍附設夜間洗髮。這是 Google 商家名稱的一部分；Google 2026-09 也顯示營業到 23:00。片中只寫「附設夜間洗髮」，不寫時段。",
+    "source": "Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】服務前一定先報價，客人確認價位後才開始做（店家導覽片原句：「我們在服務之前一定要先進行報價，確認價位之後我們才會進行服務」）。",
+    "source": "Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N（2026-09 店家導覽片口白）；「project_yan_salon_promo.md」ID 1lIivCP7I6g6lff2Y1sDX64ExVvv_A74F",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，措辭要小心】一個小時只預約一位客人，不在同一時段塞好幾位讓客人久等。同一支片也說「忙起來的時候稍微等一下是正常的」，所以文案不能寫「零等待」或「保證不用等」。",
+    "source": "Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】燙染全程由設計師操作，不是燙完設計師才出現。",
+    "source": "Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N；資料卡 v2 膠囊標籤「全程設計師操作」：「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】每個月都安排課程精進技術，另外不定期辦活動。例子：2026-09-24 剪髮講座；2026-10 邀高雄藝術家上陶藝課；年度教育課程有剪髮、燙髮、染髮。",
+    "source": "Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N；「說明.md」（剪髮講座形象片 v3）ID 1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn；「川x雁陶藝課_介紹片_v4.srt」ID 1KLPUzW99GIhnWjaqjT2ung8NcL7Kc-7H（Drive 研究代理讀取，本次無法重讀 srt）",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，屬小細節】廁所有備衛生棉，店裡有零食櫃。",
+    "source": "Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，店家原句】「有開心的我們，才有開心的客人」。",
+    "source": "Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N；「三路研究摘要.md」ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，店家原句】「如果你想要找到你的命定設計師的話，歡迎來我們的雁沙龍」（導覽片結尾）。",
+    "source": "Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，安格斯原句】「成為髮型師最強的後盾，就是我創立雁這個品牌的初衷」。IG 2025-05-06、Threads 2025-05-07 都有發。",
+    "source": "Drive「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm；「Threads歷史貼文_234篇_20260912.md」ID 1o5S93yT1jKqtmbAtD9by_Sblbc5RzMxw",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片／定調用】安格斯對兩家店的定位：雁＝「生活係髮廊」，川＝「高質感係髮廊」。",
+    "source": "Drive「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm（安格斯 IG 2025-05-08）",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，小字】IG 簡介寫「上班開心是我們的文化」。安格斯 2025-08-03 的 Threads 也說「在我們的團隊只有兩件事：一上班開心，二賺錢」。",
+    "source": "Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn（IG 簡介 OCR）；「Threads歷史貼文_234篇_20260912.md」ID 1o5S93yT1jKqtmbAtD9by_Sblbc5RzMxw",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片，小字】「好髮型・好心情」：Google 圖片裡雁價目表的抬頭。2019 年的鹽埕店體驗文標題也有「好髮型帶來好心情」，算是長期在用的說法。",
+    "source": "Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn（OCR「好髮型,好心情」）；https://xmirax.pixnet.net/blog/posts/8228278567",
+    "confidence": "high"
+   },
+   {
+    "fact": "【可入片】老闆的對外稱號是「美髮教練安格斯」（Angus），IG @geese_angus.v。",
+    "source": "Drive「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm；「Threads歷史貼文_234篇_20260912.md」ID 1o5S93yT1jKqtmbAtD9by_Sblbc5RzMxw",
+    "confidence": "high"
+   },
+   {
+    "fact": "【背景，不寫數字】團隊在 2024 年初是四、五位夥伴，2025 年 1 月「將近 10 幾位」。Juby 是店長。雁和川共同主辦整年度的「教育共學」。",
+    "source": "Drive「Threads歷史貼文_234篇_20260912.md」ID 1o5S93yT1jKqtmbAtD9by_Sblbc5RzMxw（2025-01-29 貼文）",
+    "confidence": "high"
+   },
+   {
+    "fact": "【背景，片中如果出現要等客戶確認】夜間洗髮的護髮有兩種：玻尿酸（針對光澤）、酵素水髮膜（針對柔順度）。",
+    "source": "Drive「說明.md」（雁夜間洗髮動畫 v1）ID 1-ZjwtZZJzjKSoRl42-Sxxd0tADg3C7ZR",
+    "confidence": "medium"
+   },
+   {
+    "fact": "【背景／設計概念】英文店名「Geese Model」跟 the flying-geese model（雁行理論，雁群排 V 字一起飛）字面一致。2021 年 Yahoo 新聞標題寫雁沙龍執行長「創業過程奉行『雁形理論』」。店名由來沒有店家原話可以印證，所以先當視覺概念用；要寫進文案，得等客戶確認。",
+    "source": "https://tw.news.yahoo.com/創業過程奉行-雁形理論-雁沙龍執行長丁平龍-美髮人都該有被動收入-010457600.html （WebSearch 摘要）",
+    "confidence": "medium"
+   }
+  ],
+  "do_not_use": [
+   {
+    "fact": "雁有三間分店（鹽埕店 五福四路198號、民生店、明誠店 明誠二路198號）。",
+    "reason": "過時。資料來自 2018–2023 年的部落格。2026 年的 Google 商家只剩民生一路 259 號一家，安格斯人設資料也寫「開過 3 家、現在 2 家（雁＋川）」。鹽埕、明誠現況查不到。"
+   },
+   {
+    "fact": "舊營業時間：週一至六 11–20、週日 12–20、週一公休或週二公休；2026-01 客服回覆的 11–19／12–19；夜間洗髮 19:30–23:00。",
+    "reason": "四種說法互相矛盾。19:30–23:00 只出現在我們自己做的片尾卡，沒有寫出處。要放時段，得先請客戶給現行版本。"
+   },
+   {
+    "fact": "執行長「丁平龍」，以及新聞裡的赴日進修、獎金分紅與股權、何必問綠豆沙、太元生醫洗髮精、「台灣最早用影片呈現改造過程的店家之一」。",
+    "reason": "2021 年的舊聞。沒有證據顯示丁平龍就是安格斯，宣稱也沒查證過。"
+   },
+   {
+    "fact": "「小臉專家」「無痛整形」「逆齡髮型」「視覺小臉」這類稱號和形容詞。",
+    "reason": "2021–2023 年部落客合作文的用語，安格斯現在自稱「美髮教練」。醫美式說法有廣告法規風險，也是大介討厭的空泛漂亮話。"
+   },
+   {
+    "fact": "招牌項目「雁之懶人燙」。",
+    "reason": "只在 2021 年部落格出現。2026 年的店家片、資料卡、價目表都沒提到，不確定現在還是不是主打。"
+   },
+   {
+    "fact": "自有護髮品牌 RUIENCY 潤熙（MP 香水護髮素 860 元）。",
+    "reason": "2020–2021 年的資料，現況不明，而且年份記載互相矛盾。安格斯現在主推的是 ZZZ Lazy 產品線。"
+   },
+   {
+    "fact": "style-map 上 JASON 的價格（剪 600 起、染 1,200–5,000、燙 3,000–3,500）。",
+    "reason": "單一設計師的舊價格，而且是鹽埕店，不代表現在的雁。"
+   },
+   {
+    "fact": "學生燙染 8 折。",
+    "reason": "店家片裡說的是「現在的優惠」，屬於有時效的促銷。形象片會用很久，放進去容易過期。"
+   },
+   {
+    "fact": "IG 簡介的「自媒體經紀沙龍」「每月數十萬（外）客資源」「新生設計師の培育專門店」。",
+    "reason": "店家自己宣傳的數字，沒有查證；這是寫給求職設計師看的招募語，對消費者形象片不適合。OCR 讀到的原文是「每月數十萬客資源」，跟網路摘要寫的「外客」也對不上。"
+   },
+   {
+    "fact": "團隊人數（10 幾位／民生店 7 位設計師），以及設計師名字和頭銜（Ann、Juby、Elaine、含含、Ash、Corie、Wenwen、Johnson）。",
+    "reason": "人員會流動，名字入片需要本人同意。客戶確認名單以前不放。"
+   },
+   {
+    "fact": "FB 4.9（424 則）、FB 1.8 萬追蹤、IG 約 1,860 追蹤、安格斯 IG 1.2 萬粉。",
+    "reason": "424 這個則數 OCR 沒讀到；追蹤數會變，也不加分。評價統一用 Google 的數字。"
+   },
+   {
+    "fact": "104 職缺登記的公司名「極剪沙龍企業社」、懶懶官網的舊產品責任險保單、ZZZ Lazy 跟雁共用客服電話、民生店是吹風機體驗點。",
+    "reason": "內部或法律資訊，跟雁的形象片無關。"
+   },
+   {
+    "fact": "LINE 後勤群組的內容（9 月在民生店附近投夜間洗髮廣告、雁烤肉聚會等），以及 LINE 客服對話。",
+    "reason": "內部對話，只能當背景，不能入片。另外，寫雁營業時間的那段客服對話，帳號其實是「zzz lazy 懶懶生活品牌」，不是雁的官方 LINE。"
+   },
+   {
+    "fact": "安格斯課堂上講的業績數字（6000 元做 15 萬、2000 萬營收、學員翻倍等）和 MIND 心戰理論課程。",
+    "reason": "沒有經過審核、不能公開的口徑；而且屬於安格斯個人 IP，不是雁沙龍的形象內容。"
+   },
+   {
+    "fact": "每月去學校、養老院義剪。",
+    "reason": "疫情時停了，到 2026-09 都還在「準備重啟」，不是現在進行式。"
+   },
+   {
+    "fact": "「雁沙龍，先報價，再消費」。",
+    "reason": "這是我們 9/15 寫的腳本收尾句，不是店家官方口號，不能當官方標語引用。"
+   },
+   {
+    "fact": "「想要呈現出的不只是髮型，更是妳/你的第二張臉」「這是一個好心情的開始」。",
+    "reason": "舊社群宣傳語，年份和出處都不清楚，句型又是大介剛退掉的那種對仗金句。"
+   },
+   {
+    "fact": "鹽埕店的復古老屋元素（斑駁牆、裁縫機、理髮廳旋轉燈、老窗框、二手書櫃），民生店「木質森林系咖啡廳」，明誠店「日式橘＋深綠」。",
+    "reason": "2018–2021 年的舊描述，而且大多是舊分店。民生店 2026 年的 Google 街景是灰色水泥立面加騎樓，跟「木質盆栽圍牆」對不上。不要畫成某一店的具體樣貌。"
+   },
+   {
+    "fact": "川 Hair Salon 的資訊（左營正心街 112 號、07-558-3388、NIGHT SPA 時段、10/27–10/31 員工旅遊店休）。",
+    "reason": "這是姊妹店的資訊，雁的形象片預設不提，免得觀眾搞混是哪一家。"
+   }
+  ],
+  "brand_visual": [
+   "Logo 的形狀是兩道乾筆飛白的筆刷，一長一短交叉成「>」形，像飛雁或雁陣。下方是連筆手寫小寫「geese model」，再加行草「雁」字。注意：Drive 裡的深墨、銅棕、白三版 PNG 是我們從 FB 民生店大頭貼（395px）重描的，不是官方原檔；剪髮講座定版片已經用過一次。來源：「雁_logo_深墨_高解析.png」ID 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7、「雁_logo_銅棕_高解析.png」ID 1kDARgD4o2YvhS-XxbceBSmPvZoibT57o、「雁_logo_白_高解析.png」ID 1NIM3h6uh66OJqLjyjpx3v0uqaFpLSlcp；重描說明見阿信老師〈說明.md〉ID 1kBPdBisCmltpS9_Gw9e3uJbVNgDxOHEA",
+   "Logo 色碼有兩組量測，互相不一致：Drive 研究實測深墨 #3A292E、銅棕 #9B5A3C；剪髮講座分鏡寫墨 #1E1A17、銅 #A4613C（「取自雁 logo」）。兩組都量自重描版，店家沒有官方色票。來源：「分鏡_v1.md」ID 1N2tXasavV_e5l0RAJCIYC5IZHJN0FTOn",
+   "資料卡色票是大介 2026-09-19 自己的設計，不是店家規範：米白 #F4EFE6、墨黑 #1B1916、銅金 #8C6E3C、香檳金 #E8CE99、星星橘黃 #FFB13B。#FFB13B 是安格斯個人 IP 的重點色，雁的兩支片建議少量使用，免得跟安格斯個人片混在一起。來源：「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg",
+   "最貼品牌的結構母題是 V 字雁陣，也就是 logo 本身的「>」形。可以做成版面斜線骨架、轉場路徑或資訊排列的隊形；這樣用不需要在文案裡宣稱「雁形理論」。要畫成結構線，不要畫成小鳥貼圖。",
+   "品牌氣質：雁＝「生活係髮廊」，親切、實在，團隊會互相吐槽老闆，主打上班開心。川才是「高質感係」。所以雁的兩支片不適合冷調奢華，可以一支偏溫度和生活感，一支偏節奏和幽默。來源：「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm；「三路研究摘要.md」ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w",
+   "價目表視覺：米白紙紋底，分類用黑框直排大字（調／護／染），項目按 S／M／L／XL 長度分級。可以借來當設計系統的專業工作語言，例如報價單欄位、長度分級刻度、一小時一格的預約時段表（呼應「一小時只約一位」）、「報價→確認→服務」流程標註。來源：Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn",
+   "字型（從資料卡目測推斷）：中文標題用高對比粗宋體（思源宋體 Heavy 一類）；數字用 Didone 系高反差襯線；英文小標全大寫、字距寬。剪髮講座片用的是思源宋體＋Instrument Serif 斜體。新片想做出差異，可以換字型系統。",
+   "Google 圖片裡有一張復古台式理髮廳門面：紅白藍斜紋遮雨棚、理髮旋轉燈柱、圓形「雁」字章，橫招牌由右往左讀是「美髮（雁）沙龍」。目前不確定是不是現在的民生店（舊鹽埕店也有理髮廳旋轉燈）。確認之前，斜紋只能當一般轉場元素，不要宣稱是店面。",
+   "舊片已經用過的手法，新片要避開：筆刷寫出「雁」、x、川；銅線引導線；逐字升起的標題；No.01–03 章節卡；墨藍夜空配金弦月片尾卡；霧面玻璃卡金邊點亮；旺財紅 #7A1620 色帶；安格斯個人 IP 的白色 6px 線條＋#FFB13B＋姚體字卡＋輕木琴音效；陶藝課的鉛筆線變陶土、美術館說明牌。來源：剪髮講座〈說明.md〉ID 1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn、陶藝課 vlog〈說明.md〉ID 18gkIALyHPq1dSkautB9G7T3uY-RgOGXs、夜間洗髮〈說明.md〉ID 1-ZjwtZZJzjKSoRl42-Sxxd0tADg3C7ZR"
+  ],
+  "questions_for_client": [
+   "Logo：我們手上的雁 logo 是從 FB 民生店大頭貼重描的，剪髮講座片已經用過。這兩支可以照用嗎？還是店家有官方原檔或指定色？英文名統一寫「Geese Model Hair Salon」可以嗎？",
+   "片尾聯絡資訊放「地址＋07-281-3636＋IG @geese.model_hair」就好嗎？要不要加 LINE 或 Google 線上預約？營業時間要不要放？如果要，請給現行的一般時段、夜間洗髮時段和公休日（現在手上有四種說法，互相矛盾）。",
+   "店名「雁 Geese Model」是取自雁行理論（雁群排 V 字一起飛、飛得更遠）嗎？片中可以直接這樣講嗎？",
+   "兩支片只講雁民生店，不提川，也不提以前的鹽埕、明誠店，這樣對嗎？",
+   "片中要不要出現設計師名字？如果要，請確認目前名單：Angus、Ann、Juby（店長）、Elaine、含含、Ash、Corie、Wenwen、Johnson。",
+   "（選答）Google 上那張紅白藍斜紋遮雨棚加理髮旋轉燈的復古門面，是現在的民生店嗎？"
+  ]
+ },
+ "concepts": [
+  {
+   "key": "cinematic",
+   "name": "雁的版面：60〈生活係髮廊〉長卷章節 × 30〈順序〉箭頭海報",
+   "angle": "兩支都走電影感／編輯式（editorial），但站在這個角度的兩端。\n\n60 秒是正統的編輯式：慢推、留白、細宋大字、章節框。整支一鏡到底，讀起來像一份店家自己寫的說明頁，內容講雁沙龍「生活係」的那一面。\n\n30 秒走編輯式的另一端，是海報式排版：滿版牆黃、黑體巨字、硬切對拍。只講一件事——「先報價，你點頭才開始」的服務順序。\n\n兩支的母題都從品牌本身取，不從過去作品搬：\n- 章節框借雁自家價目表「黑框直排大字」（調／護／染）的做法（Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn）。\n- 版面斜軸和箭頭借 logo 兩道筆刷的「>」角度。\n- 主色借店內的黃牆。\n\n兩支都只用程式畫的字、色塊和線條，不畫人、不貼 icon。文案裡也不提「雁形理論」。",
+   "video60": {
+    "title": "〈生活係髮廊〉——一張長紙、八個章節框，一鏡到底",
+    "style": "【規格】1080×1920 直式，30fps，Remotion 製作。先無聲渲染，再用 ffmpeg 封 WAV。所有中文元件加 lang=\"zh-Hant-TW\"。\n\n【色票】兩支共用一組 token，但比例不同。60 秒的比例是紙 70%／墨 20%／牆黃 10%。\n- 墨 #1C1A17：雁 logo 的墨色，取兩組量測中偏黑的那端。\n- 紙 #F2EDE3：價目表的米白紙紋，鋪 3% 纖維紋理。\n- 牆黃 #EED64F：店內黃牆。這是暫定值，要用店內照片取色校正。刻意避開安格斯 #FFB13B 的橘調，也避開夜間洗髮片的香檳金 #E9C46A。\n- 鉛灰 #77726A：只用在註腳和日期。\n- 不用：銅、香檳金、墨藍、#FFB13B、漸層、光暈。\n\n【字型】\n- 中文：Noto Serif TC 可變字重版（Fontsource variable，200–900）。內文用細宋 Light 300 大字；只有章節字用 Black 900，並做字重動畫。剪髮講座是用粗宋當標題，用法上拉開。\n- 英文與數字：Fraunces，正體不用斜體，opsz 144、SOFT 100。這是軟襯線，有生活感，避開 Instrument Serif 斜體和 Didot。\n- 註腳、日期、小標：JetBrains Mono 34px。\n- 中文說明小字：Noto Sans TC Regular 40px。\n\n【構圖】\n- 整支是一張很長的紙，大約 3×4 個畫面大，鏡頭在紙上走。\n- 紙上有三個色區：紙色區、墨色區（夜）、牆黃區（學）。\n- 版面骨架：從重描 logo PNG 量出兩道筆刷中心線的角度，當作兩條斜向對齊軸。章節框、標題、註腳的左緣都沿這兩條軸排成階梯，章節左右交替。整張紙排完，八個章節框剛好排成 V 字隊形，最前端是「雁」。軸線本身不畫出來，避開剪髮講座的銅線引導線。\n- 章節卡：借價目表的黑框直排。直立黑框 220×560px，墨線 6px，框底牆黃，框內放一個 260px 的章節字。\n- 一次一個主角：標題字塊佔畫寬 50–60%，每頁留白至少 40%。\n- 可讀的字只放在畫面高 14%–65%，左右各留 90px，右側按鈕列不放字。\n- 字號：主字 56–96px，標籤最小 34px。\n\n【動態語言】\n- 緩動只用 outExpo（進場）、outBack 過衝 8%（落定）、inOutExpo（鏡頭位移）、inExpo（離場），不用等速。\n- 鏡頭：一鏡到底。換章時沿斜軸滑行 0.7 秒（inOutExpo），提前 3 格起跑，讓落點對在小節第一拍。讀字時鏡頭持續慢漂 1–2%，沒有完全靜止的畫面。\n- 章節字「壓印」：框落定後，框內的字從 wght 200 長到 900，8 格，像墨被壓進紙裡。\n- 標題「收字距」：每行字距從 0.6em 收到 0.06em，同時淡入，14 格；行與行錯開 3 格。不用逐字升起。\n- 註腳：上標 ¹ 先出，4 格後註腳由左往右排入。\n- 每章一個依內容設計的主動作，八章的手法都不一樣。\n\n【轉場】\n全片沒有剪接點，也不閃白、不震、不甩鏡。\n- 換章：鏡頭滑行。\n- 進夜：章節框的黑框放大成整頁。\n- 進學：夜裡那扇黃窗放大成整頁。\n- 回紙區：鏡頭滑出黃區。\n\n【配樂】\n- 92–100 BPM 的 downtempo house／nu-jazz：Rhodes 電鋼加柔和的 kick，要有時尚感但不吵。\n- 前 30 秒只有鍵盤和輕 hi-hat；0:30 鼓組和 bass 進來，當作 B 段。\n- 以 96 BPM 算，一小節 2.5 秒，全片 24 小節，剪點全在小節線上。\n- 曲子請大介從剪映收藏挑，避開陶藝介紹片用過的 024。如果要自己合成，先交 15 秒試聽。\n- 不加音效。\n\n【封面】紙底。牆黃底的黑框直排章節框裡放 logo 的行草「雁」，旁邊細宋兩行「高雄民生一路／一間生活係髮廊」，下方 mono 小字「雁沙龍 GEESE MODEL HAIR SALON」。",
+    "structure": "以 96 BPM 計算，1 小節 = 2.5 秒，全片 24 小節。\n\n【0:00–0:05｜第 1–2 小節｜開場頁（紙區）】\n- 畫面：紙底慢推 1.00→1.02。畫面高 18% 處出現 mono 小標，中段兩行細宋大字收字距排入，下方接一行小字。\n- 小標：「雁沙龍｜GEESE MODEL HAIR SALON」\n- 文案：「高雄民生一路 259 號，」／「有一間生活係髮廊。」\n- 小字：「附設夜間洗髮」\n\n【0:05–0:12.5｜第 3–5 小節｜章節「約」】\n- 畫面：鏡頭沿長斜軸往右下滑到左翼第一個章節框，「約」字壓印。右側是一欄價目表式的橫線格，一格代表一小時。\n- 主動作：一條墨色短橫條（代表一位客人）滑進一格。第二條想擠進同一格，被彈回（outBack），順勢落到下一格。\n- 文案：「預約的時候，」／「一個小時只排一位客人。」\n- 小字：「忙起來還是可能要稍等一下，但不會同一個時段塞好幾位。」\n\n【0:12.5–0:20｜第 6–8 小節｜章節「備」】\n- 畫面：鏡頭斜滑到右翼，「備」字壓印。下方兩列用價目表的點線排法：左邊是項目，點線往右拉，右端不放價錢，放一個「有」字。兩個「有」各自在拍上壓印，錯開 4 格。\n- 文案：「幾件小事，先跟你說。」\n- 列表：「廁所的衛生棉 ⋯⋯⋯ 有」／「店裡的零食櫃 ⋯⋯⋯ 有」\n\n【0:20–0:27.5｜第 9–11 小節｜章節「夜」（墨區）】\n- 畫面：「夜」框落定後，黑框往外放大成整頁（outExpo 12 格），畫面變成墨底紙色字，「夜」字轉成牆黃。\n- 主動作：畫面中下方一扇平塗的牆黃長方形慢慢推近，像晚上從街上看進店裡的黃牆。不做光暈，也不放月亮。\n- 文案：「晚上想洗個頭，」／「雁沙龍附設夜間洗髮。」\n\n【0:27.5–0:37.5｜第 12–15 小節｜章節「學」（牆黃區）】\n- 畫面：黃窗放大成整頁，進入牆黃區。「學」框落定，這章的框底改成紙色。\n- 0:30 配樂 B 段進來。課表三列依拍排入：左欄 mono 日期，右欄宋體課名，每列的橫線由左畫到右。\n- 文案：「店裡的設計師，每個月都排了課。」\n- 課表：「2026.09.24　剪髮講座」／「2026.10　請高雄藝術家來上陶藝課」／「年度課程　剪髮・燙髮・染髮」\n- 小字：「另外還有不定期的活動。」\n\n【0:37.5–0:45｜第 16–18 小節｜章節「樂」（回紙區）】\n- 畫面：鏡頭滑出黃區回到紙上，「樂」字壓印。\n- 主動作：一對超大的墨色「」從左右兩側滑進來夾住引文（outBack）。被夾住的那行字先擠壓 4%，再回彈。\n- 文案：「雁沙龍的 IG 簡介寫著：」\n- 大引文：「上班開心是我們的文化。」\n- 小字：「店裡的人是這樣說的：有開心的我們，才有開心的客人。」\n\n【0:45–0:50｜第 19–20 小節｜章節「評」】\n- 畫面：「評」字壓印。Fraunces 超大的「4.9」從 wght 300 長到 700，後面一排 ★ 用字元排入，不用圖示。上標 ¹ 對到下方註腳。\n- 文案：「Google 上，兩千多則評論，4.9 顆星。¹」\n- 註腳（mono）：「¹ 2026 年 9 月查詢：4.9★，2,438 則 Google 評論」\n\n【0:50–0:55｜第 21–22 小節｜最後一章：雁（logo 時刻）】\n- 0:50–0:51：鏡頭快速拉遠（inOutExpo），第一次看見整張紙，前面七個章節框原來排成 V 字隊形，最前端還有一格。\n- 0:51–0:52：推進最前端那格。框當作裁切窗，只露出 logo 的行草「雁」。\n- 0:52–0:53.5：停一拍後，黑框往四邊拉開（inOutExpo 18 格），完整 logo 從框裡被讓出來：兩道飛白筆刷「>」、手寫 geese model、雁。墨色在紙上，寬約畫面 60%。用重描原檔，形狀不動，不做筆刷擦出。\n- 0:53.5：logo 下方細宋收字距排入。\n- 文案：「想找到你的命定設計師，」／「歡迎來我們的雁沙龍。」\n\n【0:55–1:00｜第 23–24 小節｜片尾資訊】\n- 畫面：logo 上移縮到畫面高 22% 處，資訊沿斜軸依序排入，之後停住並保持 1% 慢推。\n- 「雁沙龍 GEESE MODEL HAIR SALON」\n- 「附設夜間洗髮」\n- 「高雄市新興區民生一路 259 號」\n- 「07-281-3636」（Fraunces）\n- 「IG @geese.model_hair」\n- 最下一行小字：「好髮型・好心情」\n\n※ 全片不寫營業時段。",
+    "why": "1. 沒有實拍，片子只能靠字撐。編輯式的「慢」讓客人讀得完每一句：每章只有一個主角、一個主動作，每章 3 小節。\n\n2. 母題全部從雁自己身上取：價目表的黑框直排變成章節框，logo 的「>」角度變成版面骨架和 V 字隊形，店內黃牆變成主色。這樣符合他「參考只借等級，母題要從品牌重新發明」的要求。\n\n3. 內容選「生活係」那一面：衛生棉、零食櫃、夜間洗髮、每月上課、上班開心、兩千多則評論。這些都是店家自己講過、客人一聽就懂的事，用的是客人語言，不碰招募語。「報價和流程」整個留給 30 秒，兩支不搶。\n\n4. 有鋪陳，也有讓人眼睛一亮的地方：前半是紙，中段整頁翻成墨進入夜，0:30 配樂 B 段進來，最後拉遠才看出八個章節框排成 V 字，logo 再從最前面那格被讓出來。\n\n5. 照他的硬規則做：一鏡到底加慢漂，所以沒有停頓；不閃白、不震、不 punch zoom；一次一個主角；字號和安全區合規；不用安格斯 IP 的姚體和 #FFB13B。\n\n6. 跟最近的雁系列拉開距離：\n- 剪髮講座（銅線、Instrument Serif、No. 章節、逐字升起）\n- 陶藝 vlog（展覽、說明牌）\n- 阿信訪問（批改筆記）\n- 夜間洗髮（玻璃卡、墨藍弦月）\n這些手法一個都沒用。"
+   },
+   "video30": {
+    "title": "〈順序〉——坐下 > 先報價 > 你點頭 > 才開始",
+    "style": "【規格】1080×1920，30fps，Remotion 製作。先無聲渲染，再用 ffmpeg 封 WAV。所有中文元件加 lang=\"zh-Hant-TW\"。\n\n【色票】跟 60 秒同一組 token，比例反過來：牆黃 80%（滿版底）／墨 #1C1A17 18%（巨字和箭頭）／紙 #F2EDE3 2%（只用在片尾資訊帶）。不用灰，也不加其他顏色。\n\n【字型】\n- 中文巨字：Noto Sans TC Black 900（思源黑體）。單詞 290–400px，一個畫面最多 3 個字。\n- 英文與數字：Bricolage Grotesque（Google Fonts；wdth 75–100、wght 200–800）ExtraBold。「259」「07-281-3636」「4.9」都用它。重音處可以做字寬動畫 wdth 75→100。片尾的 GEESE MODEL HAIR SALON 用 wdth 75 窄體全大寫。\n- 小標：JetBrains Mono 36px。\n- 襯線只在片尾小標出現一次（Noto Serif TC Black），跟 60 秒接上。\n\n【構圖】\n- 海報式：一個畫面一個詞，字塊佔畫寬 70–85%。字塊中心放在畫面高 38%，下方 35% 全空。\n- 唯一的主角道具是「>」箭頭：照 logo 兩道筆刷的角度和長短比例，畫成兩根平塗墨條，一長一短交叉。寬約畫寬 40%。整支片裡它只是「接下來」的符號，最後才被認出是 logo。\n\n【動態語言】\n- 緩動同一套：outExpo 進場、outBack 過衝 10%、inExpo 離場。\n- 每個詞落在強拍上，提前 2 格起跑。\n- 箭頭有重量：撞到東西時擠壓 6% 再回彈；大動作之後留 2 格喘息。\n- 箭頭每次推詞的方式都不同：撞走、當溜滑梯、被擋、點頭、載著跑。避免「同手法重複」。\n\n【轉場】只有兩種：拍點硬切，或箭頭把畫面推過去。不閃、不震、不甩、不 punch zoom、不用百葉窗。\n\n【配樂】\n- 120–124 BPM 的 nu-disco／French house：會彈的貝斯，拍手落在 2、4 拍，要有「時尚動感」，跟 60 秒用不同的曲。\n- 0:08–0:12「還沒點頭」這兩小節，把整首做低通濾波，只剩悶悶的 kick 和 hi-hat；0:12 濾波打開回到滿。這裡不做全靜音，避開懶懶 B 的套路。\n- 曲子請大介從剪映收藏挑一首有清楚 4 小節樂句的。\n- 音效預設不加；箭頭被擋那兩下要不要一聲很低的悶響，由大介決定。\n\n【封面】滿版牆黃，巨字「先報價」，下方一支墨色「>」指向小字「你點頭才開始」，右上角放小 logo（不能被切到）。",
+    "structure": "以 120 BPM 計算，1 小節 = 2 秒，全片 15 小節。\n\n【0:00–0:04｜第 1–2 小節｜開題】\n- 畫面：滿版牆黃，兩行黑體 120px 沿箭頭角度滑入。第 2 小節最後一拍，第一支「>」從左外飛進來，停在字後面。\n- 文案：「在雁沙龍做頭髮，」／「順序是這樣——」\n\n【0:04–0:06｜第 3 小節】\n- 巨字：「坐下」（380px）\n- 推法一：箭頭從左邊撞上「坐下」，把它推出右側畫面（outExpo），下一個詞跟著箭頭進來。\n\n【0:06–0:08｜第 4 小節】\n- 巨字：「先報價」\n- 推法二：箭頭的長邊當溜滑梯，「先報價」沿長邊斜滑下來落定（outBack）。\n\n【0:08–0:10｜第 5 小節｜梗：被擋】\n- 畫面：箭頭往前衝，撞上一條豎起來的墨線，被彈回來（擠壓 6%）。配樂低通。\n- 文案：「還沒點頭？」\n\n【0:10–0:12｜第 6 小節】\n- 畫面：箭頭再試一次，又被彈回，這次彈得比較小。\n- 文案：「那就還不會開始。」\n\n【0:12–0:14｜第 7 小節】\n- 巨字：「你點頭」\n- 推法三：箭頭原地往下點一下，像在點頭。字跟著沉一格再回來，那條墨線同時倒平。濾波打開，配樂回滿。\n\n【0:14–0:16｜第 8 小節】\n- 巨字：「才開始」\n- 畫面：箭頭越過倒下的那條線，「才開始」落定，用 Bricolage 字寬做重音。\n\n【0:16–0:20｜第 9–10 小節】\n- 畫面：第 9 小節「燙髮、染髮」落定。第 10 小節「設計師」站上箭頭，被載著從畫面最左邊跑到最右邊，讓「從頭到尾」照字面演出來。\n- 推法四：載著跑。\n- 文案：「燙髮、染髮，」／「設計師從頭做到尾。」\n\n【0:20–0:22｜第 11 小節｜整句重排】\n- 畫面：剛才的詞以八分音符的節奏一個個落位，重排成一整句，三行，96px：「坐下 > 先報價 > 你點頭 > 才開始 > 設計師全程 >」\n- 句尾最後那支「>」後面沒有東西。\n\n【0:22–0:26｜第 12–13 小節｜logo 時刻】\n- 畫面：句尾那支空的「>」滑到正中，放大到畫寬 55%。它的平塗墨色用雜訊門檻遮罩「乾」掉，16 格內乾成 logo 原檔的飛白筆刷。這是從整片墨裡乾出紋理，不是沿筆畫擦出來。\n- 接著手寫的 geese model 和行草「雁」從下方滑上來（outExpo，錯開 3 格），完整 logo 停一小節。\n- 這段不放字。\n\n【0:26–0:30｜第 14–15 小節｜片尾】\n- 畫面：logo 上移到畫面高 20% 處，下方鋪一條紙色資訊帶，內容依拍排入，最後保持 1% 慢推。\n- 「雁沙龍 GEESE MODEL HAIR SALON」\n- 「先報價，你點頭才開始。」\n- 「高雄市新興區民生一路 259 號」\n- 「07-281-3636」\n- 「IG @geese.model_hair」\n- 小字：「Google 4.9★・2,400+ 則評論（2026.09）」",
+    "why": "1. 照他認可的 D30 做法：30 秒是獨立概念，只講一件事。雁跟別家最不一樣、客人最有感的承諾，就是「服務前一定先報價，確認了才開始」，這支就把這個順序直接演出來，看得懂，不會意味不明。\n\n2. 「>」本來就是 logo 的形狀，也是大家都看得懂的「下一步」。整支把它當箭頭用，最後才讓人認出它就是雁的 logo。這一刻是 30 秒的亮點，跟 60 秒「從章節框讓出 logo」完全是兩回事。\n\n3. 幽默來自物理，不靠吐槽同業，也不靠金句：箭頭被擋兩次、點頭、載著「設計師」跑完整個畫面。這符合他要的「有物理感、拍點對準、主從清楚」。\n\n4. 滿版牆黃配粗黑字，有點像店門口告示的現代版，親切、直白，合「生活係」的氣質；120 BPM nu-disco 回應他最近要的「時尚動感」。\n\n5. 跟過去作品的差異：\n- 沒有懶懶 C 的字義壓扁大字和膠囊標籤。\n- 沒有 hive_tony 的四賣點和印章。\n- 沒有懶懶 D 的打勾清單。\n- 沒有川hair 的大字當窗。\n- 不用安格斯 IP 的元素。"
+   },
+   "contrast": "【兩支的差別】\n- 主角素材：60 秒是八個價目表式的直排章節框，加細宋大字；30 秒是一支「>」箭頭，加黑體巨字。\n- 底色與比例：60 秒以紙為主（70%），中段翻墨、翻牆黃；30 秒是滿版牆黃（80%）。\n- 字型主從：60 秒是細宋 Light 加 Fraunces，留白至少 40%；30 秒是思源黑體 Black 加 Bricolage 窄體，字塊滿寬 70–85%。\n- 鏡頭與結構：60 秒一鏡到底，沒有剪接點，分八章，講店的生活面（一小時一位、小事、夜間洗髮、上課、上班開心、評論）；30 秒硬切對拍，是一條流程加「被擋」的梗，只講服務順序（先報價→點頭→開始→燙染設計師全程）。\n- logo 時刻：60 秒是拉遠看見八框排成 V 字隊形，再由最前端的框裁切窗把完整 logo「讓」出來；30 秒是句尾的平塗箭頭「乾」成飛白 logo。\n- 配樂：60 秒是 92–100 BPM 的 downtempo，0:30 進 B 段；30 秒是 120–124 BPM 的 nu-disco，中間兩小節低通。\n- 封面：60 秒是紙底章節框「雁」配「一間生活係髮廊」；30 秒是牆黃巨字「先報價」配箭頭。\n以上七項都不一樣，超過他「至少四項不同」的要求。\n\n【刻意保留相同的部分】\n只有「同框架」的那幾樣：同一組色 token（墨 #1C1A17、紙 #F2EDE3、牆黃 #EED64F）、同一套緩動手感（outExpo／outBack／inOutExpo／inExpo，提前起跑、兄弟元素錯開 2–4 格），以及兩支都以 logo 的筆刷角度當幾何來源。所以 30 秒不是 60 秒剪短的閹割版，兩支的事實也幾乎不重疊。\n\n【跟過去作品的差異】\n這兩支都沒有用以下手法：\n- 剪髮講座的銅線引導線、Instrument Serif 斜體、No.01 章節、逐字升起、logo 筆刷擦出。\n- 陶藝 vlog 的展覽、說明牌。\n- 阿信訪問的批改筆記。\n- 夜間洗髮的玻璃卡、墨藍弦月片尾。\n- Geese_ash 的 N°01–04 和 Didot 雜誌風；川hair 的雜誌刊頭、大字當窗。\n- 動態履歷的 HUD、時間碼、規格表逐列。\n- 懶懶 A–D 的計數器、奶油圓角卡、預告片套路、打勾清單、印章。\n- 安格斯 IP 的姚體、#FFB13B、剪紙。",
+   "risks": [
+    "【最容易被說重複】60 秒跟 10/17 剛定版的剪髮講座一樣是「宋體、淺底、章節」。已經避開它的招牌手法，主色也改成牆黃加價目表章節框、一鏡到底，但他還是可能覺得像。建議先交 15 秒樣片（開場頁加「約」章）和三張關鍵圖（章節框壓印、夜的整頁翻墨、V 字拉遠），他說「製作吧」再做全套。",
+    "【慢和停頓的衝突】編輯式需要留白，但他把超過 1 秒的靜止視為停頓。每章 7.5 秒裡排了 3–4 個動作，讀字時鏡頭也持續慢漂。樣片時要請他特別看節奏；嫌慢就把每章縮成 2 小節，改用 104 BPM。",
+    "【牆黃色值是暫定的】#EED64F 是推估值，店內黃牆沒有照片可以取色，要請大介給一張店內照片校正。也要確認這個黃不會被看成安格斯的 #FFB13B。",
+    "【logo 是重描版】logo 是從 FB 395px 大頭貼重描的，不是官方原檔，兩組色碼量測也互相矛盾。30 秒把 logo 角度畫成平塗箭頭、最後「乾」成飛白，要先確認符合 10/23「形狀保持原樣、可以換渲染」的規則。如果不行，就改成箭頭停住、硬切到 logo 原檔。另外要從重描 PNG 量出兩道筆刷的角度和長短比例。",
+    "【數據交件前要重查】Google 4.9★／2,438 則是 2026-09-19 的截圖，交件前要重查；片中已經寫成「兩千多則」並附日期。「2026.10 陶藝課」的來源 srt 這次沒有重讀。夜間洗髮只寫「附設」，不寫時段；白天營業時間查不到，所以兩支都不寫營業時間。",
+    "【衛生棉要先問店家】把「衛生棉」寫進形象片，要先問店家願不願意。不行的話，那一列只留零食櫃，或換成別的小事。",
+    "【店家原句和用詞】「有開心的我們，才有開心的客人」是店家原句，但句型對仗，大介可能嫌像金句，可以拿掉，只留 IG 簡介那句。「生活係髮廊」是安格斯 IG 上的說法，客人可能看不懂「係」，要問改成「生活系」或換一句。",
+    "【店家片還是安格斯 IP】這兩支算店家形象片，還是安格斯 IP，紀錄裡沒有定論。本案預設是店家片：不用姚體和 #FFB13B，片尾放店帳號 @geese.model_hair。如果大介要算安格斯 IP，字型、字幕和 CTA 都要換。",
+    "【「坐下」那一步是示意】30 秒「坐下 > 先報價」的順序是示意。店家只說「服務之前一定要先報價」，沒說在哪一步報。如果實際是在預約時或諮詢時報價，「坐下」要改成對應的動作。",
+    "【配樂還沒定】總綱說形象片配樂要自己合成，但近期合成曲被嫌「怪怪的」，他改用剪映的「時尚動感」曲。兩支都需要大介從剪映收藏挑曲：60 秒要能在 0:30 進 B 段，30 秒要能做兩小節低通。不然就先交一段合成試聽給他決定。",
+    "【純字動畫要先看得懂】全片沒有實拍，客人要一眼看出這是髮廊。所以 60 秒開場第二句就寫「髮廊」，30 秒開場就寫「做頭髮」。如果他還是覺得字太多，60 秒的章節之間可以穿插店內實拍，素材要他提供。",
+    "【技術風險】章節字的字重動畫需要 Noto Serif TC 的可變字重檔（Fontsource variable 200–900）；Bricolage 要在載入時明確帶 wdth 軸，字寬動畫才有效。60 秒拉遠看 V 字隊形時，章節框會變得很小；樣片如果看不出是 V 字，就把這 1 秒拿掉，直接推進「雁」那格。",
+    "【梗要節制】30 秒的「被擋」只做兩次，第三次會拖；箭頭的四種推法也不能再加，免得變成技術流堆料。"
+   ]
+  },
+  {
+   "key": "kinetic",
+   "name": "動態排版＋節奏剪輯組：60 秒〈字的雁陣〉／30 秒〈一格一位〉",
+   "angle": "兩支片的主角都是字。雁 logo 那個「>」不畫成鳥，只當排版骨架、鏡頭路線和字的隊形。60 秒走「一鏡到底的字地圖」：鋪陳 45 秒後拉遠，觀眾才發現走過的字拼成了雁 logo，這是眼睛一亮的時刻。30 秒走「每拍硬切的一格」：一格＝一小時＝一位客人，第 1 秒用擠格彈出的字戲抓人，整支只講「你的一個小時」這一件事。兩支共用同一套字型、色票和動作手感；骨架、剪法、主角、logo 時刻、配樂、封面都分開設計，30 秒不是 60 秒剪短的版本。文案只用查核過的店家原話和資料，用客人聽得懂的口語，不寫對仗金句。",
+   "video60": {
+    "title": "〈字的雁陣〉60 秒：去雁沙龍之前會想知道的 8 件事",
+    "style": "【色票】全片只用三色平塗，不用漸層、光暈、陰影：\n- 雁黃 #F5C842：底色，佔畫面八成以上。這是暫定值，要拿店內黃牆照片取色，也要確認跟安格斯的 #FFB13B 分得開。\n- 深黃 #DDAA2A：工作語言紋理字，低對比，當底紋。\n- 墨 #1E1A17：主字、拉遠後的筆畫、logo。這是剪髮講座分鏡量自雁 logo 的墨。\n- #FFB13B 完全不用。\n\n【字型】全部元件加 lang=\"zh-Hant-TW\"。\n- 中文用 Chiron GoRound TC（Google Fonts 圓體，可變字重 200–900）：主字 900、副字 500、引言 300。圓體貼雁「生活係髮廊」的親切感，也跟過去的思源宋、姚體、霞鶩文楷、Akira 的思源黑體都不一樣。\n- 數字和英文用 Anybody（Google Fonts，可變字寬＋字重），4.9／2,400+／GEESE MODEL 用寬體。\n- 工作語言小標用 JetBrains Mono 500，全大寫，字距 +12%。\n- 全片不用襯線字，跟剪髮講座（思源宋＋Instrument Serif）、資料卡（粗宋＋Didone）拉開。\n\n【構圖】\n- 整支是一張約 1080×5400 的「字地圖」。主字沿雁 logo 兩道筆刷的中心線排成樓梯：每行字都水平好讀，但一行一行往斜下錯位，整體是斜線。中心線要從重描檔描出來。\n- 字級：主角字佔畫寬 35–60%（380–650px）；附屬句 44–64px；Mono 小標 34–40px。\n- 要讀的字全部放在閱讀窗內：y 270–1248、x 90–880，避開 Reels 上 14%／下 35% 和右側按鈕列。\n- 筆畫內部的空隙填滿 34px 的工作語言紋理字（報價 確認 服務／S M L XL／剪 燙 染 護，重複排列）。字行間距刻意不均，拉遠時這些空隙就是飛白。\n\n【動態語言】每種手法最多用 2 次：\n①落陣：一串字排成 V 字飛進來，領頭字在中間，兩側往後錯 3 格；落地壓成一行，outBack 過衝 8%。\n②字重呼吸：只對 2–3 個關鍵字做 wght 300→900→700，最重那格落在重拍。\n③字距展開：tracking 0→0.4em。\n④字寬伸展：Anybody wdth 窄→寬，只用在數字，不用 scaleX 拉中文。\n⑤樓梯落字：一字一階沿斜線落下，錯 3 格。\n⑥鏡頭髮夾彎：只在「>」頂點用一次。\n⑦拉遠揭曉：只用一次。\n手感照大介認可的那套：只用 outExpo／outBack／inExpo／inOutExpo；重拍提前 3 格起跑；兄弟元素錯開 2–4 格；大落地後留 2 格喘息；停住時整張地圖仍慢漂 1.5%。規格 1080×1920、60fps。\n\n【轉場】整支沒有剪接，一鏡到底：鏡頭沿 logo 長筆畫往右下滑，在頂點折返，再沿短筆畫往左下滑。站與站之間用 1 拍 inOutExpo 移鏡。不閃白、不震、不甩鏡、不 punch zoom。\n\n【配樂方向】\n- 曲風：nu-disco／French house，112 BPM，60 秒剛好 28 小節。暖的電貝斯＋悶音吉他＋Rhodes，有他要的時尚動感，但不冷。\n- 段落：第 1–4 小節只有大鼓＋貝斯，當鋪陳。第 5 小節進拍手和 hi-hat。第 11 小節濾波上揚，帶進第 12 小節的頂點折返。第 22–23 小節拉遠時鼓抽掉，只留貝斯和和弦，不全靜音。第 24 小節正拍鼓組回來，也就是 logo 落地。最後一個和弦收在 59.6 秒。\n- 不加額外音效。\n- 來源二選一，請大介選：他剪映收藏裡的同類曲，或照格數自己合成。",
+    "structure": "【來源代號】\n- A＝Drive「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn\n- B＝Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N（店家導覽片口白）\n- C＝Drive「03_Google評論數_特寫_4.9星2438則.png」ID 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv\n- D＝Drive「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm\n- E＝Drive 剪髮講座「說明.md」ID 1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn＋「川x雁陶藝課_介紹片_v4.srt」ID 1KLPUzW99GIhnWjaqjT2ung8NcL7Kc-7H\n- F＝Drive「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg\n- G＝https://www.ezpretty.com.tw/landing/store/5708\n- L＝logo 重描檔「雁_logo_深墨_高解析.png」ID 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7\n\n0:00.0–0:04.3（第 1–2 小節）站 1・先報價\n- 畫面：第 0 格鏡頭就在動，深黃紋理字從右上往左下刷過，像順著筆刷尾巴的飛白在飛。0.3 秒「先・報・價」排成 V 字從左下飛進（「報」領頭）；0.54 秒（第 2 拍）落地成一行，墨色 900、約佔畫寬 58%。第 3 拍副句落陣。Mono 小標沿斜線排出流程：報價 → 確認 → 服務。\n- 文案：「先報價」／「確認價位之後，才開始服務。」〔B〕\n\n0:04.3–0:08.6（第 3–4 小節）站 2・設計師全程\n- 畫面：1 拍移鏡往右下。「燙・染」從右側反向落陣（右邊的字領頭）。「全程設計師操作」只有「設計師」三個字做字重呼吸，最重那格對第 4 小節正拍。\n- 文案：「燙・染」／「全程設計師操作」／「不是燙完，設計師才出現。」〔B〕〔F〕\n\n0:08.6–0:15.0（第 5–7 小節）站 3・每月課程與活動\n- 畫面：「每個月」字距隨 3 拍展開到 0.4em。Mono 小標沿筆畫排。第 7 小節「不定期辦活動」用樓梯落字。\n- 文案：「每個月」／「都安排課程，精進技術」／小標「年度教育課程：剪髮・燙髮・染髮」／「不定期辦活動」／「像是剪髮講座、陶藝課」〔B〕〔E〕\n\n0:15.0–0:19.3（第 8–9 小節）站 4・小細節\n- 畫面：小字「店裡還有」先到。兩個小 V 從畫面上方每半拍落下一個，字 64px。這段節奏最密，負責「點綴且頻繁」。\n- 文案：「店裡還有」／「廁所備衛生棉」／「零食櫃」〔B〕\n\n0:19.3–0:25.7（第 10–12 小節）站 5・評論＋頂點折返\n- 畫面：抵達「>」頂點。「4.9」用 Anybody 從窄撐到寬、約佔畫寬 55%，★ 下一拍落。「2,400+ 則評論」也用寬體，Mono 小標「GOOGLE｜2026.09」。第 12 小節鏡頭做髮夾彎：往右下的速度在 8 格內煞住、轉往左下，「4.9」剛好在轉折點上。這是中段第一個亮點。\n- 文案：「Google 4.9★」／「2,400+ 則評論」／小標「2026.09」〔A〕〔C〕\n\n0:25.7–0:32.1（第 13–15 小節）站 6・夜間洗髮\n- 畫面：改往左下走。「附設」小字先到；「夜間洗髮」從右上往左下一字一階落下，方向跟站 3 相反。不寫時段，也不換成夜空色。\n- 文案：「附設夜間洗髮」〔A〕\n\n0:32.1–0:38.6（第 16–18 小節）站 7・店的文化\n- 畫面：「上班開心」四個大字連兩拍字重呼吸。下一拍引言用 300 細字加引號。Mono 小標「雁｜生活係髮廊」。\n- 文案：「上班開心」／「是我們的文化」〔A，IG 簡介〕／「『有開心的我們，才有開心的客人。』」〔B〕／小標「生活係髮廊」〔D〕\n\n0:38.6–0:45.0（第 19–21 小節）站 8・命定設計師\n- 畫面：到短筆畫尾端。「命定設計師」整行順著筆勢由右往左滑進（inOutExpo）。紋理字開始變密、行距變不均，替拉遠鋪路。\n- 文案：「想找你的命定設計師，」／「歡迎來雁沙龍。」〔B，導覽片結尾原句〕\n\n0:45.0–0:49.3（第 22–23 小節）拉遠揭曉\n- 畫面：鏡頭在 2 小節內 inOutExpo 從 100% 拉到約 22%，整張字地圖第一次完整出現。第一拍紋理字由深黃轉墨，觀眾看到前 45 秒走過的字排成兩道交叉的筆刷「>」，字行之間的空隙就是飛白。\n- 文案：不加新字。\n\n0:49.3–0:53.6（第 24–25 小節）logo 時刻\n- 畫面：第 24 小節正拍，雁 logo（深墨重描檔，形狀不改）用 6 格疊溶，對位在字拼成的筆刷上。字筆刷降到 12% 留在底下當紋理。手寫「geese model」和「雁」字是原檔的一部分，跟著一起出現，不做書寫動畫。整張慢推 1.5%。〔L〕\n\n0:53.6–1:00.0（第 26–28 小節）片尾資訊\n- 畫面：logo 上移到 y 300–700。資訊五行落陣進場（全片第二次、也是最後一次落陣），停約 3.5 秒，最後一個和弦收尾。\n- 文案：「雁沙龍 GEESE MODEL HAIR SALON」〔A〕／「附設夜間洗髮」〔A〕／「高雄市新興區民生一路 259 號」〔A〕〔G〕／「預約 07-281-3636」〔A〕〔G〕／「IG @geese.model_hair」〔A〕\n\n【封面】用拉遠那一格（字拼成的「>」＋logo），上方兩行：「雁沙龍」／「去之前會想知道的 8 件事」。片裡剛好 8 站，數字跟內容一致。",
+    "why": "1. 品牌母題長在結構裡：「>」是 logo 本身，沒有畫小鳥貼圖，也不用在文案裡宣稱雁形理論。字行間隙當飛白，logo 等於是用店裡實際做的事拼出來的，拉遠那一刻自然就是「鋪陳後眼睛一亮」。\n2. 一鏡到底加持續移鏡，中間沒有停頓；每站一個主角字配一兩行小字，主從清楚。\n3. 8 站都是看得懂的具體內容：價格怎麼談、誰幫你做、設計師有沒有在進修、廁所有什麼、評論多少、晚上能不能洗頭、店的氣氛、怎麼聯絡。不靠抽象隱喻，降低「意味不明」。\n4. 文案全部是店家原話或查核過的資料，口語、沒有對仗收尾。「忙起來稍等」這種老實話留給 30 秒。\n\n跟過去作品的差異：\n- 不用剪髮講座的銅線引導線、筆刷擦出 logo、No. 章節卡、宋體加襯線斜體。\n- 不用動態履歷的 HUD、時間碼、規格表、打字游標、符號匯聚，也不用逐字遮罩升起。\n- 不用夜間洗髮的玻璃卡和夜空。\n- 黃牆色當主色、圓體加可變字重呼吸、字地圖一鏡到底，都是大介作品裡還沒出現過的組合。"
+   },
+   "video30": {
+    "title": "〈一格一位〉30 秒：一個小時，只約一位",
+    "style": "【色票】跟 60 秒同一組顏色，主從反過來：60 秒的黃是整片天空，30 秒的黃只有一格。\n- 價目紙 #F3EEE3：底色，疊 3% 程式雜訊當紙紋。\n- 墨 #1E1A17：黑框和主字。\n- 雁黃 #F5C842：只給「那一格」用，也就是一位客人、一個小時。用到哪裡，黃就在哪裡。\n- 鉛筆灰 #8C857A：Mono 小標。\n\n【字型】跟 60 秒同一套（Chiron GoRound TC／Anybody／JetBrains Mono），但改成直排：writing-mode: vertical-rl，標點用台灣直排置中。主字固定 900，不做呼吸；數字用 Anybody 窄體。\n\n【構圖】借雁價目表的「黑框直排大字」：10px 墨框的高長方格，字直排在格子裡。4 欄格線，左右留 90px。一次只有一個主角：一個格子，或一個超大字裁出畫面。閱讀窗規則同 60 秒（y 270–1248、x 90–880）。\n\n【動態語言】\n①擠格彈出：6 個「客」在格子裡用彈簧物理互推，其中 5 個排成 V 字往右上彈出，outExpo、錯 3 格。只用在開場。\n②黃格填色：4 格內由下往上填滿，對在重拍。這是母題，會用 3 次，每次角色不同。\n③拉門：直排黑框從上或從下滑進，inOutExpo 8 格。\n④超大裁切字：單字高約 1300px，兩側裁出畫面。\n⑤常駐標籤：「設計師」小墨框在硬切之間位置不動。\n⑥字替換：「客」硬切換成「你」，只用一次。\n手感跟 60 秒同一套：outExpo／outBack／inExpo／inOutExpo，重拍提前 3 格，兄弟錯 2–4 格。\n\n【轉場】全部硬切，落在拍上（128 BPM，一拍 0.469 秒），重點段每拍切一次。不移鏡、不疊溶、不閃白，跟 60 秒的一鏡到底正好相反。\n\n【配樂方向】\n- 曲風：伸展台式 minimal tech-house，128 BPM，30 秒剛好 16 小節。\n- 第 0 格就是大鼓正拍，沒有前奏。乾的大鼓＋拍手＋短 hi-hat，配一個單音貝斯動機；第 9 小節才進 pluck 旋律。\n- 第 12 小節末鼓抽掉 2 拍，hi-hat 繼續滾，不全靜音；第 13 小節正拍鼓回來，就是「客」換成「你」那一下。\n- 不加音效，擊點交給鼓。\n- 跟 60 秒的暖 nu-disco 是兩種曲風。來源一樣請大介二選一：剪映收藏或自己合成。",
+    "structure": "來源代號同 60 秒（A／B／C／F／G／L）。\n\n0:00.0–0:01.9（第 1 小節）開場鉤子\n- 畫面：紙色底，中央一個墨框方格，上方 Mono「1 小時」。格子裡 6 個「客」擠成一團互推。第 2 拍（0.47 秒）其中 5 個排成 V 字從右上彈出；第 3 拍剩下那個「客」放大填滿格子（outBack），格子由下往上填黃；第 4 拍，右邊的直排黑框用拉門滑進。\n- 文案：「一個小時，只約一位。」〔B〕\n\n0:01.9–0:03.8（第 2 小節）\n- 畫面：飛走的 5 個「客」還在右上角排成小 V 往外飛，接住開場的動作；下方落下一行水平字。\n- 文案：「不會同一個時段，塞好幾位讓你等。」〔B〕\n\n0:03.8–0:05.6（第 3 小節）名牌，logo 第一次出現\n- 畫面：硬切。一個高直排墨框從上方用拉門滑下，框裡是雁 logo（深墨重描檔，形狀不改），旁邊直排「雁沙龍」，下方 Mono「GEESE MODEL HAIR SALON｜高雄・新興區」。\n- 文案：「雁沙龍」／「GEESE MODEL HAIR SALON」〔A〕〔F〕〔L〕\n\n0:05.6–0:07.5（第 4 小節）老實話\n- 畫面：硬切回黃格，縮在畫面上半部。格子裡的「客」用彈簧輕輕歪 3° 再回正；下面一行細字。\n- 文案：「老實說，忙起來稍微等一下是正常的。」〔B，導覽片原話：忙起來的時候稍微等一下是正常的〕\n\n0:07.5–0:11.3（第 5–6 小節）燙・染\n- 畫面：每拍硬切一次：超大「燙」裁出畫面 → 超大「染」→ 兩字各佔半邊。右下角固定一個小墨框「設計師」，三次硬切都不動。\n- 文案：「燙、染，全程設計師操作。」〔B〕〔F〕\n\n0:11.3–0:15.0（第 7–8 小節）從頭到尾\n- 畫面：一根直排長墨框從畫面上緣拉到下緣，代表一次燙染。「設計師」標籤沿著框從上往下一路跟著走，框頂寫「從頭」、框底寫「到尾」。\n- 文案：「從頭到尾，設計師自己操作。」／「不是燙完，設計師才出現。」〔B〕\n\n0:15.0–0:18.8（第 9–10 小節）評論\n- 畫面：硬切。「4.9」用 Anybody 窄體，高到上下裁出畫面，★ 下一拍落；旋律從這裡進來。\n- 文案：「Google 4.9★」／「2,400+ 則評論（2026.09）」〔A〕〔C〕\n\n0:18.8–0:22.5（第 11–12 小節）晚上\n- 畫面：那一格往下複製出幾格，越下面越墨，代表越晚；最下面一格是墨底黃字。格子不標任何時間。第 12 小節末鼓抽掉 2 拍，格子仍持續往下滑，不停住。\n- 文案：「晚上，附設夜間洗髮。」〔A〕\n\n0:22.5–0:26.3（第 13–14 小節）回到那一格\n- 畫面：鼓回來的正拍，硬切回開場的黃格，裡面的「客」直接換成「你」；右邊直排黑框用拉門滑進。\n- 文案：「這一個小時，只約你。」〔B〕\n\n0:26.3–0:30.0（第 15–16 小節）片尾\n- 畫面：黃格放大成預約框，電話在框裡；上方小 logo（第二次出現），下方地址和 IG。停約 3.5 秒；第 16 小節正拍最後一擊後慢漂 1%。\n- 文案：「預約 07-281-3636」／「雁沙龍｜高雄市新興區民生一路 259 號」／「IG @geese.model_hair」〔A〕〔G〕\n\n【封面】紙色底一個黃格，格裡一個「客」，旁邊直排「一小時 只約一位」。",
+    "why": "1. 整支只講一件事：「你的一個小時」。60 秒的導覽留給 60 秒，所以 30 秒不會變成 60 秒的閹割版。\n2. 第 1 秒就用擠格彈出的字戲把「一小時只約一位」演出來，Reels 一滑進來就看得懂。\n3. 借用雁自己價目表的黑框直排當專業工作語言，視覺來源是店家本身。\n4. 幽默來自店家自己講的老實話（忙起來稍等是正常的），沒有亂吹，也沒碰「零等待」。\n5. logo 第 4 秒就出現，品牌記憶點提早；結尾的預約框回扣開場那一格，頭尾接得起來。\n\n跟過去作品的差異：\n- 不用懶懶 D30 的藍圖、標題欄、打勾和蓋章。\n- 不用動態履歷的規格表逐列彈出。\n- 不用懶懶 C 的膠囊標籤和壓扁彈跳大字。\n- 不用桃園 v3 的時鐘和進度軌，片中不標時間。\n- 「客」字代替人物，沒有程式畫人。"
+   },
+   "contrast": "兩支同框架、不同答案。共用的只有字型（Chiron GoRound TC／Anybody／JetBrains Mono）、三色色票（雁黃／墨／紙）和緩動手感。下面七項全部不同，超過大介要求的至少四項：\n① 剪法：60 秒一鏡到底，沒有任何剪接，鏡頭沿 logo 筆畫走「>」路線；30 秒全部硬切，每拍一切，不移鏡。\n② 排版：60 秒橫排樓梯斜線，可變字重呼吸加字距、字寬動畫；30 秒直排黑框，900 固定字重，加超大字裁切。\n③ 顏色主從：60 秒雁黃當整片底；30 秒是紙色底，黃只給「那一格」。\n④ 內容主角：60 秒是 8 站導覽（報價、設計師、課程活動、小細節、評論、夜間、文化、命定設計師）；30 秒只有一個概念：一小時一位，加上老實話、全程設計師，最後回到「只約你」。\n⑤ logo 時刻：60 秒只在第 49 秒出現，是拉遠揭曉後由字拼成的筆刷對位上去；30 秒第 4 秒就用名牌硬切出現，片尾再出現一次小 logo。\n⑥ 配樂：60 秒是 112 BPM 暖 nu-disco，有鋪陳和拉遠時的抽鼓；30 秒是 128 BPM 伸展台 tech-house，沒有前奏，第 0 格就是正拍。\n⑦ 封面：60 秒是字拼成的「>」配「去之前會想知道的 8 件事」；30 秒是紙色上的一格黃配「一小時 只約一位」。",
+   "risks": [
+    "文案要先跟大介確認的有兩句。①「一個小時，只約一位／這一個小時，只約你」：店家原話沒講清楚是每位設計師還是全店；以全店十幾位夥伴來看應該是每位設計師，但「每位設計師」這幾個字沒有原話可印證，要問大介。②片中絕對不能寫零等待，所以 30 秒保留店家原話「忙起來稍微等一下是正常的」。來源：Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N。",
+    "Google 評論數 2,438 則是 2026-09-19 截圖的數字。片中寫「2,400+（2026.09）」，交件前要重查一次。來源：Drive 03 截圖 ID 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv。",
+    "雁黃 #F5C842 是暫定色，店內黃牆沒有量過色碼。需要大介傳一張黃牆照片取色，也要確認跟安格斯個人 IP 的 #FFB13B 看得出差別，免得雁沙龍的片被看成安格斯的片。",
+    "Logo 用的是我們從 FB 395px 大頭貼重描的版本，不是官方原檔。60 秒的字地圖要照重描檔描出兩道筆刷的中心線，拉遠揭曉時 logo 要跟字拼成的筆刷對準；萬一店家有官方原檔，形狀會不一樣。logo 不能被切到，最後一格要完整落在 y 270–1248 之內。",
+    "字型技術風險：Chiron GoRound TC（Google Fonts 2025 年上架，可變字重 200–900，以昭源黑體 HK 為基礎）要逐字檢查燙、染、價、確、髮、雁等字是不是台灣標準字形；有問題就退回 Noto Sans TC（可變 100–900）。Anybody 的字寬範圍沒有查到官方表，要實測。Remotion 載入可變字型、逐格改 wght／wdth 要先試渲染，失敗就改成幾個固定字重交替。參考：https://fontsource.org/fonts/chiron-goround-tc/install 、https://www.serbyte.net/fonts/chiron-goround-tc 、https://fontsource.org/fonts/noto-sans-tc/cdn 、https://unpkg.com/@fontsource-variable/anybody@5.2.6/README.md 。另外 Akira IP 用的是思源黑體，如果退回 Noto Sans TC，要靠黃／墨配色和直排跟 Akira 拉開。",
+    "整支只有字、沒有畫面，可能被說「純文字切換」或「意味不明」。大介面試動畫 v1 就被退過：「不是純文字切換」。對策：60 秒鏡頭永遠在動，每站都有工作語言紋理；30 秒用「客」字擠格、彈出、換成「你」的字戲，直接把意思演出來。V 字飛行縮在 12–16 格內，落地後至少給 1.5 秒閱讀時間。",
+    "跟舊手法太像的風險：30 秒的「設計師」小黑框可能被看成懶懶 C 的膠囊標籤，所以要做成價目表直排黑框，不能是圓角膠囊；60 秒「上班開心」的字重呼吸要控制在字重變化，不做壓扁彈跳，免得像懶懶 C 的字義演出；30 秒的「客」擠成一團，可能讓人想到已退件的「客人排隊」，要強調是把人推出去、只留一位。",
+    "語氣和品牌安全：①「不是燙完，設計師才出現」是在嗆一種做法，沒有點名任何人，但有暗示同業的風險，備案是只寫「全程設計師操作」。②「有開心的我們，才有開心的客人」是店家原句，但句型對仗，大介可能覺得像 AI 金句，備案是只留 IG 簡介「上班開心是我們的文化」。③「上班開心」偏員工視角，要確認他接受。",
+    "「像是剪髮講座、陶藝課」：兩場活動都已經辦完（2026-09-24、2026-10），片中不寫日期，也不寫陶藝老師的名字；要確認店家願意拿已辦過的活動當例子。夜間洗髮不寫時段，因為白天營業時間沒查到，片尾也不放營業時間。",
+    "配樂來源有衝突：總綱寫形象片要自己合成，但川hair B 的合成配樂被嫌「怪怪的」，他最近又要剪映的「時尚動感」曲。兩支的曲風和 BPM 已經定，來源要請大介選。照他的規則，Remotion 先無聲渲染，再用 ffmpeg 封 WAV。",
+    "進度風險：大介嫌做得慢。建議先交三樣東西：60 秒的 0:00–0:15 樣片＋拉遠揭曉關鍵圖、30 秒開場 4 秒樣片、兩張封面。等他說「製作吧」再做全套。60fps 加可變字型的渲染時間要先預估。",
+    "文案裡出現的事實都在本次查核清單內，附了 Drive 檔名＋ID 或網址。雁形理論（Yahoo 新聞）和夜間洗髮的護髮細項，信心度都只有 medium，所以文案完全沒用，只拿 V 字當視覺結構。"
+   ]
+  },
+  {
+   "key": "retro",
+   "name": "老店新印：60 秒〈雁沙龍印刷所〉＋30 秒〈本店規矩〉",
+   "angle": "從雁的「生活係」店風和老髮廊的印刷物出發。60 秒拿雁自己價目表的版面做底，把每個賣點交給一道印刷工序來演，例如先報價用滾筒上墨、一小時一位用裁紙刀。60 秒是白天的紙、油墨和網點，溫暖、慢慢鋪陳，最後拉遠揭曉全版。30 秒換成台灣街頭的老招牌：懸掛的告示板、圓體立體字、二丁掛牆、騎樓側招，用正式的「本店規矩」口氣講很生活的內容，是夜晚、平塗色、有節奏、帶點幽默的一支。兩支共用的只有雁 logo 的墨 #1E1A17、銅 #A4613C、一支印刷黃，加上 logo「>」的斜線骨架，其餘的媒材、字型、結構、配樂都不同。「膠片質感」我故意不用：底片顆粒在懶懶 B 已經用過，60 秒改用紙纖維和油墨毛邊來做復古感。另外，部落格說店裡「復古、保留傳統髮廊元素、書櫃」，這次 WebSearch 查不到原文，pixnet 也連不上，所以復古只當美術風格，文案不寫任何店內裝潢。",
+   "video60": {
+    "title": "〈雁沙龍印刷所〉：一張店卡，一版一版印出來",
+    "style": "規格：1080×1920，60fps，100 BPM（1 拍 36 格，1 小節 2.4 秒，25 小節剛好 60.0 秒）。\n\n【色票】三支特別色油墨加一張紙\n・紙：新聞紙 #EDE5D3，加 3% 紙纖維雜訊；壓印陰影 #D6CBB4。刻意避開資料卡的米白 #F4EFE6 和剪髮講座的暖白\n・墨 #1E1A17、銅 #A4613C：都取自雁 logo，剪髮講座量過的那組。銅只當第二色油墨，不畫成細線\n・印刷黃 #F2D13D：向店裡的黃牆致意。色相約 50°，偏檸檬，跟安格斯的 #FFB13B（約 36°）和夜間洗髮的香檳金 #E9C46A 拉開。拿到店內照片後要校正\n・疊印出來的色：黃×銅 multiply 約 #9C4F0E，黃×墨 約 #1C1505。不另外加色\n・鉛灰 #5B5550：只用在開場鉛字塊的側面\n・不用：#FFB13B、#FF4A4A、香檳金、墨藍、任何漸層或光暈\n\n【字型】都在 Google Fonts，有繁中字集\n・中文：Cactus Classical Serif（仙人掌明體）。只有 400 一個字重；大標加 2px 同色描邊，模擬油墨擴散，看起來像鉛字壓出來的粗字。有字形不合台灣習慣時，改用 Noto Serif TC 900（字形查核見風險）。來源：https://fontsource.org/fonts/cactus-classical-serif/cdn 、GitHub MoonlitOwen/CactusSerif\n・英文、數字：Bodoni Moda 直立體，不用斜體，避開 Geese_ash 的 Didot 斜體。GEESE MODEL HAIR SALON 全大寫，字距 0.28em\n・製版標記：Barlow Condensed 500 全大寫\n・主字 ≥56px，標籤 ≥34px；中文元件一律加 lang=\"zh-Hant-TW\"\n\n【構圖】\n・每段是一張「版」。要讀的字鎖在 y 300–1200、x 120–960，右側按鈕列不放字\n・骨架：雁 logo「>」兩道筆畫的角度當全片格線，網點的網角就等於長筆畫的角度。最後全版海報的內容塊沿「>」排成雁陣。只畫結構線，不畫鳥\n・常駐設計層是「印刷邊」：左緣色導條（墨／銅／黃，各 100/75/50/25%，x 24–64）；上緣兩個對位十字（只放上緣，不做四角框）；下緣一條裁切線；上緣小字「第 n 版・墨／銅／黃」每段換一次。用它取代時間碼 HUD\n・一次一個主角，佔畫寬 40–60%，附屬元素都做小\n\n【動態語言】印刷的物理\n・曲線只用四種：outExpo（進場）、outBack 過衝 8%（機械件落定）、inExpo（離場）、inOutExpo（進紙、拉遠）。只有捲筒紙走紙用等速\n・重拍提前 3 格起跑，兄弟元素錯開 3 格；壓印和裁切之後留 2 格不動\n・重量感靠壓印陰影和紙張回彈，不震畫面、不閃白、不 punch zoom\n・停住的畫面一律 1.5% 慢推，加紙張呼吸\n・墨邊加 1px 雜訊位移做油墨毛邊，不加底片顆粒\n\n【轉場】每段用自己的工序進場，相鄰兩段不重複，全部是連續動作或硬切，不淡入淡出。順序：\n進紙上滑 → 滾筒帶出下一張 → 裁下的紙條掉落，露出捲筒紙 → 捲筒紙尾端摺成摺頁 → 摺頁闔上，網點從邊緣漫開 → 黃版從鏤空字滑入 → 放大鏡直接壓上小字 → 拉遠成全版 → 整張海報出紙\n\n【配樂】100 BPM 的 city pop／boogie：Rhodes 七和弦、fretless bass、乾淨的鼓機，銅管短音只放在段落入口。聲音復古，低頻做現代，對應他最近要的「時尚感」。\n・前 2 小節開濾波，只留 Rhodes\n・第 3 小節進 groove\n・第 20 小節（0:45.6，拉遠）濾波全開\n・第 21–22 小節 logo 網點長滿\n・0:59.5 用一個 Rhodes 和弦收尾\n・音效預設不放，留給大介在剪映配。另外交 3 條可選的音效分軌：鉛字落盤、壓印、裁刀\n・如果改用剪映庫，挑 95–105 BPM 的 city pop，畫面再重新對拍",
+    "structure": "【來源代號】\n[A] Drive「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn\n[B] Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N\n[C] Drive「03_Google評論數_特寫_4.9星2438則.png」ID 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv\n[D] Drive「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg\n[E] Drive「說明.md」（剪髮講座）ID 1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn；「川x雁陶藝課_介紹片_v4.srt」ID 1KLPUzW99GIhnWjaqjT2ung8NcL7Kc-7H\n[F] Drive「三路研究摘要.md」ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w（本次重讀，確認有「有開心的我們，才有開心的客人。」〔IG 店家導覽片〕，以及先報價、一小時一位、全程設計師、兩千多則評論、廁所備衛生棉）\n[G] https://www.ezpretty.com.tw/landing/store/5708\n[H] Drive「Threads歷史貼文_234篇_20260912.md」ID 1o5S93yT1jKqtmbAtD9by_Sblbc5RzMxw\n\n■ 0:00.0–0:04.8（第 1–2 小節）〈反字〉\n畫面：俯視一個排字盤。三塊鉛字（每塊 230px，鉛灰側面、墨色字面）跟著拍子滑進盤裡，喀一聲靠齊（outBack）。字面左右顛倒，由右往左排成「龍沙雁」。第 1 小節第 4 拍，一張新聞紙蓋下來，陰影由大縮小。第 2 小節第 1 拍，紙從下緣掀起，露出正著讀的「雁沙龍」，字帶壓痕陰影。接著依序印出銅色英文店名、墨色地點。同時左緣色導條三格依序上色，上緣對位十字的兩半滑合。\n文案：\n・小字「排版中・鉛字是反的」（印刷常識，不是店家資訊）\n・主字「雁沙龍」\n・GEESE MODEL HAIR SALON\n・「高雄・民生一路」[A][G]\n\n■ 0:04.8–0:12.0（第 3–5 小節）〈先報價〉｜工序：滾筒上墨\n畫面：紙往上進一格，價目表骨架印出來。左邊是三個黑框直排大字「調」「護」「染」，右邊是 S／M／L／XL 四列。價格欄只有空白底線「＿＿＿ 元」，不放任何價錢。一支黃色墨滾筒從左滾到右，在其中一列留下黃色寬帶（outExpo 減速，尾端拖出油墨毛邊）。黃帶停住後，墨色主字壓印出來。\n（價目表的結構照 Google 圖片裡雁的價目表 [A]）\n文案：\n・「做之前，先報價。」\n・「價錢你確認了，我們才開始。」[B][D]\n\n■ 0:12.0–0:19.2（第 6–8 小節）〈一小時一位〉｜工序：裁紙刀\n畫面：一張直排五格的預約表，每格寫「1 小時｜1 位」。\n・第 6 小節：主字先印出\n・第 7 小節：墨色裁刀帶 3° 斜角，每拍落一刀（inExpo，5 格）。每刀之後，紙條往外錯開 24px（outBack）。四刀下來，五格變成五條分開的紙條\n・第 8 小節：小字印出\n文案：\n・「一個小時，只約一位客人。」\n・小字（44px）「忙起來的時候，稍微等一下是正常的。」[B]\n（這句是店家導覽片的原意，所以全片不寫「零等待」）\n\n■ 0:19.2–0:24.0（第 9–10 小節）〈從頭到尾〉｜工序：捲筒紙連續印\n畫面：裁好的紙條往下掉，露出底下一條直向捲筒紙（寬 300px，位置 x 620–920）。捲筒紙每拍走一格（inOutExpo），每隔 220px 印一次「設計師」，途中依序經過「燙」「染」兩個章節標記，「設計師」一次都沒斷。左側主字固定不動。\n文案：\n・「燙跟染，」\n・「從頭到尾都是設計師在做。」[B][D]\n\n■ 0:24.0–0:31.2（第 11–13 小節）〈每個月上課〉｜工序：摺頁展開\n畫面：捲筒紙尾端摺成一份風琴摺頁，封面印「課表」。第 12 小節摺頁 3D 展開成四面（rotateY，每面錯開 3 格）。每面一個大字配一種網點底：「剪」墨、「燙」銅、「染」黃、「陶藝課」墨黃疊印。\n（剪、燙、染是年度教育課程 [B]）\n文案：\n・「每個月都排課，練技術。」\n・「十月，還請了高雄的藝術家來上陶藝課。」[B][E]\n\n■ 0:31.2–0:36.0（第 14–15 小節）〈晚上〉｜工序：網點漸層\n畫面：摺頁闔上。網點從上緣沿 logo 長筆畫的角度一路長大（點徑 0→90%），整張紙由亮轉深，下半部幾乎全墨。字是鏤空的紙色，「附設夜間洗髮」用黃色。\n文案（不寫時段）：\n・「晚上，也可以來洗頭。」\n・「雁沙龍・附設夜間洗髮」[A]\n\n■ 0:36.0–0:40.8（第 16–17 小節）〈口碑〉｜工序：兩色套印\n畫面：黃版從左、墨版從右，各帶半個「4.9」滑進來，對到同一個位置。outBack 過衝 8px 一次就停，不抖。兩版重疊的地方變成疊印深色。墨版用網點做出往右下的立體陰影。接著印出 ★ 和下方小字。\n文案：\n・「Google 4.9★」\n・「兩千多則評論」\n・小字「2026 年 9 月」[A][C]\n\n■ 0:40.8–0:45.6（第 18–19 小節）〈小字〉｜工序：網點放大鏡\n畫面：紙最下緣有兩行 20px 的 ※ 小字，故意看不清。一支印刷用放大鏡（方框、折腳、圓鏡片，線框畫法，約半個畫寬）滑進來壓在第一行。鏡片裡的字放大到 60px，背景網點也放大成看得見的圓點。第 19 小節，放大鏡滑到第二行。\n文案（鏡片內）：\n・「※ 上班開心，是我們的文化。」[A][H]\n・「※ 有開心的我們，才有開心的客人。」[B][F]\n\n■ 0:45.6–0:52.8（第 20–22 小節）〈全版〉｜鏡頭拉遠\n畫面：\n・第 20 小節：鏡頭用一小節拉遠（inOutExpo），原來前面幾段都是同一張大海報的局部：價目表、裁開的預約表、捲筒紙、摺頁、夜間漸層、4.9、小字，沿著「>」排成雁陣，「>」的尖端空著\n・第 21 小節：雁 logo 在尖端用網點長出來，最深的地方先出點，順序是長筆畫→短筆畫→geese model 手寫→行草「雁」，飛白處自然缺點。logo 上方印「好髮型・好心情」\n・第 22 小節：主字壓印\n文案：\n・「好髮型・好心情」[A]\n・「想找你的命定設計師，歡迎來雁沙龍。」[B]\n\n■ 0:52.8–1:00.0（第 23–25 小節）〈出紙〉資訊卡\n畫面：整張海報從印刷機滑出，落在紙疊上，輕微回彈。鏡頭推近海報下緣的資訊欄，停留 5 秒以上，全程 1.5% 慢推。\n文案：\n・雁 logo（網點版）\n・「雁沙龍」GEESE MODEL HAIR SALON\n・「高雄市新興區民生一路 259 號」\n・「07-281-3636」\n・「IG @geese.model_hair」\n・「附設夜間洗髮」[A][G][H]\n\n■ 封面：完成的三色全版海報（雁陣排版加網點 logo），主字「雁沙龍」，小字「高雄・民生一路」[A]",
+    "why": "1. 專業工作語言出自雁自己：雁價目表本來就有黑框直排分類和 S–XL 長度分級 [A]。版、網點、套印、裁切、對位這套印刷語言，正好是大介喜歡的「整支片疊一層設計系統」，而且不是 icon 貼紙。\n2. 動畫在演內容，不是換字：每個賣點都用一道動作把意思演出來。滾筒在報價那一列上墨、裁刀把一小時切成一格、捲筒紙上「設計師」從頭印到尾、網點把白天壓成晚上。看完就知道是什麼店、做什麼、在哪，避開他最常用的退件詞「意味不明」。\n3. 有鋪陳，也有讓人眼睛一亮的一刻：前 45 秒一張一張印，第 20 小節拉遠，才發現全是同一張海報，雁 logo 接著在「>」尖端用網點長出來。這一刻是他要的「鋪陳後眼睛一亮」。\n4. 跟過去作品不重複：網點、活版反字、裁刀、捲筒紙、摺頁、放大鏡都沒用過。銅只當油墨，不畫成剪髮講座的引導線；logo 是網點依深淺長出來，不是筆刷擦出；常駐層是印刷邊，沒有時間碼、沒有進度條，也不做四角框；不用章節卡、不蓋章、不翻面。\n5. 氣質：紙底暖、文案用店家自己的口語，貼「生活係髮廊」[I：原始語料 ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm]，不做冷調奢華。"
+   },
+   "video30": {
+    "title": "〈本店規矩〉：一塊老告示板，走到騎樓下的招牌",
+    "style": "規格：1080×1920，60fps，120 BPM（1 拍 30 格，1 小節 2 秒，15 小節剛好 30 秒）。\n\n【色票】暗底、平塗，跟 60 秒的亮紙底相反\n・二丁掛牆：墨 #1E1A17，磚縫 #2B2521。這是台灣老店面外牆的磁磚，當全片底色\n・搪瓷白 #F6F1E6：告示板\n・招牌黃 #F2D13D：燈箱招牌、側招。跟 60 秒同一支黃，屬於同框架\n・銅 #A4613C：板框、斜紋\n・立體字側面 #4A3F37，硬陰影 rgba(0,0,0,.35)，不柔化\n・（選用）門牌藍 #1D4E9E：只用在最後的地址牌。如果大介覺得太像公家門牌，就改搪瓷白\n・燈箱是平塗亮色，開場就亮著。不做霓虹、光暈、燈管閃爍\n\n【字型】\n・中文：Chiron GoRound TC 圓體，字重 700／900。圓體是台灣老招牌最常見的字，跟 60 秒的明體完全分開。來源：https://fontsource.org/fonts/chiron-goround-tc/cdn 、GitHub chiron-fonts/chiron-go-round-tc\n・英文、數字：Archivo，寬度 125（Expanded），字重 800，全大寫，字距 0.12em\n・字級：規矩主句 88–96px、副句 48px、附則 44px、直式側招 120px\n\n【構圖】\n・0–16 秒：一塊懸掛告示板（900×1000，x 90–990、y 280–1280）佔滿閱讀區，兩條鍊子吊到畫面外。板子最後一行字不低於 y 1240\n・16–24 秒：一點透視的騎樓。天花板樑和地磚線往消失點收成「<」，跟 logo 的「>」呼應。側招從右前方迎面經過\n・24–30 秒：黃色燈箱招牌置中，佔畫寬 70%，下方是地址牌\n\n【動態語言】招牌的物理\n・告示板當成阻尼擺：每落一塊字，板子就往下沉、左右擺。擺幅跟字的大小成正比（主句 2.5°、副句 1°、附則 0.4°），1.2 秒內收住，之後留 0.3° 的呼吸擺動。字越小，板子越不動，笑點就在這裡\n・立體字：每塊有 18px 厚的側面，從上方用 inExpo 6 格落下，outBack 8% 著地，影子由大縮到實。一句拆成 2–3 塊，錯開 3 格，不做逐字升起\n・斜紋：「>」形斜紋（銅／白／墨）等速往上捲，像理髮燈柱在轉。這是全片唯一的等速動作\n・騎樓：每小節往前推一步（inOutExpo）。側招停在中右側時減速到幾乎靜止，讓字讀得到\n・不閃、不震、不甩鏡\n\n【轉場】全片只有三次：\n1. 吊鍊收起，把告示板拉出畫面（inExpo）\n2. 板子後面露出滿版斜紋\n3. 斜紋尖端對準消失點，收細成騎樓的透視線\n\n【配樂】120 BPM 的 nu-disco／French house，主奏是一把有年代感的電子琴（台式電子琴音色，混音做乾淨），貝斯走四拍底。\n・第 1–8 小節：只有電子琴切分加拍手。每塊字落下，正好落在電子琴短音上，等於把音效寫進曲子，不另外加音效\n・第 9 小節（0:16）全鼓進來，斜紋同時出現\n・第 13 小節回到電子琴主題\n・0:29.5 用一個和弦收尾\n・如果改用剪映庫，挑 118–124 BPM、帶復古鍵盤的 house",
+    "structure": "【來源代號】同 60 秒：[A] 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn；[B] 行清單_v1.txt ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N；[C] 03 評論特寫 ID 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv；[D] 資料卡 v2 ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg；[F] 三路研究摘要.md ID 1sSOoaJudj_zDzOGM8eir6quiNqvzDI5w；[G] https://www.ezpretty.com.tw/landing/store/5708；[H] Threads歷史貼文 ID 1o5S93yT1jKqtmbAtD9by_Sblbc5RzMxw\n\n■ 0:00–0:02（第 1 小節）\n畫面：深色二丁掛牆。白色搪瓷告示板從上方垂下來，擺兩下停住。第 3、4 拍，「本店規矩」四塊立體字落下，板子被壓得一沉。右上角是銅色小字「雁沙龍」。\n文案：\n・「本店規矩」\n・「雁沙龍」[A]\n\n■ 0:02–0:06（第 2–3 小節）\n畫面：「一、」先落下，最重；接著落「先報價。」。第 3 小節副句落下。每落一次，板子就擺一下。\n文案：\n・「一、先報價。」\n・「你確認了價錢，我們才開始。」[B][D][F]\n\n■ 0:06–0:10（第 4–5 小節）\n畫面：鏡頭沿著板子往下移一點。主句落下，板子大擺。第 5 小節括號小字落下，板子幾乎沒動，因為字小，重量也小。\n文案：\n・「二、一個小時，只約一位。」\n・小字「（忙起來的時候，稍微等一下是正常的。）」[B]\n\n■ 0:10–0:14（第 6–7 小節）\n畫面：同樣分塊落下，板子擺一下。\n文案：\n・「三、燙跟染，」\n・「設計師從頭做到尾。」[B][D]\n\n■ 0:14–0:16（第 8 小節）\n畫面：最下面一行附則用小字落下，板子只微微晃一下。\n文案：\n・「附則：廁所有備衛生棉。店裡有零食櫃。」[B][F]\n\n■ 0:16–0:18（第 9 小節，配樂全鼓進來）\n畫面：鍊子一收，告示板被拉出畫面上緣，後面是滿版「>」斜紋（銅／白／墨）往上捲。第 4 拍，斜紋尖端對準畫面中心，收細成騎樓的透視線。\n文案：無。斜紋一直在動，不算停頓。\n\n■ 0:18–0:24（第 10–12 小節）騎樓\n畫面：一點透視的騎樓，每小節往前走一步，每步有一面側招迎面停在中右側。招牌上的字就是文案：\n・第 10 小節，搪瓷白直式側招：「附設夜間洗髮」[A]\n・第 11 小節，黃色方形側招：「Google 4.9★」，下方小字「兩千多則評論・2026.09」[A][C]\n・第 12 小節，銅底白字直式側招：「上班開心，是我們的文化」[A][H]\n\n■ 0:24–0:30（第 13–15 小節）\n畫面：\n・第 13 小節：騎樓盡頭的黃色燈箱招牌迎面停下（outBack）。第 3 拍，雁 logo 做成 18px 厚的壓克力立體字（形狀照原檔），落到招牌左側；接著「雁沙龍」立體字落下\n・第 14 小節：招牌下方滑出地址牌\n・之後停留 4 秒以上，招牌輕擺 0.3°，畫面 1.5% 慢推\n文案：\n・雁 logo\n・「雁沙龍」GEESE MODEL HAIR SALON\n・「高雄市新興區民生一路 259 號」\n・「07-281-3636」\n・「IG @geese.model_hair」[A][G][H]\n\n■ 封面：深色二丁掛牆加白色告示板，板上已經有「本店規矩」和「一、先報價。」。封面字只放「雁沙龍｜本店規矩」。",
+    "why": "1. 是另一個獨立答案，不是 60 秒的縮短版：60 秒是導覽，一路印到全版；30 秒只有一個點子，一塊告示板把規矩一條條掛上去，再走到店門口。主角素材、底色、字型、結構、logo 時刻、配樂、封面都不一樣，符合他「同框架、兩個不一樣的東西」的要求。\n2. 幽默來自反差和重量：「本店規矩」是老店告示的正式口氣，掛上去的卻是「先報價」「忙起來稍等一下是正常的」「廁所有備衛生棉」這種很生活的話。字大板子就大擺，附則字小板子幾乎不動。笑點在物理裡，不靠金句，也不嗆同業，貼雁「生活係」、團隊會吐槽老闆的氣質。\n3. 物理感和拍點：阻尼擺加立體字落地，對到電子琴切分，是他認可的物理感、提前起跑、錯開幾格的手感。\n4. 老招牌做得現代：圓體、二丁掛、騎樓側招都是台灣街景，平塗色、一點透視、硬陰影讓它看起來乾淨不俗。尾段一路走到招牌和地址牌，直接回答「在哪、怎麼找」。\n5. 跟過去作品不重複：懸掛告示板、立體壓克力字、騎樓透視、「>」斜紋，都沒在他的作品裡出現過。"
+   },
+   "contrast": "兩支只共用三樣東西：雁 logo 的墨 #1E1A17、銅 #A4613C 加一支印刷黃 #F2D13D，logo「>」的斜線骨架，以及 outExpo／outBack／inExpo 這套曲線手感。其餘拉開如下：\\n1. 底與質感：60 秒是亮的新聞紙，網點、油墨毛邊、壓印陰影；30 秒是暗的二丁掛牆，平塗搪瓷和燈箱色、立體字硬陰影。\\n2. 字型：60 秒用仙人掌明體加 Bodoni Moda，有刊本、鉛字的味道；30 秒用 Chiron GoRound TC 圓體加 Archivo Expanded，是老招牌的味道。\\n3. 結構：60 秒是九道印刷工序的導覽，最後拉遠揭曉全版；30 秒是一塊告示板累積三條規矩加附則，接著斜紋，再走騎樓到招牌。\\n4. 主動作：60 秒每段換一道工序（滾筒、裁刀、捲筒紙、摺頁、網點、套印、放大鏡）；30 秒全片只有一個物理系統，阻尼擺加立體字落下，靠重複和變化做節奏。\\n5. logo 時刻：60 秒是 logo 在海報「>」尖端用網點依深淺長出來；30 秒是 logo 做成壓克力立體字，落到黃色燈箱上。\\n6. 配樂：60 秒是 100 BPM city pop／boogie（Rhodes、fretless），鋪陳型；30 秒是 120 BPM nu-disco／house 加復古電子琴，切分型，字落在琴聲上。\\n7. 情緒：60 秒溫和、資訊完整，講生活感；30 秒短、俏皮，靠反差笑。\\n8. 封面：60 秒是三色全版海報，30 秒是深牆上的白告示板。",
+   "risks": [
+    "店內復古元素沒查證：部落格說店裡「復古、保留傳統髮廊元素、書櫃」，這次 WebSearch 三組關鍵字都查不到，xmirax.pixnet.net 也連不上。所以兩支片的復古只是美術風格，文案和畫面都不宣稱店內長這樣。要請大介給民生店的門面和室內照片，確認黃牆實際色號，以及有沒有騎樓、二丁掛。",
+    "30 秒的騎樓、二丁掛、側招是風格化的街景，觀眾可能以為店真的在騎樓下、掛著這些招牌。如果民生店門口沒有騎樓，就把 16–24 秒改成同一面牆上的側招依序伸出來，不做透視街道。理髮燈柱斜紋只當轉場，不宣稱是店面；Google 圖片那張紅白藍門面還沒確認是不是現在的民生店。",
+    "字形：仙人掌明體依刊本／傳承字形設計（來源 fontsource 與 GitHub MoonlitOwen/CactusSerif 的說明），部分字可能跟台灣教育部標準字形不同，而且只有 400 一個字重，大標要靠描邊加粗。Chiron GoRound TC 官方說明是「region-agnostic」字形，以香港黑體為底。兩套字都要把全片文案逐字出字形校樣，不合的字改用 Noto Serif TC／Noto Sans TC，並確認每個元件都有 lang=\"zh-Hant-TW\"。",
+    "60 秒開場的「龍沙雁」反字，可能有 1–2 秒讓人看不懂，碰到他最在意的「意味不明」。已經加小字「排版中・鉛字是反的」，第 2.4 秒就翻正。樣片如果他還是覺得卡，就把壓印提前到第 1 小節第 3 拍。",
+    "60 秒有九種印刷工序，可能被看成技術流堆料。每道工序都綁著一個賣點，但他如果嫌忙，先拿掉〈小字〉放大鏡段，或把〈每個月上課〉縮成兩小節。",
+    "兩色套印（4.9 那段）兩版從左右滑進來對位，看起來可能像 RGB 錯位。目前的做法是只對一次、8px 過衝就停、不抖，用的是實色特別色、不是 RGB 分色。仍被嫌的話，改成黃版先印、墨版直接印上去。放大鏡則要注意別跟桃園 v3 的對焦框太像：畫成印刷用的方框折腳放大鏡，不畫四角框。",
+    "30 秒立體字一句拆成 2–3 塊落下，雖然不是逐字，仍屬「依序落下」一類，可能被說跟剪紙片的「同類依序彈入」或剪髮講座的「逐字升起」重複。主要的差別要靠阻尼擺的物理反應撐住；樣片要先給他看這一段。",
+    "文案風險：「有開心的我們，才有開心的客人」雖是店家原句（行清單、三路研究摘要都有），但句型對仗，碰到他反 AI 金句的規則。被嫌就刪掉，只留「上班開心，是我們的文化」。「命定設計師」也是店家原句，略帶甜，要請大介確認要不要用。",
+    "時效：Google 4.9★／2,438 則是 2026-09-19 的截圖，交件前要重查，片中寫「兩千多則」並標 2026.09。「十月請高雄的藝術家上陶藝課」是相對時間，片子如果晚發要改寫；這條的來源 srt 這次沒有重讀，用的是先前研究代理的讀取結果。夜間洗髮只寫「附設夜間洗髮」，不寫時段；白天營業時間查不到，片中不出現。",
+    "黃色：#F2D13D 是我挑的，不是店家色票。要放在安格斯的 #FFB13B 旁邊比對，確認不會被看成安格斯 IP 色；拿到黃牆照片後再校正。",
+    "logo 來源：目前的 logo 是從 FB 395px 大頭貼重描的，不是官方原檔。網點長出和壓克力立體字兩種處理都必須保持原形狀（大介 10/23 的規則）。建議請店家提供官方檔。",
+    "配樂做法有衝突：總綱說形象片配樂要自己合成，但川hair B 的合成配樂被嫌「怪怪的」，他近期又改用剪映庫裡「時尚動感」的曲子。要請他二選一：用合成就先交 15 秒試聽；用剪映就照文中的 BPM 範圍挑曲，我們重新對拍。音效預設不放，因為紙張聲曾被退「完全對不上」。",
+    "製作量：網點每格上萬個點，要用 canvas 繪製並預先計算；摺頁和騎樓要做 CSS 3D，渲染時間比平常長。他嫌慢，建議先交兩段樣片：60 秒的 0:00–0:12（反字壓印加先報價滾筒），30 秒的 0:00–0:10（告示板兩條規矩），各附三張關鍵圖。他說「製作吧」再做全片。",
+    "Reels 安全區：60 秒的印刷邊（色導條、對位十字、裁切線）有一部分落在上 14%、下 35% 的區域，只能當裝飾，不放要讀的字。30 秒告示板最後一行和地址牌都要壓在 y 1248 以內。"
+   ]
+  },
+  {
+   "key": "system",
+   "name": "店務圖表系統：60 秒〈一張圖看懂雁沙龍〉＋30 秒〈你可能想問〉",
+   "angle": "角度是資訊設計和系統感。設計系統直接用雁沙龍自己的工作文件：價目表的黑框直排大字、S／M／L／XL 長度分級、一小時一格的預約、「先報價→確認→服務」的流程。logo 的「>」在系統裡有三個用途：\n- 60 秒裡是流程箭頭，也是整張圖的 V 形骨架。\n- 30 秒裡是問答清單的展開符號：「>」轉 90° 變「V」，最後揭曉它就是 logo。\n\n每條店規都用一個會動的圖表演出來：\n- 插銷抽掉，表示先報價。\n- 方塊撞開，表示一小時只約一位。\n- 捲尺長條拉到底，表示全程設計師操作。\n\n畫面不畫人、不畫小鳥，也不用貼紙圖示。\n\n跟過去作品切開的方式：\n- 動態履歷：只借手感的等級（outExpo／outBack／inExpo、重拍提前、兄弟元素錯開 2–4 格）。HUD、時間碼、規格表、等寬字、12 欄格線都不用。\n- 安格斯介紹片：色和字都不共用。不用姚體，#FFB13B 不出現，安格斯不出場。這兩支的主角是店，不是老闆。",
+   "video60": {
+    "title": "〈一張圖看懂雁沙龍〉60 秒",
+    "style": "【規格】1080×1920、60fps，用 Remotion 做。所有中文元件的 lang 屬性設成 zh-Hant-TW。先無聲渲染，再用 ffmpeg 封 WAV。\n\n【色票】紙面為主，黃色只當資料色。\n- 紙 #ECE8DF：刻意比剪髮講座的暖白底偏灰。\n- 墨 #1E1A17：文字、節點、卡榫。\n- 雁黃 #F2C230：只用在資料條（服務條、設計師長條、評分條），全片面積不超過 15%。這是提案值，要對照店內黃牆照片校色。\n- 註記灰 #6B665E：小字用，在紙底上對比約 4.6:1。\n- 格線：墨 8%。\n- 夜間段反相：底 #1E1A17、字 #ECE8DF、格線用紙色 10%。\n- 不用 #FFB13B、香檳金、銅線、墨藍。\n\n【字型】\n- 中文 Noto Sans CJK TC：主句用 Black 900（96–120px）；節點字和價目表式黑框直排字用 Bold 700；小字用 Medium 500（不小於 44px）。\n- 英文和數字 Archivo（Google Fonts，可變字寬）：大數字「4.9」用 wdth 62／wght 900 窄黑體，約 300px；標籤用 wdth 100 Medium，34–40px 全大寫、字距 +8%（例如 60 MIN、S M L XL）。\n- 刻意不用宋體、Didone、Instrument Serif、等寬字、姚體。\n\n【構圖】\n- 整支片是一張 3240×5760 的大圖（畫面的 3 倍）。六張圖表沿一個「>」的兩條手臂排開，排成雁陣隊形。\n- 虛擬鏡頭沿手臂斜向移動。每一站的圖表主角佔畫寬 40–60%。\n- 要讀的字都放在 Reels 可讀區：y 269–1248，左右各留 90px。下方 35% 只放延伸出去的格線和長條尾巴。\n- 背景只有一組 ±30° 的極淡斜線，角度呼應 logo。不用 12 欄格線，不用四角框。\n- 專業工作語言取自價目表：黑框直排單字（染／燙）、S｜M｜L｜XL 分級欄，斜線網底代表「還不能開始」。\n- 全片只用實線，不用虛線。\n\n【動態語言】每段一個主動作，相鄰段不重複：\n① 卡榫鬆開：插銷用 inExpo 6 格抽走，服務節點用 outBack 10% 彈開。\n② 重力落下加碰撞：方塊用 inExpo 9 格落下，落地壓扁 6%；第二塊撞到第一塊後用 outBack 彈進下一格。\n③ 捲尺長條：outExpo 拉長，過衝 8% 再回彈。\n④ 換月：整張月曆 inOutExpo 16 格平移，像打字機換行。\n⑤ 註腳：從下方 outExpo 升起，兩行錯開 3 格。\n⑥ 拉遠全景：inOutExpo 30 格。\n⑦ logo：一長一短兩條長條交叉，硬切成 logo。\n\n字跟著圖形一起出現：被色塊推出來，或被節點邊界遮罩帶出來，不用逐字升起。重拍提前 2–3 格起跑，兄弟元素錯開 2–4 格，大動作之後留 1–2 格喘息。字停住的時候，鏡頭持續慢推 1–2%，全片沒有超過 1 秒的靜止。\n\n【轉場】\n- 全片只有一個硬切，就是 logo 時刻的 match-cut。其餘都是同一張圖上的鏡頭移動。\n- 夜間段用一個「>」形色塊從右往左掃過，畫面反相（inOutExpo 14 格）。全程是遮罩推進，不會出現整格全白或全黑。\n- 不閃白、不震、不甩鏡、不 punch zoom、不發光。\n\n【配樂方向】\n- 96 BPM、4/4，偏溫的 deep house／lounge：電鋼琴和弦、圓的 sub bass、邊擊、沙鈴。有時尚感，但不冷。\n- 4 小節剛好 10 秒，對上分段。\n- 夜間段整首加 2 小節低通濾波。\n- 40 秒拉遠時鼓組全進，再加一層弦樂 pad。不用 BRAAM，不用上升音效。\n- 52.5 秒 logo 落在主和弦的重拍上。之後律動延續，最後 0.8 秒淡出，不做全靜音加重擊。\n- 音效最多三種、每種不超過 3 次：落地悶響、卡榫輕響、換月的軌道滑動。不用紙張聲、木琴、叮咚。\n- 自己合成，還是從剪映收藏挑 92–100 BPM 的曲子，由大介決定。選定後依實際 BPM 重排所有格點。",
+    "structure": "【來源代號】\n[A] Drive「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn\n[B] Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N\n[C] Drive「03_Google評論數_特寫_4.9星2438則.png」ID 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv\n[D] Drive 剪髮講座形象片〈說明.md〉ID 1oUgCWkNNjsKXwLI-sSKmbKeikj7XP-Mn\n[E] Drive「川x雁陶藝課_介紹片_v4.srt」ID 1KLPUzW99GIhnWjaqjT2ung8NcL7Kc-7H\n[F] https://www.ezpretty.com.tw/landing/store/5708\n[G] Drive「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm\n[I] Drive「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg\n[L] Drive「雁_logo_深墨_高解析.png」ID 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7（重描版，不是官方原檔）\n[P] 本次用 python 驗算：2026-09-01 是週二，09-24 是週四，10-01 是週四\n\n96 BPM，1 小節＝2.5 秒。\n\n0:00–0:10｜報價卡榫（第 1–4 小節，鋪陳）\n畫面：\n- 紙面加淡斜線。左上標籤「雁沙龍｜高雄・民生一路」[A]。\n- 一個墨色「>」從右邊滑進來，開口處推出三個節點「報價 › 確認 › 服務」。「服務」節點蓋著斜線網底、插著一根小插銷，表示還不能開始。\n- 2.5s：「報價」節點展開成價目表式小表，左邊是黑框直排「染」，右邊是 S｜M｜L｜XL 四欄。一個黃色游標格滑到其中一欄，畫面上不出現任何價錢數字（價目表依長度分級 [A]）。\n- 5.0s：「確認」節點由左往右填滿墨色。\n- 7.5s：插銷抽走、網底掉落，「服務」節點在第 4 小節重拍彈開，一條黃色服務條往右長出去。\n文案：2.5s「動手之前，先跟你報價。」→ 5.0s「你確認了價錢，」→ 7.5s「我們才開始。」[B]\n\n0:10–0:20｜一小時一格（第 5–8 小節）\n畫面：\n- 鏡頭沿「>」的下臂斜移（inOutExpo 18 格）。三個節點轉 90°，疊成一直欄的四個時段格。左邊只標「60 MIN」，不寫幾點。\n- 12.5s：一塊墨色「1 位」方塊落進第一格，壓扁再回彈。\n- 13.75s：第二塊也想落進同一格，撞到第一塊後彈開，滑進第二格。第三塊同理進第三格。\n- 第四格刻意留空，不做「預約表填滿」。\n文案：12.5s「一個小時，只約一位客人。」→ 17.5s 小字「忙起來還是可能要稍等一下，這很正常。」[B]（不寫零等待）\n\n0:20–0:27.5｜全程設計師（第 9–11 小節）\n畫面：\n- 時段欄轉成一條橫向泳道，左側黑框標籤「設計師」，上方兩個價目表式黑框直排字「燙」「染」當階段記號。\n- 黃色長條從「燙」下方開始，像捲尺一樣拉出去，一路經過「染」，拉到泳道盡頭過衝再回彈。\n- 只有一條泳道，不畫任何對照組。\n文案：22.5s「燙、染，從頭到尾都是設計師在做。」[B][I]\n\n0:27.5–0:35｜每月上課（第 12–14 小節）\n畫面：\n- 黃色長條往上滑，變成月曆的月份抬頭「2026・09」。七欄格線從抬頭往下落，每欄錯開 2 格。\n- 28.75s：24 號那格填墨，旁邊標「09.24 剪髮講座」[D]。月曆格要照實排：9/1 是週二，9/24 是週四 [P]。\n- 31.25s：整張月曆像打字機換行，往左移一個月到「2026・10」。標籤掛在月份抬頭上，不寫日期：「陶藝課｜邀高雄藝術家來上」[B][E]。\n- 33.75s：月曆壓成 12 格的年度條，標「年度教育課程：剪髮・燙髮・染髮」[B][D]。\n文案：28.75s「你的設計師，每個月都還在上課。」→ 33.75s 小字「也會不定期辦活動。」[B]\n\n0:35–0:40｜註腳＋夜間（第 15–16 小節）\n畫面：\n- 年度條下方升起兩行註腳（48px Bold，對比夠，讀得清楚）：「※ 廁所有備衛生棉。」「※ 店裡有零食櫃。」[B]。用註腳講最貼心的事，是這段的小幽默。\n- 37.5s：一個墨色「>」形色塊從右往左掃過，這一區反相成夜間版。正中一行大字「附設夜間洗髮」，下面一條短黃條 [A]。不寫時段。\n\n0:40–0:47.5｜拉遠：原來是一整張圖（第 17–19 小節，這是讓人眼睛一亮的地方）\n畫面：\n- 40.0s（提前 3 格起跑）：鏡頭從夜間區一路拉遠（inOutExpo 30 格）。觀眾發現前面看過的五張圖表原來排成一個大「>」，是雁陣的兩條手臂，夜間區是其中一塊深色格。\n- 頂部安全區內落下標題「一張圖看懂雁沙龍」。\n- 42.5s：「>」的尖端是一條 1–5 分的刻度尺。墨色條拉到 4.9 停住（outExpo 過衝回彈，不用數字跳表）。旁邊用窄黑體寫大字「4.9」，下方「2,400+ 則 Google 評論」，再加小字「2026.09」[A][C]。\n文案：42.5s「兩千多則 Google 評論，4.9 顆星。」\n\n0:47.5–0:52.5｜命定設計師（第 20–21 小節）\n畫面：兩條手臂上的圖表往內收，疊成一長一短兩條墨色長條。長的是設計師長條，短的是報價條。\n文案：47.5s「想找到你的命定設計師，」→ 50.0s「歡迎來雁沙龍。」[B]\n\n0:52.5–1:00｜logo＋片尾資訊（第 22–24 小節）\n畫面：\n- 52.5s：兩條長條轉到 logo 筆刷的角度，交叉成「>」，同一格硬切成深墨 logo [L]。位置、大小、角度完全對齊，畫寬約 50%。\n- 下方手寫「geese model」和「雁」字用 8 格淡入，不做筆刷擦出。\n- 53.75s：資訊由下往上推出，每行錯開 3 格：\n  雁沙龍｜GEESE MODEL HAIR SALON [A][I]\n  高雄市新興區民生一路 259 號 [A][F]\n  07-281-3636 [A][F]\n  IG @geese.model_hair [A][G]\n  附設夜間洗髮 [A]\n- 停 4–5 秒，持續慢推 1.5%，音樂最後 0.8 秒淡出。\n- 可選：加一行小字「好髮型・好心情」（價目表抬頭 [A]）。\n\n封面：用拉遠那一格的全景（紙底、墨線、黃條排成「>」）。上方「一張圖看懂雁沙龍」Black 120px，下方小字「先報價｜一小時一位｜全程設計師」[B][I]。",
+    "why": "1. 大介要的是「整個畫面被設計過」，再加上專業工作語言。這支的工作語言直接取自雁自己的價目表（黑框直排字、S／M／L／XL）和店規，沒有借別的行業的規格表或藍圖，所以跟動態履歷、懶懶 D 拉得開。\n2. 他最常用的退件詞是「意味不明」。這支每條店規都配一個一看就懂的圖表動作：插銷抽掉，表示確認了才開始；第二塊被撞開，表示一小時只約一位；一條長條拉到底，表示全程設計師。每一站也都有一句白話字幕。\n3. 他要「先鋪陳，再讓人眼睛一亮」。前 40 秒一站一站看，到 40 秒拉遠，才發現整支片是同一張圖、排成 logo 的「>」。logo 當成結構來用，不畫小鳥，文案也不用提雁形理論。\n4. 文案用客人的口氣（「先跟你報價」「你的設計師」），沒有對仗金句，所有數字都附來源。「一小時一位」保留店家自己說的「稍等一下是正常的」。\n5. 跟安格斯介紹片完全切開：不用姚體、不用 #FFB13B，安格斯不出場。主角是店，不是老闆。"
+   },
+   "video30": {
+    "title": "〈你可能想問〉30 秒",
+    "style": "【規格】跟 60 秒相同：1080×1920、60fps，中文元件的 lang 屬性設成 zh-Hant-TW，先無聲渲染再用 ffmpeg 封 WAV。\n\n【色票】黃為主，跟 60 秒反過來用。\n- 底：雁黃 #F2C230 滿版。\n- 墨 #1E1A17：問句和答案面板。\n- 紙 #ECE8DF：面板內的答案字。\n- 答案裡的關鍵字放在墨底上，用雁黃。\n- 片尾整面轉成墨底，logo 上雁黃（大介 10/23 的規則：logo 形狀不動，可以換渲染色）。\n\n【字型】跟 60 秒同一家族，用法不同。\n- 問句：Noto Sans CJK TC Bold 60px，墨色。\n- 答案：Noto Sans CJK TC Black 84–96px，紙色。\n- 笑點「有。」：Black 400px。\n- 「Q」「A」標記：Archivo wdth 125 寬體 ExtraBold 40px。\n- 頂部欄名「你可能想問」：Black 72px。\n\n【構圖】\n- 手機畫面就是一份直式問答清單，貼左排，x 從 90 起。\n- 展開符號放在問句左邊，避開右側按鈕列。符號就是 logo 的兩道筆刷「>」，縮成 44px（從重描檔裁出筆刷部分）。\n- 每次只開一題，被開的那題自動捲到 y≈420。答案面板是主角，佔畫寬 60–80%。\n- 要讀的內容都在 y 269–1248。\n\n【動態語言】手風琴的物理感：\n- 展開符號用 outBack 轉 90°，「>」變「V」。\n- 墨色面板用 outExpo 12 格往下長出，把下面的題目推下去，回彈 8%。\n- 上一題用 inExpo 10 格收合，跟新題錯開 2 格。\n- 清單用 inOutExpo 捲動。\n- 答案字被面板邊界遮罩帶出來，不逐字升起。\n\n每題節奏固定：第 1 拍符號轉，第 3 拍面板開，下一小節第 1 拍答案落定，第 3 拍清單微微呼吸。\n「有。」那題的面板開得特別大，只裝一個字，大小的反差就是笑點。\n\n【轉場】\n- 沒有剪接，全片是同一份清單一路捲下去。只有結尾一次「面板展開到全螢幕」。\n- 面板展開是遮罩推進，不會出現整格全黑或全黃的閃爍。\n- 不閃白、不震、不甩鏡、不發光。\n\n【配樂方向】\n- 128 BPM 的 fashion house／nu-disco：四拍大鼓、反拍開鈸、2、4 拍拍手、有彈性的 bass。\n- 每次面板打開，剛好落在一記和弦 stab 上。這是音樂本身的切分，不另外加音效。\n- 「有。」那題 bass 抽掉兩拍，用濾波下沉再回來，不是全靜音。\n- logo 落在第 13 小節重拍，和弦解決後律動延續，到片尾淡出。\n- 不用木琴、叮咚、紙張聲。\n- 自己合成，還是從剪映挑 124–128 BPM 的時尚 house，由大介決定。",
+    "structure": "【來源代號】\n[A] Drive「01_Google搜尋雁沙龍_整頁.png」ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn\n[B] Drive「行清單_v1.txt」ID 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N\n[F] https://www.ezpretty.com.tw/landing/store/5708\n[G] Drive「原始語料_20260912.md」ID 1ZkMiwyhfDOf2kBSx9tumbCB72AxUzNTm\n[I] Drive「08_雁沙龍資料卡v2_淺色_9比16_全屏.png」ID 1l_SWKJkIBkX7bRVGEoO6TAkxVLKOV-Gg\n[L] Drive「雁_logo_深墨_高解析.png」ID 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7（重描版）\n\n128 BPM，1 小節＝1.875 秒，2 小節一題。\n\n0:00–0:01.9｜第 1 小節\n黃底，頂部落下「你可能想問」。五行收合的問句由下往上滑進來，每行錯開 2 格，左邊各有一個小「>」。\n\n0:01.9–0:05.6｜Q1\n「下班很晚了，還能去洗頭嗎？」→「可以。雁沙龍附設夜間洗髮。」[A]（不寫時段）\n\n0:05.6–0:09.4｜Q2\n「做之前，會先講價錢嗎？」→「會。先報價，你確認了才開始。」[B]\n\n0:09.4–0:13.1｜Q3\n「廁所有衛生棉嗎？」→ 面板開到畫面一半高，裡面只有一個 400px 的「有。」[B]\n這是全片的笑點，也是封面。\n\n0:13.1–0:16.9｜Q4\n「那……有零食嗎？」→「有，店裡有零食櫃。」[B]\n\n0:16.9–0:20.6｜Q5\n「設計師開不開心，跟我有關係嗎？」→「有關係。有開心的我們，才有開心的客人。」[B]（後半句是店家原句）\n\n0:20.6–0:24.4｜Q6（這裡是讓人眼睛一亮的地方）\n- 第六行原本藏在下面，這時才捲上來：「好，店在哪？」\n- 符號照樣轉成「V」，但這次面板不停，一路展開到全螢幕，由黃轉墨。\n- 同時那個小小的展開符號飛到正中，轉回「>」，放大到畫寬 55%，在 22.5s（第 13 小節重拍）落定。觀眾這時才發現，每一題旁邊的符號就是雁的 logo [L]。\n- 手寫「geese model」和「雁」用 8 格淡入，logo 上雁黃。\n\n0:24.4–0:30｜片尾資訊（第 14–16 小節）\nlogo 下方由下往上推出資訊，每行錯開 3 格：\n  雁沙龍｜GEESE MODEL HAIR SALON [A][I]\n  高雄市新興區民生一路 259 號 [A][F]\n  07-281-3636 [A][F]\n  IG @geese.model_hair [A][G]\n停約 4 秒、慢推 1.5%，最後 0.6 秒音樂淡出。\n\n封面：黃底，上方墨色問句「廁所有衛生棉嗎？」，下方墨色巨大的「有。」，左上角一個小「>」。",
+    "why": "1. 雁的定位是「生活係髮廊」[G]，所以 30 秒負責幽默和節奏。問答本來就是人人看得懂的格式，可以避開「意味不明」。冷面短答（「有。」）在 Reels 前幾秒就能抓住人，也直接拿來當封面。\n2. 這是獨立的概念，不是把 60 秒剪短。沒有圖表、沒有鏡頭旅行，logo 時刻和配樂也都不同；兩支只共用字型家族、色票和動作手感，符合大介要的「同一個框架下，看起來是兩個不一樣的東西」。\n3. 問句全用客人的口氣，答案全是店家講過或資料上有的事。題目大多選 60 秒沒演到的生活細節（夜間洗髮的口語版、衛生棉、零食櫃、團隊開心），兩支互補。只有「先報價」兩支都有，因為它是雁最核心的一句。\n4. logo 的「>」以展開符號的身分整支片都在畫面上，最後才揭曉它就是 logo。這個 logo 時刻有記憶點，也不用剪髮講座用過的筆刷擦出。"
+   },
+   "contrast": "【兩支共用的框架】\n- 字型家族：Noto Sans CJK TC＋Archivo。\n- 三色：墨 #1E1A17、紙 #ECE8DF、雁黃 #F2C230。\n- 動作手感：outExpo／outBack／inExpo，重拍提前，兄弟元素錯開。\n- logo 的「>」當系統符號。\n\n【兩支不一樣的地方】\n1. 主角素材：60 秒是會動的圖表（流程卡榫、時段格、泳道、月曆、評分尺）；30 秒是一份問答清單，沒有任何圖表。\n2. 色彩比例：60 秒以紙底為主，黃只用在資料條、不超過 15%；30 秒黃色滿版、墨色面板，片尾整面墨底。\n3. 結構：60 秒一站一站說明，到 40 秒拉遠，揭曉整支片是同一張排成「>」的圖；30 秒是 6 題問答、2 小節一題，靠冷面笑點推進。\n4. 鏡頭與轉場：60 秒在一張大圖上斜向移動，有一次反相掃過和一次 match-cut；30 秒沒有鏡頭移動，只有清單捲動，加上最後一次面板展開到全螢幕。\n5. logo 時刻：60 秒在 52.5s，兩條資料長條交叉，硬切成深墨 logo，紙底；30 秒在 22.5s，一直在畫面上的展開符號放大，揭曉成 logo，墨底配雁黃 logo。\n6. 配樂：60 秒是 96 BPM 偏溫的 deep house，4 小節一段；30 秒是 128 BPM fashion house，2 小節一題，面板打開落在和弦 stab 上。\n7. 封面：60 秒用「>」形全景圖配「一張圖看懂雁沙龍」；30 秒用「廁所有衛生棉嗎？／有。」。\n8. 語氣：60 秒是店家說明（「先跟你報價」）；30 秒是客人提問、店家冷面回答。\n\n【跟過去作品的差異】\n- 動態履歷：不用 HUD、時間碼、進度條、規格表逐列、等寬字、12 欄格線、彈跳球、符號匯聚，只借手感的等級。\n- 安格斯介紹片：安格斯不出場，不用姚體、#FFB13B、私訊湧入。60 秒的時段格刻意留一格空著，不做「預約表填滿」。\n- 剪髮講座：不用銅線引導線、筆刷擦出 logo、No. 章節卡、Instrument Serif、暖白底板。\n- 陶藝 vlog、阿信批改筆記、雁夜間洗髮：不用草稿到陶土、紅筆圈改、霧面玻璃卡、墨藍夜空片尾卡。\n- 懶懶 D 藍圖、川hair 指標系統：這次的工作語言來自雁自己的價目表和店規，不借工程圖或指標牌。",
+   "risks": [
+    "雁黃 #F2C230 是提案值，店內黃牆沒有實際色號，要用店內照片校色。黃色如果偏橘，會跟安格斯個人 IP 的 #FFB13B 混在一起；色相要守在 45° 以上，偏檸檬黃、不偏橙。",
+    "logo 只有從 FB 大頭貼（395px）重描的版本，不是官方原檔。30 秒片把 logo 筆刷縮成展開符號，還轉 90° 變成「V」；如果店家不接受轉動 logo，就改用一般墨色「>」當符號，只在片尾換成真正的 logo。",
+    "60 秒的「一小時一格」可能讓人聯想到安格斯介紹片 v2 的「預約表填滿」。所以第四格一定留空，時段只標「60 MIN」、不寫幾點（白天營業時間也沒查到）。",
+    "「一小時只約一位」不能被看成零等待，字幕一定要保留店家自己說的「忙起來還是可能要稍等一下」。",
+    "Google 4.9★／2,438 則是 2026-09-19 的截圖，交件前要重查。片中寫「2,400+（2026.09）」或「兩千多則」，不寫精確則數。",
+    "陶藝課「邀高雄藝術家」來自陶藝課介紹片的 srt，本輪沒有重讀。陶藝課比較像「活動」而不是技術課程，文案已經拆成「每個月都還在上課」和「也會不定期辦活動」兩句，措辭仍請大介確認。",
+    "「有開心的我們，才有開心的客人」是店家原句，但句型像對仗。大介如果嫌它像 AI 金句，可以換成 IG 簡介那句「上班開心是我們的文化」（Drive 01 截圖 ID 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn）。",
+    "30 秒的問句是我們寫的假想提問。欄名用「你可能想問」，不寫「常見問題」，免得讓人以為是真實客人的留言或評論。",
+    "「廁所有衛生棉嗎？／有。」既是封面也是笑點，要先請店家確認願意這樣露出；有人可能會覺得這個題材太私密。",
+    "純程式畫的圖表沒有店景也沒有人，仍然可能被說「意味不明」或「像簡報」。所以每一段都配白話字幕，60 秒的第一格就寫出「雁沙龍｜高雄・民生一路」；動作份量也要做到「點綴且頻繁」，不然會像 PPT。",
+    "30 秒每題只有 3.75 秒，問句加答案可能讀不完。樣片要實測，讀不完就刪掉 Q4（零食）。",
+    "配樂自己合成還是用剪映的曲子，要大介選；BPM 定下來之前不能卡點，換曲就要重排所有格點。另外，60 秒片尾資訊停 4–5 秒，比總綱說的約 3.5 秒長，可以視需要縮短。",
+    "大介嫌等太久，建議先交樣片：60 秒的 0:00–0:20（卡榫＋碰撞），30 秒的 Q3「有。」，再加三張關鍵圖（60 秒拉遠全景、30 秒封面、30 秒 logo 揭曉）。等他說「製作吧」再做全套。",
+    "字型：Archivo 是 Google Fonts 上的 OFL 字型，Noto Sans CJK TC 在允許範圍內。中文元件一定要把 lang 設成 zh-Hant-TW，不然會出現日文字形。"
+   ]
+  }
+ ],
+ "judges": [
+  {
+   "scores": [
+    {
+     "concept": "cinematic｜60〈生活係髮廊〉長卷章節 × 30〈順序〉箭頭海報",
+     "brand_fit": 8,
+     "client_taste": 6.5,
+     "distinctness": 7,
+     "feasibility": 7,
+     "reels_performance": 6.5,
+     "total": 35,
+     "notes": "總分是五項加總，滿分 50。\n\n【強項：30 秒〈順序〉】\n- 滿版牆黃配黑體巨字，只講「先報價→你點頭→才開始」一條訊息。\n- 箭頭被擋兩次、點頭、載著「設計師」跑，全是物理演出；開場就寫「做頭髮」，一看就懂。這很合他要的「有物理感、拍點對準」（參考1_動態履歷.md 1XzFB6Hfr633IJNkGNCdwFzXz7BjGYYWz）。\n- 四案裡事實分流做得最好：60／30 的內容幾乎不重疊，最不會被說像閹割版（feedback_ad_lengths_redesigned.md 1F8BWZ7cbo0EWvaYGO_z27ef3wLVwEQHu）。\n- 品牌貼合度高：牆黃、價目表黑框直排、logo 筆刷角度，都取自雁本身（01_Google搜尋雁沙龍_整頁.png 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn）。\n\n【弱點：60 秒】\n1. 紙底＋宋體＋章節，跟 10/17 剛定版的剪髮講座（思源宋、No. 章節、暖白底，分鏡_v1.md 1yhVXpGAXPsxOMQDzFMyVJYAgJrECs5oG）是同一家族。他明講不想看到跟過去很像的東西（feedback_always_new_not_derivative.md 1gUxUGub3HTNX2k4rXoWwl_XgSLqPmrPD）。\n2. 細宋 Light 300 大字配 Noto Sans 40px 說明小字，正是川hair 被嫌的「細明體＋小字說明」排法（feedback_brand_ad_not_footage_collage.md 1hO6QhgezYbP9uGqYbbaeD8VzzjGWjJRX），手機上細字也難讀。\n3. 「約／備／評」這類單字章節框，接近面試片被退的「段落小標題卡」（面試_動畫腳本_v6.md 19UEgO0IFaDTSH_9YdjJv5otMbQo5IZG1）。\n4. 開場是細字慢推，Reels 前 2 秒抓不住人。\n5. 「生活係」這個詞客人不一定看得懂。\n\n【30 秒要先確認】\n- 「坐下」是自編的步驟，要問店家實際在哪一步報價。\n- 箭頭「乾」成飛白 logo，要確認符合 10/23「形狀保持原樣、可換渲染」的規則（進度紀錄.md 1HYUyueKdbtEFfYn7F5Y77xzp0icHCvYT）。"
+    },
+    {
+     "concept": "kinetic｜60〈字的雁陣〉× 30〈一格一位〉",
+     "brand_fit": 6.5,
+     "client_taste": 6.5,
+     "distinctness": 7,
+     "feasibility": 6,
+     "reels_performance": 7.5,
+     "total": 33.5,
+     "notes": "【強項】\n- 60 秒的揭曉是四案裡最有說服力的結構：前 45 秒讀過的字，拉遠後拼成 logo 的兩道筆刷，「鋪陳後眼睛一亮」長在結構裡（參考3_對話紀錄.md 1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）。\n- 60 秒第 0 格就在動、主字大；30 秒第 1 秒就演出主訊息，每拍硬切配 128 BPM，有時尚動感。\n- 60／30 差異大：一鏡到底對每拍硬切、黃底對紙底、橫排對直排。\n\n【扣分】\n1. 30 秒 5 個「客」被彈出畫面，畫面讀起來是「客人被趕走」，又接近已退件的「客人排隊」（feedback_selfintro_v1_rejected.md 1hdFr2zqh7_ZSUZIJLagszdWR-4BCyM-y），品牌上是反效果。\n2. 「不是燙完，設計師才出現」兩支都用，有暗諷同業之嫌，碰到「可以嗆觀念不能嗆人」（feedback_threads_post_structure.md 1TktXgYaz13YTaDHeKZlJkWSQYdrXOA_8）。\n3. 60 秒全片只有字、Mono 全大寫小標和紋理字：\n   - 最容易被說「純文字切換」（面試_動畫腳本_v6.md 19UEgO0IFaDTSH_9YdjJv5otMbQo5IZG1）。\n   - 帶一點動態履歷味（參考1_動態履歷.md 1XzFB6Hfr633IJNkGNCdwFzXz7BjGYYWz）。\n   - 「落陣」「樓梯落字」接近「同類依序彈入」。\n4. Chiron GoRound 圓體配滿版黃，親切，但離他要的「時尚感強並且不失質感」有距離（project_chuanhair_brand_ad.md 1AVxSbSCEMbw9ng8KJSoOLO5qwGMRGIX2）；字形以香港黑體為底，要逐字查。\n5. 字地圖要在 22% 縮放下真的讀成 logo，對位很難；60fps 加可變字型，渲染負擔重。\n6. 「一小時只約一位」沒有原話證明是每位設計師還是全店（行清單_v1.txt 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N）。"
+    },
+    {
+     "concept": "retro｜60〈雁沙龍印刷所〉× 30〈本店規矩〉",
+     "brand_fit": 6,
+     "client_taste": 6.5,
+     "distinctness": 8.5,
+     "feasibility": 4.5,
+     "reels_performance": 6,
+     "total": 31.5,
+     "notes": "【強項】\n- 媒材最新，60／30 拉得最開：亮紙加網點，對暗牆加招牌。\n- 「每個賣點交給一道工序」確實是在演內容，不是換字。\n- 30 秒〈本店規矩〉是四案最好的單一物理點子：告示板的擺幅跟字的大小成正比，附則小字落下時板子幾乎不動。笑點來自物理，不靠金句，很對他的胃口。\n\n【整體風險最高】\n1. 60 秒有九道工序（滾筒、裁刀、捲筒紙、摺頁、網點、套印、放大鏡⋯），是他退過的「技術流」（參考3_對話紀錄.md 1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）。\n2. 開場「龍沙雁」反字有 2.4 秒看不懂，Reels 一開頭就碰「意味不明」。\n3. 「4.9」兩版從左右滑進來套印，畫面很像總綱禁用的 RGB 錯位（大介想法總綱.md 1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM）。\n4. 跟過去作品撞色撞字：\n   - 墨＋銅色票就是剛定版剪髮講座的色（分鏡_v1.md 1yhVXpGAXPsxOMQDzFMyVJYAgJrECs5oG）。\n   - Bodoni Moda 跟 Geese_ash 的 Didot 雜誌風同屬 Didone（project_geese_partner_dryer_series.md 1QBHRW3c6T78t02v0O9ed5DuabBsUUu9V）。\n5. 店內「復古」沒有查證。30 秒的騎樓、二丁掛、燈箱可能讓客人以為店門口就長這樣。\n6. city pop 加台式電子琴容易偏俗，離他近期要的「時尚動感」較遠（說明.md 陶藝介紹片 v4 1Nsl6z1PXzciWE0z72XK7Ni0RQPFF21OS）。\n7. 製作量四案最大：網點要用 canvas、摺頁和騎樓要 CSS 3D、還有立體字。他又嫌慢（參考3_對話紀錄.md 1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）。"
+    },
+    {
+     "concept": "system｜60〈一張圖看懂雁沙龍〉× 30〈你可能想問〉",
+     "brand_fit": 7.5,
+     "client_taste": 7.5,
+     "distinctness": 7.5,
+     "feasibility": 8,
+     "reels_performance": 8,
+     "total": 38.5,
+     "notes": "四案最均衡、也最好做。\n\n【60 秒】\n- 每條店規都用一個一看就懂的物理圖表演出：插銷抽掉＝確認了才開始；第二塊被撞開＝一小時一位；捲尺拉到底＝全程設計師。\n- 工作語言來自雁自己的價目表：黑框直排、S／M／L／XL（01_Google搜尋雁沙龍_整頁.png 1GUCdtc2gcmyP5IKBR9Z1GulNyJdzKRtn）。\n- 正中他要的「整個畫面被設計過、點綴且頻繁」（feedback_motion_design_not_stickers.md 1-H50sjlx4yS8j2iDhY4eE1MzvXbPJpNn），也避開他最怕的「意味不明」。\n\n【30 秒】\n- 問答是 Reels 原生格式。「廁所有衛生棉嗎？／有。」的冷面大字，是四案最強的封面和開頭笑點。\n- logo 從頭到尾以展開符號待在畫面上，最後才揭曉，是 30 秒裡最漂亮的「鋪陳後一亮」。\n\n【扣分】\n1. 60 秒有「像簡報」的風險；灰紙底加資料條，時尚感偏弱，要靠字級反差和配樂撐。\n2. 一小時一格的時段欄，接近安格斯 v2 的「預約表填滿」（v2重做方案.md 1OSQtBae-Ij3hgbkfYCLjI2f3sf5hoptk）。已經留空一格，仍要注意。\n3. 兩支的 logo 時刻都是「> 的幾何變成 logo」同一套邏輯；內容也有重疊，先報價、衛生棉、零食、夜間兩支都有。\n4. 30 秒把 logo 轉 90° 當符號，要確認符合 10/23「形狀保持原樣」（進度紀錄.md 1HYUyueKdbtEFfYn7F5Y77xzp0icHCvYT）。\n5. 30 秒的細節要先處理：\n   - 衛生棉當封面要店家同意。\n   - Q5 後半句「有開心的我們，才有開心的客人」是對仗句型。\n   - 每題 3.75 秒，要實測讀不讀得完。\n6. 60 秒排了 3 種音效。他退過紙張聲、剪映翻頁聲（面試_動畫腳本_v6.md 19UEgO0IFaDTSH_9YdjJv5otMbQo5IZG1；feedback_brand_film_motion_resume_style.md 1n7uPjjE4UyCIYLr7uito-Rf0itRo8OoK），建議預設不放。"
+    }
+   ],
+   "best_pair": "推薦 system 這一案的兩支：60 秒〈一張圖看懂雁沙龍〉＋30 秒〈你可能想問〉，不跨案混搭。\n\n【為什麼選這組】\n1. 兩支的「同框架」本來就是一起設計的：同一套字型（Noto Sans CJK TC＋Archivo）、同一組色（墨／紙／雁黃）、同一套緩動。跨案混搭還得重調字型和色票。\n2. 兩支拉得夠開：60 秒是「看得懂的圖表＋物理」，30 秒是「冷面問答，logo 一直在畫面上」。主角素材、底色比例、結構、鏡頭、logo 時刻、配樂、封面七項都不同，超過他要求的四項（feedback_ad_lengths_redesigned.md 1F8BWZ7cbo0EWvaYGO_z27ef3wLVwEQHu）。\n3. 四案裡最不容易被說「意味不明」，也最快做出樣片，對他嫌慢最友善（參考3_對話紀錄.md 1GdHp7oT129hvC5Kr0VzABjj-OHxrW1s1）。\n\n【為什麼不混搭】\n- 另一支最強的 30 秒是 cinematic〈順序〉。但它的主訊息「先報價→點頭→開始」，就是 system 60 秒第一站的報價卡榫。配在一起，30 秒會像 60 秒第一站的放大版。\n- 而且「箭頭乾成 logo」跟 system 60 秒「兩條長條交叉成 logo」是同一個邏輯。\n- 其他三案各自的問題：\n  - cinematic 60：跟剪髮講座太近，又是被嫌過的細字加小字排法。\n  - kinetic 30：有「趕走客人」的語意風險。\n  - retro：製作量太大，騎樓街景也沒查證。\n\n【交樣片前要改的地方】\n(a) 事實分流：\n- 60 秒拿掉「衛生棉／零食」註腳，那 2.5 秒還給夜間段，生活小事讓 30 秒獨佔。\n- 分工：60 秒講店務流程（報價、時段、設計師、上課、夜間、評論，行清單_v1.txt 1krQa57IQCbG0kzty_Zy0islcj7V6bk8N），30 秒講生活小事和「店在哪」。\n\n(b) 拉開兩支的 logo 時刻：\n- 60 秒拉遠時的版面，照 logo 重描檔兩道筆刷的中心線和長短比例排，拉遠那一格就要看得出雁 logo 的剪影，再對位疊上 logo（雁_logo_深墨_高解析.png 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7）。\n- 30 秒維持「展開符號原來就是 logo」。\n\n(c) 60 秒開場：第 0 格流程就要在動，第 1 秒畫面上要有大字。\n\n(d) 先問店家兩件事：衛生棉當封面、logo 轉 90°。\n- 衛生棉不行，就改用「會先講價錢嗎？／會。」當封面。\n- logo 不能轉，就改用一般墨色「>」當符號，片尾才換成真 logo。\n\n【備案】\n如果店家不接受衛生棉露出，或大介嫌問答像 App 介面，30 秒換成 cinematic〈順序〉。這時 60 秒要做兩件事：\n- 把第一站報價卡榫換成別的內容（例如把上課月曆提前），避免重疊。\n- logo 時刻採用 (b) 的「版面就是 logo 剪影」做法，避免兩支都是「> 變 logo」。",
+   "grafts": [
+    "〔cinematic 30 → system 60 報價卡榫〕加一次「被擋」物理梗：「確認」節點還沒填滿時，「服務」節點先試著彈開，撞到插銷被彈回（擠壓 6%）；等確認填滿，插銷才抽走。這樣「你點頭才開始」演得更清楚也更好笑。全片只做一次，避免同手法重複。",
+    "〔cinematic 整體〕事實分流：cinematic 的 60 和 30 秒，事實幾乎不重疊，30 秒才不會像 60 秒的閹割版（feedback_ad_lengths_redesigned.md 1F8BWZ7cbo0EWvaYGO_z27ef3wLVwEQHu）。套用到 system：60 秒講店務流程，30 秒獨佔衛生棉、零食、團隊開心這些生活小事。",
+    "〔kinetic 60〕拉遠揭曉時，版面照 logo 重描檔排：從檔案量出兩道筆刷的中心線、角度和長短比例，元素之間的空隙當飛白，拉遠那一格就是雁 logo 的剪影，而不是一個通用的「>」（雁_logo_深墨_高解析.png 1cyhdWOR_Iv0KoTrQjgNrYwfnj04y7wc7）。",
+    "〔retro 30〕重量物理：落下的份量跟字的大小成正比，小字幾乎不動。用在兩個地方：system 60 秒「忙起來還是可能要稍等一下」的小字，輕輕落下、不彈；30 秒「有。」的面板，做成全片最重的一次落下。冷幽默靠物理，不靠金句（金句問題見 feedback_threads_post_structure.md 1TktXgYaz13YTaDHeKZlJkWSQYdrXOA_8）。",
+    "〔cinematic 60〕數據用上標加日期註腳：「4.9★」後面掛 ¹，註腳寫「¹ 2026 年 9 月查詢」。這符合他「正確第一、評論數用前要重查」的規則（大介想法總綱.md 1mJ-feyoEEpDDYIPtWiYTfFwwhBCc_CfM；03_Google評論數_特寫_4.9星2438則.png 1Hq-2wEdrzCfc6l09_tVCjFzHktFlLkxv），也跟 system 60 秒的 ※ 註腳母題是同一套語言。",
+    "〔kinetic 30〕「客」換成「你」：system 60 秒一小時一格那段，第一塊方塊不寫「1 位」，改寫「你」；第二塊（別的客人）撞到後滑進下一格，不會被趕走。這樣是客人視角，也合他「廣告字用客人語言」的要求（feedback_customer_facing_wording.md 1VKfQQSwxGLcfDRhRtLKGWP-aNgHPz-KP）。",
+    "〔kinetic 60〕第 0 格就在動，0.5 秒內主字落地：system 60 秒開場改成第一拍「先報價」大字就跟著「>」落定，「雁沙龍｜高雄・民生一路」標籤之後再補，讓 Reels 前 2 秒留得住人。",
+    "〔retro 60〕音效預設不放，另交可選分軌給大介在剪映自己配。他退過紙張聲、剪映翻頁聲，也嫌過川hair B 的音效（面試_動畫腳本_v6.md 19UEgO0IFaDTSH_9YdjJv5otMbQo5IZG1；feedback_brand_film_motion_resume_style.md 1n7uPjjE4UyCIYLr7uito-Rf0itRo8OoK；feedback_brand_ad_not_footage_collage.md 1hO6QhgezYbP9uGqYbbaeD8VzzjGWjJRX）。",
+    "〔cinematic 30〕「被擋」的低通濾波兩小節再打開，不做全靜音：system 30 秒「有。」那題已經用 bass 抽兩拍、濾波下沉，保留這個做法，不要改成全靜音加重擊（懶懶 B 的套路，見 feedback_always_new_not_derivative.md 1gUxUGub3HTNX2k4rXoWwl_XgSLqPmrPD）。"
+   ]
+  },
+  {
+   "scores": [
+    {
+     "concept": "cinematic｜60〈生活係髮廊〉長卷章節 × 30〈順序〉箭頭海報",
+     "brand_fit": 8,
+     "client_taste": 7,
+     "distinctness": 7.5,
+     "feasibility": 8,
+     "reels_performance": 6.5,
+     "total": 37,
+     "notes": "總分是五項加總（滿分 50），以下同。\n【Reels 成效】\n- 60 秒前 1 秒最弱：開場是紙底 1.00→1.02 慢推、mono 小標、細宋 Light 大字收字距。滑過去的人沒有理由停下來。\n- 每章 3 小節 = 7.5 秒，四案裡最慢。提案自己也承認有「慢／停頓」的風險。\n- 30 秒強很多：滿版牆黃配黑體巨字，在動態消息裡很搶眼，整支只講「先報價→你點頭→才開始」，訊息最清楚。箭頭被擋兩次、點頭這些物理梗也有記憶點。缺點是第一個巨字「坐下」到 0:04 才出現，前 4 秒只有兩行 120px 的說明字，鉤子還可以更早。\n\n【可行性】\n- 60 秒長紙一鏡到底加 wght 壓印，Remotion 都做得到。\n- 30 秒「平塗箭頭用雜訊門檻乾成飛白 logo」需要拿 logo PNG 當遮罩，中等難度。\n- 工作量兩支平衡。\n\n【其他】\n- 品牌母題取材都對：價目表黑框直排、logo「>」角度、黃牆。牆黃 #EED64F 色相約 50.9°，跟安格斯 #FFB13B（36.1°）拉得最開（本次用 python 算的）。\n- 60 秒「宋體＋淺底＋章節」跟 10/17 剛定版的剪髮講座太接近，最容易被說重複。\n- 「坐下」這一步是示意，店家沒說過報價在哪一步。\n- 「生活係」客人可能看不懂。"
+    },
+    {
+     "concept": "kinetic｜60〈字的雁陣〉一鏡到底字地圖 × 30〈一格一位〉直排黑框硬切",
+     "brand_fit": 7.5,
+     "client_taste": 7.5,
+     "distinctness": 7.5,
+     "feasibility": 7,
+     "reels_performance": 8.5,
+     "total": 38,
+     "notes": "【Reels 成效】四案最強。\n- 60 秒第 0 格鏡頭就在動，0.54 秒「先報價」已落地，佔畫寬 58%，1 秒內就看得懂在講什麼。之後一路移鏡，沒有停頓。45 秒拉遠才看出字排成 logo 的「>」，這是四案「拉遠揭曉」裡最自然的一個，因為筆刷就是由走過的字拼成的。\n- 30 秒第 1 小節用 6 個「客」互推、5 個飛走、剩 1 個填黃，直接把「一小時只約一位」演出來，是四案最好的 1 秒鉤子。結尾「客」換成「你」回扣開場，片長 30.0 秒（128 BPM×16 小節）算得剛好。\n\n【兩支差異】剪法（一鏡到底／每拍硬切）、排版（橫排樓梯／直排黑框）、顏色主從、配樂、封面都不一樣。但兩支都是純字動畫，而且「設計師全程、4.9、夜間洗髮」兩支都有，事實重疊偏多。\n\n【可行性】\n- 60 秒要讓字地圖真的排成 logo 筆刷，得先從重描檔描出中心線，再用 logo alpha 遮罩紋理字，做得到但要迭代。\n- 規格寫 60fps，加上可變 wght／wdth，渲染時間會翻倍，跟大介嫌慢衝突，樣片建議先用 30fps。\n- Chiron GoRound TC 是以香港字形為基礎，要逐字查台灣字形。\n\n【品牌與文案】\n- 雁黃 #F5C842 色相約 44.9°，是四案裡最接近安格斯橘的，要調黃。\n- 「不是燙完，設計師才出現」有暗嗆同業的風險，建議刪掉。\n- 「一小時只約一位」到底是每位設計師還是全店，必須先問清楚，30 秒整支都押在這句上。"
+    },
+    {
+     "concept": "retro｜60〈雁沙龍印刷所〉印刷工序 × 30〈本店規矩〉告示板走到騎樓",
+     "brand_fit": 6.5,
+     "client_taste": 7,
+     "distinctness": 8.5,
+     "feasibility": 5,
+     "reels_performance": 6.5,
+     "total": 33.5,
+     "notes": "【Reels 成效】\n- 60 秒開場是反字「龍沙雁」，第 2.4 秒才翻正。滑手機的人可能前 1–2 秒看不懂，正好踩到「意味不明」。\n- 九道印刷工序一道接一道，鋪陳偏長。\n- 30 秒的鉤子不錯：深色磚牆上掛下白色告示板，「本店規矩」四個大字落下。阻尼擺做得很聰明，字越大板子擺越大、附則小字板子幾乎不動，物理本身就是笑點，很合他的口味。\n- 但 16–24 秒的騎樓側招是場景插畫，有被看成「繪本式插畫」的風險，也可能讓人以為店門口真的有騎樓。\n\n【可行性】四案最重。\n- 網點每格上萬個點要用 canvas 預先計算。\n- 摺頁、騎樓要做 CSS 3D，壓克力字要做立體。\n- 60 秒 9 種工序等於 9 套獨立機制，正好踩到「技術流堆料」，也跟他嫌慢衝突。\n\n【品牌與差異】\n- 印刷工序是借外行業的語言，不是雁自己的（只有價目表是），跟他「母題要從品牌重新發明」的要求有落差。\n- 跟過去作品、兩支之間的差異都最大（亮紙／暗牆、明體／圓體、導覽／單一物理系統），所以 distinctness 給最高。\n- 30 秒內容幾乎把所有賣點又講了一遍，跟 60 秒重疊。"
+    },
+    {
+     "concept": "system｜60〈一張圖看懂雁沙龍〉店務圖表 × 30〈你可能想問〉問答清單",
+     "brand_fit": 8,
+     "client_taste": 7,
+     "distinctness": 7,
+     "feasibility": 9,
+     "reels_performance": 7,
+     "total": 38,
+     "notes": "【Reels 成效】\n- 資訊最清楚：插銷抽掉＝確認才開始、第二塊被撞開＝一小時一位、長條拉到底＝全程設計師。每條店規都由動作演出來，最能反制「意味不明」和「純文字切換」。\n- 60 秒的鉤子弱：第一句字幕到 2.5 秒才出現，第 1 秒只有「>」節點圖。整體有「像簡報／PPT」的風險。\n- 30 秒的問答是 Reels 原生格式，「廁所有衛生棉嗎？→ 有。」的冷面巨字很適合留存和分享。可是最強的這一拍放在 9.4 秒，開場只是清單滑入，太浪費。建議把 Q3 改成冷開場。每題 3.75 秒，問句加答案可能讀不完。\n\n【可行性】四案最高。幾何圖形、手風琴展開都很單純，30 秒工作量最小。月曆有用 python 驗算，2026-09-01 週二、09-24 週四都正確。\n\n【差異】\n- 兩支之間差很多（圖表／問答、紙底／黃底、鏡頭移動／清單捲動）。\n- 但跟過去作品有幾處貼近：方塊落下擠壓近似動態履歷的彈跳球，時段格近似安格斯 v2 的預約表，資訊設計整體有懶懶 D／規格表的味道。\n\n【品牌與文案】\n- 工作語言全部取自雁的價目表和店規，口氣是客人視角，品牌貼合度高。\n- 30 秒把 logo 轉 90° 當展開符號，要確認是否符合 10/23「logo 形狀保持原樣」的規則。"
+    }
+   ],
+   "best_pair": "推薦 kinetic 原組合：60 秒〈字的雁陣〉＋30 秒〈一格一位〉，並套用下方的借用點子。\n\n理由（從 Reels 成效和可行性看）：\n1. 兩支的前 1 秒鉤子都是四案最強。60 秒第 0 格就在動，0.54 秒「先報價」落地。30 秒第 1 小節用「客」擠格彈出，直接演出「一小時只約一位」。兩支都在 1 秒內交代「這是什麼店的什麼承諾」，其他三案的第一個訊息都要 2.5–4 秒以上。\n2. 兩支是互相配合設計的：60 秒刻意不放「一小時一位」，留給 30 秒當唯一主題，所以 30 秒不會像 60 秒的閹割版。剪法、排版、顏色主從、logo 時刻、配樂、封面六項都不一樣，超過大介「至少四項不同」的門檻。\n3. 程式動畫做得出來：60 秒的難點只有「字地圖排成 logo 筆刷」一處，用 logo alpha 遮罩加中心線排字就能做；30 秒全是硬切加簡單彈簧，工作量很小。\n\n跨案混搭我評估過，都不建議：\n- kinetic 60＋cinematic 30：兩支都黃底，而且都主打「先報價」，會撞。\n- system 60＋kinetic 30：兩支都紙底、都用黑框直排，而且都演「一小時一位」，30 秒會變成 60 秒的節錄。\n- cinematic 60＋system 30：衛生棉、零食、夜間洗髮、上班開心四項重疊。\n\n只有原組合的內容互補又夠分開。\n\n開工前要先解決四件事：\n- 跟大介確認「一小時只約一位」是每位設計師還是全店。這句是 30 秒的命脈，問不到就換備案。\n- 刪掉「不是燙完，設計師才出現」這句。\n- 雁黃改到色相 ≥48°，再用黃牆照片校正。\n- 樣片用 30fps：60 秒先做 0:00–0:15 加拉遠揭曉關鍵圖，30 秒先做開場 4 秒，加兩張封面。等他說「製作吧」再做全套。\n\n備案：如果「一小時一位」的範圍確認不了，30 秒改用 system〈你可能想問〉：\n- 改成紙底配墨色面板，跟 60 秒的黃底分開。\n- 開場直接冷開 Q3「廁所有衛生棉嗎？／有。」。\n- 60 秒同時拿掉「店裡還有」那站，避免內容重疊。",
+   "grafts": [
+    "【system 30 →〈字的雁陣〉站 4】「店裡還有／廁所備衛生棉／零食櫃」改成一問一答：小字「廁所有衛生棉嗎？」，接著圓體 900 巨字「有。」佔畫寬約一半。這樣 15–19 秒中段多一個留存鉤子，也可以當備用封面。用之前要先問店家願不願意露出衛生棉。",
+    "【system 60 →〈字的雁陣〉站 1】借「插銷鎖住服務」的意思，但只用字來做：「服務」兩個字先蓋一層斜線網底，「確認」落地那拍網底抽掉，「服務」再壓印成 900。用字本身演出「確認了才開始」，降低被說「純文字切換」的風險。",
+    "【cinematic 30 →〈字的雁陣〉logo 時刻】第 49 秒的 6 格疊溶，改成「雜訊門檻乾成飛白」：字拼成的筆刷沿雜訊門檻乾成 logo 原檔的飛白後，再對位深墨 logo。logo 形狀不變，符合 10/23 規則，記憶點也比疊溶強。",
+    "【system 的色相規則 → 全組】雁黃色相守在 45° 以上，最好 ≥48°。本次用 python 算：kinetic 的 #F5C842 約 44.9°，是四案最接近安格斯 #FFB13B（36.1°）的；cinematic 的 #EED64F 約 50.9°，retro 的 #F2D13D 約 49.1°。建議改用 #EED64F 一系，再拿黃牆照片校正。",
+    "【cinematic 60 →〈字的雁陣〉站 5】「4.9」旁邊加上標 ¹，片內帶一行 mono 註腳「¹ 2026.09 查詢・Google 評論」。數據可以追溯，符合「正確第一」，交件前重查只要改註腳。",
+    "【cinematic 規格 → kinetic 兩支】樣片和第一輪用 30fps 渲染，不用 60fps。可變 wght／wdth 逐格渲染加上 60fps，時間會翻倍，正好踩到他「等得比我做一部新的還久」的不滿。定版後再決定要不要升 60fps。",
+    "【retro 30 → kinetic 30 的「老實話」那格（0:05.6–0:07.5）】借「字越大、承重越大」的物理反差：「老實說，忙起來稍微等一下是正常的。」用小字落下時，黃格裡的「客」只歪 1°，不是原本的 3°。小字幾乎推不動格子，用物理收住語氣，比較不像在辯解。",
+    "【cinematic 30 的封面邏輯 → kinetic 30 封面】封面直接寫承諾：紙底一格黃、格裡一個「客」，旁邊巨字「一小時 只約一位」用 Anybody 和圓體 900 加大到畫寬 70%。原案字偏小，在九宮格縮圖裡會讀不到。"
+   ]
+  }
+ ]
+}
