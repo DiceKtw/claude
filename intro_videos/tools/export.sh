@@ -5,11 +5,17 @@
 #   3. 壞格用單格算圖（renderStill）重算，在轉色彩那一步換回去
 #   4. 轉成上架用的 BT.709 limited range、封入配樂
 #   5. 成品再掃一次，還有壞格就失敗
-# 用法：tools/export.sh angus|akira [concurrency=2]
+# 用法：tools/export.sh angus|akira|geese60|geese30 [concurrency=2]
 set -euo pipefail
 cd "$(dirname "$0")/.."
 B=$1; C=${2:-2}
-COMP=$( [ "$B" = angus ] && echo Angus || echo Akira )
+case "$B" in
+  angus) COMP=Angus ;;
+  akira) COMP=Akira ;;
+  geese60) COMP=Geese60 ;;
+  geese30) COMP=Geese30 ;;
+  *) echo "未知的片名：$B（angus|akira|geese60|geese30）"; exit 2 ;;
+esac
 PATCH=out/video/patch_${B}
 # 細線掃場（lineWipe）的線每格都在動，會被誤判成殘影 → 略過
 IGN=$( [ "$B" = akira ] && echo "216-240,936-960" || echo "" )
